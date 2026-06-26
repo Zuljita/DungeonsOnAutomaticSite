@@ -32,9 +32,15 @@
     p, li { color: var(--text-muted); line-height: 1.65; font-size: 15.5px; }
     ul { margin: 16px 0 0; padding-left: 22px; }
     .status { display: inline-flex; margin-top: 18px; padding: 8px 12px; border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); font-family: var(--font-mono); font-size: 12px; color: var(--text-body); background: var(--surface-sunken); }
+    .downloads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+    .download { display: block; min-height: 120px; padding: 18px; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); }
+    .download:hover { border-color: var(--brass-400); }
+    .download strong { display: block; font-family: var(--font-display); color: var(--text-strong); text-transform: uppercase; letter-spacing: 0.03em; }
+    .download span { display: block; margin-top: 8px; color: var(--text-muted); font-size: 14px; line-height: 1.5; }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
     @media (max-width: 760px) {
       .release { grid-template-columns: 1fr; }
+      .downloads { grid-template-columns: 1fr; }
       .nav-inner { flex-direction: column; align-items: flex-start; padding: 14px 0; }
       .nav-links { margin-left: 0; flex-wrap: wrap; }
     }
@@ -44,17 +50,32 @@
   <nav>
     <div class="wrap nav-inner">
       <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Marketing</a><a href="manual.html">Manual</a><a href="releases.html">Releases</a><a href="ui_kits/generator/index.html">Prototype</a></div>
+      <div class="nav-links"><a href="index.html">Marketing</a><a href="manual.html">Manual</a><a href="releases.html">Releases</a><a href="#downloads">Downloads</a></div>
     </div>
   </nav>
   <header>
     <div class="wrap">
       <span class="eyebrow">Public changelog</span>
       <h1>Release notes for the dungeon office.</h1>
-      <p class="lead">Use this page for public-facing release notes while the application source lives in a private repository. Keep user-visible changes, known issues, migration notes, and download or launch links here.</p>
+      <p class="lead">Use this page for public-facing release notes while the application source lives in a private repository. Downloads point at this public repo, not the private application source.</p>
     </div>
   </header>
   <main class="wrap">
+    <article class="release" id="downloads">
+      <aside>
+        <div class="version">Downloads</div>
+        <div class="date">Public files</div>
+      </aside>
+      <div>
+        <h2>Current public downloads</h2>
+        <p>These links stay public even after <code>Zuljita/DungeonsOnAutomatic</code> goes private.</p>
+        <div class="downloads">
+          <a class="download" href="ui_kits/generator/index.html"><strong>Launch prototype</strong><span>Open the public browser prototype directly from this site.</span></a>
+          <a class="download" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/latest"><strong>Latest release</strong><span>Read the latest public release notes and download attached assets.</span></a>
+          <a class="download" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/archive/refs/heads/main.zip"><strong>Site ZIP</strong><span>Download the current public site and prototype files as a ZIP archive.</span></a>
+        </div>
+      </div>
+    </article>
     <article class="release">
       <aside>
         <div class="version">v0.1.0</div>
@@ -66,7 +87,7 @@
         <ul>
           <li>Added marketing home page for Dungeons on Automatic.</li>
           <li>Added user manual with quick start, controls, exports, and troubleshooting.</li>
-          <li>Added release notes page for future public changelog entries.</li>
+          <li>Added release notes and download links backed by the public site repository.</li>
           <li>Kept the interactive generator UI kit available as a public prototype.</li>
         </ul>
         <div class="status">Documentation release</div>
@@ -79,7 +100,7 @@
       </aside>
       <div>
         <h2>Application release notes</h2>
-        <p>Replace this placeholder with the next public product release. Include the version, release date, compatibility notes, known issues, and any links users need.</p>
+        <p>Replace this placeholder with the next public product release. Attach public downloads to this repository's GitHub Release, not to the private application repository.</p>
         <ul>
           <li>Generation changes and user-facing fixes.</li>
           <li>Export compatibility notes for Foundry, Universal VTT, PNG, Markdown, and JSON.</li>
