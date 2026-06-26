@@ -29,14 +29,18 @@ jobs:
       TARGET_REPO: Zuljita/DungeonsOnAutomaticSite
       SOURCE_TAG: ${{ github.event.inputs.source_tag || 'continuous' }}
       TARGET_TAG: ${{ github.event.inputs.target_tag || 'continuous' }}
-      SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
+      SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN || github.token }}
       TARGET_TOKEN: ${{ github.token }}
+      HAS_SOURCE_SECRET: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN != '' }}
     steps:
-      - name: Require source token
+      - name: Report token mode
         run: |
-          if [ -z "$SOURCE_TOKEN" ]; then
-            echo "Missing DOA_RELEASE_MIRROR_TOKEN. Add a token with read access to $SOURCE_REPO."
-            exit 1
+          if [ "$HAS_SOURCE_SECRET" = "true" ]; then
+            echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
+          else
+            echo "Using the workflow GITHUB_TOKEN to read $SOURCE_REPO."
+            echo "This works only while the source repository is public."
+            echo "Before making $SOURCE_REPO private, add DOA_RELEASE_MIRROR_TOKEN with read access."
           fi
 
       - name: Download source assets
