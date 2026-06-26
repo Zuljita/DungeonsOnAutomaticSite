@@ -15,6 +15,7 @@ on:
     - cron: "17 9 * * *"
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -145,4 +146,5 @@ jobs:
           else
             git commit -m "Update public changelog"
             git push
+            GH_TOKEN="$TARGET_TOKEN" gh workflow run pages.yml --repo "$TARGET_REPO"
           fi
