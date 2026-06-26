@@ -1,9 +1,1 @@
-[
-  {
-    "tagName": "continuous",
-    "name": "Continuous build",
-    "publishedAt": "2026-06-26T05:29:31Z",
-    "isPrerelease": false,
-    "body": "Latest desktop builds from the main branch."
-  }
-]
+[{"body":"Latest desktop builds from the main branch.","isPrerelease":false,"name":"Continuous build","publishedAt":"2026-06-26T05:29:31Z","tagName":"continuous"}]
