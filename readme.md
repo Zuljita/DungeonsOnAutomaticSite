@@ -8,7 +8,7 @@ source repository moves private, giving users a stable place to find:
 
 - product overview and launch links
 - user manual and troubleshooting notes
-- public release notes and known issues
+- public release notes, mirrored app downloads, and known issues
 - brand assets and prototype UI references
 
 ## GitHub Pages
@@ -31,6 +31,6 @@ No build step is required.
 
 ## Public/private split
 
-Once `Zuljita/DungeonsOnAutomatic` is private, keep public release assets on this
-repository's GitHub Releases. Private-repo release assets require authentication,
-so public downloads should not point there.
+Once `Zuljita/DungeonsOnAutomatic` is private, keep public release assets mirrored
+on this repository's GitHub Releases. Private-repo release assets require
+authentication, so public downloads should not point there.
