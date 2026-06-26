@@ -33,6 +33,9 @@ jobs:
       TARGET_TOKEN: ${{ github.token }}
       HAS_SOURCE_SECRET: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN != '' }}
     steps:
+      - name: Checkout public site
+        uses: actions/checkout@v4
+
       - name: Report token mode
         run: |
           if [ "$HAS_SOURCE_SECRET" = "true" ]; then
@@ -63,6 +66,14 @@ jobs:
             --repo "$SOURCE_REPO" \
             --json name \
             --jq '.name // "Continuous build"' > release-title.txt
+
+      - name: Write public changelog data
+        run: |
+          mkdir -p data
+          GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases" \
+            --paginate \
+            --jq '[.[] | select(.draft == false) | {tagName: .tag_name, name: .name, publishedAt: .published_at, isPrerelease: .prerelease, body: (.body // "")}]' \
+            > data/releases.json
 
       - name: Create or update public release
         run: |
@@ -95,3 +106,15 @@ jobs:
           GH_TOKEN="$TARGET_TOKEN" gh release upload "$TARGET_TAG" mirror-assets/* \
             --repo "$TARGET_REPO" \
             --clobber
+
+      - name: Commit public changelog data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/releases.json
+          if git diff --cached --quiet; then
+            echo "No changelog changes to commit."
+          else
+            git commit -m "Update public changelog"
+            git push
+          fi

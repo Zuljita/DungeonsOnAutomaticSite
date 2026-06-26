@@ -37,6 +37,12 @@
     .download:hover { border-color: var(--brass-400); }
     .download strong { display: block; font-family: var(--font-display); color: var(--text-strong); text-transform: uppercase; letter-spacing: 0.03em; }
     .download span { display: block; margin-top: 8px; color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+    .feed { display: grid; gap: 18px; }
+    .feed-item { border-top: 1px solid var(--border-hairline); padding-top: 18px; }
+    .feed-item:first-child { border-top: 0; padding-top: 0; }
+    .feed-item h3 { margin: 0; font-size: 18px; letter-spacing: 0.03em; }
+    .feed-item time { display: block; margin-top: 6px; font-family: var(--font-mono); color: var(--text-faint); font-size: 12px; }
+    .feed-item pre { white-space: pre-wrap; margin: 14px 0 0; color: var(--text-muted); font-family: var(--font-body); line-height: 1.6; font-size: 15px; }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
     @media (max-width: 760px) {
       .release { grid-template-columns: 1fr; }
@@ -99,21 +105,44 @@
     </article>
     <article class="release">
       <aside>
-        <div class="version">Next</div>
-        <div class="date">Planned</div>
+        <div class="version">Changelog</div>
+        <div class="date">From app releases</div>
       </aside>
       <div>
-        <h2>Application release notes</h2>
-        <p>Public download links use the stable <code>continuous</code> release in this repository. Future builds should be mirrored into that release rather than linked directly from the private application repository.</p>
-        <ul>
-          <li>Generation changes and user-facing fixes.</li>
-          <li>Export compatibility notes for Foundry, Universal VTT, PNG, Markdown, and JSON.</li>
-          <li>Manual updates and support instructions.</li>
-        </ul>
-        <div class="status">Waiting on next build</div>
+        <h2>Application changelog</h2>
+        <p>Release notes are copied from the private application repository into a public changelog feed.</p>
+        <div class="feed" id="release-feed">
+          <p>Loading release notes.</p>
+        </div>
       </div>
     </article>
   </main>
   <footer><div class="wrap">Dungeons on Automatic release notes. Public enough for users, quiet enough for source control.</div></footer>
+  <script>
+    (async () => {
+      const feed = document.getElementById('release-feed');
+      try {
+        const response = await fetch('data/releases.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('release feed unavailable');
+        const releases = await response.json();
+        feed.replaceChildren();
+        releases.slice(0, 8).forEach((release) => {
+          const article = document.createElement('article');
+          article.className = 'feed-item';
+          const title = document.createElement('h3');
+          title.textContent = release.name || release.tagName || 'Release';
+          const date = document.createElement('time');
+          date.dateTime = release.publishedAt || '';
+          date.textContent = release.publishedAt ? new Date(release.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : 'Unpublished';
+          const body = document.createElement('pre');
+          body.textContent = release.body || 'No public release notes yet.';
+          article.append(title, date, body);
+          feed.append(article);
+        });
+      } catch (error) {
+        feed.textContent = 'Release notes are temporarily unavailable.';
+      }
+    })();
+  </script>
 </body>
 </html>
