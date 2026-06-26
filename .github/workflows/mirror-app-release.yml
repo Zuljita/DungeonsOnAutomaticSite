@@ -1,0 +1,93 @@
+name: Mirror App Release Downloads
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_tag:
+        description: Source release tag in Zuljita/DungeonsOnAutomatic
+        required: true
+        default: continuous
+      target_tag:
+        description: Public mirror tag in this repository
+        required: true
+        default: continuous
+  schedule:
+    - cron: "17 9 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror-app-release
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_REPO: Zuljita/DungeonsOnAutomatic
+      TARGET_REPO: Zuljita/DungeonsOnAutomaticSite
+      SOURCE_TAG: ${{ github.event.inputs.source_tag || 'continuous' }}
+      TARGET_TAG: ${{ github.event.inputs.target_tag || 'continuous' }}
+      SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
+      TARGET_TOKEN: ${{ github.token }}
+    steps:
+      - name: Require source token
+        run: |
+          if [ -z "$SOURCE_TOKEN" ]; then
+            echo "Missing DOA_RELEASE_MIRROR_TOKEN. Add a token with read access to $SOURCE_REPO."
+            exit 1
+          fi
+
+      - name: Download source assets
+        run: |
+          mkdir -p mirror-assets
+          GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
+            --repo "$SOURCE_REPO" \
+            --dir mirror-assets \
+            --clobber
+          GH_TOKEN="$SOURCE_TOKEN" gh release view "$SOURCE_TAG" \
+            --repo "$SOURCE_REPO" \
+            --json name,body \
+            --jq '.body // ""' > release-notes.md
+          {
+            echo ""
+            echo "---"
+            echo "Mirrored from $SOURCE_REPO release $SOURCE_TAG on $(date -u +'%Y-%m-%d %H:%M UTC')."
+          } >> release-notes.md
+          GH_TOKEN="$SOURCE_TOKEN" gh release view "$SOURCE_TAG" \
+            --repo "$SOURCE_REPO" \
+            --json name \
+            --jq '.name // "Continuous build"' > release-title.txt
+
+      - name: Create or update public release
+        run: |
+          title="$(cat release-title.txt)"
+          if GH_TOKEN="$TARGET_TOKEN" gh release view "$TARGET_TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
+            GH_TOKEN="$TARGET_TOKEN" gh release edit "$TARGET_TAG" \
+              --repo "$TARGET_REPO" \
+              --title "$title" \
+              --notes-file release-notes.md
+          else
+            GH_TOKEN="$TARGET_TOKEN" gh release create "$TARGET_TAG" \
+              --repo "$TARGET_REPO" \
+              --target main \
+              --title "$title" \
+              --notes-file release-notes.md
+          fi
+
+      - name: Replace mirrored assets
+        run: |
+          GH_TOKEN="$TARGET_TOKEN" gh release view "$TARGET_TAG" \
+            --repo "$TARGET_REPO" \
+            --json assets \
+            --jq '.assets[].name' > existing-assets.txt
+          while IFS= read -r asset; do
+            [ -z "$asset" ] && continue
+            GH_TOKEN="$TARGET_TOKEN" gh release delete-asset "$TARGET_TAG" "$asset" \
+              --repo "$TARGET_REPO" \
+              --yes
+          done < existing-assets.txt
+          GH_TOKEN="$TARGET_TOKEN" gh release upload "$TARGET_TAG" mirror-assets/* \
+            --repo "$TARGET_REPO" \
+            --clobber
