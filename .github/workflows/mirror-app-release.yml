@@ -44,27 +44,22 @@ jobs:
           fi
           echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
 
-      - name: Download source assets
+      - name: Read source metadata
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
-          mkdir -p mirror-assets
-          GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
-            --repo "$SOURCE_REPO" \
-            --dir mirror-assets \
-            --clobber
-          GH_TOKEN="$SOURCE_TOKEN" gh release view "$SOURCE_TAG" \
-            --repo "$SOURCE_REPO" \
-            --json name,body \
-            --jq '.body // ""' > release-notes.md
+          mkdir -p data mirror-meta
+          GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases/tags/$SOURCE_TAG" \
+            > mirror-meta/source-release.json
+          jq -r '.body // ""' mirror-meta/source-release.json > release-notes.md
           {
             echo ""
             echo "---"
-            echo "Mirrored from $SOURCE_REPO release $SOURCE_TAG on $(date -u +'%Y-%m-%d %H:%M UTC')."
+            echo "Mirrored from $SOURCE_REPO release $SOURCE_TAG."
           } >> release-notes.md
-          GH_TOKEN="$SOURCE_TOKEN" gh release view "$SOURCE_TAG" \
-            --repo "$SOURCE_REPO" \
-            --json name \
-            --jq '.name // "Continuous build"' > release-title.txt
+          jq -r '.name // "Continuous build"' mirror-meta/source-release.json \
+            > release-title.txt
+          jq '[.assets[] | {name, size, digest}] | sort_by(.name)' \
+            mirror-meta/source-release.json > mirror-meta/source-assets.json
 
       - name: Write public changelog data
         run: |
@@ -74,6 +69,25 @@ jobs:
             --paginate \
             --jq '[.[] | select(.draft == false) | {tagName: .tag_name, name: .name, publishedAt: .published_at, isPrerelease: .prerelease, body: (.body // "")}]' \
             > data/releases.json
+
+      - name: Compare mirrored assets
+        run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
+          if GH_TOKEN="$TARGET_TOKEN" gh api "repos/$TARGET_REPO/releases/tags/$TARGET_TAG" \
+            > mirror-meta/target-release.json 2>/dev/null; then
+            jq '[.assets[] | {name, size, digest}] | sort_by(.name)' \
+              mirror-meta/target-release.json > mirror-meta/target-assets.json
+            if cmp -s mirror-meta/source-assets.json mirror-meta/target-assets.json; then
+              echo "Mirrored release assets are already current. Skipping asset download/upload."
+              echo "MIRROR_ASSETS_CHANGED=0" >> "$GITHUB_ENV"
+            else
+              echo "Mirrored release assets differ from source. Asset mirror is required."
+              echo "MIRROR_ASSETS_CHANGED=1" >> "$GITHUB_ENV"
+            fi
+          else
+            echo "Target release does not exist. Asset mirror is required."
+            echo "MIRROR_ASSETS_CHANGED=1" >> "$GITHUB_ENV"
+          fi
 
       - name: Create or update public release
         run: |
@@ -92,9 +106,20 @@ jobs:
               --notes-file release-notes.md
           fi
 
+      - name: Download source assets
+        run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
+          [ "$MIRROR_ASSETS_CHANGED" != "1" ] && exit 0
+          mkdir -p mirror-assets
+          GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
+            --repo "$SOURCE_REPO" \
+            --dir mirror-assets \
+            --clobber
+
       - name: Replace mirrored assets
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
+          [ "$MIRROR_ASSETS_CHANGED" != "1" ] && exit 0
           GH_TOKEN="$TARGET_TOKEN" gh release view "$TARGET_TAG" \
             --repo "$TARGET_REPO" \
             --json assets \
