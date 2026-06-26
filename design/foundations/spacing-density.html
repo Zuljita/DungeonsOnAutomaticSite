@@ -1,0 +1,25 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Density in Use" subtitle="A control row at real density — the generator packs many inputs per line." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-app); padding: 20px; font-family: var(--font-body); }
+  .bar { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; background: var(--surface-panel); border: 1px solid var(--border-hairline); border-radius: var(--radius-md); padding: var(--space-3); }
+  .field { display: flex; flex-direction: column; gap: var(--space-1); }
+  .field label { font-size: 11px; color: var(--text-muted); letter-spacing: 0.02em; }
+  .ctrl { height: var(--control-h-md); display: flex; align-items: center; padding: 0 var(--space-3); background: var(--surface-input); border: 1px solid var(--border-input); border-radius: var(--radius-sm); color: var(--text-body); font-family: var(--font-mono); font-size: 12.5px; min-width: 64px; }
+  .gap { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); margin-top: 12px; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="field"><label>Seed</label><div class="ctrl">8F1A-7C2D</div></div>
+    <div class="field"><label>Biomes</label><div class="ctrl">4</div></div>
+    <div class="field"><label>Party CER</label><div class="ctrl">125</div></div>
+    <div class="field"><label>Challenge</label><div class="ctrl">Average ▾</div></div>
+  </div>
+  <div class="gap">row gap --space-3 (12px) · field gap --space-1 (4px) · control height 34px</div>
+</body>
+</html>

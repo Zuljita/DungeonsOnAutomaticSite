@@ -1,0 +1,63 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Forms — Inputs & Toggles" subtitle="Field-wrapped inputs, selects, steppers, checkboxes and switches in the iron style." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--surface-app); padding: 22px; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 16px; align-items: start; }
+  .toggles { display: flex; gap: 28px; align-items: center; margin-top: 22px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Field, TextInput, Select, NumberStepper, Checkbox, Switch } = window.DungeonsOnAutomaticDesignSystem_e301a1;
+
+function Demo() {
+  const [n, setN] = React.useState(4);
+  const [preserve, setPreserve] = React.useState(true);
+  const [book, setBook] = React.useState(false);
+  const [ink, setInk] = React.useState(true);
+  const [grid, setGrid] = React.useState(false);
+  return (
+    <div>
+      <div className="grid">
+        <Field label="Seed" hint="hex or integer"><TextInput defaultValue="8F1A-7C2D" /></Field>
+        <Field label="Challenge">
+          <Select defaultValue="average">
+            <option value="cakewalk">Cakewalk</option>
+            <option value="average">Average</option>
+            <option value="hard">Hard</option>
+            <option value="evil">Evil</option>
+          </Select>
+        </Field>
+        <Field label="Biomes" hint="2–8"><NumberStepper value={n} onChange={setN} min={2} max={8} /></Field>
+        <Field label="Party CER" required><TextInput type="number" defaultValue="125" /></Field>
+        <Field label="Seed" error="Must be hexadecimal"><TextInput invalid defaultValue="zzzz" /></Field>
+        <Field label="Door security">
+          <Select defaultValue="standard">
+            <option value="none">None</option>
+            <option value="standard">Standard</option>
+            <option value="deathtrap">Deathtrap</option>
+          </Select>
+        </Field>
+      </div>
+      <div className="toggles">
+        <Checkbox checked={preserve} onChange={setPreserve} label="Preserve edits" />
+        <Checkbox checked={book} onChange={setBook} label="DF: Monsters" />
+        <Switch checked={ink} onChange={setInk} label="Ink style" />
+        <Switch checked={grid} onChange={setGrid} label="Grid overlay" />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

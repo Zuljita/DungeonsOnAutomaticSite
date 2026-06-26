@@ -1,0 +1,119 @@
+/* ============================================================
+   DOA Generator — UI kit layout. Composition/layout only; all
+   visual values come from the design-system tokens.
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--surface-app); color: var(--text-body); font-family: var(--font-body); }
+#root, .kit-app { height: 100%; }
+.kit-app { display: flex; flex-direction: column; min-height: 0; }
+
+/* ---- App bar ---- */
+.kit-appbar {
+  display: flex; align-items: center; gap: var(--space-5);
+  height: 60px; flex: none; padding: 0 var(--space-5);
+  background: linear-gradient(var(--stone-900), var(--stone-850));
+  border-bottom: 1px solid var(--stone-700); box-shadow: var(--shadow-sm);
+  z-index: var(--z-sticky);
+}
+.kit-brand { display: flex; align-items: center; gap: var(--space-3); flex: none; }
+.kit-brand__mark { width: 34px; height: 34px; flex: none; }
+.kit-brand__wm { display: flex; flex-direction: column; line-height: 1.05; }
+.kit-brand__t { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.04em; color: var(--text-strong); white-space: nowrap; }
+.kit-brand__s { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); margin-top: 3px; }
+
+.kit-seed { display: flex; align-items: center; gap: var(--space-2); margin-left: var(--space-4); }
+.kit-seed__lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.kit-seed__input { width: 132px; }
+.kit-appbar__stats { display: flex; gap: var(--space-2); margin-left: auto; }
+.kit-appbar__actions { display: flex; align-items: center; gap: var(--space-2); }
+
+/* ---- Body grid ---- */
+.kit-body { flex: 1; min-height: 0; display: grid; grid-template-columns: var(--rail-width) 1fr 340px; }
+.kit-rail, .kit-info {
+  min-height: 0; overflow-y: auto; padding: var(--space-4);
+  display: flex; flex-direction: column; gap: var(--space-4);
+  background: var(--surface-sunken);
+}
+.kit-rail { border-right: 1px solid var(--stone-800); }
+.kit-info { border-left: 1px solid var(--stone-800); }
+.kit-rail > *, .kit-info > * { flex: none; }
+.kit-rail__count { font-family: var(--font-mono); font-size: 11px; color: var(--brass-300); }
+
+.kit-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.kit-books { display: flex; flex-direction: column; gap: var(--space-2); }
+.kit-books__c { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+
+/* ---- Stage area (map) ---- */
+.kit-stagearea { min-width: 0; min-height: 0; display: flex; flex-direction: column; background: var(--surface-app); }
+.kit-maphead { flex: none; display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--stone-800); }
+.kit-maptoolbar { display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; }
+.kit-zoom { display: flex; align-items: center; gap: var(--space-3); flex: none; margin-left: var(--space-4); }
+.kit-zoom__r { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+.kit-zoom__btns { display: flex; gap: 4px; }
+.kit-zoom__btns button {
+  height: 28px; min-width: 30px; padding: 0 8px; cursor: pointer;
+  background: var(--stone-700); color: var(--text-body);
+  border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 14px;
+}
+.kit-zoom__btns button:hover { background: var(--stone-600); color: var(--brass-300); }
+.kit-zoom__fit { font-size: 12px !important; }
+
+.kit-mapview {
+  position: relative; flex: 1; min-height: 0; margin: var(--space-4);
+  border-radius: var(--radius-lg); overflow: hidden;
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,0.4), rgba(0,0,0,0) 55%),
+    radial-gradient(140% 120% at 50% 110%, rgba(58,51,38,0.32), rgba(0,0,0,0) 60%),
+    var(--parchment-100);
+  border: 1px solid var(--stone-700);
+  box-shadow: inset 0 0 90px rgba(58,51,38,0.4), var(--shadow-md);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--space-5);
+}
+.kit-mapview .doa-map { max-height: 100%; }
+.kit-mapview.is-busy .doa-map { filter: blur(1.5px) saturate(0.8); opacity: 0.6; transition: all var(--dur-base); }
+.kit-mapview__veil {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(16,15,18,0.18);
+}
+.kit-mapview__veil span {
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink-700);
+  background: var(--parchment-floor); border: 1px solid var(--parchment-400);
+  padding: 8px 16px; border-radius: var(--radius-pill); box-shadow: var(--shadow-doc);
+}
+
+/* ---- Info column contents ---- */
+.kit-legend { display: grid; gap: var(--space-2); }
+.kit-empty { font-size: 13px; color: var(--text-faint); margin: 0; line-height: 1.5; }
+.kit-sel { display: flex; flex-direction: column; gap: var(--space-3); }
+.kit-sel__name { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: 0.02em; color: var(--text-strong); }
+.kit-sel__num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none; background: var(--ink-900); color: var(--parchment-floor); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 12px; }
+.kit-sel__stats { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.kit-sel__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.kit-sel__btns { display: flex; gap: var(--space-2); margin-top: var(--space-1); }
+
+.kit-roomlist { display: flex; flex-direction: column; max-height: 280px; overflow-y: auto; }
+.kit-room {
+  display: flex; align-items: center; gap: var(--space-3); width: 100%; text-align: left;
+  padding: var(--space-2) var(--space-4); cursor: pointer;
+  background: transparent; border: none; border-bottom: 1px solid var(--stone-800);
+  color: var(--text-body); font-family: var(--font-body); font-size: 13px;
+}
+.kit-room:hover { background: var(--stone-800); }
+.kit-room.is-sel { background: var(--stone-700); box-shadow: inset 3px 0 0 var(--ember-500); }
+.kit-room__num { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); width: 18px; flex: none; }
+.kit-room__name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- Stage Manager toast stack ---- */
+.kit-stage {
+  position: fixed; right: var(--space-5); bottom: var(--space-5);
+  display: flex; flex-direction: column; gap: var(--space-2); z-index: var(--z-toast);
+  pointer-events: none;
+}
+.kit-stage .doa-toast { pointer-events: auto; animation: kit-toast-in var(--dur-base) var(--ease-out); }
+@keyframes kit-toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1180px) {
+  .kit-body { grid-template-columns: 280px 1fr 300px; }
+}

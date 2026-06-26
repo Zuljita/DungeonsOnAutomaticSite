@@ -1,0 +1,48 @@
+<!-- @dsCard group="Brand" viewport="700x210" name="Iconography" subtitle="Lucide line icons for UI affordances; fixed glyphs for map markers." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; background: var(--surface-panel); padding: 20px 24px; font-family: var(--font-body); color: var(--text-body); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 10px; }
+  .icons { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
+  .ico { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 56px; }
+  .ico i { color: var(--brass-300); }
+  .ico span { font-family: var(--font-mono); font-size: 9px; color: var(--text-faint); }
+  .glyphs { display: flex; gap: 22px; align-items: center; }
+  .g { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); }
+  .sw { width: 16px; height: 16px; border: 1px solid #0c0c0e; }
+  .dot { border-radius: 50%; box-shadow: 0 0 0 2px #fff7ed inset; }
+  .dia { transform: rotate(45deg); }
+</style>
+</head>
+<body>
+  <p class="lbl">UI — Lucide, 2px stroke, currentColor</p>
+  <div class="icons">
+    <div class="ico"><i data-lucide="dices"></i><span>dices</span></div>
+    <div class="ico"><i data-lucide="shuffle"></i><span>shuffle</span></div>
+    <div class="ico"><i data-lucide="download"></i><span>download</span></div>
+    <div class="ico"><i data-lucide="lock"></i><span>lock</span></div>
+    <div class="ico"><i data-lucide="rotate-cw"></i><span>rotate-cw</span></div>
+    <div class="ico"><i data-lucide="settings-2"></i><span>settings-2</span></div>
+    <div class="ico"><i data-lucide="map"></i><span>map</span></div>
+    <div class="ico"><i data-lucide="skull"></i><span>skull</span></div>
+    <div class="ico"><i data-lucide="gem"></i><span>gem</span></div>
+    <div class="ico"><i data-lucide="key-round"></i><span>key</span></div>
+    <div class="ico"><i data-lucide="door-open"></i><span>door</span></div>
+    <div class="ico"><i data-lucide="plus"></i><span>plus</span></div>
+  </div>
+  <p class="lbl">Map glyphs — fixed shapes, never restyled</p>
+  <div class="glyphs">
+    <span class="g"><span class="sw dot" style="background:var(--key-encounter)"></span>Encounter</span>
+    <span class="g"><span class="sw dia" style="background:var(--key-treasure);border-color:#78350f"></span>Treasure</span>
+    <span class="g"><span class="sw" style="background:var(--key-hazard-bg);border-color:var(--key-hazard)"></span>Trap</span>
+    <span class="g"><span class="sw dot" style="background:var(--key-key);box-shadow:none"></span>Key</span>
+    <span class="g"><span class="sw" style="background:var(--parchment-200);border-color:var(--key-secret)"></span>Secret (S)</span>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

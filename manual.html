@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dungeons on Automatic user manual: quick start, generator controls, exports, and troubleshooting.">
+  <title>Dungeons on Automatic - Manual</title>
+  <link rel="icon" href="assets/brand/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--surface-app); color: var(--text-body); font-family: var(--font-body); }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+    nav { position: sticky; top: 0; z-index: 20; background: rgba(16,15,18,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--stone-800); }
+    .nav-inner { min-height: 64px; display: flex; align-items: center; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; }
+    .brand img { width: 30px; height: 30px; }
+    .brand b { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.05em; color: var(--text-strong); white-space: nowrap; text-transform: uppercase; }
+    .nav-links { margin-left: auto; display: flex; gap: 20px; font-size: 14px; color: var(--text-muted); }
+    .nav-links a:hover { color: var(--brass-300); }
+    .hero { padding: clamp(48px, 8vw, 90px) 0 36px; border-bottom: 1px solid var(--stone-800); background: radial-gradient(60% 50% at 20% 0%, rgba(211,0,0,0.14), transparent 70%); }
+    .eyebrow { font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--brass-300); }
+    h1, h2, h3 { font-family: var(--font-display); color: var(--text-strong); text-transform: uppercase; }
+    h1 { max-width: 880px; margin: 14px 0 0; font-size: clamp(42px, 6vw, 72px); line-height: 1.03; letter-spacing: 0.03em; }
+    .lead { max-width: 70ch; margin: 20px 0 0; color: var(--text-muted); font-size: 18px; line-height: 1.65; }
+    .layout { display: grid; grid-template-columns: 250px 1fr; gap: 42px; padding: 42px 0 90px; align-items: start; }
+    aside { position: sticky; top: 86px; display: grid; gap: 8px; }
+    aside a { padding: 10px 12px; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); color: var(--text-muted); background: var(--surface-panel); font-size: 14px; }
+    aside a:hover { color: var(--brass-300); border-color: var(--brass-400); }
+    main { display: grid; gap: 28px; }
+    section { background: var(--surface-panel); border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: clamp(22px, 4vw, 34px); box-shadow: var(--shadow-sm), var(--glint-top); }
+    h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.04em; }
+    h3 { margin: 26px 0 0; font-size: 18px; letter-spacing: 0.03em; color: var(--brass-300); }
+    p, li { color: var(--text-muted); line-height: 1.65; font-size: 15.5px; }
+    ul, ol { padding-left: 22px; }
+    code { font-family: var(--font-mono); color: var(--brass-300); }
+    .callout { margin-top: 18px; padding: 16px 18px; border-left: 3px solid var(--ember-500); background: var(--surface-sunken); color: var(--text-body); }
+    table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14.5px; }
+    th, td { border: 1px solid var(--border-hairline); padding: 12px 14px; text-align: left; vertical-align: top; }
+    th { font-family: var(--font-mono); color: var(--brass-300); text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; background: var(--surface-sunken); }
+    footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; grid-template-columns: repeat(2, 1fr); }
+      .nav-inner { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      .nav-links { margin-left: 0; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
+      <div class="nav-links"><a href="index.html">Marketing</a><a href="manual.html">Manual</a><a href="releases.html">Releases</a><a href="ui_kits/generator/index.html">Prototype</a></div>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">User manual</span>
+      <h1>Run a dungeon before the table gets restless.</h1>
+      <p class="lead">This manual is the public guide for Dungeons on Automatic. It explains the workflow, what each control means, how to export useful files, and how to recover when a seed has developed professional objections.</p>
+    </div>
+  </header>
+  <div class="wrap layout">
+    <aside aria-label="Manual sections">
+      <a href="#quick-start">Quick start</a>
+      <a href="#controls">Controls</a>
+      <a href="#maps">Maps and keys</a>
+      <a href="#exports">Exports</a>
+      <a href="#stage-manager">Stage Manager</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+    </aside>
+    <main>
+      <section id="quick-start">
+        <h2>Quick start</h2>
+        <ol>
+          <li>Choose a dungeon size, biome mix, party CER, and challenge profile.</li>
+          <li>Select the source books your table actually uses.</li>
+          <li>Generate a seed. Review the GM map, player map, and room list.</li>
+          <li>Lock any rooms you want to preserve, then reroll specific details as needed.</li>
+          <li>Export the map and room key into your prep tool or VTT.</li>
+        </ol>
+        <div class="callout">For a one-shot, start with a medium dungeon, standard generosity, and a moderate challenge profile. Raise danger after you know the party's appetite for terrible architectural decisions.</div>
+      </section>
+      <section id="controls">
+        <h2>Generator controls</h2>
+        <table>
+          <thead><tr><th>Control</th><th>What it does</th><th>Good first value</th></tr></thead>
+          <tbody>
+            <tr><td>Seed</td><td>Locks the generation run so the same settings produce the same dungeon.</td><td>Random, then save it</td></tr>
+            <tr><td>Size</td><td>Sets the map footprint and rough room capacity.</td><td>Medium</td></tr>
+            <tr><td>Biomes</td><td>Controls the major terrain or theme regions allocated by the BSP pass.</td><td>2-4 themes</td></tr>
+            <tr><td>Party CER</td><td>Sets the party capability used by encounter and danger placement.</td><td>Your table's current CER</td></tr>
+            <tr><td>Challenge</td><td>Adjusts how often the dungeon leans into threat, hazard, and pressure.</td><td>Moderate</td></tr>
+            <tr><td>Generosity</td><td>Shapes treasure density and reward pacing.</td><td>Standard</td></tr>
+            <tr><td>Dead ends</td><td>Changes how often the map creates branches, cul-de-sacs, and backtracking decisions.</td><td>Normal</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="maps">
+        <h2>Maps and room keys</h2>
+        <p>The GM map contains everything: room numbers, secret doors, hazards, keys, encounters, and notes. The player map removes hidden or GM-only information so it can be safely shared during play.</p>
+        <h3>Room keys</h3>
+        <p>Each room entry is meant to be used at the table. It should include room purpose, visible features, encounter pressure, treasure, hazards, doors, and tags that explain why the room belongs where it does.</p>
+      </section>
+      <section id="exports">
+        <h2>Exports</h2>
+        <table>
+          <thead><tr><th>Format</th><th>Use it for</th></tr></thead>
+          <tbody>
+            <tr><td>Foundry VTT</td><td>Scenes, walls, map assets, and room data for online play.</td></tr>
+            <tr><td>Universal VTT</td><td>Portable VTT map interchange, including walls where supported.</td></tr>
+            <tr><td>PNG</td><td>Player-safe or GM map images for handouts and notes.</td></tr>
+            <tr><td>Markdown</td><td>Room keys for Obsidian, campaign notes, and printable prep.</td></tr>
+            <tr><td>JSON</td><td>Full generator state for debugging, reproducibility, or later import.</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="stage-manager">
+        <h2>Stage Manager</h2>
+        <p>The Stage Manager is the in-character director layer. Kovath, Zarlzazz, Vorga, and Mizzik narrate what the generator is doing and provide dry operational commentary while the dungeon takes shape.</p>
+        <p>The jokes are flavor, but the status messages are still useful. If a generation pass fails, treat the message as a real diagnostic first and office misery second.</p>
+      </section>
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <h3>The dungeon feels too lethal</h3>
+        <p>Lower challenge, reduce peril-heavy biomes, or reroll encounters while keeping the room layout locked.</p>
+        <h3>The map feels too linear</h3>
+        <p>Increase size, raise branch/dead-end tolerance, or add a second biome to force more internal transitions.</p>
+        <h3>The export does not line up in a VTT</h3>
+        <p>Confirm the target grid size, export scale, and whether the VTT expects pixels per square or square size in scene units.</p>
+        <h3>I need to report a bug</h3>
+        <p>Keep the seed, settings, browser, export format, and the room number or map area where the problem appears. That is the incident report. The staff will pretend to appreciate it.</p>
+      </section>
+    </main>
+  </div>
+  <footer><div class="wrap">Dungeons on Automatic manual. Public docs for a private app workflow.</div></footer>
+</body>
+</html>

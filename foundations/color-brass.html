@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x176" name="Brass — Brand Gold" subtitle="The gear-gold of the cogs. Accents, highlights, focus, the 'automatic' machinery." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-panel); font-family: var(--font-mono); padding: 20px; }
+  .row { display: flex; gap: 0; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .chip { flex: 1; height: 92px; display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 9px; gap: 2px; }
+  .n { font-size: 11px; font-weight: 600; }
+  .h { font-size: 10px; opacity: 0.85; text-transform: uppercase; }
+  .star::after { content: "★ brand"; position: absolute; top: 7px; left: 9px; font-size: 9px; letter-spacing: 0.08em; color: #2e2305; opacity: 0.9; }
+  .star { position: relative; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="chip" style="background:var(--brass-50); color:#4d3a09;"><span class="n">50</span><span class="h">#fff8db</span></div>
+    <div class="chip" style="background:var(--brass-100); color:#4d3a09;"><span class="n">100</span><span class="h">#ffeea3</span></div>
+    <div class="chip star" style="background:var(--brass-300); color:#2e2305;"><span class="n">300</span><span class="h">#ffd800</span></div>
+    <div class="chip" style="background:var(--brass-400); color:#2e2305;"><span class="n">400</span><span class="h">#e8be1a</span></div>
+    <div class="chip" style="background:var(--brass-600); color:#fff8db;"><span class="n">600</span><span class="h">#9c7611</span></div>
+    <div class="chip" style="background:var(--brass-800); color:#ffeea3;"><span class="n">800</span><span class="h">#4d3a09</span></div>
+  </div>
+</body>
+</html>

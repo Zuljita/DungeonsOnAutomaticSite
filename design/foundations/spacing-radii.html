@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Radii" subtitle="Small and architectural — iron and stone, not a soft app. Pills/dots go full." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-panel); padding: 20px 24px; font-family: var(--font-mono); }
+  .row { display: flex; gap: 18px; align-items: flex-end; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { width: 62px; height: 50px; background: var(--stone-700); border: 1.5px solid var(--brass-400); }
+  .lbl { font-size: 10.5px; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="border-radius:var(--radius-xs)"></div><span class="lbl">xs · 2</span></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-sm)"></div><span class="lbl">sm · 3</span></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-md)"></div><span class="lbl">md · 5</span></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-lg)"></div><span class="lbl">lg · 8</span></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-xl)"></div><span class="lbl">xl · 12</span></div>
+    <div class="item"><div class="box" style="width:96px;border-radius:var(--radius-pill)"></div><span class="lbl">pill</span></div>
+    <div class="item"><div class="box" style="width:50px;border-radius:var(--radius-full)"></div><span class="lbl">full</span></div>
+  </div>
+</body>
+</html>

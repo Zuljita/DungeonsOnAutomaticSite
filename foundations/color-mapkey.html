@@ -1,0 +1,29 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Map Key — Marker Semantics" subtitle="Fixed meanings on every map. Never repurpose these hues for UI chrome." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-panel); font-family: var(--font-body); padding: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .item { display: flex; align-items: center; gap: 10px; color: var(--text-body); font-size: 13px; }
+  .sw { width: 18px; height: 18px; flex: none; border: 1px solid #0c0c0e; }
+  .dot { border-radius: 50%; box-shadow: 0 0 0 2px #fff7ed inset; }
+  .diamond { transform: rotate(45deg); }
+  .mono { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-faint); display: block; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="item"><span class="sw dot" style="background:var(--key-encounter)"></span><div>Encounter<span class="mono">--key-encounter</span></div></div>
+    <div class="item"><span class="sw diamond" style="background:var(--key-treasure); border-color:#78350f"></span><div>Treasure<span class="mono">--key-treasure</span></div></div>
+    <div class="item"><span class="sw" style="background:var(--key-hazard-bg); border-color:var(--key-hazard)"></span><div>Trap / hazard<span class="mono">--key-hazard</span></div></div>
+    <div class="item"><span class="sw dot" style="background:var(--key-key); box-shadow:none"></span><div>Quest key<span class="mono">--key-key</span></div></div>
+    <div class="item"><span class="sw" style="background:var(--key-door); box-shadow:0 0 0 2px #06141a inset"></span><div>Door<span class="mono">--key-door</span></div></div>
+    <div class="item"><span class="sw" style="background:var(--key-secret)"></span><div>Secret / illusory<span class="mono">--key-secret</span></div></div>
+    <div class="item"><span class="sw" style="background:var(--parchment-floor)"></span><div>Floor<span class="mono">--doc-floor</span></div></div>
+    <div class="item"><span class="sw" style="background:var(--parchment-200)"></span><div>Hatched wall<span class="mono">--doc-wall</span></div></div>
+  </div>
+</body>
+</html>

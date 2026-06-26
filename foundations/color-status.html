@@ -1,0 +1,22 @@
+<!-- @dsCard group="Colors" viewport="700x120" name="Status Feedback" subtitle="Generation states: success, warning, failure, info." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-panel); font-family: var(--font-body); padding: 18px; }
+  .row { display: flex; gap: 10px; }
+  .pill { flex: 1; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; color: #fff; display: flex; flex-direction: column; gap: 2px; }
+  .mono { font-family: var(--font-mono); font-size: 10px; opacity: 0.85; font-weight: 400; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="pill" style="background:var(--ok-500)">Validated<span class="mono">--ok-500</span></div>
+    <div class="pill" style="background:var(--warn-500)">Pacing flag<span class="mono">--warn-500</span></div>
+    <div class="pill" style="background:var(--danger-500)">Contradiction<span class="mono">--danger-500</span></div>
+    <div class="pill" style="background:var(--info-500)">Polishing…<span class="mono">--info-500</span></div>
+  </div>
+</body>
+</html>

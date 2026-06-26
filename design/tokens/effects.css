@@ -1,0 +1,40 @@
+/* ============================================================
+   Dungeons on Automatic — Shadows, Elevation, Motion, Texture
+   The chrome reads like forged iron under low torchlight: shadows
+   are deep and warm-black, focus rings are brass, and lit elements
+   carry a faint inner highlight (a glint off metal).
+   ============================================================ */
+
+:root {
+  /* Elevation — warm-black, low and heavy */
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm:  0 2px 6px rgba(0, 0, 0, 0.45);
+  --shadow-md:  0 6px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 14px 30px rgba(0, 0, 0, 0.55);
+  --shadow-xl:  0 24px 60px rgba(0, 0, 0, 0.6);
+
+  /* Metal glint — inner top highlight on raised/lit surfaces */
+  --glint-top: inset 0 1px 0 rgba(255, 247, 232, 0.06); /* @kind shadow */
+  --inset-press: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* @kind shadow */
+
+  /* Brand glows — used sparingly for emphasis / active state */
+  --glow-ember: 0 0 0 1px var(--ember-600), 0 0 18px rgba(211, 0, 0, 0.35);
+  --glow-brass: 0 0 0 1px var(--brass-500), 0 0 16px rgba(255, 216, 0, 0.28);
+
+  /* Focus ring — brass, always 2px, offset for visibility */
+  --focus-ring: 0 0 0 2px var(--stone-950), 0 0 0 4px var(--brass-300);
+
+  /* Document (parchment) elevation — soft paper drop */
+  --shadow-doc: 0 2px 4px rgba(40, 30, 10, 0.18), 0 10px 24px rgba(40, 30, 10, 0.14);
+
+  /* Motion — deliberate, weighty; no bounce. Stone doesn't bounce. */
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in: cubic-bezier(0.5, 0, 0.9, 0.2); /* @kind other */
+  --dur-fast: 110ms; /* @kind other */
+  --dur-base: 180ms; /* @kind other */
+  --dur-slow: 320ms; /* @kind other */
+
+  /* Hairline divider helper */
+  --divider: var(--border-w-hairline) solid var(--border-hairline);
+}

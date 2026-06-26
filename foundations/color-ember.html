@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x176" name="Ember — Brand Red" subtitle="The brick-archway red of the DOA mark. Primary actions, danger, encounters." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-panel); font-family: var(--font-mono); padding: 20px; }
+  .row { display: flex; gap: 0; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .chip { flex: 1; height: 92px; display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 9px; gap: 2px; }
+  .n { font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .h { font-size: 10px; opacity: 0.85; text-transform: uppercase; }
+  .star { position: relative; }
+  .star::after { content: "★ brand"; position: absolute; top: 7px; left: 9px; font-size: 9px; letter-spacing: 0.08em; color: #fff7e8; opacity: 0.9; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="chip" style="background:var(--ember-100); color:#5f0c0b;"><span class="n">100</span><span class="h">#f7ccc6</span></div>
+    <div class="chip" style="background:var(--ember-300); color:#3a0908;"><span class="n">300</span><span class="h">#e4634f</span></div>
+    <div class="chip star" style="background:var(--ember-500); color:#fff7e8;"><span class="n">500</span><span class="h">#d30000</span></div>
+    <div class="chip" style="background:var(--ember-600); color:#fff7e8;"><span class="n">600</span><span class="h">#b00b06</span></div>
+    <div class="chip" style="background:var(--ember-700); color:#fff7e8;"><span class="n">700</span><span class="h">#8a0a08</span></div>
+    <div class="chip" style="background:var(--ember-900); color:#f7ccc6;"><span class="n">900</span><span class="h">#3a0908</span></div>
+  </div>
+</body>
+</html>

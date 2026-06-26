@@ -1,0 +1,113 @@
+/* ============================================================
+   Dungeons on Automatic — Color Tokens
+   Sourced from the DOA brand mark (#d30000 / #ffd800), the
+   app's ink-on-parchment map renderer, and its dark workshop UI.
+   ============================================================ */
+
+:root {
+  /* ---- Brand: Ember (brick red from the logo archway) ---- */
+  --ember-50:  #fcecea;
+  --ember-100: #f7ccc6;
+  --ember-200: #ef9a8e;
+  --ember-300: #e4634f;
+  --ember-400: #d23a23;
+  --ember-500: #d30000;   /* logo red — primary brand */
+  --ember-600: #b00b06;
+  --ember-700: #8a0a08;
+  --ember-800: #5f0c0b;
+  --ember-900: #3a0908;
+
+  /* ---- Brand: Brass (gear gold from the logo cogs) ---- */
+  --brass-50:  #fff8db;
+  --brass-100: #ffeea3;
+  --brass-200: #ffe066;
+  --brass-300: #ffd800;   /* logo gold — secondary brand */
+  --brass-400: #e8be1a;
+  --brass-500: #c79a16;
+  --brass-600: #9c7611;
+  --brass-700: #74570d;
+  --brass-800: #4d3a09;
+  --brass-900: #2e2305;
+
+  /* ---- Stone: warm-tinted dark neutrals (workshop chrome) ---- */
+  --stone-950: #100f12;   /* deepest — app background */
+  --stone-900: #16151a;
+  --stone-850: #1c1b21;
+  --stone-800: #232128;   /* panel surface */
+  --stone-700: #2d2b34;
+  --stone-600: #3a3742;   /* hairline borders, raised */
+  --stone-500: #4a4753;
+  --stone-400: #6a6675;
+  --stone-300: #8e8a99;   /* muted text on dark */
+  --stone-200: #b6b2c0;
+  --stone-100: #d8d5df;
+  --stone-50:  #efedf3;   /* near-white text on dark */
+
+  /* ---- Parchment: aged-paper light surfaces (the map document) ---- */
+  --parchment-floor: #fff7df;  /* dungeon floor fill */
+  --parchment-50:    #f8efd6;
+  --parchment-100:   #f4e8ce;  /* default parchment */
+  --parchment-200:   #eadbb7;  /* hatched wall / rock */
+  --parchment-300:   #ddc99a;
+  --parchment-400:   #c8ad77;
+  --ink-line:        #3a3326;  /* hatching / map ink lines */
+  --ink-900:         #1b1b1b;  /* primary ink text on parchment */
+  --ink-700:         #3d362b;
+  --ink-500:         #6b6151;
+
+  /* ---- Map key: semantic markers (from the renderer legend) ---- */
+  --key-encounter: #dc2626;  /* monster encounter */
+  --key-treasure:  #c79a16;  /* treasure — deep gold, reads on parchment */
+  --key-hazard:    #facc15;  /* trap / hazard (on near-black) */
+  --key-hazard-bg: #111827;
+  --key-key:       #e07a00;  /* quest key — burnt amber */
+  --key-door:      #22d3ee;  /* door */
+  --key-secret:    #7e22ce;  /* secret / illusory */
+
+  /* ---- Status feedback ---- */
+  --ok-400:     #4d9d6c;
+  --ok-500:     #2f9e5e;
+  --warn-500:   #d98a16;
+  --danger-500: #d3342a;
+  --info-500:   #2f86c7;
+
+  /* ============================================================
+     Semantic aliases — reference these in components, not raw scales
+     Default surface = the dark workshop chrome.
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-app:      var(--stone-950);
+  --surface-sunken:   var(--stone-900);
+  --surface-panel:    var(--stone-800);
+  --surface-raised:   var(--stone-700);
+  --surface-input:    var(--stone-900);
+  --surface-overlay:  rgba(16, 15, 18, 0.86);
+
+  /* Text on dark chrome */
+  --text-strong:  var(--stone-50);
+  --text-body:    var(--stone-100);
+  --text-muted:   var(--stone-300);
+  --text-faint:   var(--stone-400);
+  --text-onbrand: #fff7e8;
+
+  /* Borders */
+  --border-hairline: var(--stone-600);
+  --border-strong:   var(--stone-500);
+  --border-input:    var(--stone-500);
+  --border-focus:    var(--brass-300);
+
+  /* Brand actions */
+  --action-primary:        var(--ember-500);
+  --action-primary-hover:  var(--ember-400);
+  --action-primary-press:  var(--ember-600);
+  --accent:                var(--brass-300);
+  --accent-ink:            var(--brass-400);
+
+  /* Parchment document surface (map views, exports, scrolls) */
+  --doc-surface: var(--parchment-100);
+  --doc-floor:   var(--parchment-floor);
+  --doc-wall:    var(--parchment-200);
+  --doc-ink:     var(--ink-900);
+  --doc-ink-muted: var(--ink-500);
+}
