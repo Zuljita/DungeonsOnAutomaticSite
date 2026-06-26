@@ -23,28 +23,22 @@ concurrency:
 
 jobs:
   mirror:
+    if: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN != '' }}
     runs-on: ubuntu-latest
     env:
       SOURCE_REPO: Zuljita/DungeonsOnAutomatic
       TARGET_REPO: Zuljita/DungeonsOnAutomaticSite
       SOURCE_TAG: ${{ github.event.inputs.source_tag || 'continuous' }}
       TARGET_TAG: ${{ github.event.inputs.target_tag || 'continuous' }}
-      SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN || github.token }}
+      SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
       TARGET_TOKEN: ${{ github.token }}
-      HAS_SOURCE_SECRET: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN != '' }}
     steps:
       - name: Checkout public site
         uses: actions/checkout@v4
 
       - name: Report token mode
         run: |
-          if [ "$HAS_SOURCE_SECRET" = "true" ]; then
-            echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
-          else
-            echo "Using the workflow GITHUB_TOKEN to read $SOURCE_REPO."
-            echo "This works only while the source repository is public."
-            echo "Before making $SOURCE_REPO private, add DOA_RELEASE_MIRROR_TOKEN with read access."
-          fi
+          echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
 
       - name: Download source assets
         run: |
