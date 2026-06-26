@@ -23,7 +23,6 @@ concurrency:
 
 jobs:
   mirror:
-    if: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN != '' }}
     runs-on: ubuntu-latest
     env:
       SOURCE_REPO: Zuljita/DungeonsOnAutomatic
@@ -38,10 +37,16 @@ jobs:
 
       - name: Report token mode
         run: |
+          if [ -z "$SOURCE_TOKEN" ]; then
+            echo "DOA_RELEASE_MIRROR_TOKEN is not set. Skipping private release mirror."
+            echo "MIRROR_SKIP=1" >> "$GITHUB_ENV"
+            exit 0
+          fi
           echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
 
       - name: Download source assets
         run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
           mkdir -p mirror-assets
           GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
             --repo "$SOURCE_REPO" \
@@ -63,6 +68,7 @@ jobs:
 
       - name: Write public changelog data
         run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
           mkdir -p data
           GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases" \
             --paginate \
@@ -71,6 +77,7 @@ jobs:
 
       - name: Create or update public release
         run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
           title="$(cat release-title.txt)"
           if GH_TOKEN="$TARGET_TOKEN" gh release view "$TARGET_TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
             GH_TOKEN="$TARGET_TOKEN" gh release edit "$TARGET_TAG" \
@@ -87,6 +94,7 @@ jobs:
 
       - name: Replace mirrored assets
         run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
           GH_TOKEN="$TARGET_TOKEN" gh release view "$TARGET_TAG" \
             --repo "$TARGET_REPO" \
             --json assets \
@@ -103,6 +111,7 @@ jobs:
 
       - name: Commit public changelog data
         run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/releases.json
