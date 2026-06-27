@@ -56,14 +56,14 @@
   <nav>
     <div class="wrap nav-inner">
       <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Marketing</a><a href="manual.html">Manual</a><a href="releases.html">Releases</a><a href="#downloads">Downloads</a></div>
+      <div class="nav-links"><a href="index.html">Home</a><a href="manual.html">Manual</a><a href="releases.html">Releases</a><a href="#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
     </div>
   </nav>
   <header>
     <div class="wrap">
       <span class="eyebrow">Public changelog</span>
       <h1>Release notes for the dungeon office.</h1>
-      <p class="lead">Use this page for public-facing release notes while the application source lives in a private repository. Downloads point at this public repo, not the private application source.</p>
+      <p class="lead">Continuous builds are early access desktop snapshots mirrored through this public site repository. Use this page for downloads, checksums, known issues, and user-visible release notes.</p>
     </div>
   </header>
   <main class="wrap">
@@ -73,8 +73,9 @@
         <div class="date">Public files</div>
       </aside>
       <div>
-        <h2>Current app downloads</h2>
-        <p>These are mirrored from the <code>Zuljita/DungeonsOnAutomatic</code> desktop release so they stay public after the source repository goes private.</p>
+        <h2>Continuous early access builds</h2>
+        <p>These builds are mirrored as the <code>continuous</code> public release. They are usable desktop builds, not a hosted web generator.</p>
+        <p>The Windows and Linux artifacts are large because of desktop packaging and bundled app dependencies. The local LLM runtime is not bundled; install Ollama, LM Studio, or llama.cpp separately if you want AI Narrative Polish.</p>
         <div class="downloads">
           <a class="download" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-windows-x64-setup.exe"><strong>Windows installer</strong><span>Recommended Windows x64 setup build. About 1.43 GB.</span></a>
           <a class="download" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-windows-x64-portable.exe"><strong>Windows portable</strong><span>Portable Windows x64 executable. About 1.33 GB.</span></a>
@@ -83,7 +84,8 @@
           <a class="download" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-x86_64.AppImage"><strong>Linux x86_64</strong><span>AppImage build for 64-bit Linux. About 1.79 GB.</span></a>
           <a class="download" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-arm64.AppImage"><strong>Linux ARM64</strong><span>AppImage build for ARM64 Linux. About 1.88 GB.</span></a>
         </div>
-        <p><a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/tag/continuous">View checksums, updater metadata, and all mirrored release assets.</a></p>
+        <p><a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/tag/continuous">View SHA-256 checksum files, updater metadata, and all mirrored release assets.</a></p>
+        <p>Signing/notarization is not currently advertised for these early access artifacts. Windows, macOS, and Linux may show the normal first-run warnings for unsigned or unnotarized apps.</p>
       </div>
     </article>
     <article class="release">
@@ -93,14 +95,30 @@
       </aside>
       <div>
         <h2>Public documentation shell</h2>
-        <p>This release creates the public site and mirrors the current desktop application builds so downloads can outlive a private source repository.</p>
+        <p>This release creates the public site and mirrors the current continuous desktop builds.</p>
         <ul>
-          <li>Added marketing home page for Dungeons on Automatic.</li>
-          <li>Added user manual with quick start, controls, exports, and troubleshooting.</li>
+          <li>Added product home page for Dungeons on Automatic.</li>
+          <li>Added user manual with quick start, exact controls, exports, current limitations, and troubleshooting.</li>
           <li>Added release notes and download links backed by the public site repository.</li>
           <li>Mirrored the current desktop release assets from the application repository.</li>
         </ul>
         <div class="status">Documentation release</div>
+      </div>
+    </article>
+    <article class="release">
+      <aside>
+        <div class="version">Known issues</div>
+        <div class="date">Current roadmap</div>
+      </aside>
+      <div>
+        <h2>Current limitations</h2>
+        <ul>
+          <li>Single-level generation only; stairs are placed and exported, but true multi-floor graphing is future work.</li>
+          <li>Universal VTT .dd2vtt output exists with embedded map image, walls, portals, lights, and GM/player modes, but importer hardening is ongoing.</li>
+          <li>Custom treasure per room and custom container tables are still partial.</li>
+          <li>Variable hallway widths are not implemented yet.</li>
+        </ul>
+        <div class="status">Roadmap tracked</div>
       </div>
     </article>
     <article class="release">
@@ -110,14 +128,14 @@
       </aside>
       <div>
         <h2>Application changelog</h2>
-        <p>Release notes are copied from the private application repository into a public changelog feed.</p>
+        <p>Release notes are copied from the application release feed into this public changelog.</p>
         <div class="feed" id="release-feed">
           <p>Loading release notes.</p>
         </div>
       </div>
     </article>
   </main>
-  <footer><div class="wrap">Dungeons on Automatic release notes. Public enough for users, quiet enough for source control.</div></footer>
+  <footer><div class="wrap">Dungeons on Automatic release notes. Early access builds, checksums, and roadmap notes.</div></footer>
   <script>
     (async () => {
       const feed = document.getElementById('release-feed');

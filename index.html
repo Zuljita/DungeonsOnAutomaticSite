@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dungeons on Automatic builds coherent procedural dungeons for tabletop RPGs, with GM maps, player maps, room keys, and VTT exports.">
+  <meta name="description" content="Dungeons on Automatic is a local-first DFRPG / GURPS dungeon prep generator with GM maps, player maps, room keys, and VTT exports.">
   <title>Dungeons on Automatic - Procedural Dungeons, On Schedule</title>
   <link rel="icon" href="assets/brand/favicon.ico">
   <link rel="stylesheet" href="styles.css">
@@ -120,6 +120,7 @@
         <a href="manual.html">Manual</a>
         <a href="releases.html">Releases</a>
         <a href="#staff">Staff</a>
+        <a href="privacy.html">Privacy</a>
       </div>
       <a class="btn btn--primary nav-cta" href="releases.html#downloads">Downloads</a>
     </div>
@@ -128,14 +129,14 @@
   <header class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Procedural dungeon generator</span>
+        <span class="eyebrow">DFRPG / GURPS dungeon generator</span>
         <h1>A dungeon a minute. <em>Doom</em> included.</h1>
-        <p class="sub">Dungeons on Automatic builds coherent, narratively logical dungeons for your table: biomes, rooms, encounters, traps, treasure, doors, GM maps, player maps, and clean VTT exports.</p>
+        <p class="sub">Dungeons on Automatic builds coherent prep for GURPS Dungeon Fantasy RPG / DFRPG tables: tactical maps, room keys, doors, traps, encounters, treasure hooks, environmental notes, GM/player exports, and VTT files.</p>
         <div class="ctas">
           <a class="btn btn--primary btn--lg" href="releases.html#downloads">Download the App</a>
           <a class="btn btn--ghost btn--lg" href="manual.html">Read the Manual</a>
         </div>
-        <div class="meta">System-agnostic · <b>DFRPG / GURPS</b> reference module · deterministic seeds · browser-first</div>
+        <div class="meta"><b>DFRPG / GURPS-first</b> · local-first desktop/browser app · deterministic seeds · optional local LLM polish</div>
       </div>
       <div class="shot">
         <div class="shot__bar"><i style="background:#d3354b"></i><i style="background:#e8be1a"></i><i style="background:#3aa86b"></i><span class="shot__url">dungeonsonautomatic.com</span></div>
@@ -152,6 +153,7 @@
       <span class="v">Foundry VTT</span>
       <span class="v">Universal VTT</span>
       <span class="v">Source-book filtering</span>
+      <span class="v">1-yard hex overlay</span>
     </div>
   </div>
 
@@ -193,9 +195,12 @@
       <article class="card"><div class="n">MAPS</div><h3>GM and player views</h3><p>Secret doors, traps, hidden features, and notes stay on the GM side. The player map is clean enough to put on the table.</p></article>
       <article class="card"><div class="n">BOOKS</div><h3>Source filtering</h3><p>Tell the engine what books you own. It builds from that pool instead of asking you to improvise around missing material.</p></article>
       <article class="card"><div class="n">THREAT</div><h3>Danger by density</h3><p>Party CER and challenge profile shape the probability field. Difficulty emerges room by room.</p></article>
-      <article class="card"><div class="n">KEYS</div><h3>Room keys</h3><p>Rooms get encounters, hazards, treasure, and dressing in a format meant for actual prep, not decorative screenshots.</p></article>
-      <article class="card"><div class="n">CONTROL</div><h3>Lock and reroll</h3><p>Keep the rooms that work and reroll the ones that do not. Deterministic sub-seeds keep revisions stable.</p></article>
-      <article class="card"><div class="n">EXPORT</div><h3>VTT-ready output</h3><p>Foundry scenes, Universal VTT files, PNG maps, Markdown keys, JSON state, and tabular placement data.</p></article>
+      <article class="card"><div class="n">KEYS</div><h3>Room keys</h3><p>Rooms get encounters, hazards, treasure hooks, and dressing in a format meant for actual prep, not decorative screenshots.</p></article>
+      <article class="card"><div class="n">CONTROL</div><h3>Profiles and rerolls</h3><p>Export/import generation profiles, persist last settings locally, and keep deterministic seeds stable while you revise.</p></article>
+      <article class="card"><div class="n">EXPORT</div><h3>VTT-ready output</h3><p>Foundry scene JSON and Universal VTT files include map imagery, walls, portals, lights, and GM/player modes. Importer QA is ongoing.</p></article>
+      <article class="card"><div class="n">GEOMETRY</div><h3>DFRPG scale</h3><p>Maps use 1-foot cell geometry with a 1-yard DFRPG hex overlay, so room shapes can stay tactical without losing table scale.</p></article>
+      <article class="card"><div class="n">INTENT</div><h3>Dungeon Intent</h3><p>Brief Markdown intent, global tag bias, region tag bias, and set-piece requests help steer the generator without hand-authoring every room.</p></article>
+      <article class="card"><div class="n">POLISH</div><h3>Offline or local AI</h3><p>Use no-model sample polish for offline text cleanup, or optional local-only LLM polish through Ollama, LM Studio, or llama.cpp.</p></article>
     </div>
   </section>
 
@@ -203,13 +208,15 @@
     <div class="wrap manual-grid">
       <div>
         <span class="eyebrow">Manual and operations</span>
-        <h2 class="section-title">Public docs without public source.</h2>
-        <p class="lead">This repo is the public-facing shelf: product page, user manual, release notes, and support links. The application repository can go private without breaking public documentation.</p>
+        <h2 class="section-title">Public docs for table use.</h2>
+        <p class="lead">Read the user workflow, export behavior, local-first privacy model, and known limitations before you bring a generated dungeon to the table.</p>
       </div>
       <div class="manual-list">
         <a class="manual-link" href="manual.html#quick-start">Quick start <span>5 minutes</span></a>
         <a class="manual-link" href="manual.html#controls">Generator controls <span>reference</span></a>
         <a class="manual-link" href="manual.html#exports">Exports <span>VTT and files</span></a>
+        <a class="manual-link" href="manual.html#limitations">Current limitations <span>roadmap</span></a>
+        <a class="manual-link" href="privacy.html">Privacy and content boundary <span>local-first</span></a>
         <a class="manual-link" href="manual.html#troubleshooting">Troubleshooting <span>table fixes</span></a>
         <a class="manual-link" href="releases.html">Release notes <span>public changelog</span></a>
       </div>
@@ -220,12 +227,12 @@
     <div class="wrap sec-head">
       <span class="eyebrow">The Stage Manager</span>
       <h2 class="section-title">Meet the staff.</h2>
-      <p class="lead">Four in-character directors narrate generation and give the tool its signature dark-fantasy office temperament.</p>
+      <p class="lead">The Stage Manager is both flavor and a real progress/event layer. Director actions from a local LLM are constrained, validated tool calls rather than freeform mutation.</p>
     </div>
     <div class="wrap staff">
       <article class="dir"><img src="assets/portraits/Kovath.png" alt="Kovath"><div class="dir__body"><div class="dir__name">Kovath</div><div class="dir__role">Creative Director</div><div class="dir__q">"Another fine layout, doomed to player cleverness."</div></div></article>
       <article class="dir"><img src="assets/portraits/Zarlzazz.png" alt="Zarlzazz"><div class="dir__body"><div class="dir__name">Zarlzazz</div><div class="dir__role">Narrative Director</div><div class="dir__q">"Every dungeon needs a throughline. This one's is regret, mostly."</div></div></article>
-      <article class="dir"><img src="assets/portraits/Vorga.png" alt="Vorga"><div class="dir__body"><div class="dir__name">Vorga</div><div class="dir__role">Encounter Director</div><div class="dir__q">"Three ogres in the pantry. I weighed it against the party. I stand by it."</div></div></article>
+      <article class="dir"><img src="assets/portraits/Vorga.png" alt="Vorga"><div class="dir__body"><div class="dir__name">Vorga</div><div class="dir__role">Encounter Director</div><div class="dir__q">"Encounter direction is coming online as richer faction and encounter work lands."</div></div></article>
       <article class="dir"><img src="assets/portraits/Mizzik.png" alt="Mizzik"><div class="dir__body"><div class="dir__name">Mizzik</div><div class="dir__role">Furniture and Loot</div><div class="dir__q">"I weighed the hoard against their level. It is, regrettably, fair."</div></div></article>
     </div>
   </section>
@@ -233,13 +240,13 @@
   <section id="release">
     <div class="wrap sec-head">
       <span class="eyebrow">Releases</span>
-      <h2 class="section-title">A public changelog for private work.</h2>
-      <p class="lead">Post release notes here as the private application evolves. Users get a stable place to learn what changed without needing repository access.</p>
+      <h2 class="section-title">Continuous early access builds.</h2>
+      <p class="lead">Download the current desktop builds, read known issues, and check mirrored release assets without needing source repository access.</p>
     </div>
     <div class="wrap release-grid">
-      <article class="card release"><div class="n">LATEST</div><h3>Release notes</h3><p>Document player-visible changes, known issues, migration notes, and download or launch links.</p><a href="releases.html">View releases</a></article>
-      <article class="card release"><div class="n">MANUAL</div><h3>User documentation</h3><p>Keep procedures, exports, and table advice in the open even if implementation details move behind the curtain.</p><a href="manual.html">Open manual</a></article>
-      <article class="card release"><div class="n">DOWNLOAD</div><h3>Public release files</h3><p>Downloads live on this public site repo, so they keep working after the application source goes private.</p><a href="releases.html#downloads">Get downloads</a></article>
+      <article class="card release"><div class="n">LATEST</div><h3>Release notes</h3><p>Continuous builds are early access snapshots with visible known issues and migration notes.</p><a href="releases.html">View releases</a></article>
+      <article class="card release"><div class="n">MANUAL</div><h3>User documentation</h3><p>Procedures, exports, and table advice stay public so the app is usable without source access.</p><a href="manual.html">Open manual</a></article>
+      <article class="card release"><div class="n">DOWNLOAD</div><h3>Public release files</h3><p>Downloads are mirrored on this public site repo, including installers, portable builds, metadata, and checksums.</p><a href="releases.html#downloads">Get downloads</a></article>
     </div>
   </section>
 
@@ -254,10 +261,11 @@
   <footer>
     <div class="wrap foot">
       <a class="brand" href="#top"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <small>Procedural dungeons, on schedule.</small>
+      <small>Local-first DFRPG dungeon prep, on schedule.</small>
       <div class="links">
         <a href="manual.html">Manual</a>
         <a href="releases.html">Releases</a>
+        <a href="privacy.html">Privacy</a>
         <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite">GitHub</a>
       </div>
     </div>
