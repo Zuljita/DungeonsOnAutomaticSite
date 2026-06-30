@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thoughts, progress notes, and behind-the-scenes updates on Dungeons on Automatic, the local-first DFRPG / GURPS dungeon generator.">
+  <title>Dungeons on Automatic - Blog</title>
+  <link rel="icon" href="assets/brand/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--surface-app); color: var(--text-body); font-family: var(--font-body); }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1040px, 92vw); margin: 0 auto; }
+    nav { position: sticky; top: 0; z-index: 20; background: rgba(16,15,18,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--stone-800); }
+    .nav-inner { min-height: 64px; display: flex; align-items: center; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; }
+    .brand img { width: 30px; height: 30px; }
+    .brand b { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.05em; color: var(--text-strong); white-space: nowrap; text-transform: uppercase; }
+    .nav-links { margin-left: auto; display: flex; gap: 20px; font-size: 14px; color: var(--text-muted); }
+    .nav-links a:hover { color: var(--brass-300); }
+    header { padding: clamp(48px, 8vw, 90px) 0 40px; border-bottom: 1px solid var(--stone-800); background: radial-gradient(60% 50% at 20% 0%, rgba(211,0,0,0.14), transparent 70%); }
+    .eyebrow { font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--brass-300); }
+    h1, h2, h3 { font-family: var(--font-display); color: var(--text-strong); text-transform: uppercase; }
+    h1 { max-width: 820px; margin: 14px 0 0; font-size: clamp(42px, 6vw, 72px); line-height: 1.03; letter-spacing: 0.03em; }
+    .lead { max-width: 68ch; margin: 20px 0 0; color: var(--text-muted); font-size: 18px; line-height: 1.65; }
+    main { display: grid; gap: 24px; padding: 42px 0 88px; }
+    .post { display: grid; grid-template-columns: 170px 1fr; gap: 28px; background: var(--surface-panel); border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: clamp(22px, 4vw, 34px); box-shadow: var(--shadow-sm), var(--glint-top); scroll-margin-top: 84px; }
+    .post__meta time { display: block; font-family: var(--font-mono); color: var(--brass-300); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .post__meta .author { margin-top: 8px; color: var(--text-faint); font-size: 13px; }
+    .post__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 4px 9px; background: var(--surface-sunken); }
+    .post__body h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.04em; line-height: 1.08; }
+    .post__body h2 a { color: inherit; }
+    .post__body h2 a:hover { color: var(--brass-300); }
+    .post__body h3 { margin: 26px 0 0; font-size: 18px; letter-spacing: 0.03em; color: var(--brass-300); }
+    .post__body p, .post__body li { color: var(--text-muted); line-height: 1.65; font-size: 15.5px; }
+    .post__body p { margin: 16px 0 0; }
+    .post__body ul { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .post__body .callout { margin-top: 18px; padding: 16px 18px; border-left: 3px solid var(--ember-500); background: var(--surface-sunken); color: var(--text-body); font-size: 15.5px; line-height: 1.6; }
+    .post__body pre { white-space: pre-wrap; margin: 16px 0 0; padding: 16px 18px; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font-family: var(--font-mono); font-size: 13.5px; line-height: 1.6; }
+    .permalink { margin-top: 18px; display: inline-flex; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--text-faint); }
+    .permalink:hover { color: var(--brass-300); }
+    .empty { color: var(--text-muted); font-size: 16px; line-height: 1.6; }
+    footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
+    @media (max-width: 760px) {
+      .post { grid-template-columns: 1fr; }
+      .nav-inner { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      .nav-links { margin-left: 0; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
+      <div class="nav-links"><a href="index.html">Home</a><a href="manual.html">Manual</a><a href="blog.html">Blog</a><a href="releases.html">Releases</a><a href="releases.html#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
+    </div>
+  </nav>
+  <header>
+    <div class="wrap">
+      <span class="eyebrow">From the dungeon office</span>
+      <h1>Thoughts and updates.</h1>
+      <p class="lead">Notes from behind the generator: design decisions, pipeline experiments, dead ends worth learning from, and the occasional confession about what the staff are up to. Release notes stay terse on the Releases page; this is where the reasoning goes.</p>
+    </div>
+  </header>
+  <main class="wrap" id="posts">
+    <p class="empty">Loading posts.</p>
+  </main>
+  <footer><div class="wrap">Dungeons on Automatic blog. Local-first DFRPG dungeon prep, thinking out loud.</div></footer>
+  <script>
+    (async () => {
+      const mount = document.getElementById('posts');
+
+      const fmtDate = (value) => {
+        if (!value) return 'Undated';
+        const parsed = new Date(value + 'T00:00:00');
+        if (Number.isNaN(parsed.getTime())) return value;
+        return parsed.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+      };
+
+      const renderBlock = (block) => {
+        if (typeof block === 'string') {
+          const p = document.createElement('p');
+          p.textContent = block;
+          return p;
+        }
+        if (block && block.h3) {
+          const h = document.createElement('h3');
+          h.textContent = block.h3;
+          return h;
+        }
+        if (block && Array.isArray(block.list)) {
+          const ul = document.createElement('ul');
+          block.list.forEach((item) => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            ul.append(li);
+          });
+          return ul;
+        }
+        if (block && block.callout) {
+          const div = document.createElement('div');
+          div.className = 'callout';
+          div.textContent = block.callout;
+          return div;
+        }
+        if (block && block.code) {
+          const pre = document.createElement('pre');
+          pre.textContent = block.code;
+          return pre;
+        }
+        return document.createDocumentFragment();
+      };
+
+      try {
+        const response = await fetch('data/blog.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('blog feed unavailable');
+        const posts = await response.json();
+
+        posts.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+        mount.replaceChildren();
+
+        if (!posts.length) {
+          const empty = document.createElement('p');
+          empty.className = 'empty';
+          empty.textContent = 'No posts yet. Check back soon.';
+          mount.append(empty);
+          return;
+        }
+
+        posts.forEach((post) => {
+          const article = document.createElement('article');
+          article.className = 'post';
+          if (post.slug) article.id = post.slug;
+
+          const meta = document.createElement('aside');
+          meta.className = 'post__meta';
+          const time = document.createElement('time');
+          time.dateTime = post.date || '';
+          time.textContent = fmtDate(post.date);
+          meta.append(time);
+          if (post.author) {
+            const author = document.createElement('div');
+            author.className = 'author';
+            author.textContent = post.author;
+            meta.append(author);
+          }
+          if (Array.isArray(post.tags) && post.tags.length) {
+            const tags = document.createElement('div');
+            tags.className = 'post__tags';
+            post.tags.forEach((tag) => {
+              const span = document.createElement('span');
+              span.className = 'tag';
+              span.textContent = tag;
+              tags.append(span);
+            });
+            meta.append(tags);
+          }
+
+          const body = document.createElement('div');
+          body.className = 'post__body';
+          const title = document.createElement('h2');
+          if (post.slug) {
+            const link = document.createElement('a');
+            link.href = '#' + post.slug;
+            link.textContent = post.title || 'Untitled';
+            title.append(link);
+          } else {
+            title.textContent = post.title || 'Untitled';
+          }
+          body.append(title);
+
+          (post.body || []).forEach((block) => body.append(renderBlock(block)));
+
+          if (post.slug) {
+            const permalink = document.createElement('a');
+            permalink.className = 'permalink';
+            permalink.href = '#' + post.slug;
+            permalink.textContent = 'Permalink';
+            body.append(permalink);
+          }
+
+          article.append(meta, body);
+          mount.append(article);
+        });
+
+        if (location.hash) {
+          const target = document.getElementById(location.hash.slice(1));
+          if (target) target.scrollIntoView();
+        }
+      } catch (error) {
+        mount.replaceChildren();
+        const fail = document.createElement('p');
+        fail.className = 'empty';
+        fail.textContent = 'Posts are temporarily unavailable.';
+        mount.append(fail);
+      }
+    })();
+  </script>
+</body>
+</html>

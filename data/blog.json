@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "the-dungeon-office-opens",
+    "title": "The dungeon office opens",
+    "date": "2026-06-30",
+    "author": "The Stage Manager",
+    "tags": ["update", "behind the scenes"],
+    "summary": "A place to post thoughts, progress notes, and the occasional confession about what the generator is doing and why.",
+    "body": [
+      "This is the new home for thoughts and updates about Dungeons on Automatic. Release notes live on the Releases page and stay terse on purpose. This is where the why goes: design decisions, dead ends, half-finished experiments, and the reasoning behind what the generator does.",
+      { "h3": "What this blog is for" },
+      "Dungeons on Automatic is unapologetically an experiment. Every build is a probe into what procedural and AI-assisted dungeon design can do on local hardware. That means a lot of the interesting work is in the reasoning, not just the changelog line. Expect posts about:",
+      {
+        "list": [
+          "Generation pipeline notes — BSP, organic growth, and wave function collapse, and where each one fought back.",
+          "The directors — Kovath, Vorga, Mizzik, and Zarlzazz — and what we let local models touch.",
+          "Export and VTT work, including the unglamorous wall-consolidation passes that make maps usable in Foundry.",
+          "Honest postmortems when an idea looked great and played badly."
+        ]
+      },
+      { "h3": "Reproducible bones, one-off soul" },
+      "The thing worth repeating: the skeleton is deterministic. A seed, your settings, and your source books always lay down the same layout, rooms, doors, and base encounters. The moment the local-LLM directors run their polish passes, the result becomes a one-off. Reroll and you get a different good dungeon, never that exact one again.",
+      { "callout": "So if you love what you generated, keep the output. The next reroll is a new creature." },
+      "More soon. The staff are pretending to be excited."
+    ]
+  }
+]

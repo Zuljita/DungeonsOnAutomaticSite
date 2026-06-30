@@ -11,6 +11,38 @@ source repository moves private, giving users a stable place to find:
 - public release notes, mirrored app downloads, and known issues
 - brand assets and public product documentation
 
+## Adding a blog post
+
+The blog (`blog.html`) is data-driven and needs no build step. To publish a
+post, add one entry to the array in `data/blog.json` and commit.
+
+Each post is a JSON object:
+
+```json
+{
+  "slug": "url-safe-id",
+  "title": "Post title",
+  "date": "2026-06-30",
+  "author": "Optional name",
+  "tags": ["update"],
+  "summary": "One-line description (reserved for previews/SEO).",
+  "body": [
+    "A plain string becomes a paragraph.",
+    { "h3": "A subheading" },
+    { "list": ["bullet one", "bullet two"] },
+    { "callout": "An emphasized callout box." },
+    { "code": "Preformatted / monospace block." }
+  ]
+}
+```
+
+Notes:
+
+- Posts are sorted newest-first by `date` (use `YYYY-MM-DD`).
+- `slug` powers the permalink anchor (`blog.html#your-slug`); keep it unique.
+- `body` items render in order; mix strings and the object block types above.
+- Body text is inserted as plain text, so no HTML escaping is required.
+
 ## GitHub Pages
 
 The included workflow publishes the repository root to GitHub Pages whenever
