@@ -31,7 +31,9 @@ Each post is a JSON object:
     { "h3": "A subheading" },
     { "list": ["bullet one", "bullet two"] },
     { "callout": "An emphasized callout box." },
-    { "code": "Preformatted / monospace block." }
+    { "code": "Preformatted / monospace block." },
+    { "image": "assets/blog/your-slug/image.png", "alt": "alt text", "caption": "optional" },
+    { "download": "https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/your-slug/pack.zip", "label": "Download (.zip)", "filename": "pack.zip", "size": "1.2 MB" }
   ]
 }
 ```
@@ -42,6 +44,25 @@ Notes:
 - `slug` powers the permalink anchor (`blog.html#your-slug`); keep it unique.
 - `body` items render in order; mix strings and the object block types above.
 - Body text is inserted as plain text, so no HTML escaping is required.
+
+### Downloadable files (Git LFS)
+
+Binary download packs (e.g. the Token Tuesday `.zip` archives under
+`assets/blog/`) are stored in **Git LFS** — see the `assets/blog/**/*.zip`
+rule in `.gitattributes`. You need `git lfs install` once on any clone that
+will add or fetch these files.
+
+Important: **GitHub Pages does not serve Git LFS content** — it would return the
+small pointer file, not the binary. So `download` blocks must point at GitHub's
+raw endpoint, which resolves LFS objects:
+
+```text
+https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/<slug>/<file>.zip
+```
+
+These links resolve once the file is on `main`. Note GitHub's free LFS tier
+allows 1 GB storage and 1 GB/month bandwidth; if a pack ever gets heavy traffic,
+move it to a GitHub Release asset (no LFS bandwidth limit) and update the link.
 
 ## GitHub Pages
 

@@ -12,3 +12,4 @@
 *.jpg binary
 *.jpeg binary
 *.ico binary
+assets/blog/**/*.zip filter=lfs diff=lfs merge=lfs -text
