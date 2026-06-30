@@ -4,11 +4,16 @@
     "title": "The dungeon office opens",
     "date": "2026-06-30",
     "author": "The Stage Manager",
-    "tags": ["update", "behind the scenes"],
+    "tags": [
+      "update",
+      "behind the scenes"
+    ],
     "summary": "A place to post thoughts, progress notes, and the occasional confession about what the generator is doing and why.",
     "body": [
       "This is the new home for thoughts and updates about Dungeons on Automatic. Release notes live on the Releases page and stay terse on purpose. This is where the why goes: design decisions, dead ends, half-finished experiments, and the reasoning behind what the generator does.",
-      { "h3": "What this blog is for" },
+      {
+        "h3": "What this blog is for"
+      },
       "Dungeons on Automatic is unapologetically an experiment. Every build is a probe into what procedural and AI-assisted dungeon design can do on local hardware. That means a lot of the interesting work is in the reasoning, not just the changelog line. Expect posts about:",
       {
         "list": [
@@ -18,10 +23,372 @@
           "Honest postmortems when an idea looked great and played badly."
         ]
       },
-      { "h3": "Reproducible bones, one-off soul" },
+      {
+        "h3": "Reproducible bones, one-off soul"
+      },
       "The thing worth repeating: the skeleton is deterministic. A seed, your settings, and your source books always lay down the same layout, rooms, doors, and base encounters. The moment the local-LLM directors run their polish passes, the result becomes a one-off. Reroll and you get a different good dungeon, never that exact one again.",
-      { "callout": "So if you love what you generated, keep the output. The next reroll is a new creature." },
+      {
+        "callout": "So if you love what you generated, keep the output. The next reroll is a new creature."
+      },
       "More soon. The staff are pretending to be excited."
+    ]
+  },
+  {
+    "slug": "generator-update-2018-01",
+    "title": "An update on the generator front",
+    "date": "2018-01-25",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "devlog"
+    ],
+    "summary": "Early devlog: pick-and-mix rooms, name changes, and what was coming next for the original DFRPG random dungeon generator.",
+    "body": [
+      {
+        "image": "assets/blog/generator-update-2018-01/image.png"
+      },
+      {
+        "callout": "\"Kovath.\"\n\"Zarlazz?\"\n\"What's this.\"\n\"What's what?\"\n\"This inscription here above the dungeon entrance. 'cc7cf65'? Is that Elvish?\"\n\"It's the version number.\"\n\"For the dungeon?\"\n\"For the SYSTEM, Zarlazz.\"\n\"So what's new in this version of the system?\"\n\"I don't know, nobody's writing the documentation.\""
+      },
+      "If you haven't downloaded an updated copy of the dungeon generator in the last month or so, it's long past time to do so. We've changed the name of the starting web page so I've updated the instructions accordingly. I've also failed to let you guys know about some major feature upgrades since the first release, so let's take a moment to talk about those:",
+      {
+        "list": [
+          "We now have what we call \"pick and mix\" rooms. There's a 50/50 chance for a room to be labeled as such. At present, the generator picks a threat level for the room (nuisance, fodder, worthy, boss or epic) then decides if it'll be a mixed room. When that happens, the generator picks a monster adds some then picks another monster that fits within the budget for the threat level. If there's still room it'll pick another monster in the budget and so on.",
+          "We've added per room lighting as well as overall dungeon lighting.",
+          "We've improved the way the seeding works. Going forward, if you use the same name and same options for a dungeon it'll give you the same monsters. We can't do this for treasure due to the way it's generated.",
+          "Much headway has been made on making the initial code we based this on more readable and usable for others who want to develop with it.",
+          "For boss and epic level encounters, there will always be treasure.",
+          "Monsters are no longer generated in rooms they don't fit in. This doesn't prevent the dungeon from trying to put 8 monsters where only one fits.",
+          "Added a \"Tight\" density to dungeon layout."
+        ]
+      },
+      "So what's up and coming for the generator?",
+      {
+        "list": [
+          "One of our near term goals is to add door descriptions to the room. Eventually, we'd like to point out which rooms the doors lead to in order to remind GM's about who might be listening to nearby activity.",
+          "Wandering Monster tables. This is a big deal in terms of encouraging players to keep moving at a decent clip and to keep them from resting all day after every fight."
+        ]
+      },
+      "We have some long term aspirations to give you tips/hints/rumors to drop in town, and quests to accomplish inside the dungeon and other interesting stuff. This project is still in beta, so if you want to report bugs, give ideas or just basic feedback (positive or negative), communicate in the comments here, on the github page or on the SJ Games forums."
+    ]
+  },
+  {
+    "slug": "making-the-dungeon-prettier",
+    "title": "Making the dungeon prettier",
+    "date": "2018-02-02",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "devlog"
+    ],
+    "summary": "A 2018 GIMP workflow for turning a plain generated map into something table-ready.",
+    "body": [
+      {
+        "callout": "\"Oh look. Another plain, featureless stone wall and plain, featureless stone floor with a plain, featureless stone ceiling. I absolutely love the way these dungeons look, Kovath. The constant sameness isn't at all boring or monotonous.\"\n\"I'm glad you lik-- wait, from your tone that was sarcasm. What's your problem now?\"\n\"Well, can't we - I don't know - spruce things up a little? A mosaic here, some rough-hewn stone there, maybe some cave paintings?\"\n\"I am not letting you hang Zarlazz Junior's fingerpainting in our dungeon. This is procedural generation, not arts and crafts with Miss Nuggurath.\"\n\"Look, just because you don't have a family doesn't mean you should --\"\n\"Okay, okay. We can make the dungeon 'prettier' if you insist.\""
+      },
+      "I've started doing a pretty simple thing to up my map game. It takes a plain black-and-white generated map and turns it into something a lot more visually interesting.",
+      {
+        "list": [
+          "Generate a dungeon you like and click Save as PNG.",
+          "Open the saved file in GIMP.",
+          "Use the Select by Color tool, click any white space on the map, and press Delete.",
+          "Erase the doors, portcullises, and secret doors (a step you can skip once player maps exist).",
+          "Run Filters → Dungeon Map Maker.",
+          "Set the Template Color to black, set Template Colour Identifies to Walls, and set Fill Floor With to a pattern.",
+          "Click OK, then File → Export and save."
+        ]
+      },
+      "The result is far prettier than anything the generator kicks out on its own. From there you can drop in a few objects and doors found online for something really sharp. The technique is handy even if you hand-draw a black-and-white map and just want to spice it up.",
+      {
+        "image": "assets/blog/making-the-dungeon-prettier/image-2.png",
+        "caption": "A generated map after the GIMP Dungeon Map Maker pass."
+      },
+      "Feel free to share map-making tips of your own!"
+    ]
+  },
+  {
+    "slug": "dungeon-generator-update-2018-04",
+    "title": "Dungeon Generator Update",
+    "date": "2018-04-11",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "devlog"
+    ],
+    "summary": "Devlog update on the original generator and where it was headed.",
+    "body": [
+      {
+        "image": "assets/blog/dungeon-generator-update-2018-04/image.jpg"
+      },
+      {
+        "callout": "\"Oh, that's interesting.\"\n\"Kovath, every time you say that it means something horrible has happened.\"\n\"Sure, but it's not horrible for us. Look here, this lot took an extended rest break.\"\n\"So... they're finding the Trigers restful, are they?\"\n\"That wizard definitely didn't need that leg for napping. Or all that blood. Or his spleen.\"\n\"The wandering monster table is a success, then!\""
+      },
+      "We've got a bevy of new features now available in the master version of the generator and more to come that I just had to tell you about. Our code wizards have worked hard to add the following new features:",
+      "Resolution adjustments. The latest version lets you change the resolution to fit your VTT needs. I suggest you generate a dungeon you are happy with, then adjust resolution.\nDoors. Our doors can now be trapped, stuck, locked or hidden, or all four. Check room descriptions for detailed door descriptions as well. Some doors will be stone, others simple wood, still others ironbound wood. More to come on this in future updates.\nMana level and Sanctity level. This happens both on a per dungeon and per room basis. I've got players trudging around glumly in a low mana dungeon as we speak!\nWandering Monsters. The generator now kicks out a table of wandering monsters based on the monsters already present in the dungeon. It uses a percentile system for now, but we'll be re-jiggering it to do all d6 in the future.\nGenerosity. I've felt for a while that generated treasure was a bit low, and each campaign can differ, so this is a tool to kick it up (or down) a notch. \nTravel time: this is a new feature we're still testing out, but I thought you guys would like to see what we're chewing on. The assumption is all the dungeons near here have been looted before and that more remote dungeons have richer loot. I'll do a separate blog post discussing assumptions and adjustments soon.\n\nWe've still got more features coming up soon like quests, rumors, debris, spell lists and more! Don't remember where to get the latest version? Check out our tutorial here! What features would you still like to see that we haven't discussed yet?"
+    ]
+  },
+  {
+    "slug": "new-announcements-2018-06",
+    "title": "New announcements",
+    "date": "2018-06-27",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "devlog"
+    ],
+    "summary": "Project announcements from mid-2018.",
+    "body": [
+      {
+        "image": "assets/blog/new-announcements-2018-06/image.png"
+      },
+      "I'm excited to announce a few things!\nFirst: Our Dungeon Generator has arrived at version 1.0. We've still got 40 different issues/features we want to work though but for the most part things work as intended and the generator accomplishes it's stated aims.",
+      "Second: Celti and Eric B. Smith have graciously hosted our project at the following sites:",
+      {
+        "list": [
+          "https://dungeon.celti.name/",
+          "http://gurpsland.no-ip.org/#Dungeon"
+        ]
+      },
+      "Third: We have a forum thread over at SJGames's forums where you can now provide feedback as well as the Github page, here or by pinging me (Zuljita#7010) over at Mook's Discord Server.",
+      "Fourth: We've been working away at testing our dungeons as we go and fixing things as we spot them. Most recently, we've spotted some issues with wandering monster variability that needed fixing, we've added the option for a random travel time, and we've added biomes for survival during your trip to the dungeon."
+    ]
+  },
+  {
+    "slug": "gm-tips-monster-traits-1",
+    "title": "GM tips: Monster Traits part 1",
+    "date": "2018-02-21",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "gm tips"
+    ],
+    "summary": "Why the traits section is where a DFRPG monster really lives — a GM-side reading of what makes a creature dangerous.",
+    "body": [
+      {
+        "image": "assets/blog/gm-tips-monster-traits-1/image.jpg"
+      },
+      "Image by Scotimus licensed under Creative Commons",
+      {
+        "callout": "\"Kovath.\"\n\"Hm?\"\n\"What has six arms, spits poison, and can't be killed unless you chop off its tail?\"\n\"I don't know, but if she's looking for a job she's hired.\""
+      },
+      "If you are like me, you start looking at a monster from the top of the stat block on down. You take note of the monster's ST and HP and work your way down the list from there. I'd like to suggest something new: Start with the traits section.",
+      "Why the traits section? Simply put, those traits are the biggest thing that makes a monster unique. More than once after getting half way (or all the way) through a fight I realize that a monster should have behaved differently due to a trait. Let's take a moment to look at a few major traits it's easy to overlook that completely change the threat level and behavior of a monster.",
+      "360° Vision: For a monster that might get surrounded, this is key to avoiding getting killed from behind, as there are no longer rear hexes (an important tactic for mitigating active defenses).",
+      "Altered Time Rate: The main thing to remember about this one is that with it, taking an all out attack during your first turn doesn't actually make you defenseless (since you'll get another turn before anyone else, during which you can defend or even all-out defend) with one big exception: If your all out attack triggers a wait, you'd be in trouble during that one response. This is a neat trick to reducing the utility of great haste as well. We only have this on one critter in Monsters: The Watcher at the End of Time.",
+      "Compartmentalized Mind: The only canonical example of this is the Mindwarper who's a beast to handle for a whole host of reasons. If you apply this to a spell caster like a lich or a dragon, you end up with something that can cast 2 spells a turn, or a spell and (in the case of a dragon) an array of physical attacks.",
+      "Damage Resistance: If you are making up a monster, be aware that many professions (including big damage dealers like scouts and swashbucklers) have a hard time bringing more than 6 damage at a time. Don't forget that for many monsters (dragons are a notable exception) it's possible to target locations like the eyes or chinks in the armor to avoid DR.",
+      "Dark Vision/Infravision: Most delver teams I've seen in the field bring continual light, and cast it at the entrance to the dungeon and resolve darkness penalties that way. If you can take that away (by dispel magic, a no mana/sanctity zone or similar), dark vision can make a monster pretty terrifying.",
+      "Diffuse: A monster with diffuse can almost ignore attacks from most party members. When creating a monster, be careful about mixing diffuse with too much offensive power, as the monster can have impressive staying power. This trait alone is a good reason to bring alchemist's fire, take explosive fireball or other similar measures. It may also make it difficult to escape the monster in the case of beings with infiltration.",
+      "Extra Attack: This one can make or break creatures that have it. Don't forget that monsters with Extra Attack sacrifice the use of extra attacks to use other maneuvers. Move and Attack, Attack and All-Out Attack are the only times you can use those extra attacks.",
+      "Flight: When a monster has flight, take careful note of the spaces you'll be fighting in. A low ceiling or a room too small to turn around in (don't forget changing facing takes movement points) can make a dragon's wings more or less useless.",
+      "Higher Purpose: Higher Purpose is easy to underestimate. When it's active (which for most applicable monsters is nearly all the time) it's as good as a bless spell and never expires. Don't forget to factor it in for your As-Sharak or your Sword Spirit.",
+      "Homogeneous: One of the biggest passive damage modifiers, homogeneous puts impaling centric fighters like Scouts and Swashbucklers on notice.",
+      "Injury Reduction: This is remarkably straightforward and appears on 3 monsters out of the box: Jelly, Pudding and Watcher at the End of Time. The purpose is simple: Take less damage than the player rolled. When looking at a monster, it may be helpful to consider it's HP as 2 times (in the case of IR 2) or 4 times (in the case of IR 4) as high for the purpose of guesstimating how long it'll last in a fight.",
+      "I'll spend more time on this concept in a future post and after that I'll start discussing specific monsters and where they shine."
+    ]
+  },
+  {
+    "slug": "lava-golem",
+    "title": "Lava Golem",
+    "date": "2018-08-17",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "monster"
+    ],
+    "summary": "An original advanced DFRPG monster: a fire elemental bound inside a stone golem, built to challenge maxed-out delvers.",
+    "body": [
+      {
+        "callout": "\"That's not the normal golem box.\"\n\"What do you mean?\"\n\"I mean we don't usually get golems delivered in crates made of shaped obsidian enchanted with frost runes.\"\n\"Well, this isn't the usual golem, Zarlazz.\"\n\"Please tell me you're not trying to procedurally generate monsters.\"\n\"No, of course no-- hmm, that could actually --\"\n\"Never mind, just tell me what's in the box.\""
+      },
+      "We've been bumping into the difficulty cap for DFRPG monsters at about 300 points and $80k in gear without careful planning and encounter management, so I've decided it might be time to build some custom monsters to challenge my team. Here's the first of what I hope becomes a regular series — monsters that pose new and interesting challenges for the delver who can already take on everything. There's a medium-term goal of adding a toggle in the generator so you can drop these more advanced monsters into your game.",
+      {
+        "h3": "Lava Golem"
+      },
+      "A lava golem is a powerful magical guardian made by binding a fire elemental (Monsters p.25) inside a traditional stone golem (Monsters p.54). The talent required to create such a construct means both the base golem and the fire elemental invested in it carry considerable power. Delvers often fail to recognize the danger of piercing such a golem's skin until it is too late. It stands about 8 feet tall, with small holes around its waist where a dull red glow shows when it is inactive — and where jets of fire erupt to blast anyone who gets too close to the elemental within. Sometimes that elemental is only loosely bound, and begins to attack the moment it is released from its stony prison.",
+      {
+        "code": "ST: 30      HP: 50      Speed: 7.00\nDX: 14      Will: 10    Move: 7\nIQ: 8       Per: 10\nHT: 14      FP: N/A     SM: +1\nDodge: 10   Parry: 12   DR: 4"
+      },
+      "Gooey Lava Center: Any cutting, piercing, or impaling damage that pierces DR releases a pressurized gout of lava back at the attacker, hitting at effective skill 12 out to 4 yards for 2d(2) burning and 1d crushing. It cannot be parried, but can be dodged or blocked. Any weapon or projectile that triggers it also takes 2d burning damage (see Exploits p.55-56).",
+      "Hot Hands (18): 3d+6 crushing + follow-up 2d burning. Apply burning to armor as well as the delver. Treat as a weapon, not a body part. Reach C, 1.",
+      "Flame Jets (18): 2d+2 burning. Treat as a jet spell (Spells p.12) with reach C-3.",
+      "Traits: Automaton; Cannot Learn; Doesn’t Breathe; Doesn’t Eat or Drink; Doesn’t Sleep; Extra Attack 2; High Pain Threshold; Homogeneous; Immunity to Disease; Immunity to Heat/Fire; Immunity to Poison; Indomitable; No Blood; Pressure Support; Reprogrammable; Unfazable; Unhealing (Total); Unnatural.",
+      "Skills: Brawling-18; Innate Attack (Jet)-18.",
+      "Class: Construct.",
+      "Notes: No golem will negotiate or reveal useful information."
+    ]
+  },
+  {
+    "slug": "black-knights",
+    "title": "Black Knights",
+    "date": "2018-10-17",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "monster"
+    ],
+    "summary": "An original advanced DFRPG monster: dark-pact warriors with optional dark gifts and death curses — and the first appearance of Kovath and Zarlzazz.",
+    "body": [
+      {
+        "callout": "\"Kovath.\"\"Zarlazz.\"\"I'm looking through these invoices and --\"\n\"I already approved them.\"\n\"Right, but I still have questions. Like just why exactly did we need... 'one pot of black enamel per night'. You know I don't like to ask what goes on in the bedroom, but...\"\n\"What? No, that should be - see, this is why you don't hire kobolds for scribes. That's per knight.\"\n\"And that makes more sense.\"\n\"It will.\"\n\"Fine, fair enough. This doesn't explain the feathers, though.\""
+      },
+      "In my continuing quest to come up with scaled-up monsters to challenge my players, I've decided to try these on for size. Let me know what you think! As a special feature, there's a token for the black knight in the matching Token Tuesday post.",
+      {
+        "h3": "Black Knight"
+      },
+      "A black knight is a mortal warrior who has given himself over fully to some dark power. Sometimes it's a dark god, sometimes a powerful necromancer, sometimes a demonic pact — but in every instance the resulting warrior is strong, well armored, and imbued with supernatural tools to harass his foes. A black knight always leads a band of willing (or undead) followers seeking glory under a dark banner.",
+      {
+        "code": "ST: 27              HP: 30      Speed: 7.00\nDX: 14              Will: 16    Move: 7\nIQ: 12              Per: 14\nHT: 14              FP: 14      SM: 0\nDodge: 14 (+3 DB)   Parry/Block: 15 (+3)   DR: 9 (+3 DB)"
+      },
+      "Dwarven Flail (22): 5d+5 crushing. Reach 1, 2. Wielded one-handed thanks to high ST. Usually kept ready at reach 2.",
+      "Spiked Shield Bash (22): 3d crushing. Reach 1.",
+      "Dark Gift: Each black knight has one dark gift from the evil power he serves.",
+      {
+        "list": [
+          "Twist Fate: As a Concentrate action, the black knight can twist the fate of a target he can see. Make a Will roll (modified by Unholiness and at a penalty for distance based on the Speed/Range table), resisted by the target's Will; if the target loses, they take a penalty to all rolls equal to the margin of failure for 1d seconds. A second target within sight (which can be the knight himself!) gets a corresponding bonus to all rolls for the same duration.",
+          "Hellfire: As a Concentrate action, the black knight can cause a radius 2 area within 20 yards of him to erupt in green flames. These flames do 2d (2) burning damage. Anyone who can retreat out of the area may attempt to do so to dodge.",
+          "Grasp of the Underworld: As a Concentrate action, the black knight can fill one hex with grasping shadowy hands that burst from the ground below. Anyone in or entering the hex must immediately roll a Quick Contest of ST against the Knight's Will or be affected as if by a Rooted Feet spell (Spells, p.22) - they cannot move or change facing, have -2 to melee combat skills, and halve Dodge. They may attempt to break free as a Ready action each turn, but attempts after the initial resistance are at -5."
+        ]
+      },
+      "Death Curse: Each black knight has a death curse from the evil power he serves, triggered when the black knight fails a death check.",
+      {
+        "list": [
+          "Reality Backfire: The black knight explodes, showering everyone within 5 yards who fails to dodge at -2 with sharp shards of armor doing 3d (2) cutting.",
+          "Deathpact: A demon is summoned into the black knight's body, deforming the armor and bringing its own weapons with it. Use any demon from Monsters (or ones I'll provide in the future) but add 9 DR from the mangled armor wrapped around its body.",
+          "The Grave is No Bar: The Death Knight and any other corpses within the area of the fight are resurrected as Zombies (add High Pain Threshold; Immunity to Mind Control; Immunity to Poison; Indomitable; No Blood; Unfazeable; Unhealing (Total); Unliving; Unnatural and restore to full HP)"
+        ]
+      },
+      "Traits: Born War Leader 2; Bloodlust (12); Bully; Callous; Combat Reflexes; Dark Vision; High Pain Threshold; Intolerance (Good); Penetrating Voice; Rapid Healing.",
+      "Skills: Brawling-22; Flail-22; Leadership-14; Intimidation-16; Shield-22; Strategy-13; Tactics-13; Wrestling-22.",
+      "Class: Mundane.",
+      "Equipment: Dwarven Flail, Epic Plate, Large Shield.",
+      "Notes: Truly Evil, but sometimes willing to negotiate."
+    ]
+  },
+  {
+    "slug": "token-tuesday-void-brute",
+    "title": "Token Tuesday: Void Brute",
+    "date": "2018-09-11",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "token tuesday"
+    ],
+    "summary": "Void Brute — token art by Emily Smirle, from the original blog archive.",
+    "body": [
+      "Today on Token Tuesday, Emily Smirle has served up for you the creepy eldrich slugger: Void Brute. You'll find a portrait and both based and unbased versions of these new fantastic tokens.",
+      {
+        "image": "assets/blog/token-tuesday-void-brute/image.png",
+        "alt": "Void Brute token art by Emily Smirle"
+      },
+      {
+        "callout": "Void Brute Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+      }
+    ]
+  },
+  {
+    "slug": "token-tuesday-black-knight",
+    "title": "Token Tuesday: Black Knight",
+    "date": "2018-10-17",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "token tuesday"
+    ],
+    "summary": "Black Knight — token art by Emily Smirle, from the original blog archive.",
+    "body": [
+      "Today on Token Tuesday, Emily Smirle has served up for you the armored evil Black Knight. You'll find a portrait and both based and unbased versions of these new fantastic tokens.",
+      {
+        "image": "assets/blog/token-tuesday-black-knight/image.jpg",
+        "alt": "Black Knight token art by Emily Smirle"
+      },
+      {
+        "callout": "Black Knight Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+      }
+    ]
+  },
+  {
+    "slug": "token-tuesday-chimera",
+    "title": "Token Tuesday: Chimera",
+    "date": "2018-12-04",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "token tuesday"
+    ],
+    "summary": "Chimera — token art by Emily Smirle, from the original blog archive.",
+    "body": [
+      "Today on Token Tuesday, Emily Smirle has served up for you the Chimera.",
+      {
+        "image": "assets/blog/token-tuesday-chimera/image.png",
+        "alt": "Chimera token art by Emily Smirle"
+      },
+      {
+        "callout": "Chimera Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+      }
+    ]
+  },
+  {
+    "slug": "token-tuesday-mountain-giant",
+    "title": "Token Tuesday: Mountain Giant",
+    "date": "2018-11-27",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "token tuesday"
+    ],
+    "summary": "Mountain Giant — token art by Emily Smirle, from the original blog archive.",
+    "body": [
+      "Today on Token Tuesday, Emily Smirle has served up for you the Mountain Giant, complete with horse that acts as both scale and a meal.",
+      {
+        "image": "assets/blog/token-tuesday-mountain-giant/image.jpg",
+        "alt": "Mountain Giant token art by Emily Smirle"
+      },
+      {
+        "callout": "Mountain Giant Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+      }
+    ]
+  },
+  {
+    "slug": "token-tuesday-strix",
+    "title": "Token Tuesday: Strix with Special News Bulletin!",
+    "date": "2018-11-21",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "token tuesday"
+    ],
+    "summary": "Strix with Special News Bulletin! — token art by Emily Smirle, from the original blog archive.",
+    "body": [
+      "Today on Token Tuesday, Emily Smirle has served up for you the Strix. You'll find a portrait and both based and unbased versions of these new fantastic tokens.",
+      {
+        "image": "assets/blog/token-tuesday-strix/image.jpg",
+        "alt": "Strix with Special News Bulletin! token art by Emily Smirle"
+      },
+      {
+        "callout": "Strix Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+      }
+    ]
+  },
+  {
+    "slug": "token-tuesday-as-sharak",
+    "title": "Token Tuesday: as-Sharak",
+    "date": "2019-09-10",
+    "author": "Kyle Norton",
+    "tags": [
+      "archive",
+      "token tuesday"
+    ],
+    "summary": "as-Sharak — token art by Emily Smirle, from the original blog archive.",
+    "body": [
+      "Today on Token Tuesday (from my backlog), Emily Smirle has served up for you the accursed as-Sharak. You'll find a portrait and both based and unbased versions of these new fantastic tokens.",
+      {
+        "image": "assets/blog/token-tuesday-as-sharak/image.png",
+        "alt": "as-Sharak token art by Emily Smirle"
+      },
+      {
+        "callout": "as-Sharak Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+      }
     ]
   }
 ]
