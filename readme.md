@@ -8,6 +8,7 @@ source repository moves private, giving users a stable place to find:
 
 - product overview and launch links
 - user manual and troubleshooting notes
+- public monster-library package links and source/license summaries
 - public release notes, mirrored app downloads, and known issues
 - brand assets and public product documentation
 
@@ -99,3 +100,11 @@ Before the source repository goes private, add a repository secret named
 `DOA_RELEASE_MIRROR_TOKEN` with read access to `Zuljita/DungeonsOnAutomatic`.
 The scheduled workflow uses that token to read the private release and the
 standard `GITHUB_TOKEN` to publish mirrored assets here.
+
+## Public monster library
+
+The monster library page (`monsters.html`) reads package JSON from
+`Zuljita/DungeonsOnAutomaticMonsters`. Keep canonical monster data, schemas,
+conversion scripts, and package releases in that repository. The site should
+link to and render the package metadata; it should not become the canonical
+monster-data store.
