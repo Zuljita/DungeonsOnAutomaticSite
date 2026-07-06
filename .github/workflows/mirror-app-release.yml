@@ -8,10 +8,12 @@ on:
       source_tag:
         description: Source release tag in Zuljita/DungeonsOnAutomatic
         required: true
+        type: string
         default: continuous
       target_tag:
         description: Public mirror tag in this repository
         required: true
+        type: string
         default: continuous
   schedule:
     - cron: "*/15 * * * *"
@@ -31,14 +33,26 @@ jobs:
     env:
       SOURCE_REPO: Zuljita/DungeonsOnAutomatic
       TARGET_REPO: Zuljita/DungeonsOnAutomaticSite
-      SOURCE_TAG: ${{ github.event.client_payload.source_tag || github.event.inputs.source_tag || 'continuous' }}
-      TARGET_TAG: ${{ github.event.client_payload.target_tag || github.event.inputs.target_tag || 'continuous' }}
+      SOURCE_TAG: continuous
+      TARGET_TAG: continuous
       SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
       TARGET_TOKEN: ${{ github.token }}
       ALERT_TITLE: Release mirror token needs attention
     steps:
       - name: Checkout public site
         uses: actions/checkout@v4
+
+      - name: Resolve mirror tags
+        env:
+          DISPATCH_SOURCE_TAG: ${{ github.event.client_payload.source_tag }}
+          DISPATCH_TARGET_TAG: ${{ github.event.client_payload.target_tag }}
+          INPUT_SOURCE_TAG: ${{ github.event.inputs.source_tag }}
+          INPUT_TARGET_TAG: ${{ github.event.inputs.target_tag }}
+        run: |
+          source_tag="${DISPATCH_SOURCE_TAG:-${INPUT_SOURCE_TAG:-continuous}}"
+          target_tag="${DISPATCH_TARGET_TAG:-${INPUT_TARGET_TAG:-continuous}}"
+          echo "SOURCE_TAG=$source_tag" >> "$GITHUB_ENV"
+          echo "TARGET_TAG=$target_tag" >> "$GITHUB_ENV"
 
       - name: Preflight source release access
         run: |
