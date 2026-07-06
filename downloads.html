@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--surface-app); color: var(--text-body); font-family: var(--font-body); padding: 24px; }
-    main { width: min(680px, 100%); background: var(--surface-panel); border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: clamp(24px, 5vw, 42px); box-shadow: var(--shadow-sm), var(--glint-top); }
+    body { margin: 0; min-height: 100vh; background: var(--surface-app); color: var(--text-body); font-family: var(--font-body); padding: 24px 0 0; }
+    .wrap { width: min(680px, 100%); margin: 0 auto; }
+    main { width: min(680px, 92vw); margin: min(16vh, 120px) auto; background: var(--surface-panel); border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: clamp(24px, 5vw, 42px); box-shadow: var(--shadow-sm), var(--glint-top); }
     h1 { margin: 0; color: var(--text-strong); font-family: var(--font-display); font-size: clamp(30px, 6vw, 52px); line-height: 1.05; letter-spacing: 0.03em; text-transform: uppercase; }
     p { color: var(--text-muted); line-height: 1.6; font-size: 16px; }
     a { color: var(--brass-300); font-weight: 700; }
@@ -22,6 +23,13 @@
     <h1>Downloads moved</h1>
     <p>The current Dungeons on Automatic builds live on the release page.</p>
     <p><a href="releases.html#downloads">Open downloads</a></p>
+    <p><a href="quickstart.html">Open first dungeon quickstart</a></p>
   </main>
+  <section class="legal-notice" aria-label="Steve Jackson Games notice">
+    <div class="wrap">
+      <p>Dungeons on Automatic is an original game aid by Kyle Norton for use with <a href="https://www.sjgames.com/gurps/"><b><i>GURPS</i></b></a> and <a href="https://www.sjgames.com/dungeonfantasy/"><b><i>Dungeon Fantasy Roleplaying Game</i></b></a> from <a href="https://www.sjgames.com/">Steve Jackson Games</a>. It is not official and is not endorsed by Steve Jackson Games.</p>
+      <p>GURPS and Dungeon Fantasy Roleplaying Game are trademarks or registered trademarks of Steve Jackson Games. All rights are reserved by Steve Jackson Games. This free, non-resale game aid uses those marks under the <a href="https://www.sjgames.com/general/online_policy.html">SJ Games Online Policy</a>; no SJ Games art, logos, or trade dress are hosted here.</p>
+    </div>
+  </section>
 </body>
 </html>

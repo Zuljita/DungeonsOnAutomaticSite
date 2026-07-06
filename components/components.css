@@ -227,3 +227,30 @@
 .doa-legend__swatch { width: 14px; height: 14px; flex: none; border: 1px solid #0c0c0e; }
 .doa-legend__swatch--dot { border-radius: 50%; box-shadow: 0 0 0 2px #fff7ed inset; }
 .doa-legend__swatch--diamond { transform: rotate(45deg); }
+
+/* ------------------------------- Legal Notice ------------------------------ */
+.legal-notice {
+  border-top: 1px solid var(--stone-800);
+  background: var(--surface-sunken);
+  color: var(--text-faint);
+  font-size: 12.5px;
+  line-height: 1.6;
+  padding: 22px 0;
+}
+.legal-notice .wrap {
+  display: grid;
+  gap: 8px;
+}
+.legal-notice p {
+  margin: 0;
+  color: var(--text-faint);
+  font-size: inherit;
+  line-height: inherit;
+}
+.legal-notice a {
+  color: var(--brass-300);
+  text-decoration: none;
+}
+.legal-notice a:hover {
+  color: var(--brass-200);
+}

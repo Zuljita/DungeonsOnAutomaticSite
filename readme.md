@@ -89,6 +89,13 @@ Once `Zuljita/DungeonsOnAutomatic` is private, keep public release assets mirror
 on this repository's GitHub Releases. Private-repo release assets require
 authentication, so public downloads should not point there.
 
+## SJ Games compliance notes
+
+See `LEGAL.md` for the current Steve Jackson Games Online Policy review, the
+sitewide notice checklist, monster-library source boundaries, and launch decision
+about proactive SJ Games contact before any commercial, mobile, or app-store
+distribution path.
+
 ## Mirroring app releases
 
 The `Mirror App Release Downloads` workflow copies assets from
@@ -100,6 +107,26 @@ Before the source repository goes private, add a repository secret named
 `DOA_RELEASE_MIRROR_TOKEN` with read access to `Zuljita/DungeonsOnAutomatic`.
 The scheduled workflow uses that token to read the private release and the
 standard `GITHUB_TOKEN` to publish mirrored assets here.
+
+The mirror workflow also accepts a `repository_dispatch` event named
+`app_release_published` so the source repository can update the public mirror
+within minutes of publishing a release:
+
+```sh
+gh api repos/Zuljita/DungeonsOnAutomaticSite/dispatches \
+  --method POST \
+  --field event_type=app_release_published \
+  --raw-field client_payload='{"source_tag":"continuous","target_tag":"continuous"}'
+```
+
+During launch, the fallback schedule runs every four hours. Manual or dispatch
+runs fail if `DOA_RELEASE_MIRROR_TOKEN` is missing or invalid. Scheduled runs
+create or update a visible repository issue named "Release mirror token needs
+attention" instead of silently succeeding with stale downloads.
+
+Updater metadata matters: the mirror compares release assets and the
+`latest*.yml` files used by Electron auto-update before deciding whether to
+replace public assets.
 
 ## Public monster library
 

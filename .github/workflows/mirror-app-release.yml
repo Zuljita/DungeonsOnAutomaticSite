@@ -1,6 +1,8 @@
 name: Mirror App Release Downloads
 
 on:
+  repository_dispatch:
+    types: [app_release_published]
   workflow_dispatch:
     inputs:
       source_tag:
@@ -12,11 +14,12 @@ on:
         required: true
         default: continuous
   schedule:
-    - cron: "17 9 * * *"
+    - cron: "17 */4 * * *"
 
 permissions:
   actions: write
   contents: write
+  issues: write
 
 concurrency:
   group: mirror-app-release
@@ -28,29 +31,75 @@ jobs:
     env:
       SOURCE_REPO: Zuljita/DungeonsOnAutomatic
       TARGET_REPO: Zuljita/DungeonsOnAutomaticSite
-      SOURCE_TAG: ${{ github.event.inputs.source_tag || 'continuous' }}
-      TARGET_TAG: ${{ github.event.inputs.target_tag || 'continuous' }}
+      SOURCE_TAG: ${{ github.event.client_payload.source_tag || github.event.inputs.source_tag || 'continuous' }}
+      TARGET_TAG: ${{ github.event.client_payload.target_tag || github.event.inputs.target_tag || 'continuous' }}
       SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
       TARGET_TOKEN: ${{ github.token }}
+      ALERT_TITLE: Release mirror token needs attention
     steps:
       - name: Checkout public site
         uses: actions/checkout@v4
 
-      - name: Report token mode
+      - name: Preflight source release access
         run: |
+          mkdir -p data mirror-meta
+          alert_issue() {
+            echo "::warning title=Release mirror unavailable::$1"
+            run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            body="The release mirror could not read ${SOURCE_REPO}@${SOURCE_TAG}.
+
+Reason: $1
+
+Run: ${run_url}
+
+Refresh or replace the DOA_RELEASE_MIRROR_TOKEN secret, then rerun this workflow."
+            existing="$(GH_TOKEN="$TARGET_TOKEN" gh issue list \
+              --repo "$TARGET_REPO" \
+              --state open \
+              --search "$ALERT_TITLE in:title" \
+              --json number \
+              --jq '.[0].number // empty')"
+            if [ -n "$existing" ]; then
+              GH_TOKEN="$TARGET_TOKEN" gh issue edit "$existing" \
+                --repo "$TARGET_REPO" \
+                --body "$body"
+            else
+              GH_TOKEN="$TARGET_TOKEN" gh issue create \
+                --repo "$TARGET_REPO" \
+                --title "$ALERT_TITLE" \
+                --body "$body"
+            fi
+          }
+
           if [ -z "$SOURCE_TOKEN" ]; then
-            echo "DOA_RELEASE_MIRROR_TOKEN is not set. Skipping private release mirror."
+            message="DOA_RELEASE_MIRROR_TOKEN is not set."
+            if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
+              alert_issue "$message"
+              echo "MIRROR_SKIP=1" >> "$GITHUB_ENV"
+              exit 0
+            fi
+            echo "::error title=Missing release mirror token::$message"
+            exit 1
+          fi
+
+          if GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases/tags/$SOURCE_TAG" \
+            > mirror-meta/source-release.json; then
+            echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
+            exit 0
+          fi
+
+          message="DOA_RELEASE_MIRROR_TOKEN could not read ${SOURCE_REPO}@${SOURCE_TAG}."
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
+            alert_issue "$message"
             echo "MIRROR_SKIP=1" >> "$GITHUB_ENV"
             exit 0
           fi
-          echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
+          echo "::error title=Invalid release mirror token::$message"
+          exit 1
 
       - name: Read source metadata
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
-          mkdir -p data mirror-meta
-          GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases/tags/$SOURCE_TAG" \
-            > mirror-meta/source-release.json
           jq -r '.body // ""' mirror-meta/source-release.json > release-notes.md
           {
             echo ""
@@ -78,11 +127,32 @@ jobs:
             > mirror-meta/target-release.json 2>/dev/null; then
             jq '[.assets[] | {name, size, digest}] | sort_by(.name)' \
               mirror-meta/target-release.json > mirror-meta/target-assets.json
-            if cmp -s mirror-meta/source-assets.json mirror-meta/target-assets.json; then
+            rm -rf mirror-meta/source-updater mirror-meta/target-updater
+            mkdir -p mirror-meta/source-updater mirror-meta/target-updater
+            GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
+              --repo "$SOURCE_REPO" \
+              --pattern "latest*.yml" \
+              --dir mirror-meta/source-updater \
+              --clobber >/dev/null 2>&1 || true
+            GH_TOKEN="$TARGET_TOKEN" gh release download "$TARGET_TAG" \
+              --repo "$TARGET_REPO" \
+              --pattern "latest*.yml" \
+              --dir mirror-meta/target-updater \
+              --clobber >/dev/null 2>&1 || true
+            (
+              cd mirror-meta/source-updater
+              find . -type f -print | sort | while IFS= read -r file; do sha256sum "$file"; done
+            ) > mirror-meta/source-updater.sha256
+            (
+              cd mirror-meta/target-updater
+              find . -type f -print | sort | while IFS= read -r file; do sha256sum "$file"; done
+            ) > mirror-meta/target-updater.sha256
+            if cmp -s mirror-meta/source-assets.json mirror-meta/target-assets.json && \
+              cmp -s mirror-meta/source-updater.sha256 mirror-meta/target-updater.sha256; then
               echo "Mirrored release assets are already current. Skipping asset download/upload."
               echo "MIRROR_ASSETS_CHANGED=0" >> "$GITHUB_ENV"
             else
-              echo "Mirrored release assets differ from source. Asset mirror is required."
+              echo "Mirrored release assets or updater metadata differ from source. Asset mirror is required."
               echo "MIRROR_ASSETS_CHANGED=1" >> "$GITHUB_ENV"
             fi
           else
