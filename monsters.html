@@ -65,18 +65,17 @@
     <div class="wrap">
       <span class="eyebrow">Public monster library</span>
       <h1>Publishable monsters for deterministic dungeon prep.</h1>
-      <p class="lead">The monster library is a separate data repository that publishes validated JSON packages with source, license, conversion, and manual-review provenance. Dungeons on Automatic can consume a fixed package version without turning the public site into the canonical data store.</p>
+      <p class="lead">The monster library is built in a private data repository and will publish reviewed JSON packages through public release assets. Dungeons on Automatic can consume a fixed package version without turning the public site into the canonical data store.</p>
       <div class="actions">
-        <a class="action" href="https://github.com/Zuljita/DungeonsOnAutomaticMonsters">Data repo</a>
-        <a class="action" href="https://raw.githubusercontent.com/Zuljita/DungeonsOnAutomaticMonsters/main/converted/doa-monsters.json">Download JSON</a>
-        <a class="action" href="https://github.com/Zuljita/DungeonsOnAutomaticMonsters/blob/main/schema/monster.schema.json">Schema</a>
+        <a class="action" href="releases.html">Release packages</a>
+        <a class="action" href="releases.html#downloads">Downloads</a>
       </div>
     </div>
   </header>
   <main class="wrap">
     <section>
       <h2>Package status</h2>
-      <p id="status">Loading public monster package.</p>
+      <p id="status">No public monster package has been released yet.</p>
       <div class="stats" aria-label="Package summary">
         <div class="stat"><span>Version</span><strong id="version">-</strong></div>
         <div class="stat"><span>Monsters</span><strong id="monster-count">-</strong></div>
@@ -84,7 +83,7 @@
         <div class="stat"><span>Licenses</span><strong id="license-count">-</strong></div>
       </div>
       <h3>License summary</h3>
-      <p id="license-summary" class="muted">Waiting for package metadata.</p>
+      <p id="license-summary" class="muted">SRD 5.1 CC-BY records and 3.5-era OGL records will be published only after source/license notices and manual review are complete.</p>
       <h3>Sources</h3>
       <ul id="sources"></ul>
     </section>
@@ -96,14 +95,14 @@
           <tr><th>Name</th><th>Class</th><th>CER</th><th>Tags</th><th>Source</th><th>Review</th></tr>
         </thead>
         <tbody id="monster-rows">
-          <tr><td colspan="6">Loading records.</td></tr>
+          <tr><td colspan="6">Public package release pending.</td></tr>
         </tbody>
       </table>
     </section>
   </main>
-  <footer><div class="wrap">Dungeons on Automatic public monster library. Canonical data lives in the monster-data repository.</div></footer>
+  <footer><div class="wrap">Dungeons on Automatic public monster library. Canonical source data stays private until reviewed packages are released.</div></footer>
   <script>
-    const PACKAGE_URL = 'https://raw.githubusercontent.com/Zuljita/DungeonsOnAutomaticMonsters/main/converted/doa-monsters.json';
+    const PACKAGE_URL = '';
     const state = { monsters: [] };
 
     const text = (value) => value === null || value === undefined ? '' : String(value);
@@ -158,6 +157,21 @@
 
     (async () => {
       try {
+        if (!PACKAGE_URL) {
+          document.getElementById('version').textContent = 'Pending';
+          document.getElementById('monster-count').textContent = '0';
+          document.getElementById('source-count').textContent = '0';
+          document.getElementById('license-count').textContent = '0';
+          const sources = document.getElementById('sources');
+          sources.replaceChildren();
+          ['SRD 5.1 CC-BY path planned first', '3.5-era OGL path planned after notice review'].forEach((label) => {
+            const item = document.createElement('li');
+            item.textContent = label;
+            sources.append(item);
+          });
+          renderRows([]);
+          return;
+        }
         const response = await fetch(PACKAGE_URL, { cache: 'no-store' });
         if (!response.ok) throw new Error('package unavailable');
         const pkg = await response.json();
