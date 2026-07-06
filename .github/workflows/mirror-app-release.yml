@@ -3,18 +3,6 @@ name: Mirror App Release Downloads
 on:
   repository_dispatch:
     types: [app_release_published]
-  workflow_dispatch:
-    inputs:
-      source_tag:
-        description: Source release tag in Zuljita/DungeonsOnAutomatic
-        required: true
-        type: string
-        default: continuous
-      target_tag:
-        description: Public mirror tag in this repository
-        required: true
-        type: string
-        default: continuous
   schedule:
     - cron: "*/15 * * * *"
 
@@ -46,11 +34,9 @@ jobs:
         env:
           DISPATCH_SOURCE_TAG: ${{ github.event.client_payload.source_tag }}
           DISPATCH_TARGET_TAG: ${{ github.event.client_payload.target_tag }}
-          INPUT_SOURCE_TAG: ${{ github.event.inputs.source_tag }}
-          INPUT_TARGET_TAG: ${{ github.event.inputs.target_tag }}
         run: |
-          source_tag="${DISPATCH_SOURCE_TAG:-${INPUT_SOURCE_TAG:-continuous}}"
-          target_tag="${DISPATCH_TARGET_TAG:-${INPUT_TARGET_TAG:-continuous}}"
+          source_tag="${DISPATCH_SOURCE_TAG:-continuous}"
+          target_tag="${DISPATCH_TARGET_TAG:-continuous}"
           echo "SOURCE_TAG=$source_tag" >> "$GITHUB_ENV"
           echo "TARGET_TAG=$target_tag" >> "$GITHUB_ENV"
 
