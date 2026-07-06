@@ -122,9 +122,8 @@ gh api repos/Zuljita/DungeonsOnAutomaticSite/dispatches \
 In the source app repository, configure `DOA_SITE_MIRROR_DISPATCH_TOKEN` with
 permission to create repository dispatch events in this public site repository.
 
-During launch, the fallback schedule runs every 15 minutes. Dispatch runs fail
-if `DOA_RELEASE_MIRROR_TOKEN` is missing or invalid. Scheduled runs create or
-update a visible repository issue named "Release mirror token needs attention"
+During launch, the fallback schedule runs every 15 minutes. Dispatch and
+scheduled runs fail visibly if `DOA_RELEASE_MIRROR_TOKEN` is missing or invalid
 instead of silently succeeding with stale downloads.
 
 Updater metadata matters: the mirror compares release assets and the

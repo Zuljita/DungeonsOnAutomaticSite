@@ -9,7 +9,6 @@ on:
 permissions:
   actions: write
   contents: write
-  issues: write
 
 concurrency:
   group: mirror-app-release
@@ -25,7 +24,6 @@ jobs:
       TARGET_TAG: continuous
       SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
       TARGET_TOKEN: ${{ github.token }}
-      ALERT_TITLE: Release mirror token needs attention
     steps:
       - name: Checkout public site
         uses: actions/checkout@v4
@@ -43,41 +41,8 @@ jobs:
       - name: Preflight source release access
         run: |
           mkdir -p data mirror-meta
-          alert_issue() {
-            echo "::warning title=Release mirror unavailable::$1"
-            run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-            body="The release mirror could not read ${SOURCE_REPO}@${SOURCE_TAG}.
-
-Reason: $1
-
-Run: ${run_url}
-
-Refresh or replace the DOA_RELEASE_MIRROR_TOKEN secret, then rerun this workflow."
-            existing="$(GH_TOKEN="$TARGET_TOKEN" gh issue list \
-              --repo "$TARGET_REPO" \
-              --state open \
-              --search "$ALERT_TITLE in:title" \
-              --json number \
-              --jq '.[0].number // empty')"
-            if [ -n "$existing" ]; then
-              GH_TOKEN="$TARGET_TOKEN" gh issue edit "$existing" \
-                --repo "$TARGET_REPO" \
-                --body "$body"
-            else
-              GH_TOKEN="$TARGET_TOKEN" gh issue create \
-                --repo "$TARGET_REPO" \
-                --title "$ALERT_TITLE" \
-                --body "$body"
-            fi
-          }
-
           if [ -z "$SOURCE_TOKEN" ]; then
             message="DOA_RELEASE_MIRROR_TOKEN is not set."
-            if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
-              alert_issue "$message"
-              echo "MIRROR_SKIP=1" >> "$GITHUB_ENV"
-              exit 0
-            fi
             echo "::error title=Missing release mirror token::$message"
             exit 1
           fi
@@ -89,11 +54,6 @@ Refresh or replace the DOA_RELEASE_MIRROR_TOKEN secret, then rerun this workflow
           fi
 
           message="DOA_RELEASE_MIRROR_TOKEN could not read ${SOURCE_REPO}@${SOURCE_TAG}."
-          if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
-            alert_issue "$message"
-            echo "MIRROR_SKIP=1" >> "$GITHUB_ENV"
-            exit 0
-          fi
           echo "::error title=Invalid release mirror token::$message"
           exit 1
 
