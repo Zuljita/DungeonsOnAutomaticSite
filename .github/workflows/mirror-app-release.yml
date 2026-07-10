@@ -80,6 +80,96 @@ jobs:
             --jq '[.[] | select(.draft == false) | {tagName: .tag_name, name: .name, publishedAt: .published_at, isPrerelease: .prerelease, body: (.body // "")}]' \
             > data/releases.json
 
+      - name: Write public download metadata
+        run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
+          rm -rf mirror-meta/download-metadata
+          mkdir -p mirror-meta/download-metadata
+          GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
+            --repo "$SOURCE_REPO" \
+            --pattern "latest*.yml" \
+            --dir mirror-meta/download-metadata \
+            --clobber
+          node <<'NODE'
+          const fs = require("fs");
+          const path = require("path");
+
+          const release = JSON.parse(fs.readFileSync("mirror-meta/source-release.json", "utf8"));
+          const assetByName = new Map((release.assets || []).map((asset) => [asset.name, asset]));
+          const metadataDir = "mirror-meta/download-metadata";
+
+          const downloads = [
+            {
+              id: "windows-x64",
+              label: "Windows installer",
+              feed: "latest.yml",
+              asset: "Dungeons-on-Automatic-windows-x64-setup.exe",
+            },
+            {
+              id: "mac-arm64",
+              label: "macOS Apple silicon",
+              feed: "latest-mac.yml",
+              asset: "Dungeons-on-Automatic-mac-arm64.zip",
+            },
+            {
+              id: "mac-x64",
+              label: "macOS Intel",
+              feed: "latest-mac.yml",
+              asset: "Dungeons-on-Automatic-mac-x64.zip",
+            },
+            {
+              id: "linux-x86_64",
+              label: "Linux x86_64",
+              feed: "latest-linux.yml",
+              asset: "Dungeons-on-Automatic-linux-x86_64.AppImage",
+            },
+            {
+              id: "linux-arm64",
+              label: "Linux ARM64",
+              feed: "latest-linux-arm64.yml",
+              asset: "Dungeons-on-Automatic-linux-arm64.AppImage",
+            },
+          ];
+
+          function readFeed(name) {
+            const file = path.join(metadataDir, name);
+            if (!fs.existsSync(file)) return {};
+            const text = fs.readFileSync(file, "utf8");
+            const version = text.match(/^version:\s*['"]?([^'"\n]+)['"]?/m)?.[1] ?? null;
+            const releaseDate = text.match(/^releaseDate:\s*['"]?([^'"\n]+)['"]?/m)?.[1] ?? null;
+            return { version, releaseDate };
+          }
+
+          const feedByName = new Map([...new Set(downloads.map((download) => download.feed))]
+            .map((feed) => [feed, readFeed(feed)]));
+
+          const output = {
+            schemaVersion: 1,
+            releaseTag: release.tag_name,
+            releaseName: release.name,
+            publishedAt: release.published_at,
+            updatedAt: release.updated_at,
+            generatedAt: new Date().toISOString(),
+            downloads: downloads.map((download) => {
+              const asset = assetByName.get(download.asset);
+              const feed = feedByName.get(download.feed) || {};
+              return {
+                id: download.id,
+                label: download.label,
+                assetName: download.asset,
+                feedName: download.feed,
+                version: feed.version,
+                releaseDate: feed.releaseDate,
+                size: asset?.size ?? null,
+                digest: asset?.digest ?? null,
+                url: asset?.browser_download_url ?? null,
+              };
+            }),
+          };
+
+          fs.writeFileSync("data/downloads.json", `${JSON.stringify(output, null, 2)}\n`);
+          NODE
+
       - name: Compare mirrored assets
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
@@ -165,16 +255,16 @@ jobs:
             --repo "$TARGET_REPO" \
             --clobber
 
-      - name: Commit public changelog data
+      - name: Commit public release data
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/releases.json
+          git add data/releases.json data/downloads.json
           if git diff --cached --quiet; then
-            echo "No changelog changes to commit."
+            echo "No public release metadata changes to commit."
           else
-            git commit -m "Update public changelog"
+            git commit -m "Update public release metadata"
             git push
             GH_TOKEN="$TARGET_TOKEN" gh workflow run pages.yml --repo "$TARGET_REPO"
           fi
