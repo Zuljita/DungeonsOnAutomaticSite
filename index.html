@@ -24,7 +24,7 @@
     .brand { display: inline-flex; align-items: center; gap: 11px; flex: none; }
     .brand img { width: 30px; height: 30px; }
     .brand b { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.05em; color: var(--text-strong); white-space: nowrap; text-transform: uppercase; }
-    .nav-links { display: flex; gap: 22px; margin-left: 18px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 8px 22px; min-width: 0; margin-left: 18px; }
     .nav-links a { font-size: 14px; color: var(--text-muted); }
     .nav-links a:hover { color: var(--brass-300); }
     .nav-cta { margin-left: auto; }
@@ -122,6 +122,7 @@
         <a href="monsters.html">Monsters</a>
         <a href="blog.html">Blog</a>
         <a href="releases.html">Releases</a>
+        <a href="releases.html#changelog">Changelog</a>
         <a href="#staff">Staff</a>
         <a href="privacy.html">Privacy</a>
       </div>
@@ -247,7 +248,7 @@
         <a class="manual-link" href="manual.html#limitations">Current limitations <span>roadmap</span></a>
         <a class="manual-link" href="privacy.html">Privacy and content boundary <span>local-first</span></a>
         <a class="manual-link" href="manual.html#troubleshooting">Troubleshooting <span>table fixes</span></a>
-        <a class="manual-link" href="releases.html">Release notes <span>public changelog</span></a>
+        <a class="manual-link" href="releases.html#changelog">Changelog <span>release notes</span></a>
         <a class="manual-link" href="blog.html">Blog <span>thoughts and updates</span></a>
       </div>
     </div>
@@ -263,7 +264,7 @@
       <article class="dir"><img src="assets/portraits/Kovath.png" alt="Kovath"><div class="dir__body"><div class="dir__name">Kovath</div><div class="dir__role">Creative Director</div><div class="dir__q">"Another fine layout, doomed to player cleverness."</div></div></article>
       <article class="dir"><img src="assets/portraits/Zarlzazz.png" alt="Zarlzazz"><div class="dir__body"><div class="dir__name">Zarlzazz</div><div class="dir__role">Narrative Director</div><div class="dir__q">"Every dungeon needs a throughline. This one's is regret, mostly."</div></div></article>
       <article class="dir"><img src="assets/portraits/Vorga.png" alt="Vorga"><div class="dir__body"><div class="dir__name">Vorga</div><div class="dir__role">Encounter Director</div><div class="dir__q">"Encounter direction is coming online as richer faction and encounter work lands."</div></div></article>
-      <article class="dir"><img src="assets/portraits/Mizzik.png" alt="Mizzik"><div class="dir__body"><div class="dir__name">Mizzik</div><div class="dir__role">Furniture and Loot</div><div class="dir__q">"I weighed the hoard against their level. It is, regrettably, fair."</div></div></article>
+      <article class="dir"><img src="assets/portraits/Mizzik-red-kobold.png" alt="Mizzik"><div class="dir__body"><div class="dir__name">Mizzik</div><div class="dir__role">Furniture and Loot</div><div class="dir__q">"I weighed the hoard against their level. It is, regrettably, fair."</div></div></article>
     </div>
   </section>
 
@@ -274,7 +275,7 @@
       <p class="lead">Download the current desktop builds, read known issues, and check mirrored release assets without needing source repository access.</p>
     </div>
     <div class="wrap release-grid">
-      <article class="card release"><div class="n">LATEST</div><h3>Release notes</h3><p>Continuous builds are early access snapshots with visible known issues and migration notes.</p><a href="releases.html">View releases</a></article>
+      <article class="card release"><div class="n">LATEST</div><h3>Changelog</h3><p>Continuous builds publish public release notes from the mirrored application release feed.</p><a href="releases.html#changelog">View changelog</a></article>
       <article class="card release"><div class="n">START</div><h3>First dungeon guide</h3><p>A focused on-ramp for generating, checking, and exporting a first table-ready dungeon.</p><a href="quickstart.html">Open quickstart</a></article>
       <article class="card release"><div class="n">DOWNLOAD</div><h3>Public release files</h3><p>Downloads are mirrored on this public site repo, including installers, metadata, and checksums.</p><a href="releases.html#downloads">Get downloads</a></article>
     </div>
@@ -303,6 +304,7 @@
         <a href="manual.html">Manual</a>
         <a href="blog.html">Blog</a>
         <a href="releases.html">Releases</a>
+        <a href="releases.html#changelog">Changelog</a>
         <a href="privacy.html">Privacy</a>
         <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite">GitHub</a>
       </div>
