@@ -37,19 +37,21 @@
       .nav-links { margin-left: 0; flex-wrap: wrap; }
     }
   </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav>
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a><a href="releases.html">Releases</a><a href="releases.html#changelog">Changelog</a><a href="releases.html#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-wrap site-nav__inner">
+      <a class="site-brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
+      <div class="site-nav__links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a></div>
+      <a class="site-button site-button--primary" href="releases.html#downloads">Download</a>
     </div>
   </nav>
   <header>
     <div class="wrap">
       <span class="eyebrow">Privacy and boundaries</span>
       <h1>Local-first dungeon prep.</h1>
-      <p class="lead">Dungeons on Automatic is designed around local files, local settings, and optional local model providers. The public site hosts documentation and downloads; it is not a server database for your generated dungeons.</p>
+      <p class="lead">Dungeons on Automatic uses local files, local settings, and optional local model providers. The public site hosts documentation and downloads. Generated dungeons remain on your machine.</p>
     </div>
   </header>
   <main class="wrap">
@@ -58,17 +60,17 @@
       <ul>
         <li>Generated dungeon state is saved as local JSON when you export or persist it.</li>
         <li>Generation profiles and last-used settings are stored locally so your setup can survive a restart.</li>
-        <li>The app does not need a hosted account or server database to generate a dungeon.</li>
+        <li>Generation runs inside the desktop app, with exported dungeons stored as local files.</li>
       </ul>
     </section>
     <section>
       <h2>Local LLMs</h2>
-      <p>AI Narrative Polish is optional. When enabled, model calls are intended for local providers on your machine, such as Ollama, LM Studio, or llama.cpp. Browser builds may need local-provider CORS configuration before those calls are allowed.</p>
-      <p>The downloadable app does not bundle a local LLM runtime or model weights.</p>
+      <p>AI-assisted brief suggestions, director interviews, tool actions, and narrative polish are optional. When enabled, the desktop app sends those requests to a provider running on your machine, such as Ollama, LM Studio, or llama.cpp.</p>
+      <p>Install and run your chosen local LLM provider separately. Inside DOA, director actions use a constrained list of validated tools with narrowly scoped DungeonState permissions.</p>
     </section>
     <section>
       <h2>DFRPG content boundary</h2>
-      <p>The bundled DFRPG data path uses structural data, tags, references, and original templates to support table prep. It is not a copy of copyrighted source-book text or stat blocks.</p>
+      <p>The bundled DFRPG data path uses structural data, tags, references, and original templates to support table prep. Published rules text and stat blocks remain in their source books.</p>
       <p>You should still use the source books you own at the table. Source-book filtering exists so the generator can stay aligned with your available library.</p>
     </section>
   </main>

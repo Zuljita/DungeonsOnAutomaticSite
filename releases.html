@@ -59,12 +59,14 @@
       .nav-links { margin-left: 0; flex-wrap: wrap; }
     }
   </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav>
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a><a href="releases.html">Releases</a><a href="#changelog">Changelog</a><a href="#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-wrap site-nav__inner">
+      <a class="site-brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
+      <div class="site-nav__links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a></div>
+      <a class="site-button site-button--primary" href="#downloads">Download</a>
     </div>
   </nav>
   <header>
@@ -82,8 +84,8 @@
       </aside>
       <div>
         <h2>Continuous early access builds</h2>
-        <p>These unofficial early access builds are mirrored as the <code>continuous</code> public release. They are usable desktop builds, not a hosted web generator.</p>
-        <p>The Windows and Linux artifacts are large because of desktop packaging and bundled app dependencies. The local LLM runtime is not bundled; install Ollama, LM Studio, or llama.cpp separately if you want AI Narrative Polish.</p>
+        <p>These unofficial early access desktop builds are mirrored as the <code>continuous</code> public release for Windows, macOS, and Linux.</p>
+        <p>The artifacts include the Electron desktop runtime and app dependencies. Install Ollama, LM Studio, or llama.cpp separately to enable local AI features.</p>
         <p>Compare the available version shown below with your installed version in the app's About dialog or Help menu update check.</p>
         <p>New here? Start with the <a href="quickstart.html">first dungeon quickstart</a>, then return for downloads and known issues.</p>
         <div class="downloads">
@@ -94,7 +96,7 @@
           <a class="download" data-download-id="linux-arm64" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-arm64.AppImage"><strong>Linux ARM64</strong><span>AppImage build for ARM64 Linux.</span><span class="download-meta">Version metadata loading.</span></a>
         </div>
         <p><a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/tag/continuous">View SHA-256 checksum files, updater metadata, and all mirrored release assets.</a></p>
-        <p>Signing/notarization is not currently advertised for these early access artifacts. Windows, macOS, and Linux may show the normal first-run warnings for unsigned or unnotarized apps.</p>
+        <p>These early access artifacts are currently unsigned and unnotarized. Windows, macOS, and Linux may show their standard first-run warnings.</p>
       </div>
     </article>
     <article class="release">
@@ -122,10 +124,10 @@
       <div>
         <h2>Current limitations</h2>
         <ul>
-          <li>Single-level generation only; stairs are placed and exported, but true multi-floor graphing is future work.</li>
-          <li>Universal VTT .dd2vtt output exists with embedded map image, walls, portals, lights, and GM/player modes, but importer hardening is ongoing.</li>
+          <li>Generation currently covers one level. Stairs are placed and exported; multi-floor graphing is future work.</li>
+          <li>Universal VTT .dd2vtt output includes an embedded map image, walls, portals, lights, and GM/player modes. Importer hardening is ongoing.</li>
           <li>Custom treasure per room and custom container tables are still partial.</li>
-          <li>Variable hallway widths are not implemented yet.</li>
+          <li>Hallways currently use fixed widths.</li>
         </ul>
         <div class="status">Roadmap tracked</div>
       </div>

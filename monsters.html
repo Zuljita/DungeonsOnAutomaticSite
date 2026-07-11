@@ -53,19 +53,21 @@
       table { display: block; overflow-x: auto; }
     }
   </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav>
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a><a href="releases.html">Releases</a><a href="releases.html#changelog">Changelog</a><a href="releases.html#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-wrap site-nav__inner">
+      <a class="site-brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
+      <div class="site-nav__links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a></div>
+      <a class="site-button site-button--primary" href="releases.html#downloads">Download</a>
     </div>
   </nav>
   <header>
     <div class="wrap">
       <span class="eyebrow">Public monster library</span>
       <h1>Publishable monsters for deterministic dungeon prep.</h1>
-      <p class="lead">The monster library is built in a private data repository and will publish reviewed JSON packages through public release assets. Dungeons on Automatic can consume a fixed package version without turning the public site into the canonical data store.</p>
+      <p class="lead">The private monster-data repository produces reviewed, versioned JSON packages. Public release assets carry those packages, and Dungeons on Automatic loads a fixed version.</p>
       <div class="actions">
         <a class="action" href="releases.html">Release packages</a>
         <a class="action" href="releases.html#downloads">Downloads</a>
@@ -83,15 +85,15 @@
         <div class="stat"><span>Licenses</span><strong id="license-count">-</strong></div>
       </div>
       <h3>License summary</h3>
-      <p id="license-summary" class="muted">SRD 5.1 CC-BY records and 3.5-era OGL records will be published only after source/license notices and manual review are complete.</p>
+      <p id="license-summary" class="muted">Source and license notices plus manual review precede publication of SRD 5.1 CC-BY and 3.5-era OGL records.</p>
       <h3>Sources</h3>
       <ul id="sources"></ul>
     </section>
     <section>
       <h2>Source and IP boundary</h2>
-      <p>This page publishes package metadata only after manual review. It does not publish Steve Jackson Games book text, monster stat blocks, art, logos, or trade dress.</p>
-      <p>Public monster packages must identify their source basis at the record level. Planned public source paths include SRD 5.1 CC-BY material, 3.5-era OGL material, GCS public data where allowed, and DOA-authored metadata. These source families stay separate in provenance instead of being merged into a generic bucket.</p>
-      <p>GURPS and Dungeon Fantasy RPG source-book filtering remains a table-ownership feature: use the books you own, and treat this page as a package release surface rather than a substitute for published rules.</p>
+      <p>Manual review precedes every package-metadata release. Steve Jackson Games book text, monster stat blocks, art, logos, and trade dress remain with their publisher.</p>
+      <p>Public monster packages must identify their source basis at the record level. Planned public source paths include SRD 5.1 CC-BY material, 3.5-era OGL material, GCS public data where allowed, and DOA-authored metadata. Each source family retains its own provenance category.</p>
+      <p>GURPS and Dungeon Fantasy RPG source-book filtering follows the books you own. This page distributes package releases; published rules remain in their books.</p>
     </section>
     <section>
       <h2>Monster records</h2>

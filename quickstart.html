@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Your first Dungeons on Automatic dungeon in a minute: generate, inspect, and export a table-ready packet.">
+  <meta name="description" content="Generate, inspect, and export your first table-ready Dungeons on Automatic dungeon.">
   <title>Dungeons on Automatic - Quickstart</title>
   <link rel="icon" href="assets/brand/favicon.ico">
   <link rel="stylesheet" href="styles.css">
@@ -48,19 +48,21 @@
       .nav-links { margin-left: 0; flex-wrap: wrap; }
     }
   </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav>
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a><a href="releases.html">Releases</a><a href="releases.html#changelog">Changelog</a><a href="releases.html#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-wrap site-nav__inner">
+      <a class="site-brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
+      <div class="site-nav__links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a></div>
+      <a class="site-button site-button--primary" href="releases.html#downloads">Download</a>
     </div>
   </nav>
   <header>
     <div class="wrap">
-      <span class="eyebrow">Your first dungeon in a minute</span>
-      <h1>Generate, inspect, export, then go play.</h1>
-      <p class="lead">Use this path for a first launch-week run. It favors stable defaults, player-safe exports, and a short final check before you bring the dungeon to the table.</p>
+      <span class="eyebrow">Start here</span>
+      <h1>From install to room key.</h1>
+      <p class="lead">Make one clean baseline before you tune anything. Generate with the defaults, read what DOA made, then export the version your table actually needs.</p>
     </div>
   </header>
   <main class="wrap">
@@ -70,46 +72,46 @@
     <div class="steps">
       <article class="step">
         <div class="n">Step 01</div>
-        <h3>Choose safe defaults</h3>
-        <p>Use Standard size, 4 biomes, Average challenge, 100% generosity, Standard door security, and the default required sources. Save the seed once the run looks usable.</p>
+        <h3>Build a baseline</h3>
+        <p>Open the Generate panel and click Generate Map. The defaults are enough for a first pass; set Party CER first if you already know it.</p>
       </article>
       <article class="step">
         <div class="n">Step 02</div>
         <h3>Read before rerolling</h3>
-        <p>Open the GM map, player map, and room key. Check entrances, blocked paths, secret content, and the first few room entries before changing the seed.</p>
+        <p>Inspect Rooms &amp; Contents, the adventure frame, and both map views. Check the entrance, obvious routes, encounters, hazards, treasure, and the first few room entries.</p>
       </article>
       <article class="step">
         <div class="n">Step 03</div>
         <h3>Export the right packet</h3>
-        <p>Use player exports for handouts. Keep GM map images, Markdown room keys, placement TSV, Foundry scene JSON, and .dd2vtt files in your prep folder.</p>
+        <p>Give players a player-safe PNG or VTT file. Keep the GM map, Markdown room key, and Dungeon JSON with your prep.</p>
       </article>
     </div>
     <section>
       <h2>One-minute checklist</h2>
       <div class="checklist">
         <ul>
-          <li>Confirm party CER and challenge profile match the table.</li>
-          <li>Confirm only source books your table uses are enabled.</li>
-          <li>Generate once with defaults before adding Dungeon Intent.</li>
-          <li>Save the seed and export the full JSON state.</li>
+          <li>Set Party CER and challenge for the current delvers.</li>
+          <li>Enable only the rulebooks and monster sources you own.</li>
+          <li>Generate once before adding a Session Brief.</li>
+          <li>Keep the seed and export the full Dungeon JSON.</li>
         </ul>
         <ul>
-          <li>Check the player map for hidden GM information.</li>
-          <li>Skim room keys for encounter and treasure pacing.</li>
+          <li>Check the player map before you share it.</li>
+          <li>Skim the room key for encounter and treasure pacing.</li>
+          <li>Review the adventure frame and wandering procedures.</li>
           <li>Import VTT files into a test scene before game time.</li>
-          <li>Keep the Known Issues section open during launch week.</li>
         </ul>
       </div>
       <div class="action-row">
         <a class="action" href="releases.html#downloads">Download builds</a>
-        <a class="action" href="releases.html#downloads">Known issues</a>
+        <a class="action" href="releases.html#changelog">Release notes</a>
         <a class="action" href="manual.html">Full manual</a>
       </div>
     </section>
     <section>
-      <h2>Launch-week boundaries</h2>
-      <p>Dungeons on Automatic is an unofficial free game aid. It expects you to use the source books you own and does not replace published GURPS or Dungeon Fantasy RPG rules.</p>
-      <p>Monster-library packages are public only after provenance and license review. Until a package is released, the monster page is a status and release surface rather than a stat-block catalog.</p>
+      <h2>Give the directors something to work with</h2>
+      <p>A Session Brief can name a theme, tone, set pieces, danger target, and character spotlight. Local AI can help interview you and turn those notes into structured suggestions.</p>
+      <p>Director authority is limited to typed tools. Source-filtered DFRPG data, deterministic generation, and validation approve every change before it enters the dungeon.</p>
     </section>
   </main>
   <section class="legal-notice" aria-label="Steve Jackson Games notice">

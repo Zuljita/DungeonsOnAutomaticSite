@@ -48,12 +48,14 @@
       .nav-links { margin-left: 0; flex-wrap: wrap; }
     }
   </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav>
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><b>Dungeons on Automatic</b></a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a><a href="releases.html">Releases</a><a href="releases.html#changelog">Changelog</a><a href="releases.html#downloads">Downloads</a><a href="privacy.html">Privacy</a></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-wrap site-nav__inner">
+      <a class="site-brand" href="index.html"><img src="assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
+      <div class="site-nav__links"><a href="index.html">Home</a><a href="quickstart.html">Quickstart</a><a href="manual.html">Manual</a><a href="monsters.html">Monsters</a><a href="blog.html">Blog</a></div>
+      <a class="site-button site-button--primary" href="releases.html#downloads">Download</a>
     </div>
   </nav>
   <header class="hero">
@@ -67,7 +69,7 @@
     <aside aria-label="Manual sections">
       <a href="#quick-start">Quick start</a>
       <a href="#controls">Controls</a>
-      <a href="#intent">Dungeon Intent</a>
+      <a href="#intent">Brief and AI direction</a>
       <a href="#maps">Maps and keys</a>
       <a href="#exports">Exports</a>
       <a href="#stage-manager">Stage Manager</a>
@@ -80,7 +82,7 @@
         <ol>
           <li>Choose a dungeon size, biome mix, party CER, challenge profile, generosity, door security, and travel distance.</li>
           <li>Select the source books your table actually uses, then apply the staged source changes before generating.</li>
-          <li>Add Dungeon Intent if you want a global theme, regional tag bias, or a set-piece request.</li>
+          <li>Add a Session Brief if you want a theme, tone, set-piece request, danger hint, or party spotlight.</li>
           <li>Generate a seed. Review the GM map, player map, and room list.</li>
           <li>Lock any rooms you want to preserve, then reroll specific details as needed.</li>
           <li>Export the map and room key into your prep tool or VTT.</li>
@@ -99,6 +101,8 @@
             <tr><td>Room size</td><td>Sets the preferred room scale from Tiny through Colossal.</td><td>Standard middle values</td></tr>
             <tr><td>Corridor profile</td><td>Shapes corridor behavior. Values are Labyrinthian, Squiggly, Wandering, Organized, and Straight.</td><td>Wandering</td></tr>
             <tr><td>Dead ends</td><td>Changes branch and cul-de-sac frequency. Values are None, Few, Some, Most, and All.</td><td>Some</td></tr>
+            <tr><td>Stairs</td><td>Controls whether the generated level includes stair features for later connection or export.</td><td>Yes</td></tr>
+            <tr><td>Teleporters</td><td>Adds rare or frequent portal-style connections when the dungeon calls for less conventional circulation.</td><td>Off</td></tr>
             <tr><td>Party CER</td><td>Sets the party capability used by encounter and danger placement.</td><td>Your table's current CER</td></tr>
             <tr><td>Challenge</td><td>Adjusts how often the dungeon leans into threat, hazard, and pressure.</td><td>Average</td></tr>
             <tr><td>Door security</td><td>Sets how severe door locks, bars, and complications can become. Values are None, Basic, Standard, Secure, and Deathtrap.</td><td>Standard</td></tr>
@@ -112,9 +116,10 @@
         <p>Generation profiles can be exported and imported. The app also persists your last settings locally so a table setup survives a restart.</p>
       </section>
       <section id="intent">
-        <h2>Dungeon Intent</h2>
-        <p>Dungeon Intent lets you steer a run without hand-building it. Use brief Markdown for the concept, global tag bias for the whole dungeon, region tag bias for specific areas, and set-piece requests for memorable rooms or situations.</p>
-        <p>Intent changes the pressure on the generator; it does not bypass validation or turn the dungeon into freeform prose.</p>
+        <h2>Session Brief and Dungeon Intent</h2>
+        <p>Before generation, the Session Brief can capture tonight's theme, factions, tone, set pieces, danger target, and skills or advantages you want to spotlight. You can fill it in directly; with a local LLM connected, Suggest chips and the optional Dungeon Interview can turn loose notes into structured brief fields.</p>
+        <p>After generation, Dungeon Intent gives you finer control: brief Markdown, global tag bias, region-specific pressure, and set-piece requests. Room-level course correction can reroll encounters, treasure, or a zone with optional tag bias.</p>
+        <div class="callout">The AI serves as a director. Suggestions become typed tool calls, deterministic generation passes, or schema-checked prose. Source-filtered DFRPG data and validators remain authoritative.</div>
       </section>
       <section id="maps">
         <h2>Maps and room keys</h2>
@@ -133,33 +138,34 @@
             <tr><td>PNG GM</td><td>GM map image with private labels, markers, lights, and operational details.</td></tr>
             <tr><td>PNG Player</td><td>Player-safe map image for handouts and table display.</td></tr>
             <tr><td>Foundry</td><td>Foundry scene JSON with map data and VTT setup information.</td></tr>
+            <tr><td>Foundry + map image</td><td>Foundry scene JSON using an external PNG, JPEG, or WebP map as the scene background.</td></tr>
             <tr><td>UVTT GM</td><td>Universal VTT .dd2vtt with embedded map image, walls, portals, lights, and GM-facing data.</td></tr>
             <tr><td>UVTT Player</td><td>Universal VTT .dd2vtt player version with hidden details removed where applicable.</td></tr>
             <tr><td>Placement TSV</td><td>Tabular placement data for audit, debugging, spreadsheets, or custom prep workflows.</td></tr>
             <tr><td>Markdown GM</td><td>GM room key for Obsidian, campaign notes, and printable prep.</td></tr>
+            <tr><td>GCS NPC bundle</td><td>Generated NPC data packaged for a GURPS Character Sheet workflow.</td></tr>
           </tbody>
         </table>
         <h3>Player-safe behavior</h3>
         <p>Player exports hide secret or GM-only details, room labels, GM lights, markers, encounters, traps, treasure hooks, and notes where applicable.</p>
         <h3>VTT precision</h3>
-        <p>Foundry scene JSON exists today. Universal VTT exports include embedded map images, walls, portals, lights, and GM/player modes, but real importer hardening is still an active roadmap item.</p>
+        <p>Foundry scene JSON is available today. Universal VTT exports include embedded map images, walls, portals, lights, and GM/player modes. Importer hardening remains active roadmap work.</p>
       </section>
       <section id="stage-manager">
         <h2>Stage Manager</h2>
         <p>The Stage Manager is the in-character director layer and the real progress/event surface. Kovath, Zarlzazz, Vorga, and Mizzik narrate what the generator is doing while generation, validation, exports, and polish work happen underneath.</p>
-        <p>Kovath, Zarlzazz, and Mizzik are the most mature director voices right now. Vorga's encounter direction is still partial and depends on richer encounter and faction work.</p>
-        <h3>Offline sample polish and AI Narrative Polish</h3>
-        <p>Offline sample polish gives you no-model text cleanup. AI Narrative Polish uses optional local LLM providers such as Ollama, LM Studio, or llama.cpp. In browser builds, local LLMs may require CORS setup from the provider.</p>
-        <p>LLM director actions are constrained, validated tool calls. They are not allowed to mutate the dungeon as arbitrary freeform text.</p>
+        <h3>Local AI direction and narrative polish</h3>
+        <p>Local AI is optional. Connect Ollama, LM Studio, or llama.cpp in Settings to enable brief suggestions, the Dungeon Interview, director actions, and narrative polish. The desktop app talks to the provider running on your own machine.</p>
+        <p>LLM director actions use a constrained list of validated tool calls. Source filters and structural validators review every proposed DungeonState change.</p>
       </section>
       <section id="limitations">
         <h2>Current limitations</h2>
         <ul>
           <li>Generation is single-level today.</li>
-          <li>Stairs can be placed and exported, but true multi-floor graphing is future work.</li>
+          <li>Stairs can be placed and exported. Multi-floor graphing is future work.</li>
           <li>Universal VTT importer QA is ongoing.</li>
-          <li>Custom treasure per room and custom container tables are not complete.</li>
-          <li>Variable hallway widths are not implemented yet.</li>
+          <li>Custom treasure per room and custom container tables remain roadmap work.</li>
+          <li>Hallways currently use fixed widths.</li>
         </ul>
       </section>
       <section id="troubleshooting">
@@ -168,10 +174,10 @@
         <p>Lower challenge, reduce peril-heavy biomes, or reroll encounters while keeping the room layout locked.</p>
         <h3>The map feels too linear</h3>
         <p>Increase size, raise branch/dead-end tolerance, or add a second biome to force more internal transitions.</p>
-        <h3>The export does not line up in a VTT</h3>
+        <h3>The VTT import is misaligned</h3>
         <p>Confirm the target grid size, export scale, and whether the VTT expects pixels per square or square size in scene units.</p>
         <h3>I need to report a bug</h3>
-        <p>Keep the seed, settings, browser, export format, and the room number or map area where the problem appears. That is the incident report. The staff will pretend to appreciate it.</p>
+        <p>Keep the seed, settings, app version, export format, and the room number or map area where the problem appears. That is the incident report. The staff will pretend to appreciate it.</p>
       </section>
     </main>
   </div>
