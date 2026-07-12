@@ -26,7 +26,7 @@
       {
         "h3": "Reproducible bones, one-off soul"
       },
-      "The thing worth repeating: the skeleton is deterministic. A seed, your settings, and your source books always lay down the same layout, rooms, doors, and base encounters. The moment the local-LLM directors run their polish passes, the result becomes a one-off. Reroll and you get a different good dungeon, never that exact one again.",
+      "The dungeon skeleton is deterministic. A seed, your settings, and your source books lay down the same layout, rooms, doors, and base encounters. Local-LLM director passes then create a one-off narrative layer. Save the result when it earns table time.",
       {
         "callout": "So if you love what you generated, keep the output. The next reroll is a new creature."
       },
