@@ -15,7 +15,7 @@
       "releaseDate": "2026-07-25T03:35:56.955Z",
       "size": 122604088,
       "digest": "sha256:849356e2f668ba40d5c411956d023550717248f56e1a0ec6550792be00cde3c6",
-      "url": "https://github.com/Zuljita/DungeonsOnAutomatic/releases/download/continuous/Dungeons-on-Automatic-windows-x64-setup.exe"
+      "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-windows-x64-setup.exe"
     },
     {
       "id": "mac-arm64",
@@ -26,7 +26,7 @@
       "releaseDate": "2026-07-25T03:33:37.755Z",
       "size": 141252554,
       "digest": "sha256:275046b74c4d8a6d0edb1e9ae8354feaaa88a1c5233a51eeff2bca7fa4879090",
-      "url": "https://github.com/Zuljita/DungeonsOnAutomatic/releases/download/continuous/Dungeons-on-Automatic-mac-arm64.zip"
+      "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-mac-arm64.zip"
     },
     {
       "id": "mac-x64",
@@ -37,7 +37,7 @@
       "releaseDate": "2026-07-25T03:33:37.755Z",
       "size": 146811600,
       "digest": "sha256:ab063d7b704c30745591e4ef892e620c9a50e2075db9ae8519a2df4e7f591219",
-      "url": "https://github.com/Zuljita/DungeonsOnAutomatic/releases/download/continuous/Dungeons-on-Automatic-mac-x64.zip"
+      "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-mac-x64.zip"
     },
     {
       "id": "linux-x86_64",
@@ -48,7 +48,7 @@
       "releaseDate": "2026-07-25T03:33:58.683Z",
       "size": 147013901,
       "digest": "sha256:a02f1dee1b67abc986c37d718b5896dd48374b3657011dcc67d2f89946576a7f",
-      "url": "https://github.com/Zuljita/DungeonsOnAutomatic/releases/download/continuous/Dungeons-on-Automatic-linux-x86_64.AppImage"
+      "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-x86_64.AppImage"
     },
     {
       "id": "linux-arm64",
@@ -59,7 +59,7 @@
       "releaseDate": "2026-07-25T03:33:58.683Z",
       "size": 147626610,
       "digest": "sha256:c1e8ca24830cacf0cdfefa9ac5c7d7afc9cf4f786238bbec99d988fe71060d47",
-      "url": "https://github.com/Zuljita/DungeonsOnAutomatic/releases/download/continuous/Dungeons-on-Automatic-linux-arm64.AppImage"
+      "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-arm64.AppImage"
     }
   ]
 }

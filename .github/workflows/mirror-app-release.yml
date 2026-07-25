@@ -98,6 +98,18 @@ jobs:
           const assetByName = new Map((release.assets || []).map((asset) => [asset.name, asset]));
           const metadataDir = "mirror-meta/download-metadata";
 
+          // Public download URL for a mirrored asset. This MUST be built from
+          // the target repo: the source release lives in the private app repo,
+          // so its `browser_download_url` 404s for everyone who is not a
+          // collaborator. Size and digest still come from the source asset —
+          // the mirror copies those bytes verbatim.
+          const targetRepo = process.env.TARGET_REPO;
+          const targetTag = process.env.TARGET_TAG;
+          function publicDownloadUrl(assetName) {
+            if (!targetRepo || !targetTag) throw new Error("TARGET_REPO/TARGET_TAG are required to build public download URLs");
+            return `https://github.com/${targetRepo}/releases/download/${targetTag}/${encodeURIComponent(assetName)}`;
+          }
+
           const downloads = [
             {
               id: "windows-x64",
@@ -162,7 +174,7 @@ jobs:
                 releaseDate: feed.releaseDate,
                 size: asset?.size ?? null,
                 digest: asset?.digest ?? null,
-                url: asset?.browser_download_url ?? null,
+                url: asset ? publicDownloadUrl(download.asset) : null,
               };
             }),
           };
