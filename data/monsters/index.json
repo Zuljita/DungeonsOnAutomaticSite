@@ -1,17 +1,32 @@
 {
   "schemaVersion": 1,
-  "status": "review_required",
+  "status": "released",
   "candidate": {
     "id": "enraged-eggplant-monsters",
     "name": "Enraged Eggplant Monster Library",
-    "candidateVersion": "0.2.0-library-rebuild-draft",
+    "candidateVersion": "0.2.0",
     "recordCount": 304,
-    "approvedCount": 0,
-    "reviewRequiredCount": 304,
+    "approvedCount": 304,
+    "reviewRequiredCount": 0,
     "sourceSystem": "gurps_4e_fan_conversion",
     "sourceLicense": "author_permission",
     "creditLine": "Original GURPS conversion by Enraged Eggplant, from Monsters (May 11, 2024); adapted and republished with permission.",
     "attributionUrl": "data/monsters/enraged-eggplant-permission.txt"
   },
-  "latest": null
+  "latest": {
+    "id": "enraged-eggplant-monsters",
+    "name": "Enraged Eggplant Monster Library",
+    "version": "0.2.0",
+    "path": "packages/enraged-eggplant-0.2.0.json",
+    "fileName": "enraged-eggplant-0.2.0.json",
+    "sha256": "385247eb26f3a7e96f9c955aea6e77da20621ba14be94e84488c799099578895",
+    "monsterCount": 304,
+    "art": {
+      "manifestUrl": "https://assets.dungeonsonautomatic.com/monsters/enraged-eggplant/image-manifest.json",
+      "portraitCount": 304,
+      "tokenCount": 304,
+      "hexTokenCount": 304
+    },
+    "publishedAt": "2026-07-26T20:04:29.260Z"
+  }
 }
