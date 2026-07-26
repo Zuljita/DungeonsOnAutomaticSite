@@ -33,9 +33,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # DungeonsOnAutomaticMonsters is a public repository, so its release assets
+      # are readable with this workflow's own token. A dedicated cross-repo PAT
+      # was only needed while the source repo was private.
       - name: Download approved source artifact
         env:
-          GH_TOKEN: ${{ secrets.DOA_MONSTER_SOURCE_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p incoming
           gh release download "$SOURCE_TAG" --repo Zuljita/DungeonsOnAutomaticMonsters --pattern "$ASSET_NAME" --dir incoming --clobber
