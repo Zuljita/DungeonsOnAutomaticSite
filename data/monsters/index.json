@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "review_required",
+  "candidate": {
+    "id": "enraged-eggplant-monsters",
+    "name": "Enraged Eggplant Monster Library",
+    "candidateVersion": "0.2.0-library-rebuild-draft",
+    "recordCount": 304,
+    "approvedCount": 0,
+    "reviewRequiredCount": 304,
+    "sourceSystem": "gurps_4e_fan_conversion",
+    "sourceLicense": "author_permission",
+    "creditLine": "Original GURPS conversion by Enraged Eggplant, from Monsters (May 11, 2024); adapted and republished with permission.",
+    "attributionUrl": "data/monsters/enraged-eggplant-permission.txt"
+  },
+  "latest": null
+}

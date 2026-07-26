@@ -24,6 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build blog feed from Markdown
+        run: npm run build
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

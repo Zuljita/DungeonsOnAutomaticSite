@@ -138,3 +138,44 @@ scripts, and package validation in the private `Zuljita/DungeonsOnAutomaticMonst
 repository. The site should link to and render released package metadata after a
 public artifact exists; it should not point at private raw `main` URLs or become
 the canonical monster-data store.
+
+`data/monsters/index.json` is the public discovery pointer. Before release it reports
+the review queue without exposing candidate records. After all records are approved,
+the monster data repository's publish workflow creates a release asset, uploads art
+to the `doa-assets` R2 bucket (served at `https://assets.dungeonsonautomatic.com`),
+and dispatches `monster_package_published`; this repository validates the asset,
+copies it to a versioned `data/monsters/packages/` path, updates the index, and the
+deploy workflows publish it. Monster art is never committed to this repository.
+
+Repository secrets used by that handoff:
+
+- `DOA_SITE_MONSTER_DISPATCH_TOKEN` in the data repository can dispatch to this repository.
+- `DOA_MONSTER_SOURCE_TOKEN` in this repository can read release assets from the data repository.
+- `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` deploy this site to Cloudflare Pages.
+
+## Hosting
+
+The site deploys to Cloudflare Pages (`dungeonsonautomatic.pages.dev`, production
+domain `dungeonsonautomatic.com`) via `.github/workflows/deploy.yml` on every push
+to `main`. The legacy GitHub Pages workflow remains during the transition and can
+be removed after DNS cutover.
+
+## Blog authoring
+
+Blog posts are Markdown files in `content/blog/*.md` with YAML frontmatter
+(`title`, `date`, `author`, `tags`, `summary`). `npm run build` compiles them into
+`data/blog.json`, which `blog.html` renders; the deploy workflows run the build, so
+committing a Markdown post is all it takes to publish. `data/blog.json` is a build
+artifact - edit the Markdown, not the JSON. `npm test` verifies the Markdown
+serialization round-trips losslessly.
+
+Markdown conventions beyond standard paragraphs, `###` headings, `-` lists, and
+fenced code blocks:
+
+- `> text` renders as a callout box.
+- `![alt](src "caption")` renders a centered figure with optional caption.
+- `[download: Label | filename.zip | 2.9 MB](https://url)` renders a download button.
+
+A browser editor is available at `/admin` (Sveltia CMS). It authenticates through
+the `doa-cms-auth` Cloudflare Worker (`https://doa-cms-auth.zuljita.workers.dev`)
+using a GitHub OAuth app, and commits Markdown straight to `main`.

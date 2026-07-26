@@ -1,9 +1,2 @@
-.DS_Store
-Thumbs.db
-desktop.ini
 node_modules/
-dist/
-.release-assets/
-.env
-.env.*
-!.env.example
+.wrangler/

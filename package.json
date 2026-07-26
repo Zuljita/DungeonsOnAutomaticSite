@@ -1,0 +1,12 @@
+{
+  "name": "dungeons-on-automatic-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-blog.mjs",
+    "export:blog": "node scripts/export-blog-to-markdown.mjs",
+    "test": "node scripts/test-blog-roundtrip.mjs && node scripts/validate-monster-library.mjs",
+    "publish:monster-package": "node scripts/publish-monster-package.mjs"
+  }
+}

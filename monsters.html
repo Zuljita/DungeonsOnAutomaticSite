@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Public Dungeons on Automatic monster library packages, provenance, licenses, and JSON downloads.">
+  <meta name="description" content="Browse the public Dungeons on Automatic monster library: art, tags, stats, provenance, licenses, and JSON downloads.">
   <title>Dungeons on Automatic - Monster Library</title>
   <link rel="icon" href="assets/brand/favicon.ico">
   <link rel="stylesheet" href="styles.css">
@@ -12,13 +12,6 @@
     body { margin: 0; background: var(--surface-app); color: var(--text-body); font-family: var(--font-body); }
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(1120px, 92vw); margin: 0 auto; }
-    nav { position: sticky; top: 0; z-index: 20; background: rgba(16,15,18,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--stone-800); }
-    .nav-inner { min-height: 64px; display: flex; align-items: center; gap: 22px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; }
-    .brand img { width: 30px; height: 30px; }
-    .brand b { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.05em; color: var(--text-strong); white-space: nowrap; text-transform: uppercase; }
-    .nav-links { margin-left: auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; min-width: 0; font-size: 14px; color: var(--text-muted); }
-    .nav-links a:hover { color: var(--brass-300); }
     header { padding: clamp(48px, 8vw, 90px) 0 40px; border-bottom: 1px solid var(--stone-800); background: radial-gradient(60% 50% at 20% 0%, rgba(211,0,0,0.14), transparent 70%); }
     .eyebrow { font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--brass-300); }
     h1, h2, h3 { font-family: var(--font-display); color: var(--text-strong); text-transform: uppercase; }
@@ -38,19 +31,45 @@
     .stat span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase; }
     .stat strong { display: block; margin-top: 8px; color: var(--text-strong); font-size: 20px; }
     .search { width: 100%; margin-top: 22px; min-height: 44px; padding: 0 14px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font: inherit; }
-    table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14.5px; }
-    th, td { border: 1px solid var(--border-hairline); padding: 12px 14px; text-align: left; vertical-align: top; }
-    th { font-family: var(--font-mono); color: var(--brass-300); text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; background: var(--surface-sunken); }
+    .filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+    .chip { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 6px 12px; background: var(--surface-sunken); cursor: pointer; }
+    .chip:hover { border-color: var(--brass-400); color: var(--brass-300); }
+    .chip[aria-pressed="true"] { border-color: var(--brass-400); color: var(--brass-300); background: rgba(211,160,70,0.12); }
+    .chip .count { color: var(--text-faint); margin-left: 6px; }
+    .chip--clear { border-style: dashed; }
+    .result-note { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; margin-top: 18px; }
+    .card { display: flex; flex-direction: column; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; }
+    .card:hover { border-color: var(--brass-400); }
+    .card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--surface-app); }
+    .card .card-art-missing { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1; color: var(--text-faint); font-family: var(--font-mono); font-size: 12px; background: var(--surface-app); }
+    .card-body { padding: 12px 14px 14px; }
+    .card-body strong { display: block; font-family: var(--font-display); color: var(--text-strong); font-size: 15px; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.25; }
+    .card-body .meta { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+    .card-tags span { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 2px 7px; }
+    dialog { width: min(880px, 94vw); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); background: var(--surface-panel); color: var(--text-body); padding: 0; }
+    dialog::backdrop { background: rgba(10,9,11,0.8); }
+    .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 22px 26px 0; }
+    .modal-head h2 { font-size: clamp(22px, 3vw, 30px); }
+    .modal-close { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font-size: 18px; line-height: 1; padding: 8px 12px; cursor: pointer; }
+    .modal-close:hover { border-color: var(--brass-400); color: var(--brass-300); }
+    .modal-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; padding: 18px 26px 26px; }
+    .modal-grid img { max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-hairline); background: var(--surface-app); }
+    .modal-tokens { display: flex; gap: 12px; margin-top: 12px; }
+    .modal-tokens img { width: calc(50% - 6px); }
+    .modal-stats dt { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 12px; }
+    .modal-stats dd { margin: 4px 0 0; color: var(--text-body); font-size: 15px; }
+    .modal-credit { grid-column: 1 / -1; border-top: 1px solid var(--border-hairline); padding-top: 14px; font-size: 13px; color: var(--text-faint); line-height: 1.6; }
     .muted { color: var(--text-faint); }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
     @media (max-width: 860px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
-      .nav-inner { flex-direction: column; align-items: flex-start; padding: 14px 0; }
-      .nav-links { margin-left: 0; flex-wrap: wrap; }
+      .modal-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .stats { grid-template-columns: 1fr; }
-      table { display: block; overflow-x: auto; }
+      .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
     }
   </style>
   <link rel="stylesheet" href="site.css">
@@ -66,11 +85,11 @@
   <header>
     <div class="wrap">
       <span class="eyebrow">Public monster library</span>
-      <h1>Publishable monsters for deterministic dungeon prep.</h1>
-      <p class="lead">The private monster-data repository produces reviewed, versioned JSON packages. Public release assets carry those packages, and Dungeons on Automatic loads a fixed version.</p>
+      <h1>Browse the bestiary.</h1>
+      <p class="lead">Reviewed, versioned monster packages from the open monster-data repository, with original AI-generated portraits and tokens. Filter by tag, search by name, and download the whole package as JSON.</p>
       <div class="actions">
+        <a class="action" id="package-download" hidden download>Download package JSON</a>
         <a class="action" href="releases.html">Release packages</a>
-        <a class="action" href="releases.html#downloads">Downloads</a>
       </div>
     </div>
   </header>
@@ -85,29 +104,41 @@
         <div class="stat"><span>Licenses</span><strong id="license-count">-</strong></div>
       </div>
       <h3>License summary</h3>
-      <p id="license-summary" class="muted">Source and license notices plus manual review precede publication of SRD 5.1 CC-BY and 3.5-era OGL records.</p>
+      <p id="license-summary" class="muted">Source and license notices plus manual review precede publication.</p>
       <h3>Sources</h3>
       <ul id="sources"></ul>
     </section>
     <section>
       <h2>Source and IP boundary</h2>
       <p>Manual review precedes every package-metadata release. Steve Jackson Games book text, monster stat blocks, art, logos, and trade dress remain with their publisher.</p>
-      <p>Public monster packages must identify their source basis at the record level. Planned public source paths include SRD 5.1 CC-BY material, 3.5-era OGL material, GCS public data where allowed, and DOA-authored metadata. Each source family retains its own provenance category.</p>
-      <p>GURPS and Dungeon Fantasy RPG source-book filtering follows the books you own. This page distributes package releases; published rules remain in their books.</p>
+      <p>Public monster packages must identify their source basis at the record level. Each source family retains its own provenance category, and record-level credit lines travel with the package.</p>
+      <p>All monster portraits and tokens are AI-generated original art produced for this project; no publisher art is hosted here.</p>
     </section>
-    <section>
-      <h2>Monster records</h2>
-      <input class="search" id="search" type="search" placeholder="Search by name, tag, source, or license" aria-label="Search monster records">
-      <table>
-        <thead>
-          <tr><th>Name</th><th>Class</th><th>CER</th><th>Tags</th><th>Source</th><th>Review</th></tr>
-        </thead>
-        <tbody id="monster-rows">
-          <tr><td colspan="6">Public package release pending.</td></tr>
-        </tbody>
-      </table>
+    <section id="library">
+      <h2>Monster gallery</h2>
+      <input class="search" id="search" type="search" placeholder="Search by name, class, tag, or source" aria-label="Search monster records" disabled>
+      <div class="filter-bar" id="tag-bar" aria-label="Filter by tag"></div>
+      <p class="result-note" id="result-note">Public package release pending.</p>
+      <div class="gallery" id="gallery"></div>
     </section>
   </main>
+  <dialog id="monster-dialog" aria-labelledby="dialog-title">
+    <div class="modal-head">
+      <h2 id="dialog-title">Monster</h2>
+      <button class="modal-close" id="dialog-close" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="modal-grid">
+      <div>
+        <img id="dialog-portrait" alt="">
+        <div class="modal-tokens">
+          <img id="dialog-token" alt="" loading="lazy">
+          <img id="dialog-hex" alt="" loading="lazy">
+        </div>
+      </div>
+      <dl class="modal-stats" id="dialog-stats"></dl>
+      <p class="modal-credit" id="dialog-credit"></p>
+    </div>
+  </dialog>
   <section class="legal-notice" aria-label="Steve Jackson Games notice">
     <div class="wrap">
       <p>Dungeons on Automatic is an original game aid by Kyle Norton for use with <a href="https://www.sjgames.com/gurps/"><b><i>GURPS</i></b></a> and <a href="https://www.sjgames.com/dungeonfantasy/"><b><i>Dungeon Fantasy Roleplaying Game</i></b></a> from <a href="https://www.sjgames.com/">Steve Jackson Games</a>. It is not official and is not endorsed by Steve Jackson Games.</p>
@@ -116,87 +147,225 @@
   </section>
   <footer><div class="wrap">Dungeons on Automatic public monster library. Canonical source data stays private until reviewed packages are released.</div></footer>
   <script>
-    const PACKAGE_URL = '';
-    const state = { monsters: [] };
+    const INDEX_URL = 'data/monsters/index.json';
+    const state = { monsters: [], artBase: '', selectedTags: new Set(), needle: '' };
 
     const text = (value) => value === null || value === undefined ? '' : String(value);
-    const sourceLabel = (monster) => [monster.provenance?.sourceSystem, monster.provenance?.sourceLicense].filter(Boolean).join(' / ');
+    const monsterTags = (monster) => {
+      const tags = new Set([...(monster.tags || []), ...(monster.classTags || [])]);
+      tags.delete('fan-authorized');
+      tags.delete('enraged-eggplant');
+      return [...tags];
+    };
 
-    function renderRows(monsters) {
-      const body = document.getElementById('monster-rows');
-      body.replaceChildren();
-      if (!monsters.length) {
-        const row = document.createElement('tr');
-        const cell = document.createElement('td');
-        cell.colSpan = 6;
-        cell.textContent = 'No matching monster records.';
-        row.append(cell);
-        body.append(row);
-        return;
+    function thumbUrl(monster) {
+      if (!state.artBase) return '';
+      return `${state.artBase}/thumbs/${monster.id}.webp`;
+    }
+
+    function matches(monster) {
+      const tags = monsterTags(monster);
+      for (const tag of state.selectedTags) {
+        if (!tags.includes(tag)) return false;
       }
-      monsters.forEach((monster) => {
-        const row = document.createElement('tr');
-        [
-          monster.name,
-          monster.class || 'Unclassified',
-          monster.effectiveness?.combatEffectivenessRating ?? '?',
-          (monster.tags || []).join(', '),
-          sourceLabel(monster),
-          monster.provenance?.manualReviewStatus || 'unknown'
-        ].forEach((value) => {
-          const cell = document.createElement('td');
-          cell.textContent = text(value);
-          row.append(cell);
+      if (!state.needle) return true;
+      return [
+        monster.name,
+        monster.class,
+        ...tags,
+        monster.provenance?.sourceSystem,
+        monster.provenance?.sourceLicense,
+        monster.provenance?.sourceName
+      ].some((entry) => text(entry).toLowerCase().includes(state.needle));
+    }
+
+    function renderTagBar() {
+      const bar = document.getElementById('tag-bar');
+      bar.replaceChildren();
+      const counts = new Map();
+      state.monsters.forEach((monster) => {
+        monsterTags(monster).forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1));
+      });
+      const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+      tags.forEach(([tag, count]) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'chip';
+        chip.setAttribute('aria-pressed', state.selectedTags.has(tag) ? 'true' : 'false');
+        chip.textContent = tag;
+        const span = document.createElement('span');
+        span.className = 'count';
+        span.textContent = String(count);
+        chip.append(span);
+        chip.addEventListener('click', () => {
+          if (state.selectedTags.has(tag)) state.selectedTags.delete(tag);
+          else state.selectedTags.add(tag);
+          chip.setAttribute('aria-pressed', state.selectedTags.has(tag) ? 'true' : 'false');
+          renderGallery();
         });
-        body.append(row);
+        bar.append(chip);
+      });
+      if (tags.length) {
+        const clear = document.createElement('button');
+        clear.type = 'button';
+        clear.className = 'chip chip--clear';
+        clear.textContent = 'clear filters';
+        clear.addEventListener('click', () => {
+          state.selectedTags.clear();
+          document.getElementById('search').value = '';
+          state.needle = '';
+          renderTagBar();
+          renderGallery();
+        });
+        bar.append(clear);
+      }
+    }
+
+    function renderGallery() {
+      const gallery = document.getElementById('gallery');
+      const note = document.getElementById('result-note');
+      gallery.replaceChildren();
+      const visible = state.monsters.filter(matches);
+      note.textContent = `${visible.length} of ${state.monsters.length} monsters shown.`;
+      visible.forEach((monster) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'card';
+        const portraitUrl = monster.art?.portrait?.url || '';
+        if (portraitUrl) {
+          const img = document.createElement('img');
+          img.loading = 'lazy';
+          img.alt = monster.art?.portrait?.alt || monster.name;
+          img.src = thumbUrl(monster) || portraitUrl;
+          img.addEventListener('error', () => {
+            if (img.src !== portraitUrl) img.src = portraitUrl;
+          }, { once: true });
+          card.append(img);
+        } else {
+          const missing = document.createElement('span');
+          missing.className = 'card-art-missing';
+          missing.textContent = 'no art';
+          card.append(missing);
+        }
+        const body = document.createElement('div');
+        body.className = 'card-body';
+        const name = document.createElement('strong');
+        name.textContent = monster.name;
+        const meta = document.createElement('span');
+        meta.className = 'meta';
+        meta.textContent = `${monster.class || 'Unclassified'} · CER ${monster.effectiveness?.combatEffectivenessRating ?? '?'}`;
+        body.append(name, meta);
+        const tags = monsterTags(monster);
+        if (tags.length) {
+          const tagWrap = document.createElement('div');
+          tagWrap.className = 'card-tags';
+          tags.slice(0, 5).forEach((tag) => {
+            const span = document.createElement('span');
+            span.textContent = tag;
+            tagWrap.append(span);
+          });
+          body.append(tagWrap);
+        }
+        card.append(body);
+        card.addEventListener('click', () => openDialog(monster));
+        gallery.append(card);
       });
     }
 
-    function applySearch() {
-      const needle = document.getElementById('search').value.trim().toLowerCase();
-      if (!needle) {
-        renderRows(state.monsters);
-        return;
-      }
-      renderRows(state.monsters.filter((monster) => [
-        monster.name,
-        monster.class,
-        ...(monster.tags || []),
-        monster.provenance?.sourceSystem,
-        monster.provenance?.sourceLicense,
-        monster.provenance?.sourceName,
-        monster.provenance?.manualReviewStatus
-      ].some((entry) => text(entry).toLowerCase().includes(needle))));
+    function statPairs(monster) {
+      const attrs = monster.stats?.attributes || {};
+      const pairs = [
+        ['Class', monster.class || 'Unclassified'],
+        ['Threat tier', monster.effectiveness?.threatTier],
+        ['CER', monster.effectiveness?.combatEffectivenessRating],
+        ['ST / DX / IQ / HT', [attrs.st, attrs.dx, attrs.iq, attrs.ht].map((v) => v ?? '-').join(' / ')],
+        ['HP', attrs.hp],
+        ['Size', monster.size?.hexes],
+        ['Average appearing', monster.encounter?.averageNumberAppearing],
+        ['Treasure strategy', monster.treasure?.strategy],
+        ['Tags', monsterTags(monster).join(', ')],
+        ['Source', [monster.provenance?.sourceSystem, monster.provenance?.sourceLicense].filter(Boolean).join(' / ')]
+      ];
+      return pairs.filter(([, value]) => value !== undefined && value !== null && value !== '');
+    }
+
+    function openDialog(monster) {
+      const dialog = document.getElementById('monster-dialog');
+      document.getElementById('dialog-title').textContent = monster.name;
+      const portrait = document.getElementById('dialog-portrait');
+      portrait.src = monster.art?.portrait?.url || '';
+      portrait.alt = monster.art?.portrait?.alt || monster.name;
+      const token = document.getElementById('dialog-token');
+      token.src = monster.art?.token?.url || '';
+      token.alt = monster.art?.token?.alt || `${monster.name} token`;
+      const hex = document.getElementById('dialog-hex');
+      hex.src = monster.art?.hexToken?.url || '';
+      hex.alt = monster.art?.hexToken?.alt || `${monster.name} hex token`;
+      const stats = document.getElementById('dialog-stats');
+      stats.replaceChildren();
+      statPairs(monster).forEach(([label, value]) => {
+        const dt = document.createElement('dt');
+        dt.textContent = label;
+        const dd = document.createElement('dd');
+        dd.textContent = text(value);
+        stats.append(dt, dd);
+      });
+      const credit = document.getElementById('dialog-credit');
+      const creditParts = [monster.provenance?.sourceCopyrightNotice, 'Portrait and tokens are AI-generated original art.'];
+      credit.textContent = creditParts.filter(Boolean).join(' ');
+      dialog.showModal();
+    }
+
+    document.getElementById('dialog-close').addEventListener('click', () => {
+      document.getElementById('monster-dialog').close();
+    });
+    document.getElementById('monster-dialog').addEventListener('click', (event) => {
+      if (event.target === event.currentTarget) event.currentTarget.close();
+    });
+
+    function renderPending(index) {
+      const candidate = index.candidate || {};
+      document.getElementById('status').textContent = `${candidate.approvedCount || 0} of ${candidate.recordCount || 0} converted records are approved. Public package release remains gated on mechanical review.`;
+      document.getElementById('version').textContent = 'In review';
+      document.getElementById('monster-count').textContent = text(candidate.recordCount || 0);
+      document.getElementById('source-count').textContent = candidate.sourceSystem ? '1' : '0';
+      document.getElementById('license-count').textContent = candidate.sourceLicense ? '1' : '0';
+      const sources = document.getElementById('sources');
+      sources.replaceChildren();
+      const item = document.createElement('li');
+      item.textContent = candidate.creditLine || 'Candidate package awaiting review.';
+      sources.append(item);
+      document.getElementById('result-note').textContent = 'Candidate records remain private until their mechanical review is approved.';
     }
 
     (async () => {
       try {
-        if (!PACKAGE_URL) {
-          document.getElementById('version').textContent = 'Pending';
-          document.getElementById('monster-count').textContent = '0';
-          document.getElementById('source-count').textContent = '0';
-          document.getElementById('license-count').textContent = '0';
-          const sources = document.getElementById('sources');
-          sources.replaceChildren();
-          ['SRD 5.1 CC-BY path planned first', '3.5-era OGL path planned after notice review'].forEach((label) => {
-            const item = document.createElement('li');
-            item.textContent = label;
-            sources.append(item);
-          });
-          renderRows([]);
+        const indexUrl = new URL(INDEX_URL, window.location.href);
+        const indexResponse = await fetch(indexUrl, { cache: 'no-store' });
+        if (!indexResponse.ok) throw new Error('package index unavailable');
+        const index = await indexResponse.json();
+        if (!index.latest?.path) {
+          renderPending(index);
           return;
         }
-        const response = await fetch(PACKAGE_URL, { cache: 'no-store' });
+
+        const packageUrl = new URL(index.latest.path, indexUrl);
+        const response = await fetch(packageUrl, { cache: 'no-store' });
         if (!response.ok) throw new Error('package unavailable');
         const pkg = await response.json();
         state.monsters = Array.isArray(pkg.monsters) ? pkg.monsters : [];
+        state.artBase = (pkg.manifest?.art?.baseUrl || '').replace(/\/+$/, '');
         const licenses = new Set(state.monsters.map((monster) => monster.provenance?.sourceLicense).filter(Boolean));
-        document.getElementById('status').textContent = `${pkg.manifest?.name || 'Monster package'} loaded from the data repository.`;
+        document.getElementById('status').textContent = `${pkg.manifest?.name || 'Monster package'} is published as a reviewed, site-hosted snapshot.`;
         document.getElementById('version').textContent = pkg.manifest?.version || '-';
         document.getElementById('monster-count').textContent = String(state.monsters.length);
         document.getElementById('source-count').textContent = String((pkg.manifest?.sources || []).length);
         document.getElementById('license-count').textContent = String(licenses.size);
         document.getElementById('license-summary').textContent = pkg.manifest?.licenseSummary || 'No license summary provided.';
+        const download = document.getElementById('package-download');
+        download.href = packageUrl.href;
+        download.download = index.latest.fileName || '';
+        download.hidden = false;
         const sources = document.getElementById('sources');
         sources.replaceChildren();
         (pkg.manifest?.sources || []).forEach((source) => {
@@ -204,14 +373,19 @@
           item.textContent = `${source.name}: ${source.sourceSystem} / ${source.sourceLicense}`;
           sources.append(item);
         });
-        renderRows(state.monsters);
+        document.getElementById('search').disabled = false;
+        renderTagBar();
+        renderGallery();
       } catch (error) {
-        document.getElementById('status').textContent = 'Package metadata is temporarily unavailable. Direct download links above remain available.';
-        renderRows([]);
+        document.getElementById('status').textContent = 'Package metadata is temporarily unavailable. Please try again later.';
+        document.getElementById('result-note').textContent = 'Monster package metadata is temporarily unavailable.';
       }
     })();
 
-    document.getElementById('search').addEventListener('input', applySearch);
+    document.getElementById('search').addEventListener('input', (event) => {
+      state.needle = event.target.value.trim().toLowerCase();
+      renderGallery();
+    });
   </script>
 </body>
 </html>

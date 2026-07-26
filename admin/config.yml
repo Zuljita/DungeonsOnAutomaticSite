@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: Zuljita/DungeonsOnAutomaticSite
+  branch: main
+  base_url: https://doa-cms-auth.zuljita.workers.dev
+
+media_folder: assets/blog/cms
+public_folder: assets/blog/cms
+
+collections:
+  - name: blog
+    label: Blog posts
+    folder: content/blog
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{{slug}}"
+    summary: "{{date}} {{title}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: string, pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use YYYY-MM-DD'] }
+      - { label: Author, name: author, widget: string, default: Kyle Norton, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown }

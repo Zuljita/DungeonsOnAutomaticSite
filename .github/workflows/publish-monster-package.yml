@@ -1,0 +1,66 @@
+name: Mirror Public Monster Package
+
+on:
+  repository_dispatch:
+    types: [monster_package_published]
+  workflow_dispatch:
+    inputs:
+      source_tag:
+        description: Monster data-repo release tag
+        required: true
+        type: string
+      asset_name:
+        description: JSON asset name
+        required: true
+        default: doa-monsters.json
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-monster-package
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_TAG: ${{ github.event.client_payload.source_tag || inputs.source_tag }}
+      ASSET_NAME: ${{ github.event.client_payload.asset_name || inputs.asset_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download approved source artifact
+        env:
+          GH_TOKEN: ${{ secrets.DOA_MONSTER_SOURCE_TOKEN }}
+        run: |
+          mkdir -p incoming
+          gh release download "$SOURCE_TAG" --repo Zuljita/DungeonsOnAutomaticMonsters --pattern "$ASSET_NAME" --dir incoming --clobber
+      - name: Validate and mirror package
+        run: npm run publish:monster-package -- "incoming/$ASSET_NAME"
+      - name: Smoke-check hosted art
+        run: |
+          node - <<'EOF'
+          const pkg = JSON.parse(require('node:fs').readFileSync(`incoming/${process.env.ASSET_NAME}`, 'utf8'));
+          const sample = pkg.monsters.slice(0, 3).flatMap((m) =>
+            ['portrait', 'token', 'hexToken'].map((kind) => m.art?.[kind]?.url).filter(Boolean));
+          (async () => {
+            for (const url of sample) {
+              const response = await fetch(url, { method: 'HEAD' });
+              if (!response.ok) throw new Error(`${url} -> ${response.status}`);
+              console.log(`ok ${url}`);
+            }
+          })();
+          EOF
+      - run: npm test
+      - name: Commit public package snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/monsters
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish monster package snapshot"
+          git push
