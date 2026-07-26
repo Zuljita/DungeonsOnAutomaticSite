@@ -58,6 +58,8 @@
     .modal-grid img { max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-hairline); background: var(--surface-app); }
     .modal-tokens { display: flex; gap: 12px; margin-top: 12px; }
     .modal-tokens img { width: calc(50% - 6px); }
+    .modal-downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
+    .modal-downloads a { font-family: var(--font-mono); font-size: 12px; text-decoration: none; border: 1px solid var(--border, currentColor); border-radius: 6px; padding: 5px 9px; }
     .modal-stats dt { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 12px; }
     .modal-stats dd { margin: 4px 0 0; color: var(--text-body); font-size: 15px; }
     .modal-credit { grid-column: 1 / -1; border-top: 1px solid var(--border-hairline); padding-top: 14px; font-size: 13px; color: var(--text-faint); line-height: 1.6; }
@@ -134,6 +136,7 @@
           <img id="dialog-token" alt="" loading="lazy">
           <img id="dialog-hex" alt="" loading="lazy">
         </div>
+        <ul class="modal-downloads" id="dialog-downloads" aria-label="Image downloads"></ul>
       </div>
       <dl class="modal-stats" id="dialog-stats"></dl>
       <p class="modal-credit" id="dialog-credit"></p>
@@ -301,6 +304,22 @@
       const hex = document.getElementById('dialog-hex');
       hex.src = monster.art?.hexToken?.url || '';
       hex.alt = monster.art?.hexToken?.alt || `${monster.name} hex token`;
+      const downloads = document.getElementById('dialog-downloads');
+      downloads.replaceChildren();
+      [
+        ['Portrait', monster.art?.portrait?.url, 'portrait'],
+        ['Token', monster.art?.token?.url, 'token'],
+        ['Hex token', monster.art?.hexToken?.url, 'hex-token'],
+      ].forEach(([label, url, slug]) => {
+        if (!url) return;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${monster.id}-${slug}.png`;
+        a.textContent = `↓ ${label}`;
+        li.append(a);
+        downloads.append(li);
+      });
       const stats = document.getElementById('dialog-stats');
       stats.replaceChildren();
       statPairs(monster).forEach(([label, value]) => {
