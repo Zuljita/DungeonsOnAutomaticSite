@@ -50,11 +50,11 @@
     .card-tags span { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 2px 7px; }
     dialog { width: min(880px, 94vw); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); background: var(--surface-panel); color: var(--text-body); padding: 0; }
     dialog::backdrop { background: rgba(10,9,11,0.8); }
-    .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 22px 26px 0; }
+    .modal-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 22px 26px 14px; background: var(--surface-panel); border-bottom: 1px solid var(--border-hairline); }
     .modal-head h2 { font-size: clamp(22px, 3vw, 30px); }
     .modal-close { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font-size: 18px; line-height: 1; padding: 8px 12px; cursor: pointer; }
     .modal-close:hover { border-color: var(--brass-400); color: var(--brass-300); }
-    .modal-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; padding: 18px 26px 26px; }
+    .modal-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr); gap: 24px; padding: 18px 26px 26px; }
     .modal-grid img { max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-hairline); background: var(--surface-app); }
     .modal-tokens { display: flex; gap: 12px; margin-top: 12px; }
     .modal-tokens img { width: calc(50% - 6px); }
@@ -62,12 +62,51 @@
     .modal-downloads a { font-family: var(--font-mono); font-size: 12px; text-decoration: none; border: 1px solid var(--border, currentColor); border-radius: 6px; padding: 5px 9px; }
     .modal-stats dt { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 12px; }
     .modal-stats dd { margin: 4px 0 0; color: var(--text-body); font-size: 15px; }
+    .sheet { grid-column: 2; min-width: 0; }
+    .sheet h3 { margin: 20px 0 0; font-size: 12px; letter-spacing: 0.12em; color: var(--brass-300); }
+    .sheet h3:first-child { margin-top: 0; }
+    .sheet-ident { margin: 0 0 4px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em; }
+    .sheet-attrs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 10px; margin-top: 10px; }
+    .sheet-attr { border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); padding: 7px 9px; }
+    .sheet-attr span { display: block; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+    .sheet-attr strong { display: block; margin-top: 3px; color: var(--text-strong); font-size: 16px; }
+    .sheet-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    .sheet-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); font-weight: 400; padding: 0 8px 6px 0; border-bottom: 1px solid var(--border-hairline); }
+    .sheet-table td { padding: 8px 8px 8px 0; vertical-align: top; border-bottom: 1px solid var(--border-hairline); color: var(--text-body); }
+    .sheet-table td.num { font-family: var(--font-mono); white-space: nowrap; }
+    .sheet-table .attack-name { color: var(--text-strong); font-weight: 600; }
+    .sheet-table .attack-note { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; color: var(--text-muted); }
+    .sheet-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; padding: 0; list-style: none; }
+    .sheet-chips li { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 3px 8px; }
+    .sheet-notes { margin: 10px 0 0; padding: 0; list-style: none; }
+    .sheet-notes li { margin-top: 8px; font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+    .sheet-prov { margin-top: 20px; border-top: 1px solid var(--border-hairline); padding-top: 12px; }
+    .sheet-prov summary { cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+    .sheet-prov summary:hover { color: var(--brass-300); }
+    .sheet-prov .modal-stats { margin-top: 10px; }
     .modal-credit { grid-column: 1 / -1; border-top: 1px solid var(--border-hairline); padding-top: 14px; font-size: 13px; color: var(--text-faint); line-height: 1.6; }
     .muted { color: var(--text-faint); }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
     @media (max-width: 860px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
       .modal-grid { grid-template-columns: 1fr; }
+      .sheet { grid-column: 1; }
+      .sheet-attrs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    /* A GM printing an open monster should get the block, not the website. */
+    @media print {
+      body > *:not(dialog) { display: none !important; }
+      dialog[open] { display: block; position: static; width: auto; max-width: none; border: 0; background: none; padding: 0; }
+      dialog::backdrop { display: none; }
+      .modal-close, .modal-downloads { display: none !important; }
+      .modal-head { position: static; padding: 0 0 8px; border: 0; }
+      .modal-grid { grid-template-columns: 1fr; gap: 12px; padding: 0; }
+      .modal-grid img { max-width: 46mm; }
+      .modal-tokens { gap: 8px; }
+      .sheet { grid-column: 1; }
+      .sheet-prov[open] > *, .sheet-prov summary { color: inherit; }
+      .sheet-table tr, .sheet-attrs, h3 { break-inside: avoid; }
+      h3 { break-after: avoid; }
     }
     @media (max-width: 560px) {
       .stats { grid-template-columns: 1fr; }
@@ -138,7 +177,7 @@
         </div>
         <ul class="modal-downloads" id="dialog-downloads" aria-label="Image downloads"></ul>
       </div>
-      <dl class="modal-stats" id="dialog-stats"></dl>
+      <div class="sheet" id="dialog-sheet"></div>
       <p class="modal-credit" id="dialog-credit"></p>
     </div>
   </dialog>
@@ -172,10 +211,20 @@
         if (!tags.includes(tag)) return false;
       }
       if (!state.needle) return true;
+      // Searching the mechanics is what makes 304 records a reference rather
+      // than a list you scroll: "petrification", "engulf" and "impaling" should
+      // all find their monsters.
+      const attacks = monster.stats?.attacks || [];
       return [
         monster.name,
         monster.class,
         ...tags,
+        ...(monster.stats?.traits || []),
+        ...(monster.stats?.skills || []).map((skill) => skill?.name),
+        ...attacks.map((attack) => attack?.name),
+        ...attacks.map((attack) => attack?.damage),
+        ...attacks.map((attack) => attack?.notes),
+        ...(monster.stats?.notes || []),
         monster.provenance?.sourceSystem,
         monster.provenance?.sourceLicense,
         monster.provenance?.sourceName
@@ -275,21 +324,150 @@
       });
     }
 
-    function statPairs(monster) {
-      const attrs = monster.stats?.attributes || {};
-      const pairs = [
-        ['Class', monster.class || 'Unclassified'],
-        ['Threat tier', monster.effectiveness?.threatTier],
-        ['CER', monster.effectiveness?.combatEffectivenessRating],
-        ['ST / DX / IQ / HT', [attrs.st, attrs.dx, attrs.iq, attrs.ht].map((v) => v ?? '-').join(' / ')],
-        ['HP', attrs.hp],
-        ['Size', monster.size?.hexes],
-        ['Average appearing', monster.encounter?.averageNumberAppearing],
-        ['Treasure strategy', monster.treasure?.strategy],
-        ['Tags', monsterTags(monster).join(', ')],
-        ['Source', [monster.provenance?.sourceSystem, monster.provenance?.sourceLicense].filter(Boolean).join(' / ')]
+    const el = (tag, className, textContent) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (textContent !== undefined && textContent !== null) node.textContent = String(textContent);
+      return node;
+    };
+
+    function provenancePairs(monster) {
+      const provenance = monster.provenance || {};
+      return [
+        ['Source record', provenance.sourceName],
+        ['Source system', [provenance.sourceSystem, provenance.sourceLicense].filter(Boolean).join(' / ')],
+        ['Released under', provenance.contentLicense],
+        ['Conversion', provenance.conversionVersion],
+        ['Review status', provenance.manualReviewStatus],
+        ['Credit', (provenance.credits || []).map((credit) => credit.creditLine).join(' ')]
+      ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+    }
+
+    function attributeCells(monster) {
+      const a = monster.stats?.attributes || {};
+      return [
+        ['ST', a.st], ['DX', a.dx], ['IQ', a.iq], ['HT', a.ht],
+        ['HP', a.hp], ['Will', a.will], ['Per', a.per], ['FP', a.fp],
+        ['Speed', a.speed], ['Move', a.move], ['Dodge', a.dodge], ['DR', a.dr]
       ];
-      return pairs.filter(([, value]) => value !== undefined && value !== null && value !== '');
+    }
+
+    function ratingPairs(monster) {
+      const e = monster.effectiveness || {};
+      const n = monster.encounter || {};
+      return [
+        ['CER', e.combatEffectivenessRating],
+        ['Offense', e.offenseRating],
+        ['Protection', e.protectionRating],
+        ['Threat tier', e.threatTier],
+        ['Appearing', n.averageNumberAppearing],
+        ['Wandering', n.wanderingWeight]
+      ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+    }
+
+    function statGrid(pairs) {
+      const grid = el('div', 'sheet-attrs');
+      pairs.forEach(([label, value]) => {
+        const cell = el('div', 'sheet-attr');
+        cell.append(el('span', null, label), el('strong', null, value === null || value === undefined ? '\u2014' : value));
+        grid.append(cell);
+      });
+      return grid;
+    }
+
+    function chipList(values) {
+      const list = el('ul', 'sheet-chips');
+      values.forEach((value) => list.append(el('li', null, value)));
+      return list;
+    }
+
+    function renderSheet(monster) {
+      const sheet = document.getElementById('dialog-sheet');
+      sheet.replaceChildren();
+
+      const ident = [monster.class, monster.size?.hexes, monster.size?.modifier ? 'SM ' + monster.size.modifier : '']
+        .filter(Boolean).join(' \u00b7 ');
+      if (ident) sheet.append(el('p', 'sheet-ident', ident));
+      if (monster.pageRef) sheet.append(el('p', 'sheet-ident', monster.pageRef));
+
+      sheet.append(el('h3', null, 'Attributes'));
+      sheet.append(statGrid(attributeCells(monster)));
+
+      const attacks = (monster.stats?.attacks || []).filter(Boolean);
+      if (attacks.length) {
+        sheet.append(el('h3', null, 'Attacks (' + attacks.length + ')'));
+        const table = el('table', 'sheet-table');
+        const thead = el('thead');
+        const head = el('tr');
+        ['Attack', 'Skill', 'Damage', 'Reach'].forEach((label) => head.append(el('th', null, label)));
+        thead.append(head);
+        table.append(thead);
+        const body = el('tbody');
+        attacks.forEach((attack) => {
+          const row = el('tr');
+          const nameCell = el('td');
+          nameCell.append(el('span', 'attack-name', attack.name || 'Attack'));
+          if (attack.notes) nameCell.append(el('span', 'attack-note', attack.notes));
+          row.append(nameCell);
+          // A hazard that allows no attack roll is not missing a skill; say so.
+          const noSkill = attack.skill === null || attack.skill === undefined;
+          row.append(el('td', 'num', noSkill ? (attack.autoHit ? 'no roll' : '\u2014') : attack.skill));
+          row.append(el('td', null, attack.damage || '\u2014'));
+          row.append(el('td', 'num', attack.reach || '\u2014'));
+          body.append(row);
+        });
+        table.append(body);
+        sheet.append(table);
+      }
+
+      const notes = (monster.stats?.notes || []).filter(Boolean);
+      if (notes.length) {
+        sheet.append(el('h3', null, 'Special abilities and notes'));
+        const list = el('ul', 'sheet-notes');
+        notes.forEach((note) => list.append(el('li', null, note)));
+        sheet.append(list);
+      }
+
+      const traits = (monster.stats?.traits || []).filter(Boolean);
+      if (traits.length) {
+        sheet.append(el('h3', null, 'Traits (' + traits.length + ')'));
+        sheet.append(chipList(traits));
+      }
+
+      const skills = (monster.stats?.skills || []).filter(Boolean);
+      if (skills.length) {
+        sheet.append(el('h3', null, 'Skills (' + skills.length + ')'));
+        sheet.append(chipList(skills.map((skill) => skill.name + '-' + skill.level)));
+      }
+
+      const ratings = ratingPairs(monster);
+      if (ratings.length) {
+        sheet.append(el('h3', null, 'Encounter rating'));
+        sheet.append(statGrid(ratings));
+      }
+
+      const tags = monsterTags(monster);
+      if (tags.length) {
+        sheet.append(el('h3', null, 'Tags'));
+        sheet.append(chipList(tags));
+      }
+
+      // Review provenance is worth publishing but should not be the first thing
+      // you read, so it opens on request.
+      const details = el('details', 'sheet-prov');
+      details.append(el('summary', null, 'Provenance and review notes'));
+      const dl = el('dl', 'modal-stats');
+      provenancePairs(monster).forEach(([label, value]) => {
+        dl.append(el('dt', null, label), el('dd', null, value));
+      });
+      details.append(dl);
+      const conversionNotes = (monster.provenance?.conversionNotes || []).filter(Boolean);
+      if (conversionNotes.length) {
+        const list = el('ul', 'sheet-notes');
+        conversionNotes.forEach((note) => list.append(el('li', null, note)));
+        details.append(list);
+      }
+      sheet.append(details);
     }
 
     function openDialog(monster) {
@@ -320,27 +498,45 @@
         li.append(a);
         downloads.append(li);
       });
-      const stats = document.getElementById('dialog-stats');
-      stats.replaceChildren();
-      statPairs(monster).forEach(([label, value]) => {
-        const dt = document.createElement('dt');
-        dt.textContent = label;
-        const dd = document.createElement('dd');
-        dd.textContent = text(value);
-        stats.append(dt, dd);
-      });
+      renderSheet(monster);
       const credit = document.getElementById('dialog-credit');
       const creditParts = [monster.provenance?.sourceCopyrightNotice, 'Portrait and tokens are AI-generated original art.'];
       credit.textContent = creditParts.filter(Boolean).join(' ');
-      dialog.showModal();
+      if (!dialog.open) dialog.showModal();
+      dialog.scrollTop = 0;
+      // A monster you are looking at should be a link you can send someone.
+      if (window.location.hash.slice(1) !== monster.id) {
+        window.history.replaceState(null, '', '#' + monster.id);
+      }
     }
 
-    document.getElementById('dialog-close').addEventListener('click', () => {
-      document.getElementById('monster-dialog').close();
-    });
+    function closeDialog() {
+      const dialog = document.getElementById('monster-dialog');
+      if (dialog.open) dialog.close();
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+
+    /** Open whichever monster the URL names, if the package knows it. */
+    function openFromHash() {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!id) return;
+      const monster = state.monsters.find((entry) => entry.id === id);
+      if (monster) openDialog(monster);
+    }
+
+    document.getElementById('dialog-close').addEventListener('click', closeDialog);
     document.getElementById('monster-dialog').addEventListener('click', (event) => {
-      if (event.target === event.currentTarget) event.currentTarget.close();
+      if (event.target === event.currentTarget) closeDialog();
     });
+    // Escape closes a native dialog without firing our click handler.
+    document.getElementById('monster-dialog').addEventListener('close', () => {
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    });
+    window.addEventListener('hashchange', openFromHash);
 
     function renderPending(index) {
       const candidate = index.candidate || {};
@@ -395,6 +591,7 @@
         document.getElementById('search').disabled = false;
         renderTagBar();
         renderGallery();
+        openFromHash();
       } catch (error) {
         document.getElementById('status').textContent = 'Package metadata is temporarily unavailable. Please try again later.';
         document.getElementById('result-note').textContent = 'Monster package metadata is temporarily unavailable.';
