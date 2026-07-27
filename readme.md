@@ -169,13 +169,14 @@ deploy workflows run the build, so committing a Markdown post is all it takes to
 publish. `npm test` verifies the Markdown serialization round-trips losslessly.
 
 Each post gets its own page at `/blog/<slug>/`, which is its canonical URL. The
-build writes three things, **all of them artifacts - edit the Markdown, never
+build writes four things, **all of them artifacts - edit the Markdown, never
 these**:
 
 - `blog/<slug>/index.html` - one static page per post, with its own title,
   description, OpenGraph tags, and JSON-LD so links unfurl and index properly.
 - `blog.html` - the index, listing every post with its summary and a link.
 - `data/blog.json` - the structured feed.
+- `sitemap.xml` - see below.
 
 `blog/` is deleted and regenerated on every build, so deleting a Markdown file
 removes its page. Post pages use relative asset paths, so opening one from disk
@@ -196,3 +197,18 @@ fenced code blocks:
 A browser editor is available at `/admin` (Sveltia CMS). It authenticates through
 the `doa-cms-auth` Cloudflare Worker (`https://doa-cms-auth.zuljita.workers.dev`)
 using a GitHub OAuth app, and commits Markdown straight to `main`.
+
+## Search engines
+
+`scripts/build-sitemap.mjs` generates `sitemap.xml` as part of `npm run build`,
+covering the top-level pages plus every blog post. It is an artifact - do not
+edit it by hand.
+
+Pages are discovered by scanning top-level `*.html`, so a new page is picked up
+with no change to the script. Pages carrying a `refresh` meta or `noindex` are
+skipped automatically, which is how `downloads.html` stays out. Blog posts carry
+a `lastmod` from their frontmatter date; static pages deliberately do not, since
+CI checks out shallow and neither git history nor file mtime survives the build.
+
+`robots.txt` is a static file that points at the sitemap and disallows `/admin`.
+Both live at the site root, which is where crawlers expect them.
