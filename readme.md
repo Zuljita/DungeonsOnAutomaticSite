@@ -14,10 +14,11 @@ source repository moves private, giving users a stable place to find:
 
 ## Adding a blog post
 
-The blog (`blog.html`) is data-driven and needs no build step. To publish a
-post, add one entry to the array in `data/blog.json` and commit.
+To publish a post, add a Markdown file under `content/blog/` and commit - see
+[Blog authoring](#blog-authoring) below. The build compiles it to the block
+structure described here, which is what the page templates consume.
 
-Each post is a JSON object:
+Each post becomes a JSON object in the generated `data/blog.json`:
 
 ```json
 {
@@ -42,7 +43,7 @@ Each post is a JSON object:
 Notes:
 
 - Posts are sorted newest-first by `date` (use `YYYY-MM-DD`).
-- `slug` powers the permalink anchor (`blog.html#your-slug`); keep it unique.
+- `slug` is the post URL (`/blog/your-slug/`); keep it unique.
 - `body` items render in order; mix strings and the object block types above.
 - Body text is inserted as plain text, so no HTML escaping is required.
 
@@ -163,11 +164,27 @@ be removed after DNS cutover.
 ## Blog authoring
 
 Blog posts are Markdown files in `content/blog/*.md` with YAML frontmatter
-(`title`, `date`, `author`, `tags`, `summary`). `npm run build` compiles them into
-`data/blog.json`, which `blog.html` renders; the deploy workflows run the build, so
-committing a Markdown post is all it takes to publish. `data/blog.json` is a build
-artifact - edit the Markdown, not the JSON. `npm test` verifies the Markdown
-serialization round-trips losslessly.
+(`title`, `date`, `author`, `tags`, `summary`). `npm run build` compiles them; the
+deploy workflows run the build, so committing a Markdown post is all it takes to
+publish. `npm test` verifies the Markdown serialization round-trips losslessly.
+
+Each post gets its own page at `/blog/<slug>/`, which is its canonical URL. The
+build writes three things, **all of them artifacts - edit the Markdown, never
+these**:
+
+- `blog/<slug>/index.html` - one static page per post, with its own title,
+  description, OpenGraph tags, and JSON-LD so links unfurl and index properly.
+- `blog.html` - the index, listing every post with its summary and a link.
+- `data/blog.json` - the structured feed.
+
+`blog/` is deleted and regenerated on every build, so deleting a Markdown file
+removes its page. Post pages use relative asset paths, so opening one from disk
+works the same as serving it.
+
+Posts previously lived at `blog.html#<slug>`. Those anchors still work: the index
+carries a small script that forwards a known slug fragment to the post page.
+Markup and styles are shared between the index and post pages via
+`scripts/blog-render.mjs` and `blog.css`.
 
 Markdown conventions beyond standard paragraphs, `###` headings, `-` lists, and
 fenced code blocks:
