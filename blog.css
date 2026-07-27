@@ -25,6 +25,12 @@ main { display: grid; gap: 24px; padding: 42px 0 88px; }
 .post__meta .author { margin-top: 8px; color: var(--text-faint); font-size: 13px; }
 .post__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 4px 9px; background: var(--surface-sunken); }
+a.tag:hover { color: var(--brass-300); border-color: var(--brass-300); }
+.feed-line { margin: 18px 0 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.feed-line a { color: var(--text-muted); }
+.feed-line a:hover { color: var(--brass-300); }
+.lead .tag-page__back { color: var(--brass-300); }
+.lead .tag-page__back:hover { color: var(--text-strong); }
 .post__body h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.04em; line-height: 1.08; }
 .post__body h2 a { color: inherit; }
 .post__body h2 a:hover { color: var(--brass-300); }

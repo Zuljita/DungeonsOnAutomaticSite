@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dungeons on Automatic - devlog</title>
+    <link>https://dungeonsonautomatic.com/blog/tags/devlog/</link>
+    <atom:link href="https://dungeonsonautomatic.com/blog/tags/devlog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Posts tagged &quot;devlog&quot; on the Dungeons on Automatic blog.</description>
+    <language>en-us</language>
+    <generator>Dungeons on Automatic build scripts</generator>
+    <item>
+      <title>New announcements</title>
+      <link>https://dungeonsonautomatic.com/blog/new-announcements-2018-06/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/new-announcements-2018-06/</guid>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>Project announcements from mid-2018.</description>
+      <category>archive</category>
+      <category>devlog</category>
+      <content:encoded><![CDATA[<figure class="center"><img src="https://dungeonsonautomatic.com/assets/blog/new-announcements-2018-06/image.png" alt="" loading="lazy"></figure>
+        <p>I&#39;m excited to announce a few things!
+First: Our Dungeon Generator has arrived at version 1.0. We&#39;ve still got 40 different issues/features we want to work though but for the most part things work as intended and the generator accomplishes it&#39;s stated aims.</p>
+        <p>Second: Celti and Eric B. Smith have graciously hosted our project at the following sites:</p>
+        <ul><li>https://dungeon.celti.name/</li><li>http://gurpsland.no-ip.org/#Dungeon</li></ul>
+        <p>Third: We have a forum thread over at SJGames&#39;s forums where you can now provide feedback as well as the Github page, here or by pinging me (Zuljita#7010) over at Mook&#39;s Discord Server.</p>
+        <p>Fourth: We&#39;ve been working away at testing our dungeons as we go and fixing things as we spot them. Most recently, we&#39;ve spotted some issues with wandering monster variability that needed fixing, we&#39;ve added the option for a random travel time, and we&#39;ve added biomes for survival during your trip to the dungeon.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Dungeon Generator Update</title>
+      <link>https://dungeonsonautomatic.com/blog/dungeon-generator-update-2018-04/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/dungeon-generator-update-2018-04/</guid>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>Devlog update on the original generator and where it was headed.</description>
+      <category>archive</category>
+      <category>devlog</category>
+      <content:encoded><![CDATA[<figure class="center"><img src="https://dungeonsonautomatic.com/assets/blog/dungeon-generator-update-2018-04/image.jpg" alt="" loading="lazy"></figure>
+        <div class="callout">&quot;Oh, that&#39;s interesting.&quot;
+&quot;Kovath, every time you say that it means something horrible has happened.&quot;
+&quot;Sure, but it&#39;s not horrible for us. Look here, this lot took an extended rest break.&quot;
+&quot;So... they&#39;re finding the Trigers restful, are they?&quot;
+&quot;That wizard definitely didn&#39;t need that leg for napping. Or all that blood. Or his spleen.&quot;
+&quot;The wandering monster table is a success, then!&quot;</div>
+        <p>We&#39;ve got a bevy of new features now available in the master version of the generator and more to come that I just had to tell you about. Our code wizards have worked hard to add the following new features:</p>
+        <p>Resolution adjustments. The latest version lets you change the resolution to fit your VTT needs. I suggest you generate a dungeon you are happy with, then adjust resolution.
+Doors. Our doors can now be trapped, stuck, locked or hidden, or all four. Check room descriptions for detailed door descriptions as well. Some doors will be stone, others simple wood, still others ironbound wood. More to come on this in future updates.
+Mana level and Sanctity level. This happens both on a per dungeon and per room basis. I&#39;ve got players trudging around glumly in a low mana dungeon as we speak!
+Wandering Monsters. The generator now kicks out a table of wandering monsters based on the monsters already present in the dungeon. It uses a percentile system for now, but we&#39;ll be re-jiggering it to do all d6 in the future.
+Generosity. I&#39;ve felt for a while that generated treasure was a bit low, and each campaign can differ, so this is a tool to kick it up (or down) a notch. 
+Travel time: this is a new feature we&#39;re still testing out, but I thought you guys would like to see what we&#39;re chewing on. The assumption is all the dungeons near here have been looted before and that more remote dungeons have richer loot. I&#39;ll do a separate blog post discussing assumptions and adjustments soon.
+
+We&#39;ve still got more features coming up soon like quests, rumors, debris, spell lists and more! Don&#39;t remember where to get the latest version? Check out our tutorial here! What features would you still like to see that we haven&#39;t discussed yet?</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Making the dungeon prettier</title>
+      <link>https://dungeonsonautomatic.com/blog/making-the-dungeon-prettier/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/making-the-dungeon-prettier/</guid>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>A 2018 GIMP workflow for turning a plain generated map into something table-ready.</description>
+      <category>archive</category>
+      <category>devlog</category>
+      <content:encoded><![CDATA[<div class="callout">&quot;Oh look. Another plain, featureless stone wall and plain, featureless stone floor with a plain, featureless stone ceiling. I absolutely love the way these dungeons look, Kovath. The constant sameness isn&#39;t at all boring or monotonous.&quot;
+&quot;I&#39;m glad you lik-- wait, from your tone that was sarcasm. What&#39;s your problem now?&quot;
+&quot;Well, can&#39;t we - I don&#39;t know - spruce things up a little? A mosaic here, some rough-hewn stone there, maybe some cave paintings?&quot;
+&quot;I am not letting you hang Zarlazz Junior&#39;s fingerpainting in our dungeon. This is procedural generation, not arts and crafts with Miss Nuggurath.&quot;
+&quot;Look, just because you don&#39;t have a family doesn&#39;t mean you should --&quot;
+&quot;Okay, okay. We can make the dungeon &#39;prettier&#39; if you insist.&quot;</div>
+        <p>I&#39;ve started doing a pretty simple thing to up my map game. It takes a plain black-and-white generated map and turns it into something a lot more visually interesting.</p>
+        <ul><li>Generate a dungeon you like and click Save as PNG.</li><li>Open the saved file in GIMP.</li><li>Use the Select by Color tool, click any white space on the map, and press Delete.</li><li>Erase the doors, portcullises, and secret doors (a step you can skip once player maps exist).</li><li>Run Filters → Dungeon Map Maker.</li><li>Set the Template Color to black, set Template Colour Identifies to Walls, and set Fill Floor With to a pattern.</li><li>Click OK, then File → Export and save.</li></ul>
+        <p>The result is far prettier than anything the generator kicks out on its own. From there you can drop in a few objects and doors found online for something really sharp. The technique is handy even if you hand-draw a black-and-white map and just want to spice it up.</p>
+        <figure class="center"><img src="https://dungeonsonautomatic.com/assets/blog/making-the-dungeon-prettier/image-2.png" alt="" loading="lazy"><figcaption>A generated map after the GIMP Dungeon Map Maker pass.</figcaption></figure>
+        <p>Feel free to share map-making tips of your own!</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>An update on the generator front</title>
+      <link>https://dungeonsonautomatic.com/blog/generator-update-2018-01/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/generator-update-2018-01/</guid>
+      <pubDate>Thu, 25 Jan 2018 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>Early devlog: pick-and-mix rooms, name changes, and what was coming next for the original DFRPG random dungeon generator.</description>
+      <category>archive</category>
+      <category>devlog</category>
+      <content:encoded><![CDATA[<figure class="center"><img src="https://dungeonsonautomatic.com/assets/blog/generator-update-2018-01/image.png" alt="" loading="lazy"></figure>
+        <div class="callout">&quot;Kovath.&quot;
+&quot;Zarlazz?&quot;
+&quot;What&#39;s this.&quot;
+&quot;What&#39;s what?&quot;
+&quot;This inscription here above the dungeon entrance. &#39;cc7cf65&#39;? Is that Elvish?&quot;
+&quot;It&#39;s the version number.&quot;
+&quot;For the dungeon?&quot;
+&quot;For the SYSTEM, Zarlazz.&quot;
+&quot;So what&#39;s new in this version of the system?&quot;
+&quot;I don&#39;t know, nobody&#39;s writing the documentation.&quot;</div>
+        <p>If you haven&#39;t downloaded an updated copy of the dungeon generator in the last month or so, it&#39;s long past time to do so. We&#39;ve changed the name of the starting web page so I&#39;ve updated the instructions accordingly. I&#39;ve also failed to let you guys know about some major feature upgrades since the first release, so let&#39;s take a moment to talk about those:</p>
+        <ul><li>We now have what we call &quot;pick and mix&quot; rooms. There&#39;s a 50/50 chance for a room to be labeled as such. At present, the generator picks a threat level for the room (nuisance, fodder, worthy, boss or epic) then decides if it&#39;ll be a mixed room. When that happens, the generator picks a monster adds some then picks another monster that fits within the budget for the threat level. If there&#39;s still room it&#39;ll pick another monster in the budget and so on.</li><li>We&#39;ve added per room lighting as well as overall dungeon lighting.</li><li>We&#39;ve improved the way the seeding works. Going forward, if you use the same name and same options for a dungeon it&#39;ll give you the same monsters. We can&#39;t do this for treasure due to the way it&#39;s generated.</li><li>Much headway has been made on making the initial code we based this on more readable and usable for others who want to develop with it.</li><li>For boss and epic level encounters, there will always be treasure.</li><li>Monsters are no longer generated in rooms they don&#39;t fit in. This doesn&#39;t prevent the dungeon from trying to put 8 monsters where only one fits.</li><li>Added a &quot;Tight&quot; density to dungeon layout.</li></ul>
+        <p>So what&#39;s up and coming for the generator?</p>
+        <ul><li>One of our near term goals is to add door descriptions to the room. Eventually, we&#39;d like to point out which rooms the doors lead to in order to remind GM&#39;s about who might be listening to nearby activity.</li><li>Wandering Monster tables. This is a big deal in terms of encouraging players to keep moving at a decent clip and to keep them from resting all day after every fight.</li></ul>
+        <p>We have some long term aspirations to give you tips/hints/rumors to drop in town, and quests to accomplish inside the dungeon and other interesting stuff. This project is still in beta, so if you want to report bugs, give ideas or just basic feedback (positive or negative), communicate in the comments here, on the github page or on the SJ Games forums.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

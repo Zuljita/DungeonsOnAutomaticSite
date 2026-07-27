@@ -1,13 +1,23 @@
 // Compile content/blog/*.md into:
-//   data/blog.json        the structured feed
-//   blog/<slug>/index.html one page per post (the canonical URL for a post)
-//   blog.html             the index that links to them
+//   data/blog.json             the structured feed
+//   blog/<slug>/index.html     one page per post (the canonical URL for a post)
+//   blog/tags/<slug>/          one page + RSS feed per tag
+//   blog.html                  the index that links to them
+//   feed.xml                   RSS feed of the whole blog
 // Slug comes from the filename. Posts are sorted newest first.
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parsePost } from './blog-content.mjs';
-import { renderIndexPage, renderPostPage } from './blog-render.mjs';
+import {
+  BLOG_DESCRIPTION,
+  SITE_NAME,
+  renderIndexPage,
+  renderPostPage,
+  renderTagPage,
+  tagSlug,
+} from './blog-render.mjs';
+import { renderFeed } from './blog-feed.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = path.join(root, 'content', 'blog');
@@ -68,8 +78,50 @@ for (const [index, post] of ordered.entries()) {
   );
 }
 
+// Tag pages live under blog/tags/, so the rm above clears stale tags too.
+// First-seen name wins when casings collide on one slug (posts are newest
+// first, so the most recent spelling is the one displayed).
+const tags = new Map();
+for (const post of ordered) {
+  for (const tag of post.tags || []) {
+    const slug = tagSlug(tag);
+    if (!slug) continue;
+    if (!tags.has(slug)) tags.set(slug, { name: tag, posts: [] });
+    tags.get(slug).posts.push(post);
+  }
+}
+
+for (const [slug, { name, posts: tagged }] of tags) {
+  const dir = path.join(postsDir, 'tags', slug);
+  await mkdir(dir, { recursive: true });
+  await writeFile(path.join(dir, 'index.html'), renderTagPage({ tag: name, posts: tagged }), 'utf8');
+  await writeFile(
+    path.join(dir, 'feed.xml'),
+    renderFeed({
+      title: `${SITE_NAME} - ${name}`,
+      description: `Posts tagged "${name}" on the ${SITE_NAME} blog.`,
+      feedPath: `blog/tags/${slug}/feed.xml`,
+      linkPath: `blog/tags/${slug}/`,
+      posts: tagged,
+    }),
+    'utf8'
+  );
+}
+
 await writeFile(path.join(root, 'blog.html'), renderIndexPage(ordered), 'utf8');
 
+await writeFile(
+  path.join(root, 'feed.xml'),
+  renderFeed({
+    title: `${SITE_NAME} - Blog`,
+    description: BLOG_DESCRIPTION,
+    feedPath: 'feed.xml',
+    linkPath: 'blog.html',
+    posts: ordered,
+  }),
+  'utf8'
+);
+
 console.log(
-  `Built data/blog.json, blog.html, and ${ordered.length} post pages from ${ordered.length} posts`
+  `Built data/blog.json, blog.html, feed.xml, ${ordered.length} post pages, and ${tags.size} tag pages from ${ordered.length} posts`
 );
