@@ -134,8 +134,11 @@ replace public assets.
 ## Public monster library
 
 The monster library page (`monsters.html`) should read only public release or
-site-hosted package JSON. Keep canonical monster data, schemas, conversion
-scripts, and package validation in the private `Zuljita/DungeonsOnAutomaticMonsters`
+site-hosted package JSON. It is the browsing surface: gallery, search, filters,
+and the per-monster sheet. Package identity, source credits, licensing, and the
+raw JSON download live on `monster-credits.html`, which reads the same index and
+package files. Keep canonical monster data, schemas, conversion scripts, and
+package validation in the private `Zuljita/DungeonsOnAutomaticMonsters`
 repository. The site should link to and render released package metadata after a
 public artifact exists; it should not point at private raw `main` URLs or become
 the canonical monster-data store.

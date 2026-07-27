@@ -48,6 +48,11 @@ not the canonical data store.
   review status, and `publicStats: true`.
 - Do not publish Steve Jackson Games book text, monster stat blocks, art, logos,
   or trade dress through this site.
+- Source credits, licensing, and the SJ Games content boundary are stated on
+  `monster-credits.html`, linked from `monsters.html` in both the page body and
+  the footer. Per-record provenance stays on the monster itself, in the sheet's
+  "Where this one came from" panel. Neither disclosure may be dropped when the
+  browsing page is restyled.
 
 Allowed public source bases for monster packages are tracked separately by
 package provenance, such as SRD 5.1 CC-BY, 3.5-era OGL, GCS public data, and

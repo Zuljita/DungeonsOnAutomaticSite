@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse the public Dungeons on Automatic monster library: art, tags, stats, provenance, licenses, and JSON downloads.">
-  <title>Dungeons on Automatic - Monster Library</title>
+  <meta name="description" content="A free bestiary of GURPS and Dungeon Fantasy monsters, each with an original portrait, a hex token, a full stat block, and GCS-ready files. Search, filter, and print.">
+  <title>Dungeons on Automatic - The Bestiary</title>
   <link rel="icon" href="assets/brand/favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -26,17 +26,22 @@
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
     .action { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.03em; text-transform: uppercase; }
     .action:hover { border-color: var(--brass-400); color: var(--brass-300); }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+    .action--primary { border-color: var(--brass-400); color: var(--brass-300); }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
     .stat { border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); padding: 16px; }
     .stat span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase; }
     .stat strong { display: block; margin-top: 8px; color: var(--text-strong); font-size: 20px; }
+    .stat small { display: block; margin-top: 4px; font-size: 12px; color: var(--text-faint); }
+    .section-lede { max-width: 62ch; margin: 12px 0 0; }
     .search { width: 100%; margin-top: 22px; min-height: 44px; padding: 0 14px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font: inherit; }
-    .filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+    .filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
+    .filter-bar > .filter-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); margin-right: 2px; }
     .chip { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 6px 12px; background: var(--surface-sunken); cursor: pointer; }
     .chip:hover { border-color: var(--brass-400); color: var(--brass-300); }
     .chip[aria-pressed="true"] { border-color: var(--brass-400); color: var(--brass-300); background: rgba(211,160,70,0.12); }
     .chip .count { color: var(--text-faint); margin-left: 6px; }
     .chip--clear { border-style: dashed; }
+    .chip--more { border-style: dashed; }
     .result-note { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; margin-top: 18px; }
     .card { display: flex; flex-direction: column; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; }
@@ -48,6 +53,10 @@
     .card-body .meta { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; }
     .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
     .card-tags span { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 2px 7px; }
+    .kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+    .kit article { border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); padding: 18px 18px 20px; }
+    .kit h3 { margin: 0; font-size: 15px; color: var(--brass-300); }
+    .kit p { margin: 9px 0 0; font-size: 14px; }
     dialog { width: min(880px, 94vw); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); background: var(--surface-panel); color: var(--text-body); padding: 0; }
     dialog::backdrop { background: rgba(10,9,11,0.8); }
     .modal-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 22px 26px 14px; background: var(--surface-panel); border-bottom: 1px solid var(--border-hairline); }
@@ -103,9 +112,13 @@
     .sheet-prov .modal-stats dt { margin-top: 9px; }
     .modal-credit { grid-column: 1 / -1; border-top: 1px solid var(--border-hairline); padding-top: 14px; font-size: 13px; color: var(--text-faint); line-height: 1.6; }
     .muted { color: var(--text-faint); }
+    .colophon { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin-top: 18px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-faint); }
+    .colophon a { border-bottom: 1px solid var(--border-strong); }
+    .colophon a:hover { color: var(--brass-300); border-color: var(--brass-400); }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
     @media (max-width: 860px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
+      .kit { grid-template-columns: 1fr; }
       .modal-grid { grid-template-columns: 1fr; }
       .sheet { grid-column: 1; }
       .attr-cols { grid-template-columns: 1fr; }
@@ -145,42 +158,53 @@
   </nav>
   <header>
     <div class="wrap">
-      <span class="eyebrow">Public monster library</span>
-      <h1>Browse the bestiary.</h1>
-      <p class="lead">Reviewed, versioned monster packages from the open monster-data repository, with original AI-generated portraits and tokens. Filter by tag, search by name, and download the whole package as JSON.</p>
+      <span class="eyebrow">The bestiary</span>
+      <h1>Something is already in the room.</h1>
+      <p class="lead">Three hundred–odd monsters, each with an original portrait, a top-down token, a hex token cut to its real footprint, and a complete stat block. Search it by name or by what the thing actually does &mdash; <em>petrification</em>, <em>engulf</em>, <em>impaling</em> &mdash; then print the block or import it into GCS. Free, no account, nothing to install.</p>
       <div class="actions">
-        <a class="action" id="package-download" hidden download>Download package JSON</a>
-        <a class="action" href="releases.html">Release packages</a>
+        <a class="action action--primary" href="#library">Browse the bestiary</a>
+        <a class="action" href="releases.html#downloads">Get the desktop app</a>
+      </div>
+      <div class="stats" aria-label="Library at a glance">
+        <div class="stat"><span>Monsters</span><strong id="monster-count">&mdash;</strong><small id="monster-note">loading</small></div>
+        <div class="stat"><span>Threat range</span><strong id="cer-range">&mdash;</strong><small id="cer-note">combat effectiveness</small></div>
+        <div class="stat"><span>Art pieces</span><strong id="art-count">&mdash;</strong><small>portrait, token, hex token</small></div>
+        <div class="stat"><span>GCS files</span><strong id="gcs-count">&mdash;</strong><small>sheets and ancestry templates</small></div>
       </div>
     </div>
   </header>
   <main class="wrap">
-    <section>
-      <h2>Package status</h2>
-      <p id="status">No public monster package has been released yet.</p>
-      <div class="stats" aria-label="Package summary">
-        <div class="stat"><span>Version</span><strong id="version">-</strong></div>
-        <div class="stat"><span>Monsters</span><strong id="monster-count">-</strong></div>
-        <div class="stat"><span>Sources</span><strong id="source-count">-</strong></div>
-        <div class="stat"><span>Licenses</span><strong id="license-count">-</strong></div>
-      </div>
-      <h3>License summary</h3>
-      <p id="license-summary" class="muted">Source and license notices plus manual review precede publication.</p>
-      <h3>Sources</h3>
-      <ul id="sources"></ul>
-    </section>
-    <section>
-      <h2>Source and IP boundary</h2>
-      <p>Manual review precedes every package-metadata release. Steve Jackson Games book text, monster stat blocks, art, logos, and trade dress remain with their publisher.</p>
-      <p>Public monster packages must identify their source basis at the record level. Each source family retains its own provenance category, and record-level credit lines travel with the package.</p>
-      <p>All monster portraits and tokens are AI-generated original art produced for this project; no publisher art is hosted here.</p>
-    </section>
     <section id="library">
-      <h2>Monster gallery</h2>
-      <input class="search" id="search" type="search" placeholder="Search by name, class, tag, or source" aria-label="Search monster records" disabled>
+      <h2>Find a monster</h2>
+      <p class="section-lede">Type a name, a creature class, a trait, or an attack. Filter by threat tier when you know roughly how much trouble the party can survive.</p>
+      <input class="search" id="search" type="search" placeholder="Try &quot;undead&quot;, &quot;swallows whole&quot;, or &quot;paralysis&quot;" aria-label="Search the bestiary" disabled>
+      <div class="filter-bar" id="tier-bar" aria-label="Filter by threat tier"></div>
       <div class="filter-bar" id="tag-bar" aria-label="Filter by tag"></div>
-      <p class="result-note" id="result-note">Public package release pending.</p>
+      <p class="result-note" id="result-note">Loading the bestiary&hellip;</p>
       <div class="gallery" id="gallery"></div>
+    </section>
+    <section>
+      <h2>What comes with every entry</h2>
+      <p class="section-lede">Open any monster and you get the whole thing &mdash; not a teaser card that sends you shopping.</p>
+      <div class="kit">
+        <article>
+          <h3>Art you can drop on a map</h3>
+          <p>A portrait for the reveal, a top-down token for play, and a flat-top hex token sized to the creature's real footprint. A 14-hex aboleth arrives 14 hexes wide. All three download as PNGs.</p>
+        </article>
+        <article>
+          <h3>A stat block, not a summary</h3>
+          <p>Attributes, derived stats, every attack with skill, damage and reach, the full trait and skill lists, and the notes that explain the nasty bit. Hit print and the page hands your printer the block alone.</p>
+        </article>
+        <article>
+          <h3>Ready for GCS and for DOA</h3>
+          <p>Each monster ships as a GCS v5 character sheet and as an ancestry template you can apply to any character. The desktop app draws on this same library when it stocks a dungeon.</p>
+        </article>
+      </div>
+      <div class="colophon">
+        <span id="package-line">Library package loading&hellip;</span>
+        <a href="monster-credits.html">Sources, credits &amp; licensing</a>
+        <a id="package-download" href="#" download hidden>Download the whole library as JSON</a>
+      </div>
     </section>
   </main>
   <dialog id="monster-dialog" aria-labelledby="dialog-title">
@@ -207,10 +231,13 @@
       <p>GURPS and Dungeon Fantasy Roleplaying Game are trademarks or registered trademarks of Steve Jackson Games. All rights are reserved by Steve Jackson Games. This free, non-resale game aid uses those marks under the <a href="https://www.sjgames.com/general/online_policy.html">SJ Games Online Policy</a>; no SJ Games art, logos, or trade dress are hosted here.</p>
     </div>
   </section>
-  <footer><div class="wrap">Dungeons on Automatic public monster library. Canonical source data stays private until reviewed packages are released.</div></footer>
+  <footer><div class="wrap">The bestiary is free to browse, print, and use at your table. <a href="monster-credits.html">Where these monsters came from.</a></div></footer>
   <script>
     const INDEX_URL = 'data/monsters/index.json';
-    const state = { monsters: [], artBase: '', selectedTags: new Set(), needle: '' };
+    const TIER_ORDER = ['minor', 'standard', 'major', 'severe'];
+    // Enough chips to be useful without turning the filter bar into a wall.
+    const TAG_CHIP_LIMIT = 18;
+    const state = { monsters: [], artBase: '', selectedTags: new Set(), selectedTiers: new Set(), needle: '', showAllTags: false };
 
     const text = (value) => value === null || value === undefined ? '' : String(value);
     const monsterTags = (monster) => {
@@ -219,6 +246,7 @@
       tags.delete('enraged-eggplant');
       return [...tags];
     };
+    const monsterTier = (monster) => monster.effectiveness?.threatTier || '';
 
     function thumbUrl(monster) {
       if (!state.artBase) return '';
@@ -226,6 +254,7 @@
     }
 
     function matches(monster) {
+      if (state.selectedTiers.size && !state.selectedTiers.has(monsterTier(monster))) return false;
       const tags = monsterTags(monster);
       for (const tag of state.selectedTags) {
         if (!tags.includes(tag)) return false;
@@ -251,7 +280,54 @@
       ].some((entry) => text(entry).toLowerCase().includes(state.needle));
     }
 
-    function renderTagBar() {
+    function makeChip(label, count, pressed, onClick) {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip';
+      chip.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+      chip.textContent = label;
+      if (count !== undefined) {
+        const span = document.createElement('span');
+        span.className = 'count';
+        span.textContent = String(count);
+        chip.append(span);
+      }
+      chip.addEventListener('click', onClick);
+      return chip;
+    }
+
+    function clearFilters() {
+      state.selectedTags.clear();
+      state.selectedTiers.clear();
+      state.needle = '';
+      document.getElementById('search').value = '';
+      renderFilters();
+      renderGallery();
+    }
+
+    function renderFilters() {
+      const tierBar = document.getElementById('tier-bar');
+      tierBar.replaceChildren();
+      const tierCounts = new Map();
+      state.monsters.forEach((monster) => {
+        const tier = monsterTier(monster);
+        if (tier) tierCounts.set(tier, (tierCounts.get(tier) || 0) + 1);
+      });
+      if (tierCounts.size) {
+        const label = document.createElement('span');
+        label.className = 'filter-label';
+        label.textContent = 'Threat';
+        tierBar.append(label);
+        TIER_ORDER.filter((tier) => tierCounts.has(tier)).forEach((tier) => {
+          tierBar.append(makeChip(tier, tierCounts.get(tier), state.selectedTiers.has(tier), () => {
+            if (state.selectedTiers.has(tier)) state.selectedTiers.delete(tier);
+            else state.selectedTiers.add(tier);
+            renderFilters();
+            renderGallery();
+          }));
+        });
+      }
+
       const bar = document.getElementById('tag-bar');
       bar.replaceChildren();
       const counts = new Map();
@@ -259,36 +335,40 @@
         monsterTags(monster).forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1));
       });
       const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-      tags.forEach(([tag, count]) => {
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = 'chip';
-        chip.setAttribute('aria-pressed', state.selectedTags.has(tag) ? 'true' : 'false');
-        chip.textContent = tag;
-        const span = document.createElement('span');
-        span.className = 'count';
-        span.textContent = String(count);
-        chip.append(span);
-        chip.addEventListener('click', () => {
+      if (!tags.length) return;
+      const label = document.createElement('span');
+      label.className = 'filter-label';
+      label.textContent = 'Kind';
+      bar.append(label);
+      // A selected tag always stays visible, even if it lives in the long tail.
+      const shown = state.showAllTags
+        ? tags
+        : tags.filter(([tag], index) => index < TAG_CHIP_LIMIT || state.selectedTags.has(tag));
+      shown.forEach(([tag, count]) => {
+        bar.append(makeChip(tag, count, state.selectedTags.has(tag), () => {
           if (state.selectedTags.has(tag)) state.selectedTags.delete(tag);
           else state.selectedTags.add(tag);
-          chip.setAttribute('aria-pressed', state.selectedTags.has(tag) ? 'true' : 'false');
+          renderFilters();
           renderGallery();
-        });
-        bar.append(chip);
+        }));
       });
-      if (tags.length) {
+      if (tags.length > shown.length || state.showAllTags) {
+        const more = document.createElement('button');
+        more.type = 'button';
+        more.className = 'chip chip--more';
+        more.textContent = state.showAllTags ? 'fewer tags' : `+${tags.length - shown.length} more`;
+        more.addEventListener('click', () => {
+          state.showAllTags = !state.showAllTags;
+          renderFilters();
+        });
+        bar.append(more);
+      }
+      if (state.selectedTags.size || state.selectedTiers.size || state.needle) {
         const clear = document.createElement('button');
         clear.type = 'button';
         clear.className = 'chip chip--clear';
         clear.textContent = 'clear filters';
-        clear.addEventListener('click', () => {
-          state.selectedTags.clear();
-          document.getElementById('search').value = '';
-          state.needle = '';
-          renderTagBar();
-          renderGallery();
-        });
+        clear.addEventListener('click', clearFilters);
         bar.append(clear);
       }
     }
@@ -298,7 +378,13 @@
       const note = document.getElementById('result-note');
       gallery.replaceChildren();
       const visible = state.monsters.filter(matches);
-      note.textContent = `${visible.length} of ${state.monsters.length} monsters shown.`;
+      if (!visible.length) {
+        note.textContent = 'Nothing matches that. Try a broader tag, or a different word.';
+      } else if (visible.length === state.monsters.length) {
+        note.textContent = `All ${state.monsters.length} monsters.`;
+      } else {
+        note.textContent = `${visible.length} of ${state.monsters.length} monsters.`;
+      }
       visible.forEach((monster) => {
         const card = document.createElement('button');
         card.type = 'button';
@@ -375,7 +461,7 @@
 
     function attrRow(label, value) {
       const row = el('div', 'attr-row');
-      row.append(el('span', null, label), el('strong', null, value === null || value === undefined ? '\u2014' : value));
+      row.append(el('span', null, label), el('strong', null, value === null || value === undefined ? '—' : value));
       return row;
     }
 
@@ -400,7 +486,7 @@
       const a = monster.stats?.attributes || {};
 
       const ident = [monster.class, monster.size?.hexes, monster.size?.modifier ? 'SM ' + monster.size.modifier : '']
-        .filter(Boolean).join(' \u00b7 ');
+        .filter(Boolean).join(' · ');
       const identLine = el('p', 'sheet-ident');
       identLine.textContent = [ident, monster.pageRef].filter(Boolean).join('\n');
       sheet.append(identLine);
@@ -439,9 +525,9 @@
           if (attack.notes) usage.append(el('span', 'usage-note', attack.notes));
           row.append(usage);
           const noSkill = attack.skill === null || attack.skill === undefined;
-          row.append(el('td', 'num', noSkill ? (attack.autoHit ? 'no roll' : '\u2014') : attack.skill));
-          row.append(el('td', null, attack.damage || '\u2014'));
-          row.append(el('td', 'num', attack.reach || '\u2014'));
+          row.append(el('td', 'num', noSkill ? (attack.autoHit ? 'no roll' : '—') : attack.skill));
+          row.append(el('td', null, attack.damage || '—'));
+          row.append(el('td', 'num', attack.reach || '—'));
           body.append(row);
         });
         table.append(thead, body);
@@ -499,8 +585,8 @@
         const box = panel('GCS v5 downloads');
         const list = el('ul', 'file-links');
         [
-          ['\u2193 Character sheet (.gcs)', files.gcs?.url, monster.id + '.gcs', 'Open directly in GCS'],
-          ['\u2193 Ancestry template (.gct)', files.gct?.url, monster.id + '.gct', 'Apply to any character'],
+          ['↓ Character sheet (.gcs)', files.gcs?.url, monster.id + '.gcs', 'Open directly in GCS'],
+          ['↓ Ancestry template (.gct)', files.gct?.url, monster.id + '.gct', 'Apply to any character'],
         ].forEach(([label, url, filename, hint]) => {
           if (!url) return;
           const li = el('li');
@@ -516,7 +602,7 @@
       }
 
       const details = el('details', 'panel sheet-prov');
-      details.append(el('summary', null, 'Provenance and review notes'));
+      details.append(el('summary', null, 'Where this one came from'));
       const provBody = el('div', 'panel-body');
       const dl = el('dl', 'modal-stats');
       provenancePairs(monster).forEach(([label, value]) => {
@@ -601,19 +687,14 @@
     });
     window.addEventListener('hashchange', openFromHash);
 
+    const setText = (id, value) => { document.getElementById(id).textContent = value; };
+
     function renderPending(index) {
       const candidate = index.candidate || {};
-      document.getElementById('status').textContent = `${candidate.approvedCount || 0} of ${candidate.recordCount || 0} converted records are approved. Public package release remains gated on mechanical review.`;
-      document.getElementById('version').textContent = 'In review';
-      document.getElementById('monster-count').textContent = text(candidate.recordCount || 0);
-      document.getElementById('source-count').textContent = candidate.sourceSystem ? '1' : '0';
-      document.getElementById('license-count').textContent = candidate.sourceLicense ? '1' : '0';
-      const sources = document.getElementById('sources');
-      sources.replaceChildren();
-      const item = document.createElement('li');
-      item.textContent = candidate.creditLine || 'Candidate package awaiting review.';
-      sources.append(item);
-      document.getElementById('result-note').textContent = 'Candidate records remain private until their mechanical review is approved.';
+      setText('monster-count', text(candidate.recordCount || 0));
+      setText('monster-note', 'in review');
+      setText('package-line', `${candidate.name || 'The library'} is still in mechanical review.`);
+      setText('result-note', 'The bestiary opens once its mechanical review is finished. Check back shortly.');
     }
 
     (async () => {
@@ -633,36 +714,64 @@
         const pkg = await response.json();
         state.monsters = Array.isArray(pkg.monsters) ? pkg.monsters : [];
         state.artBase = (pkg.manifest?.art?.baseUrl || '').replace(/\/+$/, '');
-        const licenses = new Set(state.monsters.map((monster) => monster.provenance?.sourceLicense).filter(Boolean));
-        document.getElementById('status').textContent = `${pkg.manifest?.name || 'Monster package'} is published as a reviewed, site-hosted snapshot.`;
-        document.getElementById('version').textContent = pkg.manifest?.version || '-';
-        document.getElementById('monster-count').textContent = String(state.monsters.length);
-        document.getElementById('source-count').textContent = String((pkg.manifest?.sources || []).length);
-        document.getElementById('license-count').textContent = String(licenses.size);
-        document.getElementById('license-summary').textContent = pkg.manifest?.licenseSummary || 'No license summary provided.';
+
+        const countFiles = (monster, group, keys) =>
+          keys.filter((key) => monster[group]?.[key]?.url).length;
+        const artCount = state.monsters.reduce(
+          (total, monster) => total + countFiles(monster, 'art', ['portrait', 'token', 'hexToken']), 0);
+        const gcsCount = state.monsters.reduce(
+          (total, monster) => total + countFiles(monster, 'files', ['gcs', 'gct']), 0);
+        // "Outsider (Chaotic, Evil, Tanar'ri)" and "Outsider (Fire)" are one
+        // family to a GM picking a monster; the parenthetical is a subtype.
+        const families = new Set(state.monsters
+          .map((monster) => text(monster.class).split(' (')[0].trim())
+          .filter(Boolean));
+
+        // Naming the two ends is more use than the numbers alone: it says at a
+        // glance what the bottom and the top of this library actually are.
+        const ranked = state.monsters
+          .filter((monster) => typeof monster.effectiveness?.combatEffectivenessRating === 'number')
+          .sort((a, b) => a.effectiveness.combatEffectivenessRating - b.effectiveness.combatEffectivenessRating);
+        const shortName = (monster) => text(monster?.name).split(' (')[0].trim();
+
+        setText('monster-count', String(state.monsters.length));
+        setText('monster-note', families.size ? `${families.size} creature families` : 'across the library');
+        setText('cer-range', ranked.length
+          ? `${ranked[0].effectiveness.combatEffectivenessRating}–${ranked[ranked.length - 1].effectiveness.combatEffectivenessRating}`
+          : '—');
+        if (ranked.length > 1) {
+          setText('cer-note', `${shortName(ranked[0])} → ${shortName(ranked[ranked.length - 1])}`);
+        }
+        setText('art-count', String(artCount));
+        setText('gcs-count', String(gcsCount));
+
+        const published = index.latest.publishedAt
+          ? new Date(index.latest.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
+          : '';
+        setText('package-line', [
+          `${pkg.manifest?.name || 'Monster library'} ${pkg.manifest?.version || ''}`.trim(),
+          published && `published ${published}`
+        ].filter(Boolean).join(' · '));
+
         const download = document.getElementById('package-download');
         download.href = packageUrl.href;
         download.download = index.latest.fileName || '';
         download.hidden = false;
-        const sources = document.getElementById('sources');
-        sources.replaceChildren();
-        (pkg.manifest?.sources || []).forEach((source) => {
-          const item = document.createElement('li');
-          item.textContent = `${source.name}: ${source.sourceSystem} / ${source.sourceLicense}`;
-          sources.append(item);
-        });
+
         document.getElementById('search').disabled = false;
-        renderTagBar();
+        renderFilters();
         renderGallery();
         openFromHash();
       } catch (error) {
-        document.getElementById('status').textContent = 'Package metadata is temporarily unavailable. Please try again later.';
-        document.getElementById('result-note').textContent = 'Monster package metadata is temporarily unavailable.';
+        setText('monster-note', 'unavailable');
+        setText('package-line', 'The library could not be reached right now.');
+        setText('result-note', 'The bestiary could not load. Refresh in a moment — or grab the desktop app, which ships with the same library.');
       }
     })();
 
     document.getElementById('search').addEventListener('input', (event) => {
       state.needle = event.target.value.trim().toLowerCase();
+      renderFilters();
       renderGallery();
     });
   </script>
