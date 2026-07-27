@@ -1,0 +1,54 @@
+// Build sitemap.xml from the site's public HTML pages.
+//
+// Runs after build-blog.mjs, so the generated post pages and data/blog.json
+// already exist. Pages that redirect or ask not to be indexed are skipped, so
+// adding another redirect stub needs no change here.
+//
+// lastmod is emitted only for blog posts, where the frontmatter date is real
+// information. Static pages have no trustworthy source for it: CI checks out
+// shallow, so neither git history nor file mtime survives the build.
+import { readdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { SITE_URL, postPath } from './blog-render.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+const XML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' };
+const escapeXml = (value) => String(value).replace(/[&<>"']/g, (char) => XML_ESCAPES[char]);
+
+const isExcluded = (html) =>
+  /<meta[^>]+http-equiv=["']refresh["']/i.test(html) ||
+  /<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html);
+
+// Top-level pages only; admin/ is the CMS and blog/ is covered via blog.json.
+const pages = [];
+for (const name of (await readdir(root)).filter((f) => f.endsWith('.html')).sort()) {
+  const html = await readFile(path.join(root, name), 'utf8');
+  if (isExcluded(html)) continue;
+  pages.push({ loc: name === 'index.html' ? '' : name });
+}
+
+const posts = JSON.parse(await readFile(path.join(root, 'data', 'blog.json'), 'utf8'));
+for (const post of posts) {
+  pages.push({ loc: postPath(post.slug), lastmod: post.date });
+}
+
+const entries = pages
+  .map(({ loc, lastmod }) =>
+    [
+      '  <url>',
+      `    <loc>${escapeXml(new URL(loc, SITE_URL).href)}</loc>`,
+      ...(lastmod ? [`    <lastmod>${escapeXml(lastmod)}</lastmod>`] : []),
+      '  </url>',
+    ].join('\n')
+  )
+  .join('\n');
+
+await writeFile(
+  path.join(root, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`,
+  'utf8'
+);
+
+console.log(`Built sitemap.xml with ${pages.length} URLs`);

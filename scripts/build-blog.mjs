@@ -1,12 +1,17 @@
-// Compile content/blog/*.md into data/blog.json (the file blog.html fetches).
+// Compile content/blog/*.md into:
+//   data/blog.json        the structured feed
+//   blog/<slug>/index.html one page per post (the canonical URL for a post)
+//   blog.html             the index that links to them
 // Slug comes from the filename. Posts are sorted newest first.
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parsePost } from './blog-content.mjs';
+import { renderIndexPage, renderPostPage } from './blog-render.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = path.join(root, 'content', 'blog');
+const postsDir = path.join(root, 'blog');
 
 const files = (await readdir(contentDir)).filter((name) => name.endsWith('.md')).sort();
 const posts = [];
@@ -26,6 +31,9 @@ for (const file of files) {
   posts.push(post);
 }
 
+const duplicate = posts.map((post) => post.slug).find((slug, i, all) => all.indexOf(slug) !== i);
+if (duplicate) throw new Error(`duplicate slug: ${duplicate}`);
+
 posts.sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
 const ordered = posts.map((post) => ({
@@ -43,4 +51,25 @@ await writeFile(
   JSON.stringify(ordered, null, 2) + '\n',
   'utf8'
 );
-console.log(`Built data/blog.json from ${ordered.length} posts`);
+
+// blog/ is generated in full, so stale slugs disappear with the rebuild.
+await rm(postsDir, { recursive: true, force: true });
+for (const [index, post] of ordered.entries()) {
+  const dir = path.join(postsDir, post.slug);
+  await mkdir(dir, { recursive: true });
+  await writeFile(
+    path.join(dir, 'index.html'),
+    renderPostPage({
+      post,
+      newer: ordered[index - 1],
+      older: ordered[index + 1],
+    }),
+    'utf8'
+  );
+}
+
+await writeFile(path.join(root, 'blog.html'), renderIndexPage(ordered), 'utf8');
+
+console.log(
+  `Built data/blog.json, blog.html, and ${ordered.length} post pages from ${ordered.length} posts`
+);
