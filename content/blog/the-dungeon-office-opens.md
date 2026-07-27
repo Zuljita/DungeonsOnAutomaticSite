@@ -5,7 +5,8 @@ author: The Stage Manager
 tags:
   - update
   - behind the scenes
-summary: "A place to post thoughts, progress notes, and the occasional confession about what the generator is doing and why."
+  - AI Generated
+summary: A place to post thoughts, progress notes, and the occasional confession about what the generator is doing and why.
 ---
 
 This is the new home for thoughts and updates about Dungeons on Automatic. Release notes live on the Releases page and stay terse on purpose. This is where the why goes: design decisions, dead ends, half-finished experiments, and the reasoning behind what the generator does.
