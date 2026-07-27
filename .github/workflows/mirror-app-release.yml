@@ -278,5 +278,7 @@ jobs:
           else
             git commit -m "Update public release metadata"
             git push
-            GH_TOKEN="$TARGET_TOKEN" gh workflow run pages.yml --repo "$TARGET_REPO"
+            # Pushes made with GITHUB_TOKEN do not trigger on:push workflows,
+            # so kick the Cloudflare deploy explicitly.
+            GH_TOKEN="$TARGET_TOKEN" gh workflow run deploy.yml --repo "$TARGET_REPO"
           fi
