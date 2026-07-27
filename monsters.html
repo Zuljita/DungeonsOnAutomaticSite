@@ -90,7 +90,10 @@
     .sheet-notes li { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
     .sheet-notes li:first-child { margin-top: 0; }
     .file-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-    .file-links a { font-family: var(--font-mono); font-size: 11.5px; text-decoration: none; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text-body); }
+    /* The label sits above a hint, so the anchor must be its own block: an
+       inline box wrapping a block child splits into several line boxes and
+       renders its right border on the last fragment, a stray edge below. */
+    .file-links a { display: inline-flex; flex-direction: column; align-items: flex-start; font-family: var(--font-mono); font-size: 11.5px; text-decoration: none; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text-body); }
     .file-links a:hover { border-color: var(--brass-400); color: var(--brass-300); }
     .file-links small { display: block; color: var(--text-faint); font-size: 10px; margin-top: 2px; }
     .sheet-prov summary { cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); padding: 7px 11px; }
