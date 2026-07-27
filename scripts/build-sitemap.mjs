@@ -10,7 +10,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE_URL, postPath } from './blog-render.mjs';
+import { SITE_URL, postPath, tagPath, tagSlug } from './blog-render.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -32,6 +32,19 @@ for (const name of (await readdir(root)).filter((f) => f.endsWith('.html')).sort
 const posts = JSON.parse(await readFile(path.join(root, 'data', 'blog.json'), 'utf8'));
 for (const post of posts) {
   pages.push({ loc: postPath(post.slug), lastmod: post.date });
+}
+
+// Tag pages, one per slug; posts are newest first, so the first date seen for
+// a tag is its most recent post — a real lastmod.
+const tags = new Map();
+for (const post of posts) {
+  for (const tag of post.tags || []) {
+    const slug = tagSlug(tag);
+    if (slug && !tags.has(slug)) tags.set(slug, { tag, lastmod: post.date });
+  }
+}
+for (const { tag, lastmod } of tags.values()) {
+  pages.push({ loc: tagPath(tag), lastmod });
 }
 
 const entries = pages

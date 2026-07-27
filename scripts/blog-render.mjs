@@ -49,6 +49,20 @@ export const formatDate = (value) => {
 
 export const postPath = (slug) => `blog/${slug}/`;
 
+// Tag names are free text ("behind the scenes"); URLs need slugs. Distinct
+// names that collapse to one slug ("GM Tips" / "gm tips") share a page, and
+// the first-seen name (newest post) is the one displayed.
+export const tagSlug = (tag) =>
+  String(tag ?? '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+export const tagPath = (tag) => `blog/tags/${tagSlug(tag)}/`;
+
+export const BLOG_DESCRIPTION =
+  'Thoughts, progress notes, and behind-the-scenes updates on Dungeons on Automatic, the local-first DFRPG / GURPS dungeon generator.';
+
 export function renderBlock(block, prefix) {
   if (typeof block === 'string') {
     return `<p>${escapeHtml(block)}</p>`;
@@ -112,15 +126,18 @@ export function renderBlock(block, prefix) {
 export const renderBlocks = (blocks, prefix) =>
   (blocks || []).map((block) => renderBlock(block, prefix)).join('\n        ');
 
-const renderTags = (tags) => {
+const renderTags = (tags, prefix) => {
   if (!Array.isArray(tags) || !tags.length) return '';
   const items = tags
-    .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
+    .map(
+      (tag) =>
+        `<a class="tag" href="${escapeHtml(prefix + tagPath(tag))}">${escapeHtml(tag)}</a>`
+    )
     .join('');
   return `<div class="post__tags">${items}</div>`;
 };
 
-const renderMeta = (post) => {
+const renderMeta = (post, prefix) => {
   const author = post.author
     ? `<div class="author">${escapeHtml(post.author)}</div>`
     : '';
@@ -128,7 +145,7 @@ const renderMeta = (post) => {
     '<aside class="post__meta">',
     `<time datetime="${escapeHtml(post.date || '')}">${escapeHtml(formatDate(post.date))}</time>`,
     author,
-    renderTags(post.tags),
+    renderTags(post.tags, prefix),
     '</aside>',
   ].join('');
 };
@@ -153,6 +170,7 @@ function renderHead({ title, description, canonical, prefix, ogType, image, extr
   <meta property="og:url" content="${escapeHtml(canonical)}">
   <meta property="og:image" content="${escapeHtml(image)}">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" type="application/rss+xml" title="${escapeHtml(SITE_NAME)} - Blog" href="${prefix}feed.xml">
   <link rel="icon" href="${prefix}assets/brand/favicon.ico">
   <link rel="stylesheet" href="${prefix}styles.css">
   <link rel="stylesheet" href="${prefix}blog.css">
@@ -229,7 +247,7 @@ ${renderHead({
   <main class="wrap post-page">
     <a class="post-page__back" href="${prefix}blog.html">&larr; All posts</a>
     <article class="post">
-      ${renderMeta(post)}
+      ${renderMeta(post, prefix)}
       <div class="post__body">
         <h1 class="post__title">${escapeHtml(post.title)}</h1>
         ${renderBlocks(post.body, prefix)}
@@ -246,20 +264,15 @@ ${renderHead({
 `;
 }
 
-export function renderIndexPage(posts) {
-  const prefix = '';
-  const canonical = absoluteUrl('blog.html');
-  const description =
-    'Thoughts, progress notes, and behind-the-scenes updates on Dungeons on Automatic, the local-first DFRPG / GURPS dungeon generator.';
-
-  const entries = posts
+const renderPostCards = (posts, prefix) =>
+  posts
     .map((post) => {
-      const href = postPath(post.slug);
+      const href = prefix + postPath(post.slug);
       const summary = post.summary
         ? `<p class="post__summary">${escapeHtml(post.summary)}</p>`
         : '';
       return `    <article class="post post--card" id="${escapeHtml(post.slug)}">
-      ${renderMeta(post)}
+      ${renderMeta(post, prefix)}
       <div class="post__body">
         <h2><a href="${escapeHtml(href)}">${escapeHtml(post.title)}</a></h2>
         ${summary}
@@ -268,6 +281,13 @@ export function renderIndexPage(posts) {
     </article>`;
     })
     .join('\n');
+
+export function renderIndexPage(posts) {
+  const prefix = '';
+  const canonical = absoluteUrl('blog.html');
+  const description = BLOG_DESCRIPTION;
+
+  const entries = renderPostCards(posts, prefix);
 
   const body = posts.length
     ? entries
@@ -302,6 +322,7 @@ ${renderHead({
       <span class="eyebrow">From the dungeon office</span>
       <h1>Thoughts and updates.</h1>
       <p class="lead">Notes from behind the generator: design decisions, pipeline experiments, dead ends worth learning from, and the occasional confession about what the staff are up to. The Releases page carries the changelog. The blog carries the reasoning.</p>
+      <p class="feed-line"><a href="feed.xml">RSS feed</a></p>
     </div>
   </header>
   <main class="wrap" id="posts">
@@ -310,6 +331,49 @@ ${body}
   ${LEGAL_NOTICE}
   ${SITE_FOOTER}
   ${redirect}
+</body>
+</html>
+`;
+}
+
+export function renderTagPage({ tag, posts }) {
+  const prefix = '../../../';
+  const canonical = absoluteUrl(tagPath(tag));
+  const description = `Posts tagged "${tag}" on the ${SITE_NAME} blog.`;
+  const count = `${posts.length} post${posts.length === 1 ? '' : 's'}`;
+
+  // Relative href, so it resolves to this tag's own feed.
+  const tagFeed = `\n  <link rel="alternate" type="application/rss+xml" title="${escapeHtml(
+    `${SITE_NAME} - ${tag}`
+  )}" href="feed.xml">`;
+
+  return `<!DOCTYPE html>
+${GENERATED_BANNER('content/blog/*.md')}
+<html lang="en">
+${renderHead({
+  title: `Tagged "${tag}" - ${SITE_NAME}`,
+  description,
+  canonical,
+  prefix,
+  ogType: 'website',
+  image: absoluteUrl(FALLBACK_OG_IMAGE),
+  extraHead: tagFeed,
+})}
+<body>
+  ${renderNav(prefix)}
+  <header>
+    <div class="wrap">
+      <span class="eyebrow">Blog tag</span>
+      <h1>${escapeHtml(tag)}</h1>
+      <p class="lead">${count} tagged &ldquo;${escapeHtml(tag)}&rdquo;. <a class="tag-page__back" href="${prefix}blog.html">All posts &rarr;</a></p>
+      <p class="feed-line"><a href="feed.xml">RSS feed for this tag</a></p>
+    </div>
+  </header>
+  <main class="wrap" id="posts">
+${renderPostCards(posts, prefix)}
+  </main>
+  ${LEGAL_NOTICE}
+  ${SITE_FOOTER}
 </body>
 </html>
 `;

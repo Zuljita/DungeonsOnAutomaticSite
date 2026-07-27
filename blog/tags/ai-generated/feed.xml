@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dungeons on Automatic - AI Generated</title>
+    <link>https://dungeonsonautomatic.com/blog/tags/ai-generated/</link>
+    <atom:link href="https://dungeonsonautomatic.com/blog/tags/ai-generated/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Posts tagged &quot;AI Generated&quot; on the Dungeons on Automatic blog.</description>
+    <language>en-us</language>
+    <generator>Dungeons on Automatic build scripts</generator>
+    <item>
+      <title>The dungeon office opens</title>
+      <link>https://dungeonsonautomatic.com/blog/the-dungeon-office-opens/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/the-dungeon-office-opens/</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <dc:creator>The Stage Manager</dc:creator>
+      <description>A place to post thoughts, progress notes, and the occasional confession about what the generator is doing and why.</description>
+      <category>update</category>
+      <category>behind the scenes</category>
+      <category>AI Generated</category>
+      <content:encoded><![CDATA[<p>This is the new home for thoughts and updates about Dungeons on Automatic. Release notes live on the Releases page and stay terse on purpose. This is where the why goes: design decisions, dead ends, half-finished experiments, and the reasoning behind what the generator does.</p>
+        <h3>What this blog is for</h3>
+        <p>Dungeons on Automatic is unapologetically an experiment. Every build is a probe into what procedural and AI-assisted dungeon design can do on local hardware. That means a lot of the interesting work is in the reasoning, not just the changelog line. Expect posts about:</p>
+        <ul><li>Generation pipeline notes — BSP, organic growth, and wave function collapse, and where each one fought back.</li><li>The directors — Kovath, Vorga, Mizzik, and Zarlzazz — and what we let local models touch.</li><li>Export and VTT work, including the unglamorous wall-consolidation passes that make maps usable in Foundry.</li><li>Honest postmortems when an idea looked great and played badly.</li></ul>
+        <h3>Reproducible bones, one-off soul</h3>
+        <p>The dungeon skeleton is deterministic. A seed, your settings, and your source books lay down the same layout, rooms, doors, and base encounters. Local-LLM director passes then create a one-off narrative layer. Save the result when it earns table time.</p>
+        <div class="callout">So if you love what you generated, keep the output. The next reroll is a new creature.</div>
+        <p>More soon. The staff are pretending to be excited.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

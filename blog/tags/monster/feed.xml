@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dungeons on Automatic - monster</title>
+    <link>https://dungeonsonautomatic.com/blog/tags/monster/</link>
+    <atom:link href="https://dungeonsonautomatic.com/blog/tags/monster/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Posts tagged &quot;monster&quot; on the Dungeons on Automatic blog.</description>
+    <language>en-us</language>
+    <generator>Dungeons on Automatic build scripts</generator>
+    <item>
+      <title>Black Knights</title>
+      <link>https://dungeonsonautomatic.com/blog/black-knights/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/black-knights/</guid>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>An original advanced DFRPG monster: dark-pact warriors with optional dark gifts and death curses — and the first appearance of Kovath and Zarlzazz.</description>
+      <category>archive</category>
+      <category>monster</category>
+      <content:encoded><![CDATA[<div class="callout">&quot;Kovath.&quot;&quot;Zarlazz.&quot;&quot;I&#39;m looking through these invoices and --&quot;
+&quot;I already approved them.&quot;
+&quot;Right, but I still have questions. Like just why exactly did we need... &#39;one pot of black enamel per night&#39;. You know I don&#39;t like to ask what goes on in the bedroom, but...&quot;
+&quot;What? No, that should be - see, this is why you don&#39;t hire kobolds for scribes. That&#39;s per knight.&quot;
+&quot;And that makes more sense.&quot;
+&quot;It will.&quot;
+&quot;Fine, fair enough. This doesn&#39;t explain the feathers, though.&quot;</div>
+        <p>In my continuing quest to come up with scaled-up monsters to challenge my players, I&#39;ve decided to try these on for size. Let me know what you think! As a special feature, there&#39;s a token for the black knight in the matching Token Tuesday post.</p>
+        <h3>Black Knight</h3>
+        <p>A black knight is a mortal warrior who has given himself over fully to some dark power. Sometimes it&#39;s a dark god, sometimes a powerful necromancer, sometimes a demonic pact — but in every instance the resulting warrior is strong, well armored, and imbued with supernatural tools to harass his foes. A black knight always leads a band of willing (or undead) followers seeking glory under a dark banner.</p>
+        <pre>ST: 27              HP: 30      Speed: 7.00
+DX: 14              Will: 16    Move: 7
+IQ: 12              Per: 14
+HT: 14              FP: 14      SM: 0
+Dodge: 14 (+3 DB)   Parry/Block: 15 (+3)   DR: 9 (+3 DB)</pre>
+        <p>Dwarven Flail (22): 5d+5 crushing. Reach 1, 2. Wielded one-handed thanks to high ST. Usually kept ready at reach 2.</p>
+        <p>Spiked Shield Bash (22): 3d crushing. Reach 1.</p>
+        <p>Dark Gift: Each black knight has one dark gift from the evil power he serves.</p>
+        <ul><li>Twist Fate: As a Concentrate action, the black knight can twist the fate of a target he can see. Make a Will roll (modified by Unholiness and at a penalty for distance based on the Speed/Range table), resisted by the target&#39;s Will; if the target loses, they take a penalty to all rolls equal to the margin of failure for 1d seconds. A second target within sight (which can be the knight himself!) gets a corresponding bonus to all rolls for the same duration.</li><li>Hellfire: As a Concentrate action, the black knight can cause a radius 2 area within 20 yards of him to erupt in green flames. These flames do 2d (2) burning damage. Anyone who can retreat out of the area may attempt to do so to dodge.</li><li>Grasp of the Underworld: As a Concentrate action, the black knight can fill one hex with grasping shadowy hands that burst from the ground below. Anyone in or entering the hex must immediately roll a Quick Contest of ST against the Knight&#39;s Will or be affected as if by a Rooted Feet spell (Spells, p.22) - they cannot move or change facing, have -2 to melee combat skills, and halve Dodge. They may attempt to break free as a Ready action each turn, but attempts after the initial resistance are at -5.</li></ul>
+        <p>Death Curse: Each black knight has a death curse from the evil power he serves, triggered when the black knight fails a death check.</p>
+        <ul><li>Reality Backfire: The black knight explodes, showering everyone within 5 yards who fails to dodge at -2 with sharp shards of armor doing 3d (2) cutting.</li><li>Deathpact: A demon is summoned into the black knight&#39;s body, deforming the armor and bringing its own weapons with it. Use any demon from Monsters (or ones I&#39;ll provide in the future) but add 9 DR from the mangled armor wrapped around its body.</li><li>The Grave is No Bar: The Death Knight and any other corpses within the area of the fight are resurrected as Zombies (add High Pain Threshold; Immunity to Mind Control; Immunity to Poison; Indomitable; No Blood; Unfazeable; Unhealing (Total); Unliving; Unnatural and restore to full HP)</li></ul>
+        <p>Traits: Born War Leader 2; Bloodlust (12); Bully; Callous; Combat Reflexes; Dark Vision; High Pain Threshold; Intolerance (Good); Penetrating Voice; Rapid Healing.</p>
+        <p>Skills: Brawling-22; Flail-22; Leadership-14; Intimidation-16; Shield-22; Strategy-13; Tactics-13; Wrestling-22.</p>
+        <p>Class: Mundane.</p>
+        <p>Equipment: Dwarven Flail, Epic Plate, Large Shield.</p>
+        <p>Notes: Truly Evil, but sometimes willing to negotiate.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Lava Golem</title>
+      <link>https://dungeonsonautomatic.com/blog/lava-golem/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/lava-golem/</guid>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>An original advanced DFRPG monster: a fire elemental bound inside a stone golem, built to challenge maxed-out delvers.</description>
+      <category>archive</category>
+      <category>monster</category>
+      <content:encoded><![CDATA[<div class="callout">&quot;That&#39;s not the normal golem box.&quot;
+&quot;What do you mean?&quot;
+&quot;I mean we don&#39;t usually get golems delivered in crates made of shaped obsidian enchanted with frost runes.&quot;
+&quot;Well, this isn&#39;t the usual golem, Zarlazz.&quot;
+&quot;Please tell me you&#39;re not trying to procedurally generate monsters.&quot;
+&quot;No, of course no-- hmm, that could actually --&quot;
+&quot;Never mind, just tell me what&#39;s in the box.&quot;</div>
+        <p>We&#39;ve been bumping into the difficulty cap for DFRPG monsters at about 300 points and $80k in gear without careful planning and encounter management, so I&#39;ve decided it might be time to build some custom monsters to challenge my team. Here&#39;s the first of what I hope becomes a regular series — monsters that pose new and interesting challenges for the delver who can already take on everything. There&#39;s a medium-term goal of adding a toggle in the generator so you can drop these more advanced monsters into your game.</p>
+        <h3>Lava Golem</h3>
+        <p>A lava golem is a powerful magical guardian made by binding a fire elemental (Monsters p.25) inside a traditional stone golem (Monsters p.54). The talent required to create such a construct means both the base golem and the fire elemental invested in it carry considerable power. Delvers often fail to recognize the danger of piercing such a golem&#39;s skin until it is too late. It stands about 8 feet tall, with small holes around its waist where a dull red glow shows when it is inactive — and where jets of fire erupt to blast anyone who gets too close to the elemental within. Sometimes that elemental is only loosely bound, and begins to attack the moment it is released from its stony prison.</p>
+        <pre>ST: 30      HP: 50      Speed: 7.00
+DX: 14      Will: 10    Move: 7
+IQ: 8       Per: 10
+HT: 14      FP: N/A     SM: +1
+Dodge: 10   Parry: 12   DR: 4</pre>
+        <p>Gooey Lava Center: Any cutting, piercing, or impaling damage that pierces DR releases a pressurized gout of lava back at the attacker, hitting at effective skill 12 out to 4 yards for 2d(2) burning and 1d crushing. It cannot be parried, but can be dodged or blocked. Any weapon or projectile that triggers it also takes 2d burning damage (see Exploits p.55-56).</p>
+        <p>Hot Hands (18): 3d+6 crushing + follow-up 2d burning. Apply burning to armor as well as the delver. Treat as a weapon, not a body part. Reach C, 1.</p>
+        <p>Flame Jets (18): 2d+2 burning. Treat as a jet spell (Spells p.12) with reach C-3.</p>
+        <p>Traits: Automaton; Cannot Learn; Doesn’t Breathe; Doesn’t Eat or Drink; Doesn’t Sleep; Extra Attack 2; High Pain Threshold; Homogeneous; Immunity to Disease; Immunity to Heat/Fire; Immunity to Poison; Indomitable; No Blood; Pressure Support; Reprogrammable; Unfazable; Unhealing (Total); Unnatural.</p>
+        <p>Skills: Brawling-18; Innate Attack (Jet)-18.</p>
+        <p>Class: Construct.</p>
+        <p>Notes: No golem will negotiate or reveal useful information.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
