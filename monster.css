@@ -1,0 +1,64 @@
+/* Monster sheet styles, shared by the bestiary modal (monsters.html) and the
+   generated per-monster pages (monsters/<slug>/). The sheet is the same object
+   in both places; only the frame around it differs, so the frame stays with
+   each page and the sheet lives here.
+
+   GCS-style panels: a titled bar over a bordered body, stacked tightly. */
+.panel { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); margin-top: 14px; overflow: hidden; }
+.panel:first-child { margin-top: 0; }
+.panel > h3 { margin: 0; padding: 7px 11px; font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass-300); background: rgba(211,160,70,0.10); border-bottom: 1px solid var(--border-hairline); }
+/* The attack table has four columns; let it scroll inside its own panel on a
+   narrow screen rather than pushing the page sideways. */
+.panel-body { padding: 9px 12px 11px; overflow-x: auto; }
+
+.sheet-ident { margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.03em; line-height: 1.5; white-space: pre-line; }
+
+.attr-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
+.attr-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 3px 0; border-bottom: 1px dotted var(--border-hairline); }
+.attr-row span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-faint); }
+.attr-row strong { font-family: var(--font-mono); font-size: 14px; color: var(--text-strong); }
+
+.wtable { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.wtable th { text-align: left; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); font-weight: 400; padding: 0 8px 5px 0; border-bottom: 1px solid var(--border-hairline); }
+.wtable td { padding: 6px 8px 6px 0; vertical-align: top; border-bottom: 1px dotted var(--border-hairline); color: var(--text-body); }
+.wtable tr:last-child td { border-bottom: 0; }
+.wtable td.num { font-family: var(--font-mono); white-space: nowrap; }
+.wtable .usage { color: var(--text-strong); font-weight: 600; }
+.wtable .usage-note { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.55; color: var(--text-muted); }
+
+.rule-list { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 22px; }
+.rule-list li { break-inside: avoid; font-size: 13px; line-height: 1.5; color: var(--text-muted); padding: 2px 0; border-bottom: 1px dotted var(--border-hairline); }
+.rule-list.single { columns: 1; }
+.rule-list .lvl { float: right; font-family: var(--font-mono); color: var(--text-faint); }
+
+.sheet-notes { margin: 0; padding: 0; list-style: none; }
+.sheet-notes li { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
+.sheet-notes li:first-child { margin-top: 0; }
+
+.file-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+/* The label sits above a hint, so the anchor must be its own block: an inline
+   box wrapping a block child splits into several line boxes and renders its
+   right border on the last fragment, a stray edge below. */
+.file-links a { display: inline-flex; flex-direction: column; align-items: flex-start; font-family: var(--font-mono); font-size: 11.5px; text-decoration: none; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text-body); }
+.file-links a:hover { border-color: var(--brass-400); color: var(--brass-300); }
+.file-links small { display: block; color: var(--text-faint); font-size: 10px; margin-top: 2px; }
+
+.sheet-stats dt { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 9px; }
+.sheet-stats dd { margin: 4px 0 0; color: var(--text-body); font-size: 15px; }
+
+.sheet-prov summary { cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); padding: 7px 11px; }
+.sheet-prov summary:hover { color: var(--brass-300); }
+.sheet-prov[open] summary { border-bottom: 1px solid var(--border-hairline); }
+.sheet-prov .panel-body { padding-top: 4px; }
+
+@media (max-width: 860px) {
+  .attr-cols { grid-template-columns: 1fr; }
+  .rule-list { columns: 1; }
+}
+
+@media print {
+  .wtable tr, .attr-cols, .panel { break-inside: avoid; }
+  .panel { border-color: #999; }
+  .panel > h3 { background: none; }
+  .sheet-prov[open] > *, .sheet-prov summary { color: inherit; }
+}
