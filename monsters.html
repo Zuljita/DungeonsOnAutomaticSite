@@ -196,19 +196,19 @@
     </section>
     <section>
       <h2>What comes with every entry</h2>
-      <p class="section-lede">Open any monster and you get the whole thing &mdash; not a teaser card that sends you shopping.</p>
+      <p class="section-lede">Every monster carries the same set of files.</p>
       <div class="kit">
         <article>
-          <h3>Art you can drop on a map</h3>
-          <p>A portrait for the reveal, a top-down token for play, and a flat-top hex token sized to the creature's real footprint. A 14-hex aboleth arrives 14 hexes wide. All three download as PNGs.</p>
+          <h3>Art</h3>
+          <p>A portrait, a top-down token, and a flat-top hex token cut to the creature's footprint. A 14-hex aboleth arrives 14 hexes wide. All three download as PNGs.</p>
         </article>
         <article>
-          <h3>A stat block, not a summary</h3>
-          <p>Attributes, derived stats, every attack with skill, damage and reach, the full trait and skill lists, and the notes that explain the nasty bit. Hit print and the page hands your printer the block alone.</p>
+          <h3>The stat block</h3>
+          <p>Attributes and derived stats, every attack with its skill, damage and reach, the full trait and skill lists, and the notes covering special abilities. Printing the page gives you the block on its own.</p>
         </article>
         <article>
-          <h3>Ready for GCS and for DOA</h3>
-          <p>Each monster ships as a GCS v5 character sheet and as an ancestry template you can apply to any character. The desktop app draws on this same library when it stocks a dungeon.</p>
+          <h3>GCS files</h3>
+          <p>A GCS v5 character sheet and an ancestry template you can apply to any character. The dungeon generator draws on this same library when it stocks a dungeon.</p>
         </article>
       </div>
       <div class="colophon">
@@ -759,8 +759,11 @@
         const published = index.latest.publishedAt
           ? new Date(index.latest.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
           : '';
+        // The library is ours; the package inside it is one source among the
+        // ones to come. Show our name and the package version, not the
+        // package's own name, which reads as though the source owns the shelf.
         setText('package-line', [
-          `${pkg.manifest?.name || 'Monster library'} ${pkg.manifest?.version || ''}`.trim(),
+          `Dungeons on Automatic bestiary${pkg.manifest?.version ? ' ' + pkg.manifest.version : ''}`,
           published && `published ${published}`
         ].filter(Boolean).join(' · '));
 
