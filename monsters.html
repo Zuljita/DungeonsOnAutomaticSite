@@ -63,27 +63,41 @@
     .modal-stats dt { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 12px; }
     .modal-stats dd { margin: 4px 0 0; color: var(--text-body); font-size: 15px; }
     .sheet { grid-column: 2; min-width: 0; }
-    .sheet h3 { margin: 20px 0 0; font-size: 12px; letter-spacing: 0.12em; color: var(--brass-300); }
-    .sheet h3:first-child { margin-top: 0; }
-    .sheet-ident { margin: 0 0 4px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em; }
-    .sheet-attrs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 10px; margin-top: 10px; }
-    .sheet-attr { border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); padding: 7px 9px; }
-    .sheet-attr span { display: block; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
-    .sheet-attr strong { display: block; margin-top: 3px; color: var(--text-strong); font-size: 16px; }
-    .sheet-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
-    .sheet-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); font-weight: 400; padding: 0 8px 6px 0; border-bottom: 1px solid var(--border-hairline); }
-    .sheet-table td { padding: 8px 8px 8px 0; vertical-align: top; border-bottom: 1px solid var(--border-hairline); color: var(--text-body); }
-    .sheet-table td.num { font-family: var(--font-mono); white-space: nowrap; }
-    .sheet-table .attack-name { color: var(--text-strong); font-weight: 600; }
-    .sheet-table .attack-note { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; color: var(--text-muted); }
-    .sheet-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; padding: 0; list-style: none; }
-    .sheet-chips li { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 3px 8px; }
-    .sheet-notes { margin: 10px 0 0; padding: 0; list-style: none; }
-    .sheet-notes li { margin-top: 8px; font-size: 14px; line-height: 1.6; color: var(--text-muted); }
-    .sheet-prov { margin-top: 20px; border-top: 1px solid var(--border-hairline); padding-top: 12px; }
-    .sheet-prov summary { cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+    /* GCS-style panels: a titled bar over a bordered body, stacked tightly. */
+    .panel { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); margin-top: 14px; overflow: hidden; }
+    .panel:first-child { margin-top: 0; }
+    .panel > h3 { margin: 0; padding: 7px 11px; font-size: 11px; letter-spacing: 0.12em; color: var(--brass-300); background: rgba(211,160,70,0.10); border-bottom: 1px solid var(--border-hairline); }
+    /* The attack table has four columns; let it scroll inside its own panel
+       on a narrow screen rather than pushing the page sideways. */
+    .panel-body { padding: 9px 12px 11px; overflow-x: auto; }
+    .sheet-ident { margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.03em; line-height: 1.5; }
+    .attr-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
+    .attr-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 3px 0; border-bottom: 1px dotted var(--border-hairline); }
+    .attr-row span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-faint); }
+    .attr-row strong { font-family: var(--font-mono); font-size: 14px; color: var(--text-strong); }
+    .wtable { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .wtable th { text-align: left; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); font-weight: 400; padding: 0 8px 5px 0; border-bottom: 1px solid var(--border-hairline); }
+    .wtable td { padding: 6px 8px 6px 0; vertical-align: top; border-bottom: 1px dotted var(--border-hairline); color: var(--text-body); }
+    .wtable tr:last-child td { border-bottom: 0; }
+    .wtable td.num { font-family: var(--font-mono); white-space: nowrap; }
+    .wtable .usage { color: var(--text-strong); font-weight: 600; }
+    .wtable .usage-note { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.55; color: var(--text-muted); }
+    .rule-list { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 22px; }
+    .rule-list li { break-inside: avoid; font-size: 13px; line-height: 1.5; color: var(--text-muted); padding: 2px 0; border-bottom: 1px dotted var(--border-hairline); }
+    .rule-list.single { columns: 1; }
+    .rule-list .lvl { float: right; font-family: var(--font-mono); color: var(--text-faint); }
+    .sheet-notes { margin: 0; padding: 0; list-style: none; }
+    .sheet-notes li { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
+    .sheet-notes li:first-child { margin-top: 0; }
+    .file-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .file-links a { font-family: var(--font-mono); font-size: 11.5px; text-decoration: none; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text-body); }
+    .file-links a:hover { border-color: var(--brass-400); color: var(--brass-300); }
+    .file-links small { display: block; color: var(--text-faint); font-size: 10px; margin-top: 2px; }
+    .sheet-prov summary { cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); padding: 7px 11px; }
     .sheet-prov summary:hover { color: var(--brass-300); }
-    .sheet-prov .modal-stats { margin-top: 10px; }
+    .sheet-prov[open] summary { border-bottom: 1px solid var(--border-hairline); }
+    .sheet-prov .panel-body { padding-top: 4px; }
+    .sheet-prov .modal-stats dt { margin-top: 9px; }
     .modal-credit { grid-column: 1 / -1; border-top: 1px solid var(--border-hairline); padding-top: 14px; font-size: 13px; color: var(--text-faint); line-height: 1.6; }
     .muted { color: var(--text-faint); }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
@@ -91,7 +105,8 @@
       .stats { grid-template-columns: repeat(2, 1fr); }
       .modal-grid { grid-template-columns: 1fr; }
       .sheet { grid-column: 1; }
-      .sheet-attrs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .attr-cols { grid-template-columns: 1fr; }
+      .rule-list { columns: 1; }
     }
     /* A GM printing an open monster should get the block, not the website. */
     @media print {
@@ -105,7 +120,9 @@
       .modal-tokens { gap: 8px; }
       .sheet { grid-column: 1; }
       .sheet-prov[open] > *, .sheet-prov summary { color: inherit; }
-      .sheet-table tr, .sheet-attrs, h3 { break-inside: avoid; }
+      .wtable tr, .attr-cols, .panel { break-inside: avoid; }
+      .panel { border-color: #999; }
+      .panel > h3 { background: none; }
       h3 { break-after: avoid; }
     }
     @media (max-width: 560px) {
@@ -343,130 +360,173 @@
       ].filter(([, value]) => value !== undefined && value !== null && value !== '');
     }
 
-    function attributeCells(monster) {
-      const a = monster.stats?.attributes || {};
-      return [
-        ['ST', a.st], ['DX', a.dx], ['IQ', a.iq], ['HT', a.ht],
-        ['HP', a.hp], ['Will', a.will], ['Per', a.per], ['FP', a.fp],
-        ['Speed', a.speed], ['Move', a.move], ['Dodge', a.dodge], ['DR', a.dr]
-      ];
+
+
+    function panel(title) {
+      const box = el('section', 'panel');
+      box.append(el('h3', null, title));
+      const body = el('div', 'panel-body');
+      box.append(body);
+      return { box, body };
     }
 
-    function ratingPairs(monster) {
-      const e = monster.effectiveness || {};
-      const n = monster.encounter || {};
-      return [
-        ['CER', e.combatEffectivenessRating],
-        ['Offense', e.offenseRating],
-        ['Protection', e.protectionRating],
-        ['Threat tier', e.threatTier],
-        ['Appearing', n.averageNumberAppearing],
-        ['Wandering', n.wanderingWeight]
-      ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+    function attrRow(label, value) {
+      const row = el('div', 'attr-row');
+      row.append(el('span', null, label), el('strong', null, value === null || value === undefined ? '\u2014' : value));
+      return row;
     }
 
-    function statGrid(pairs) {
-      const grid = el('div', 'sheet-attrs');
-      pairs.forEach(([label, value]) => {
-        const cell = el('div', 'sheet-attr');
-        cell.append(el('span', null, label), el('strong', null, value === null || value === undefined ? '\u2014' : value));
-        grid.append(cell);
+    function ruleList(items, single) {
+      const list = el('ul', single ? 'rule-list single' : 'rule-list');
+      items.forEach((item) => {
+        const li = el('li');
+        if (Array.isArray(item)) {
+          li.append(el('span', 'lvl', item[1]));
+          li.append(document.createTextNode(item[0]));
+        } else {
+          li.textContent = item;
+        }
+        list.append(li);
       });
-      return grid;
-    }
-
-    function chipList(values) {
-      const list = el('ul', 'sheet-chips');
-      values.forEach((value) => list.append(el('li', null, value)));
       return list;
     }
 
     function renderSheet(monster) {
       const sheet = document.getElementById('dialog-sheet');
       sheet.replaceChildren();
+      const a = monster.stats?.attributes || {};
 
       const ident = [monster.class, monster.size?.hexes, monster.size?.modifier ? 'SM ' + monster.size.modifier : '']
         .filter(Boolean).join(' \u00b7 ');
-      if (ident) sheet.append(el('p', 'sheet-ident', ident));
-      if (monster.pageRef) sheet.append(el('p', 'sheet-ident', monster.pageRef));
+      const identLine = el('p', 'sheet-ident');
+      identLine.textContent = [ident, monster.pageRef].filter(Boolean).join('\n');
+      sheet.append(identLine);
 
-      sheet.append(el('h3', null, 'Attributes'));
-      sheet.append(statGrid(attributeCells(monster)));
+      // Attributes: primary and secondary side by side, the way GCS shows them.
+      const attrs = panel('Attributes');
+      const cols = el('div', 'attr-cols');
+      const primary = el('div');
+      [['ST', a.st], ['DX', a.dx], ['IQ', a.iq], ['HT', a.ht]].forEach(([l, v]) => primary.append(attrRow(l, v)));
+      const secondary = el('div');
+      [['HP', a.hp], ['Will', a.will], ['Per', a.per], ['FP', a.fp]].forEach(([l, v]) => secondary.append(attrRow(l, v)));
+      cols.append(primary, secondary);
+      attrs.body.append(cols);
+      const derived = el('div', 'attr-cols');
+      const left = el('div');
+      [['Basic Speed', a.speed], ['Basic Move', a.move]].forEach(([l, v]) => left.append(attrRow(l, v)));
+      const right = el('div');
+      [['Dodge', a.dodge], ['DR', a.dr]].forEach(([l, v]) => right.append(attrRow(l, v)));
+      derived.append(left, right);
+      attrs.body.append(derived);
+      sheet.append(attrs.box);
 
       const attacks = (monster.stats?.attacks || []).filter(Boolean);
       if (attacks.length) {
-        sheet.append(el('h3', null, 'Attacks (' + attacks.length + ')'));
-        const table = el('table', 'sheet-table');
+        const box = panel('Melee attacks');
+        const table = el('table', 'wtable');
         const thead = el('thead');
         const head = el('tr');
-        ['Attack', 'Skill', 'Damage', 'Reach'].forEach((label) => head.append(el('th', null, label)));
+        ['Usage', 'Level', 'Damage', 'Reach'].forEach((label) => head.append(el('th', null, label)));
         thead.append(head);
-        table.append(thead);
         const body = el('tbody');
         attacks.forEach((attack) => {
           const row = el('tr');
-          const nameCell = el('td');
-          nameCell.append(el('span', 'attack-name', attack.name || 'Attack'));
-          if (attack.notes) nameCell.append(el('span', 'attack-note', attack.notes));
-          row.append(nameCell);
-          // A hazard that allows no attack roll is not missing a skill; say so.
+          const usage = el('td');
+          usage.append(el('span', 'usage', attack.name || 'Attack'));
+          if (attack.notes) usage.append(el('span', 'usage-note', attack.notes));
+          row.append(usage);
           const noSkill = attack.skill === null || attack.skill === undefined;
           row.append(el('td', 'num', noSkill ? (attack.autoHit ? 'no roll' : '\u2014') : attack.skill));
           row.append(el('td', null, attack.damage || '\u2014'));
           row.append(el('td', 'num', attack.reach || '\u2014'));
           body.append(row);
         });
-        table.append(body);
-        sheet.append(table);
-      }
-
-      const notes = (monster.stats?.notes || []).filter(Boolean);
-      if (notes.length) {
-        sheet.append(el('h3', null, 'Special abilities and notes'));
-        const list = el('ul', 'sheet-notes');
-        notes.forEach((note) => list.append(el('li', null, note)));
-        sheet.append(list);
+        table.append(thead, body);
+        box.body.append(table);
+        sheet.append(box.box);
       }
 
       const traits = (monster.stats?.traits || []).filter(Boolean);
       if (traits.length) {
-        sheet.append(el('h3', null, 'Traits (' + traits.length + ')'));
-        sheet.append(chipList(traits));
+        const box = panel('Traits (' + traits.length + ')');
+        box.body.append(ruleList(traits));
+        sheet.append(box.box);
       }
 
       const skills = (monster.stats?.skills || []).filter(Boolean);
       if (skills.length) {
-        sheet.append(el('h3', null, 'Skills (' + skills.length + ')'));
-        sheet.append(chipList(skills.map((skill) => skill.name + '-' + skill.level)));
+        const box = panel('Skills (' + skills.length + ')');
+        box.body.append(ruleList(skills.map((skill) => [skill.name, skill.level])));
+        sheet.append(box.box);
       }
 
-      const ratings = ratingPairs(monster);
-      if (ratings.length) {
-        sheet.append(el('h3', null, 'Encounter rating'));
-        sheet.append(statGrid(ratings));
+      const notes = (monster.stats?.notes || []).filter(Boolean);
+      if (notes.length) {
+        const box = panel('Notes');
+        const list = el('ul', 'sheet-notes');
+        notes.forEach((note) => list.append(el('li', null, note)));
+        box.body.append(list);
+        sheet.append(box.box);
       }
+
+      const e = monster.effectiveness || {};
+      const n = monster.encounter || {};
+      const rating = panel('Encounter rating');
+      const ratingCols = el('div', 'attr-cols');
+      const rl = el('div');
+      [['CER', e.combatEffectivenessRating], ['Offense', e.offenseRating], ['Protection', e.protectionRating]]
+        .forEach(([l, v]) => rl.append(attrRow(l, v)));
+      const rr = el('div');
+      [['Threat tier', e.threatTier], ['Appearing', n.averageNumberAppearing], ['Wandering', n.wanderingWeight]]
+        .forEach(([l, v]) => rr.append(attrRow(l, v)));
+      ratingCols.append(rl, rr);
+      rating.body.append(ratingCols);
+      sheet.append(rating.box);
 
       const tags = monsterTags(monster);
       if (tags.length) {
-        sheet.append(el('h3', null, 'Tags'));
-        sheet.append(chipList(tags));
+        const box = panel('Tags');
+        box.body.append(ruleList(tags));
+        sheet.append(box.box);
       }
 
-      // Review provenance is worth publishing but should not be the first thing
-      // you read, so it opens on request.
-      const details = el('details', 'sheet-prov');
+      // GCS downloads sit with the sheet, not with the art.
+      const files = monster.files || {};
+      if (files.gct?.url || files.gcs?.url) {
+        const box = panel('GCS v5 downloads');
+        const list = el('ul', 'file-links');
+        [
+          ['\u2193 Character sheet (.gcs)', files.gcs?.url, monster.id + '.gcs', 'Open directly in GCS'],
+          ['\u2193 Ancestry template (.gct)', files.gct?.url, monster.id + '.gct', 'Apply to any character'],
+        ].forEach(([label, url, filename, hint]) => {
+          if (!url) return;
+          const li = el('li');
+          const link = el('a');
+          link.href = url;
+          link.download = filename;
+          link.append(document.createTextNode(label), el('small', null, hint));
+          li.append(link);
+          list.append(li);
+        });
+        box.body.append(list);
+        sheet.append(box.box);
+      }
+
+      const details = el('details', 'panel sheet-prov');
       details.append(el('summary', null, 'Provenance and review notes'));
+      const provBody = el('div', 'panel-body');
       const dl = el('dl', 'modal-stats');
       provenancePairs(monster).forEach(([label, value]) => {
         dl.append(el('dt', null, label), el('dd', null, value));
       });
-      details.append(dl);
+      provBody.append(dl);
       const conversionNotes = (monster.provenance?.conversionNotes || []).filter(Boolean);
       if (conversionNotes.length) {
         const list = el('ul', 'sheet-notes');
         conversionNotes.forEach((note) => list.append(el('li', null, note)));
-        details.append(list);
+        provBody.append(list);
       }
+      details.append(provBody);
       sheet.append(details);
     }
 
