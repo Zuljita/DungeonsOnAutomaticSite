@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A free bestiary of GURPS and Dungeon Fantasy monsters, each with an original portrait, a hex token, a full stat block, and GCS-ready files. Search, filter, and print.">
   <title>Dungeons on Automatic - The Bestiary</title>
+  <link rel="canonical" href="https://dungeonsonautomatic.com/monsters.html">
+  <meta property="og:site_name" content="Dungeons on Automatic">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dungeons on Automatic - The Bestiary">
+  <meta property="og:description" content="A free bestiary of GURPS and Dungeon Fantasy monsters, each with an original portrait, a hex token, a full stat block, and GCS-ready files. Search, filter, and print.">
+  <meta property="og:url" content="https://dungeonsonautomatic.com/monsters.html">
+  <meta property="og:image" content="https://dungeonsonautomatic.com/assets/brand/logo.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Dungeons on Automatic logo">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/brand/favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -22,7 +33,6 @@
     h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.04em; }
     h3 { margin: 26px 0 0; font-size: 18px; letter-spacing: 0.03em; color: var(--brass-300); }
     p, li { color: var(--text-muted); line-height: 1.65; font-size: 15.5px; }
-    code { font-family: var(--font-mono); color: var(--brass-300); }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
     .action { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.03em; text-transform: uppercase; }
     .action:hover { border-color: var(--brass-400); color: var(--brass-300); }
@@ -40,11 +50,10 @@
     .chip:hover { border-color: var(--brass-400); color: var(--brass-300); }
     .chip[aria-pressed="true"] { border-color: var(--brass-400); color: var(--brass-300); background: rgba(211,160,70,0.12); }
     .chip .count { color: var(--text-faint); margin-left: 6px; }
-    .chip--clear { border-style: dashed; }
-    .chip--more { border-style: dashed; }
+    .chip--clear, .chip--more { border-style: dashed; }
     .result-note { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; margin-top: 18px; }
-    .card { display: flex; flex-direction: column; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; }
+    .card { display: flex; flex-direction: column; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); overflow: hidden; }
     .card:hover { border-color: var(--brass-400); }
     .card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--surface-app); }
     .card .card-art-missing { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1; color: var(--text-faint); font-family: var(--font-mono); font-size: 12px; background: var(--surface-app); }
@@ -57,61 +66,6 @@
     .kit article { border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); background: var(--surface-sunken); padding: 18px 18px 20px; }
     .kit h3 { margin: 0; font-size: 15px; color: var(--brass-300); }
     .kit p { margin: 9px 0 0; font-size: 14px; }
-    dialog { width: min(880px, 94vw); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); background: var(--surface-panel); color: var(--text-body); padding: 0; }
-    dialog::backdrop { background: rgba(10,9,11,0.8); }
-    .modal-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 22px 26px 14px; background: var(--surface-panel); border-bottom: 1px solid var(--border-hairline); }
-    .modal-head h2 { font-size: clamp(22px, 3vw, 30px); }
-    .modal-close { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); color: var(--text-body); font-size: 18px; line-height: 1; padding: 8px 12px; cursor: pointer; }
-    .modal-close:hover { border-color: var(--brass-400); color: var(--brass-300); }
-    .modal-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr); gap: 24px; padding: 18px 26px 26px; }
-    .modal-grid img { max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-hairline); background: var(--surface-app); }
-    .modal-tokens { display: flex; gap: 12px; margin-top: 12px; }
-    .modal-tokens img { width: calc(50% - 6px); }
-    .modal-downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
-    .modal-downloads a { font-family: var(--font-mono); font-size: 12px; text-decoration: none; border: 1px solid var(--border, currentColor); border-radius: 6px; padding: 5px 9px; }
-    .modal-stats dt { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 12px; }
-    .modal-stats dd { margin: 4px 0 0; color: var(--text-body); font-size: 15px; }
-    .sheet { grid-column: 2; min-width: 0; }
-    /* GCS-style panels: a titled bar over a bordered body, stacked tightly. */
-    .panel { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface-sunken); margin-top: 14px; overflow: hidden; }
-    .panel:first-child { margin-top: 0; }
-    .panel > h3 { margin: 0; padding: 7px 11px; font-size: 11px; letter-spacing: 0.12em; color: var(--brass-300); background: rgba(211,160,70,0.10); border-bottom: 1px solid var(--border-hairline); }
-    /* The attack table has four columns; let it scroll inside its own panel
-       on a narrow screen rather than pushing the page sideways. */
-    .panel-body { padding: 9px 12px 11px; overflow-x: auto; }
-    .sheet-ident { margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.03em; line-height: 1.5; }
-    .attr-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
-    .attr-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 3px 0; border-bottom: 1px dotted var(--border-hairline); }
-    .attr-row span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-faint); }
-    .attr-row strong { font-family: var(--font-mono); font-size: 14px; color: var(--text-strong); }
-    .wtable { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-    .wtable th { text-align: left; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); font-weight: 400; padding: 0 8px 5px 0; border-bottom: 1px solid var(--border-hairline); }
-    .wtable td { padding: 6px 8px 6px 0; vertical-align: top; border-bottom: 1px dotted var(--border-hairline); color: var(--text-body); }
-    .wtable tr:last-child td { border-bottom: 0; }
-    .wtable td.num { font-family: var(--font-mono); white-space: nowrap; }
-    .wtable .usage { color: var(--text-strong); font-weight: 600; }
-    .wtable .usage-note { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.55; color: var(--text-muted); }
-    .rule-list { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 22px; }
-    .rule-list li { break-inside: avoid; font-size: 13px; line-height: 1.5; color: var(--text-muted); padding: 2px 0; border-bottom: 1px dotted var(--border-hairline); }
-    .rule-list.single { columns: 1; }
-    .rule-list .lvl { float: right; font-family: var(--font-mono); color: var(--text-faint); }
-    .sheet-notes { margin: 0; padding: 0; list-style: none; }
-    .sheet-notes li { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
-    .sheet-notes li:first-child { margin-top: 0; }
-    .file-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-    /* The label sits above a hint, so the anchor must be its own block: an
-       inline box wrapping a block child splits into several line boxes and
-       renders its right border on the last fragment, a stray edge below. */
-    .file-links a { display: inline-flex; flex-direction: column; align-items: flex-start; font-family: var(--font-mono); font-size: 11.5px; text-decoration: none; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text-body); }
-    .file-links a:hover { border-color: var(--brass-400); color: var(--brass-300); }
-    .file-links small { display: block; color: var(--text-faint); font-size: 10px; margin-top: 2px; }
-    .sheet-prov summary { cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); padding: 7px 11px; }
-    .sheet-prov summary:hover { color: var(--brass-300); }
-    .sheet-prov[open] summary { border-bottom: 1px solid var(--border-hairline); }
-    .sheet-prov .panel-body { padding-top: 4px; }
-    .sheet-prov .modal-stats dt { margin-top: 9px; }
-    .modal-credit { grid-column: 1 / -1; border-top: 1px solid var(--border-hairline); padding-top: 14px; font-size: 13px; color: var(--text-faint); line-height: 1.6; }
-    .muted { color: var(--text-faint); }
     .colophon { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin-top: 18px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-faint); }
     .colophon a { border-bottom: 1px solid var(--border-strong); }
     .colophon a:hover { color: var(--brass-300); border-color: var(--brass-400); }
@@ -119,27 +73,6 @@
     @media (max-width: 860px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
       .kit { grid-template-columns: 1fr; }
-      .modal-grid { grid-template-columns: 1fr; }
-      .sheet { grid-column: 1; }
-      .attr-cols { grid-template-columns: 1fr; }
-      .rule-list { columns: 1; }
-    }
-    /* A GM printing an open monster should get the block, not the website. */
-    @media print {
-      body > *:not(dialog) { display: none !important; }
-      dialog[open] { display: block; position: static; width: auto; max-width: none; border: 0; background: none; padding: 0; }
-      dialog::backdrop { display: none; }
-      .modal-close, .modal-downloads { display: none !important; }
-      .modal-head { position: static; padding: 0 0 8px; border: 0; }
-      .modal-grid { grid-template-columns: 1fr; gap: 12px; padding: 0; }
-      .modal-grid img { max-width: 46mm; }
-      .modal-tokens { gap: 8px; }
-      .sheet { grid-column: 1; }
-      .sheet-prov[open] > *, .sheet-prov summary { color: inherit; }
-      .wtable tr, .attr-cols, .panel { break-inside: avoid; }
-      .panel { border-color: #999; }
-      .panel > h3 { background: none; }
-      h3 { break-after: avoid; }
     }
     @media (max-width: 560px) {
       .stats { grid-template-columns: 1fr; }
@@ -160,10 +93,10 @@
     <div class="wrap">
       <span class="eyebrow">The bestiary</span>
       <h1>Something is already in the room.</h1>
-      <p class="lead">Three hundred–odd monsters, each with an original portrait, a top-down token, a hex token cut to its real footprint, and a complete stat block. Search it by name or by what the thing actually does &mdash; <em>petrification</em>, <em>engulf</em>, <em>impaling</em> &mdash; then print the block or import it into GCS. Free, no account, nothing to install.</p>
+      <p class="lead">Three hundred&ndash;odd monsters, each with an original portrait, a top-down token, a hex token cut to its real footprint, and a complete stat block. Search it by name or by what the thing actually does &mdash; <em>petrification</em>, <em>engulf</em>, <em>impaling</em> &mdash; then print the block or import it into GCS. Free, no account, nothing to install.</p>
       <div class="actions">
         <a class="action action--primary" href="#library">Browse the bestiary</a>
-        <a class="action" href="releases.html#downloads">Get the desktop app</a>
+        <a class="action" href="releases.html#downloads">Get the dungeon generator</a>
       </div>
       <div class="stats" aria-label="Library at a glance">
         <div class="stat"><span>Monsters</span><strong id="monster-count">&mdash;</strong><small id="monster-note">loading</small></div>
@@ -185,19 +118,19 @@
     </section>
     <section>
       <h2>What comes with every entry</h2>
-      <p class="section-lede">Open any monster and you get the whole thing &mdash; not a teaser card that sends you shopping.</p>
+      <p class="section-lede">Every monster carries the same set of files.</p>
       <div class="kit">
         <article>
-          <h3>Art you can drop on a map</h3>
-          <p>A portrait for the reveal, a top-down token for play, and a flat-top hex token sized to the creature's real footprint. A 14-hex aboleth arrives 14 hexes wide. All three download as PNGs.</p>
+          <h3>Art</h3>
+          <p>A portrait, a top-down token, and a flat-top hex token cut to the creature's footprint. A 14-hex aboleth arrives 14 hexes wide. All three download as PNGs.</p>
         </article>
         <article>
-          <h3>A stat block, not a summary</h3>
-          <p>Attributes, derived stats, every attack with skill, damage and reach, the full trait and skill lists, and the notes that explain the nasty bit. Hit print and the page hands your printer the block alone.</p>
+          <h3>The stat block</h3>
+          <p>Attributes and derived stats, every attack with its skill, damage and reach, the full trait and skill lists, and the notes covering special abilities. Printing a monster's page gives you the block on its own.</p>
         </article>
         <article>
-          <h3>Ready for GCS and for DOA</h3>
-          <p>Each monster ships as a GCS v5 character sheet and as an ancestry template you can apply to any character. The desktop app draws on this same library when it stocks a dungeon.</p>
+          <h3>GCS files</h3>
+          <p>A GCS v5 character sheet and an ancestry template you can apply to any character. The dungeon generator draws on this same library when it stocks a dungeon.</p>
         </article>
       </div>
       <div class="colophon">
@@ -207,24 +140,6 @@
       </div>
     </section>
   </main>
-  <dialog id="monster-dialog" aria-labelledby="dialog-title">
-    <div class="modal-head">
-      <h2 id="dialog-title">Monster</h2>
-      <button class="modal-close" id="dialog-close" aria-label="Close">&#10005;</button>
-    </div>
-    <div class="modal-grid">
-      <div>
-        <img id="dialog-portrait" alt="">
-        <div class="modal-tokens">
-          <img id="dialog-token" alt="" loading="lazy">
-          <img id="dialog-hex" alt="" loading="lazy">
-        </div>
-        <ul class="modal-downloads" id="dialog-downloads" aria-label="Image downloads"></ul>
-      </div>
-      <div class="sheet" id="dialog-sheet"></div>
-      <p class="modal-credit" id="dialog-credit"></p>
-    </div>
-  </dialog>
   <section class="legal-notice" aria-label="Steve Jackson Games notice">
     <div class="wrap">
       <p>Dungeons on Automatic is an original game aid by Kyle Norton for use with <a href="https://www.sjgames.com/gurps/"><b><i>GURPS</i></b></a> and <a href="https://www.sjgames.com/dungeonfantasy/"><b><i>Dungeon Fantasy Roleplaying Game</i></b></a> from <a href="https://www.sjgames.com/">Steve Jackson Games</a>. It is not official and is not endorsed by Steve Jackson Games.</p>
@@ -234,10 +149,14 @@
   <footer><div class="wrap">The bestiary is free to browse, print, and use at your table. <a href="monster-credits.html">Where these monsters came from.</a></div></footer>
   <script>
     const INDEX_URL = 'data/monsters/index.json';
+    const SLUGS_URL = 'data/monsters/slugs.json';
     const TIER_ORDER = ['minor', 'standard', 'major', 'severe'];
     // Enough chips to be useful without turning the filter bar into a wall.
     const TAG_CHIP_LIMIT = 18;
-    const state = { monsters: [], artBase: '', selectedTags: new Set(), selectedTiers: new Set(), needle: '', showAllTags: false };
+    const state = {
+      monsters: [], slugs: {}, artBase: '',
+      selectedTags: new Set(), selectedTiers: new Set(), needle: '', showAllTags: false,
+    };
 
     const text = (value) => value === null || value === undefined ? '' : String(value);
     const monsterTags = (monster) => {
@@ -247,6 +166,13 @@
       return [...tags];
     };
     const monsterTier = (monster) => monster.effectiveness?.threatTier || '';
+    // Slugs come from the build rather than being recomputed here: the pages
+    // they point at are generated from the same map, so there is nothing to
+    // drift.
+    const monsterHref = (monster) => {
+      const slug = state.slugs[monster.id];
+      return slug ? `monsters/${encodeURIComponent(slug)}/` : '';
+    };
 
     function thumbUrl(monster) {
       if (!state.artBase) return '';
@@ -280,6 +206,23 @@
       ].some((entry) => text(entry).toLowerCase().includes(state.needle));
     }
 
+    /** A filtered view is worth sending to someone, so it lives in the URL. */
+    function readQuery() {
+      const params = new URLSearchParams(window.location.search);
+      state.needle = (params.get('q') || '').trim().toLowerCase();
+      params.getAll('tier').forEach((tier) => state.selectedTiers.add(tier));
+      params.getAll('tag').forEach((tag) => state.selectedTags.add(tag));
+    }
+
+    function writeQuery() {
+      const params = new URLSearchParams();
+      if (state.needle) params.set('q', state.needle);
+      [...state.selectedTiers].forEach((tier) => params.append('tier', tier));
+      [...state.selectedTags].forEach((tag) => params.append('tag', tag));
+      const query = params.toString();
+      window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : ''));
+    }
+
     function makeChip(label, count, pressed, onClick) {
       const chip = document.createElement('button');
       chip.type = 'button';
@@ -296,13 +239,18 @@
       return chip;
     }
 
+    function refresh() {
+      writeQuery();
+      renderFilters();
+      renderGallery();
+    }
+
     function clearFilters() {
       state.selectedTags.clear();
       state.selectedTiers.clear();
       state.needle = '';
       document.getElementById('search').value = '';
-      renderFilters();
-      renderGallery();
+      refresh();
     }
 
     function renderFilters() {
@@ -322,8 +270,7 @@
           tierBar.append(makeChip(tier, tierCounts.get(tier), state.selectedTiers.has(tier), () => {
             if (state.selectedTiers.has(tier)) state.selectedTiers.delete(tier);
             else state.selectedTiers.add(tier);
-            renderFilters();
-            renderGallery();
+            refresh();
           }));
         });
       }
@@ -348,8 +295,7 @@
         bar.append(makeChip(tag, count, state.selectedTags.has(tag), () => {
           if (state.selectedTags.has(tag)) state.selectedTags.delete(tag);
           else state.selectedTags.add(tag);
-          renderFilters();
-          renderGallery();
+          refresh();
         }));
       });
       if (tags.length > shown.length || state.showAllTags) {
@@ -386,9 +332,12 @@
         note.textContent = `${visible.length} of ${state.monsters.length} monsters.`;
       }
       visible.forEach((monster) => {
-        const card = document.createElement('button');
-        card.type = 'button';
+        // A real link: middle-click, open in a new tab, copy the address, and
+        // read it without JavaScript all work because the page it names exists.
+        const card = document.createElement('a');
         card.className = 'card';
+        const href = monsterHref(monster);
+        if (href) card.href = href;
         const portraitUrl = monster.art?.portrait?.url || '';
         if (portraitUrl) {
           const img = document.createElement('img');
@@ -425,269 +374,21 @@
           body.append(tagWrap);
         }
         card.append(body);
-        card.addEventListener('click', () => openDialog(monster));
         gallery.append(card);
       });
     }
 
-    const el = (tag, className, textContent) => {
-      const node = document.createElement(tag);
-      if (className) node.className = className;
-      if (textContent !== undefined && textContent !== null) node.textContent = String(textContent);
-      return node;
-    };
-
-    function provenancePairs(monster) {
-      const provenance = monster.provenance || {};
-      return [
-        ['Source record', provenance.sourceName],
-        ['Source system', [provenance.sourceSystem, provenance.sourceLicense].filter(Boolean).join(' / ')],
-        ['Released under', provenance.contentLicense],
-        ['Conversion', provenance.conversionVersion],
-        ['Review status', provenance.manualReviewStatus],
-        ['Credit', (provenance.credits || []).map((credit) => credit.creditLine).join(' ')]
-      ].filter(([, value]) => value !== undefined && value !== null && value !== '');
-    }
-
-
-
-    function panel(title) {
-      const box = el('section', 'panel');
-      box.append(el('h3', null, title));
-      const body = el('div', 'panel-body');
-      box.append(body);
-      return { box, body };
-    }
-
-    function attrRow(label, value) {
-      const row = el('div', 'attr-row');
-      row.append(el('span', null, label), el('strong', null, value === null || value === undefined ? '—' : value));
-      return row;
-    }
-
-    function ruleList(items, single) {
-      const list = el('ul', single ? 'rule-list single' : 'rule-list');
-      items.forEach((item) => {
-        const li = el('li');
-        if (Array.isArray(item)) {
-          li.append(el('span', 'lvl', item[1]));
-          li.append(document.createTextNode(item[0]));
-        } else {
-          li.textContent = item;
-        }
-        list.append(li);
-      });
-      return list;
-    }
-
-    function renderSheet(monster) {
-      const sheet = document.getElementById('dialog-sheet');
-      sheet.replaceChildren();
-      const a = monster.stats?.attributes || {};
-
-      const ident = [monster.class, monster.size?.hexes, monster.size?.modifier ? 'SM ' + monster.size.modifier : '']
-        .filter(Boolean).join(' · ');
-      const identLine = el('p', 'sheet-ident');
-      identLine.textContent = [ident, monster.pageRef].filter(Boolean).join('\n');
-      sheet.append(identLine);
-
-      // Attributes: primary and secondary side by side, the way GCS shows them.
-      const attrs = panel('Attributes');
-      const cols = el('div', 'attr-cols');
-      const primary = el('div');
-      [['ST', a.st], ['DX', a.dx], ['IQ', a.iq], ['HT', a.ht]].forEach(([l, v]) => primary.append(attrRow(l, v)));
-      const secondary = el('div');
-      [['HP', a.hp], ['Will', a.will], ['Per', a.per], ['FP', a.fp]].forEach(([l, v]) => secondary.append(attrRow(l, v)));
-      cols.append(primary, secondary);
-      attrs.body.append(cols);
-      const derived = el('div', 'attr-cols');
-      const left = el('div');
-      [['Basic Speed', a.speed], ['Basic Move', a.move]].forEach(([l, v]) => left.append(attrRow(l, v)));
-      const right = el('div');
-      [['Dodge', a.dodge], ['DR', a.dr]].forEach(([l, v]) => right.append(attrRow(l, v)));
-      derived.append(left, right);
-      attrs.body.append(derived);
-      sheet.append(attrs.box);
-
-      const attacks = (monster.stats?.attacks || []).filter(Boolean);
-      if (attacks.length) {
-        const box = panel('Melee attacks');
-        const table = el('table', 'wtable');
-        const thead = el('thead');
-        const head = el('tr');
-        ['Usage', 'Level', 'Damage', 'Reach'].forEach((label) => head.append(el('th', null, label)));
-        thead.append(head);
-        const body = el('tbody');
-        attacks.forEach((attack) => {
-          const row = el('tr');
-          const usage = el('td');
-          usage.append(el('span', 'usage', attack.name || 'Attack'));
-          if (attack.notes) usage.append(el('span', 'usage-note', attack.notes));
-          row.append(usage);
-          const noSkill = attack.skill === null || attack.skill === undefined;
-          row.append(el('td', 'num', noSkill ? (attack.autoHit ? 'no roll' : '—') : attack.skill));
-          row.append(el('td', null, attack.damage || '—'));
-          row.append(el('td', 'num', attack.reach || '—'));
-          body.append(row);
-        });
-        table.append(thead, body);
-        box.body.append(table);
-        sheet.append(box.box);
-      }
-
-      const traits = (monster.stats?.traits || []).filter(Boolean);
-      if (traits.length) {
-        const box = panel('Traits (' + traits.length + ')');
-        box.body.append(ruleList(traits));
-        sheet.append(box.box);
-      }
-
-      const skills = (monster.stats?.skills || []).filter(Boolean);
-      if (skills.length) {
-        const box = panel('Skills (' + skills.length + ')');
-        box.body.append(ruleList(skills.map((skill) => [skill.name, skill.level])));
-        sheet.append(box.box);
-      }
-
-      const notes = (monster.stats?.notes || []).filter(Boolean);
-      if (notes.length) {
-        const box = panel('Notes');
-        const list = el('ul', 'sheet-notes');
-        notes.forEach((note) => list.append(el('li', null, note)));
-        box.body.append(list);
-        sheet.append(box.box);
-      }
-
-      const e = monster.effectiveness || {};
-      const n = monster.encounter || {};
-      const rating = panel('Encounter rating');
-      const ratingCols = el('div', 'attr-cols');
-      const rl = el('div');
-      [['CER', e.combatEffectivenessRating], ['Offense', e.offenseRating], ['Protection', e.protectionRating]]
-        .forEach(([l, v]) => rl.append(attrRow(l, v)));
-      const rr = el('div');
-      [['Threat tier', e.threatTier], ['Appearing', n.averageNumberAppearing], ['Wandering', n.wanderingWeight]]
-        .forEach(([l, v]) => rr.append(attrRow(l, v)));
-      ratingCols.append(rl, rr);
-      rating.body.append(ratingCols);
-      sheet.append(rating.box);
-
-      const tags = monsterTags(monster);
-      if (tags.length) {
-        const box = panel('Tags');
-        box.body.append(ruleList(tags));
-        sheet.append(box.box);
-      }
-
-      // GCS downloads sit with the sheet, not with the art.
-      const files = monster.files || {};
-      if (files.gct?.url || files.gcs?.url) {
-        const box = panel('GCS v5 downloads');
-        const list = el('ul', 'file-links');
-        [
-          ['↓ Character sheet (.gcs)', files.gcs?.url, monster.id + '.gcs', 'Open directly in GCS'],
-          ['↓ Ancestry template (.gct)', files.gct?.url, monster.id + '.gct', 'Apply to any character'],
-        ].forEach(([label, url, filename, hint]) => {
-          if (!url) return;
-          const li = el('li');
-          const link = el('a');
-          link.href = url;
-          link.download = filename;
-          link.append(document.createTextNode(label), el('small', null, hint));
-          li.append(link);
-          list.append(li);
-        });
-        box.body.append(list);
-        sheet.append(box.box);
-      }
-
-      const details = el('details', 'panel sheet-prov');
-      details.append(el('summary', null, 'Where this one came from'));
-      const provBody = el('div', 'panel-body');
-      const dl = el('dl', 'modal-stats');
-      provenancePairs(monster).forEach(([label, value]) => {
-        dl.append(el('dt', null, label), el('dd', null, value));
-      });
-      provBody.append(dl);
-      const conversionNotes = (monster.provenance?.conversionNotes || []).filter(Boolean);
-      if (conversionNotes.length) {
-        const list = el('ul', 'sheet-notes');
-        conversionNotes.forEach((note) => list.append(el('li', null, note)));
-        provBody.append(list);
-      }
-      details.append(provBody);
-      sheet.append(details);
-    }
-
-    function openDialog(monster) {
-      const dialog = document.getElementById('monster-dialog');
-      document.getElementById('dialog-title').textContent = monster.name;
-      const portrait = document.getElementById('dialog-portrait');
-      portrait.src = monster.art?.portrait?.url || '';
-      portrait.alt = monster.art?.portrait?.alt || monster.name;
-      const token = document.getElementById('dialog-token');
-      token.src = monster.art?.token?.url || '';
-      token.alt = monster.art?.token?.alt || `${monster.name} token`;
-      const hex = document.getElementById('dialog-hex');
-      hex.src = monster.art?.hexToken?.url || '';
-      hex.alt = monster.art?.hexToken?.alt || `${monster.name} hex token`;
-      const downloads = document.getElementById('dialog-downloads');
-      downloads.replaceChildren();
-      [
-        ['Portrait', monster.art?.portrait?.url, 'portrait'],
-        ['Token', monster.art?.token?.url, 'token'],
-        ['Hex token', monster.art?.hexToken?.url, 'hex-token'],
-      ].forEach(([label, url, slug]) => {
-        if (!url) return;
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${monster.id}-${slug}.png`;
-        a.textContent = `↓ ${label}`;
-        li.append(a);
-        downloads.append(li);
-      });
-      renderSheet(monster);
-      const credit = document.getElementById('dialog-credit');
-      const creditParts = [monster.provenance?.sourceCopyrightNotice, 'Portrait and tokens are AI-generated original art.'];
-      credit.textContent = creditParts.filter(Boolean).join(' ');
-      if (!dialog.open) dialog.showModal();
-      dialog.scrollTop = 0;
-      // A monster you are looking at should be a link you can send someone.
-      if (window.location.hash.slice(1) !== monster.id) {
-        window.history.replaceState(null, '', '#' + monster.id);
-      }
-    }
-
-    function closeDialog() {
-      const dialog = document.getElementById('monster-dialog');
-      if (dialog.open) dialog.close();
-      if (window.location.hash) {
-        window.history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-    }
-
-    /** Open whichever monster the URL names, if the package knows it. */
-    function openFromHash() {
-      const id = decodeURIComponent(window.location.hash.slice(1));
-      if (!id) return;
-      const monster = state.monsters.find((entry) => entry.id === id);
-      if (monster) openDialog(monster);
-    }
-
-    document.getElementById('dialog-close').addEventListener('click', closeDialog);
-    document.getElementById('monster-dialog').addEventListener('click', (event) => {
-      if (event.target === event.currentTarget) closeDialog();
-    });
-    // Escape closes a native dialog without firing our click handler.
-    document.getElementById('monster-dialog').addEventListener('close', () => {
-      if (window.location.hash) {
-        window.history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-    });
-    window.addEventListener('hashchange', openFromHash);
-
     const setText = (id, value) => { document.getElementById(id).textContent = value; };
+
+    /** Monsters used to be #<record id> on this page. Those links are in the
+     *  wild; send them to the record's own page instead of breaking them. */
+    function redirectLegacyHash() {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const slug = id && state.slugs[id];
+      if (!slug) return false;
+      window.location.replace(`monsters/${encodeURIComponent(slug)}/`);
+      return true;
+    }
 
     function renderPending(index) {
       const candidate = index.candidate || {};
@@ -700,13 +401,18 @@
     (async () => {
       try {
         const indexUrl = new URL(INDEX_URL, window.location.href);
-        const indexResponse = await fetch(indexUrl, { cache: 'no-store' });
+        const [indexResponse, slugsResponse] = await Promise.all([
+          fetch(indexUrl, { cache: 'no-store' }),
+          fetch(new URL(SLUGS_URL, window.location.href), { cache: 'no-store' }),
+        ]);
         if (!indexResponse.ok) throw new Error('package index unavailable');
         const index = await indexResponse.json();
+        state.slugs = slugsResponse.ok ? await slugsResponse.json() : {};
         if (!index.latest?.path) {
           renderPending(index);
           return;
         }
+        if (redirectLegacyHash()) return;
 
         const packageUrl = new URL(index.latest.path, indexUrl);
         const response = await fetch(packageUrl, { cache: 'no-store' });
@@ -748,8 +454,11 @@
         const published = index.latest.publishedAt
           ? new Date(index.latest.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
           : '';
+        // The library is ours; the package inside it is one source among the
+        // ones to come. Show our name and the package version, not the
+        // package's own name, which reads as though the source owns the shelf.
         setText('package-line', [
-          `${pkg.manifest?.name || 'Monster library'} ${pkg.manifest?.version || ''}`.trim(),
+          `Dungeons on Automatic bestiary${pkg.manifest?.version ? ' ' + pkg.manifest.version : ''}`,
           published && `published ${published}`
         ].filter(Boolean).join(' · '));
 
@@ -758,10 +467,12 @@
         download.download = index.latest.fileName || '';
         download.hidden = false;
 
-        document.getElementById('search').disabled = false;
+        const search = document.getElementById('search');
+        search.disabled = false;
+        readQuery();
+        search.value = state.needle;
         renderFilters();
         renderGallery();
-        openFromHash();
       } catch (error) {
         setText('monster-note', 'unavailable');
         setText('package-line', 'The library could not be reached right now.');
@@ -771,8 +482,7 @@
 
     document.getElementById('search').addEventListener('input', (event) => {
       state.needle = event.target.value.trim().toLowerCase();
-      renderFilters();
-      renderGallery();
+      refresh();
     });
   </script>
 </body>
