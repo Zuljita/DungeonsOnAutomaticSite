@@ -60,6 +60,9 @@
     .card-body { padding: 12px 14px 14px; }
     .card-body strong { display: block; font-family: var(--font-display); color: var(--text-strong); font-size: 15px; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.25; }
     .card-body .meta { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; }
+    /* Clamped to four lines: descriptions run 190-350 characters, and letting
+       the longest ones set the card height leaves ragged gaps across the grid. */
+    .card-prose { margin: 9px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
     .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
     .card-tags span { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-hairline); border-radius: var(--radius-pill); padding: 2px 7px; }
     .kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
@@ -362,6 +365,16 @@
         meta.className = 'meta';
         meta.textContent = `${monster.class || 'Unclassified'} · CER ${monster.effectiveness?.combatEffectivenessRating ?? '?'}`;
         body.append(name, meta);
+        // Records published before the description field existed, and any whose
+        // prose is not yet written, carry description: null rather than omitting
+        // the key, so a card without prose simply shows one fewer line.
+        const prose = monster.description?.text;
+        if (prose) {
+          const blurb = document.createElement('p');
+          blurb.className = 'card-prose';
+          blurb.textContent = prose;
+          body.append(blurb);
+        }
         const tags = monsterTags(monster);
         if (tags.length) {
           const tagWrap = document.createElement('div');
