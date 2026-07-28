@@ -1,13 +1,22 @@
 name: Mirror Public Monster Package
 
 on:
+  # The data repo posts this the moment it publishes, which is the fast path.
+  # It needs a cross-repo token there, and a missing one fails silently on that
+  # side, so it cannot be the only path: 0.3.1 and 0.3.2 both shipped without
+  # ever reaching this workflow.
   repository_dispatch:
     types: [monster_package_published]
+  # The path that cannot silently stop working. DungeonsOnAutomaticMonsters is
+  # public, so resolving its latest release needs no credential at all. A run
+  # that finds nothing new commits nothing and costs a minute.
+  schedule:
+    - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
       source_tag:
-        description: Monster data-repo release tag
-        required: true
+        description: Monster data-repo release tag. Leave blank to take the latest release.
+        required: false
         type: string
       asset_name:
         description: JSON asset name
@@ -28,12 +37,26 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SOURCE_TAG: ${{ github.event.client_payload.source_tag || inputs.source_tag }}
-      ASSET_NAME: ${{ github.event.client_payload.asset_name || inputs.asset_name }}
+      ASSET_NAME: ${{ github.event.client_payload.asset_name || inputs.asset_name || 'doa-monsters.json' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # A scheduled run carries no tag, so ask the source repo what its newest
+      # release is. Explicit tags from a dispatch are left alone, so replaying
+      # an older release still works.
+      - name: Resolve the release to mirror
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$SOURCE_TAG" ]; then
+            SOURCE_TAG=$(gh release view --repo Zuljita/DungeonsOnAutomaticMonsters --json tagName -q .tagName)
+            echo "Resolved latest release: $SOURCE_TAG"
+            echo "SOURCE_TAG=$SOURCE_TAG" >> "$GITHUB_ENV"
+          else
+            echo "Using requested release: $SOURCE_TAG"
+          fi
       # DungeonsOnAutomaticMonsters is a public repository, so its release assets
       # are readable with this workflow's own token. A dedicated cross-repo PAT
       # was only needed while the source repo was private.

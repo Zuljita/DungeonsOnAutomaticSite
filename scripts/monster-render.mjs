@@ -105,6 +105,13 @@ function provenancePanel(monster) {
     ['Conversion', provenance.conversionVersion],
     ['Review status', provenance.manualReviewStatus],
     ['Credit', (provenance.credits || []).map((credit) => credit.creditLine).join(' ')],
+    // Description prose carries its own authorship and terms, which need not be
+    // the record's: the record's licence covers the converted mechanics, the
+    // description's covers prose Dungeons on Automatic wrote. Stating only the
+    // record's licence here would quietly attribute one to the other.
+    ['Description', monster.description
+      ? `Written by Dungeons on Automatic, released under ${monster.description.contentLicense}`
+      : ''],
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
   const dl = pairs
     .map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`)
@@ -135,6 +142,12 @@ export function renderSheet(monster) {
     .join(' · ');
   const identLine = [ident, monster.pageRef].filter(Boolean).join('\n');
   if (identLine) parts.push(`<p class="sheet-ident">${escapeHtml(identLine)}</p>`);
+
+  // What the creature is, before what its numbers are. The record states this
+  // prose's own licence separately from the mechanics beside it, so the page
+  // does not have to infer that the two share terms.
+  const prose = monsterProse(monster);
+  if (prose) parts.push(`<p class="sheet-prose">${escapeHtml(prose)}</p>`);
 
   parts.push(
     panel(
@@ -185,11 +198,27 @@ export function renderSheet(monster) {
   return parts.filter(Boolean).join('\n        ');
 }
 
+/** The authored prose about the creature, or '' when the record has none.
+ *  Records published before the field existed, and any record whose prose is
+ *  still unwritten, carry `description: null` rather than omitting the key. */
+export function monsterProse(monster) {
+  const text = monster.description?.text;
+  return typeof text === 'string' && text.trim() ? text.trim() : '';
+}
+
 /** One sentence a search result or an unfurl can stand on.
+ *  Prefers the authored prose, which is what a reader actually wants to see in
+ *  a search result, and falls back to the stat summary when a record has none.
  *  Kept clause-separated rather than parenthetical: 22 of these names already
  *  carry their own bracket ("Monstrous Centipede (Tiny)"), and nesting a
  *  second one reads as a typo. */
 export function monsterDescription(monster) {
+  const prose = monsterProse(monster);
+  if (prose) return prose;
+  return monsterStatSummary(monster);
+}
+
+export function monsterStatSummary(monster) {
   const cer = monster.effectiveness?.combatEffectivenessRating;
   const facts = [
     monster.class,
