@@ -89,6 +89,16 @@
     ctx.restore();
   }
 
+  // The page displays the token through a plain <img>, so the browser caches a
+  // response carrying no CORS headers. Re-requesting that exact URL for the
+  // canvas reuses the cached copy and fails however the bucket is configured,
+  // so the composite asks for a distinct URL. The marker is stable rather than
+  // random: the CORS-flavoured response caches once and every later toggle
+  // reuses it.
+  function corsUrl(src) {
+    return src + (src.indexOf('?') === -1 ? '?' : '&') + 'cors=1';
+  }
+
   // Resolves to a PNG blob of the token with the bar burned in, or rejects if
   // the asset host will not allow a cross-origin read. Callers fall back to the
   // untouched PNG, so a missing CORS header costs the download nothing but the
@@ -116,7 +126,7 @@
       source.onerror = function () {
         reject(new Error('token could not be read cross-origin'));
       };
-      source.src = src;
+      source.src = corsUrl(src);
     });
   }
 
