@@ -4,7 +4,7 @@
   "candidate": {
     "id": "enraged-eggplant-monsters",
     "name": "Enraged Eggplant Monster Library",
-    "candidateVersion": "0.3.2",
+    "candidateVersion": "0.4.0",
     "recordCount": 304,
     "approvedCount": 304,
     "reviewRequiredCount": 0,
@@ -16,10 +16,10 @@
   "latest": {
     "id": "enraged-eggplant-monsters",
     "name": "Dungeons on Automatic Monster Library",
-    "version": "0.3.2",
-    "path": "packages/enraged-eggplant-0.3.2.json",
-    "fileName": "enraged-eggplant-0.3.2.json",
-    "sha256": "5b99c2cbbcd6bce13a5fe3d23be3e5d872b437105d7da000c6b387c0415f55c7",
+    "version": "0.4.0",
+    "path": "packages/enraged-eggplant-0.4.0.json",
+    "fileName": "enraged-eggplant-0.4.0.json",
+    "sha256": "8ee2eef073cbd7c773b5519376c393e3abb675938911f47b57924b6bfaa00ee1",
     "monsterCount": 304,
     "art": {
       "manifestUrl": "https://assets.dungeonsonautomatic.com/monsters/enraged-eggplant/image-manifest.json",
@@ -27,6 +27,6 @@
       "tokenCount": 304,
       "hexTokenCount": 304
     },
-    "publishedAt": "2026-07-29T19:42:29.899Z"
+    "publishedAt": "2026-07-29T21:12:10.091Z"
   }
 }
