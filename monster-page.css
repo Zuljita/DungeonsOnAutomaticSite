@@ -15,7 +15,20 @@ a { color: inherit; text-decoration: none; }
 .monster-art img { max-width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border-hairline); background: var(--surface-panel); }
 .monster-art .portrait { display: block; width: 100%; }
 .monster-tokens { display: flex; gap: 12px; margin-top: 12px; }
-.monster-tokens .token { width: calc(50% - 6px); }
+.monster-tokens > .token, .monster-tokens > .token-frame { width: calc(50% - 6px); }
+.token-frame { position: relative; display: block; }
+.token-frame .token { display: block; width: 100%; }
+
+/* The facing bar is an SVG sibling of the token rather than a background, so it
+   survives printing without the reader turning background graphics on. Inset by
+   the token's 1px border so the overlay tracks the image, not the border box. */
+.facing-bar { display: none; position: absolute; inset: 1px; pointer-events: none; }
+.token-frame.is-facing .facing-bar { display: block; }
+
+.token-controls { display: flex; align-items: center; gap: 7px; margin: 10px 0 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.03em; color: var(--text-muted); cursor: pointer; }
+.token-controls[hidden] { display: none; }
+.token-controls input { accent-color: var(--ember-500); cursor: pointer; }
+.token-controls:hover { color: var(--text-body); }
 .art-downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
 .art-downloads a { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 9px; color: var(--text-body); }
 .art-downloads a:hover { border-color: var(--brass-400); color: var(--brass-300); }
@@ -38,11 +51,11 @@ footer a:hover { color: var(--brass-300); }
 
 /* A GM printing a monster wants the block, not the site around it. */
 @media print {
-  .site-nav, .legal-notice, footer, .art-downloads, .monster-siblings, .back-link { display: none !important; }
+  .site-nav, .legal-notice, footer, .art-downloads, .monster-siblings, .back-link, .token-controls { display: none !important; }
   .monster-head { padding: 0 0 8px; border: 0; background: none; }
   .monster-main { grid-template-columns: 1fr; gap: 12px; padding: 0; }
   .monster-art .portrait { max-width: 46mm; }
   .monster-tokens { gap: 8px; }
-  .monster-tokens .token { max-width: 28mm; }
+  .monster-tokens > .token, .monster-tokens > .token-frame { max-width: 28mm; }
   h1, h3 { break-after: avoid; }
 }

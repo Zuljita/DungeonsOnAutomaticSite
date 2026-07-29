@@ -252,16 +252,35 @@ const LEGAL_NOTICE = `<section class="legal-notice" aria-label="Steve Jackson Ga
     </div>
   </section>`;
 
-const artImage = (art, className) =>
+const artImage = (art, className, extra = '') =>
   art?.url
     ? `<img class="${className}" src="${escapeHtml(art.url)}" alt="${escapeHtml(art.alt || '')}" width="${
         art.width || ''
-      }" height="${art.height || ''}" loading="lazy">`
+      }" height="${art.height || ''}"${extra} loading="lazy">`
     : '';
 
 function renderArt(monster) {
   const art = monster.art || {};
-  const tokens = [artImage(art.token, 'token'), artImage(art.hexToken, 'token')].filter(Boolean).join('');
+  // The hex token carries its renderer's style id so the facing-bar overlay can
+  // refuse to draw on art it was not measured against.
+  const hexStyle = art.hexToken?.derivationStyleId;
+  const hexToken = artImage(
+    art.hexToken,
+    'token token--hex',
+    hexStyle ? ` data-hex-style="${escapeHtml(hexStyle)}"` : ''
+  );
+  const tokens = [
+    artImage(art.token, 'token'),
+    hexToken ? `<span class="token-frame">${hexToken}</span>` : '',
+  ]
+    .filter(Boolean)
+    .join('');
+  // Drawn client-side by assets/js/hex-facing.js. The control ships hidden and
+  // is revealed by that script, so a visitor without JavaScript is not offered a
+  // checkbox that cannot do anything.
+  const facingControl = hexToken
+    ? '<label class="token-controls" hidden><input type="checkbox"> Red facing bar</label>'
+    : '';
   const downloads = [
     ['Portrait', art.portrait?.url, 'portrait'],
     ['Token', art.token?.url, 'token'],
@@ -270,9 +289,9 @@ function renderArt(monster) {
     .filter(([, url]) => url)
     .map(
       ([label, url, slug]) =>
-        `<li><a href="${escapeHtml(url)}" download="${escapeHtml(`${monster.id}-${slug}.png`)}">↓ ${escapeHtml(
-          label
-        )}</a></li>`
+        `<li><a href="${escapeHtml(url)}" data-art="${escapeHtml(slug)}" download="${escapeHtml(
+          `${monster.id}-${slug}.png`
+        )}">↓ ${escapeHtml(label)}</a></li>`
     )
     .join('');
   return [
@@ -282,6 +301,7 @@ function renderArt(monster) {
         )}" width="${art.portrait.width || ''}" height="${art.portrait.height || ''}">`
       : '',
     tokens ? `<div class="monster-tokens">${tokens}</div>` : '',
+    facingControl,
     downloads ? `<ul class="art-downloads">${downloads}</ul>` : '',
   ]
     .filter(Boolean)
@@ -367,6 +387,7 @@ export function renderMonsterPage({ monster, prev, next }) {
   </main>
   ${LEGAL_NOTICE}
   <footer><div class="wrap">Part of the <a href="../../monsters.html">Dungeons on Automatic bestiary</a>. Free to browse, print, and use at your table.</div></footer>
+  <script src="../../assets/js/hex-facing.js" defer></script>
 </body>
 </html>
 `;
