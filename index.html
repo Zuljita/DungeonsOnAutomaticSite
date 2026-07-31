@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dungeons on Automatic turns a short brief into a runnable DFRPG or GURPS dungeon: maps, room keys, encounters, treasure, and VTT exports in a local-first desktop app.">
-  <title>Dungeons on Automatic — Grounded DFRPG Dungeon Generation</title>
+  <meta name="description" content="A local-first desktop app that turns a short brief into a runnable DFRPG or GURPS dungeon — maps, room keys, encounters, treasure, and VTT exports — plus a free browsable bestiary of 457 statted, illustrated monsters.">
+  <title>Dungeons on Automatic — DFRPG Dungeon Generator &amp; Free Monster Library</title>
   <link rel="canonical" href="https://dungeonsonautomatic.com/">
   <meta property="og:site_name" content="Dungeons on Automatic">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dungeons on Automatic — Grounded DFRPG Dungeon Generation">
-  <meta property="og:description" content="Dungeons on Automatic turns a short brief into a runnable DFRPG or GURPS dungeon: maps, room keys, encounters, treasure, and VTT exports in a local-first desktop app.">
+  <meta property="og:title" content="Dungeons on Automatic — DFRPG Dungeon Generator &amp; Free Monster Library">
+  <meta property="og:description" content="A local-first desktop app that turns a short brief into a runnable DFRPG or GURPS dungeon — maps, room keys, encounters, treasure, and VTT exports — plus a free browsable bestiary of 457 statted, illustrated monsters.">
   <meta property="og:url" content="https://dungeonsonautomatic.com/">
   <meta property="og:image" content="https://dungeonsonautomatic.com/assets/site/generator-hero.png">
   <meta property="og:image:width" content="924">
@@ -43,12 +43,12 @@
       <div class="site-hero__copy">
         <div class="site-eyebrow">Local-first dungeon prep for DFRPG &amp; GURPS</div>
         <h1>Build the dungeon. <em>Skip the blank page.</em></h1>
-        <p class="site-hero__lede">Give it a session brief, or start with a seed and a few decisions. Local AI directors work inside a deterministic, DFRPG-grounded generator to produce a dungeon you can actually run.</p>
+        <p class="site-hero__lede">Give it a session brief, or just a seed. A deterministic, DFRPG-grounded generator lays out the place, keys every room, and exports it for your table &mdash; with optional local AI to interpret your brief and dress the result.</p>
         <div class="site-hero__actions">
           <a class="site-button site-button--primary" href="releases.html#downloads">Get the Desktop App</a>
           <a class="site-button site-button--quiet" href="quickstart.html">Make Your First Dungeon</a>
         </div>
-        <p class="site-hero__note">Free early-access builds · Windows, macOS &amp; Linux · optional local AI · your prep stays on your machine</p>
+        <p class="site-hero__note">Free early-access builds (0.1.x) &middot; Windows, macOS &amp; Linux &middot; optional local AI built in &middot; no account, no cloud &mdash; your prep stays on your machine</p>
       </div>
 
       <div class="product-window" aria-label="Dungeons on Automatic workspace preview">
@@ -62,9 +62,9 @@
   <div class="proof-strip" aria-label="Product highlights">
     <div class="site-wrap proof-strip__inner">
       <div class="proof"><b>DFRPG-grounded</b><span>CER, sources, mana, sanctity</span></div>
-      <div class="proof"><b>Constrained AI</b><span>typed tools + validation</span></div>
       <div class="proof"><b>Reproducible</b><span>deterministic seeded builds</span></div>
       <div class="proof"><b>Local-first</b><span>no account, no cloud required</span></div>
+      <div class="proof"><b>457-monster bestiary</b><span>free, statted, illustrated</span></div>
     </div>
   </div>
 
@@ -73,7 +73,7 @@
       <div class="site-wrap">
         <div class="section-heading">
           <div>
-            <div class="site-eyebrow">From idea to incident report</div>
+            <div class="site-eyebrow">How it works</div>
             <h2>A generator that remembers you have to run this thing.</h2>
           </div>
           <p>DOA handles the spatial work, content passes, and export plumbing. The judgment calls stay yours, because they only make sense with your players in the room.</p>
@@ -83,17 +83,17 @@
           <article class="workflow__step">
             <div class="workflow__number">01 / BRIEF</div>
             <h3>Set the intent</h3>
-            <p>Choose the scale, danger, source books, tone, and any set pieces the evening requires.</p>
+            <p>Choose the scale, danger, source books, tone, and any set pieces the evening requires. Party CER keeps encounters sized to your delvers.</p>
           </article>
           <article class="workflow__step">
             <div class="workflow__number">02 / BUILD</div>
             <h3>Generate the place</h3>
-            <p>Biomes, organic zones, and room geometry become a connected dungeon from one deterministic seed.</p>
+            <p>Biomes, organic zones, and room geometry become a connected dungeon from one deterministic seed. Same seed and settings, same dungeon.</p>
           </article>
           <article class="workflow__step">
             <div class="workflow__number">03 / REVIEW</div>
             <h3>Inspect the trouble</h3>
-            <p>Read the adventure frame and room key. Check exits, CER, hazards, treasure, and hidden routes.</p>
+            <p>Read the adventure frame and room key. Check exits, CER, hazards, treasure, and hidden routes. Reroll the parts that miss.</p>
           </article>
           <article class="workflow__step">
             <div class="workflow__number">04 / EXPORT</div>
@@ -107,9 +107,9 @@
     <section class="hybrid" id="hybrid" aria-labelledby="hybrid-title">
       <div class="site-wrap hybrid__inner">
         <div>
-          <div class="site-eyebrow">The unusual bit</div>
+          <div class="site-eyebrow">Local AI, fenced in</div>
           <h2 id="hybrid-title">AI imagination, made to follow the rules.</h2>
-          <p class="hybrid__lede">DOA’s local directors interpret your brief, suggest themes and set pieces, and improve the narrative. <strong>Every action travels through a typed tool the generator understands.</strong></p>
+          <p class="hybrid__lede">DOA&rsquo;s directors run on a local model &mdash; the app can download one and run it on its bundled llama.cpp runtime, or connect to the Ollama, LM Studio, or llama.cpp server you already have. They interpret your brief and improve the narrative, but <strong>every action travels through a typed tool the generator understands.</strong> No model, no problem: the deterministic generator runs fine without one.</p>
         </div>
 
         <div class="hybrid__machine" aria-label="How AI direction becomes a valid dungeon">
@@ -118,9 +118,9 @@
             <div class="hybrid__step"><b>01 / Ground</b><p><strong>Your party and library set the facts:</strong> CER, owned source books, DFRPG data, tone, tags, and requested set pieces.</p></div>
             <div class="hybrid__step"><b>02 / Propose</b><p><strong>Local AI turns the brief into intent:</strong> loose notes become structured suggestions and director actions.</p></div>
             <div class="hybrid__step"><b>03 / Build</b><p><strong>Deterministic systems do the physical work:</strong> partitions, zones, rooms, connections, encounters, treasure, and player-safe visibility.</p></div>
-            <div class="hybrid__step"><b>04 / Verify</b><p><strong>Validators get the last word:</strong> they reject impossible geometry, broken references, and disallowed mutations before the result reaches DungeonState.</p></div>
+            <div class="hybrid__step"><b>04 / Verify</b><p><strong>Validators get the last word:</strong> they reject impossible geometry, broken references, and disallowed mutations before the result reaches the dungeon.</p></div>
           </div>
-          <div class="hybrid__result"><span>AI proposes → typed tool call → seeded pass → validation</span><strong>Result: a real DungeonState</strong></div>
+          <div class="hybrid__result"><span>AI proposes &rarr; typed tool call &rarr; seeded pass &rarr; validation</span><strong>Result: a valid, runnable dungeon</strong></div>
         </div>
       </div>
     </section>
@@ -130,9 +130,9 @@
         <div class="section-heading">
           <div>
             <div class="site-eyebrow">The prep packet</div>
-            <h2>The packet you wish the map generator had given you.</h2>
+            <h2>Everything the table needs. Nothing the players shouldn&rsquo;t see.</h2>
           </div>
-          <p>DOA tracks each room’s purpose, connections, inhabitants, contents, and visibility alongside the map geometry.</p>
+          <p>DOA tracks each room&rsquo;s purpose, connections, inhabitants, contents, and visibility alongside the map geometry.</p>
         </div>
 
         <div class="artifact-grid">
@@ -157,13 +157,29 @@
             <h3>Use the dungeon where you actually play</h3>
             <p>Export GM and player PNGs, Foundry VTT scenes, Universal VTT files, Markdown room keys, placement TSV, and the complete dungeon state.</p>
             <div class="artifact__tags"><span>PNG</span><span>Foundry VTT</span><span>.dd2vtt</span><span>Markdown</span><span>TSV</span><span>JSON</span></div>
-            <p><a href="foundry.html">The monster library also installs directly into Foundry VTT</a> as a compendium of three hundred&ndash;odd Actors.</p>
+            <p><a href="foundry.html">The monster library also installs directly into Foundry VTT</a> as a compendium of 457 ready-to-drag Actors.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="site-section" id="control">
+    <section class="site-section" id="bestiary">
+      <div class="site-wrap">
+        <div class="section-heading">
+          <div>
+            <div class="site-eyebrow">The bestiary</div>
+            <h2>457 monsters. Statted, illustrated, browsable right now.</h2>
+          </div>
+          <p>Every monster in the public library carries a complete GURPS stat block, an original portrait, a top-down token, a hex token cut to its real footprint, and GCS files that work outside DOA. It feeds the generator&rsquo;s encounters &mdash; and it runs in your browser, no download, no account.</p>
+        </div>
+        <div class="site-hero__actions">
+          <a class="site-button site-button--primary" href="monsters.html">Browse the bestiary</a>
+          <a class="site-button site-button--quiet" href="foundry.html">Install it in Foundry VTT</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section site-section--sunken" id="control">
       <div class="site-wrap control-grid">
         <div>
           <div class="site-eyebrow">Selective control</div>
@@ -174,7 +190,7 @@
           <div class="control-item"><b>Seeds</b><p><strong>Repeat a result exactly.</strong> Keep the same seed and configuration when you need the same dungeon bones again.</p></div>
           <div class="control-item"><b>Rerolls</b><p><strong>Change the offending part.</strong> Encounter and dressing rerolls preserve the approved topology.</p></div>
           <div class="control-item"><b>Sources</b><p><strong>Use the books on your shelf.</strong> Enable the DFRPG and GURPS sources you own before the next generation pass.</p></div>
-          <div class="control-item"><b>Local AI</b><p><strong>Polish is optional.</strong> Connect Ollama, LM Studio, or llama.cpp for local narrative help; deterministic code still owns the dungeon state.</p></div>
+          <div class="control-item"><b>Local AI</b><p><strong>Polish is optional.</strong> One click downloads a small model onto the bundled runtime, or point DOA at Ollama, LM Studio, or llama.cpp. Deterministic code still owns the dungeon state.</p></div>
         </div>
       </div>
     </section>
@@ -183,7 +199,7 @@
       <div class="site-wrap staff-band__inner">
         <div>
           <div class="site-eyebrow">The Stage Manager</div>
-          <h2 id="staff-title">Four specialists. One regrettable floor plan.</h2>
+          <h2 id="staff-title">Four director personas, played by your local model.</h2>
         </div>
         <div class="staff-band__roster">
           <div class="staff-member"><img src="assets/portraits/Kovath.png" alt="Kovath"><div><b>Kovath</b><span>Creative director</span></div></div>
@@ -197,12 +213,13 @@
     <section>
       <div class="site-wrap closing">
         <div>
-          <div class="site-eyebrow">The players have arrived early</div>
-          <h2>Good. The dungeon has already filed the paperwork.</h2>
+          <div class="site-eyebrow">Early access</div>
+          <h2>It works. It&rsquo;s not finished. Come break it.</h2>
+          <p>Version 0.1.x ships every platform, generates real dungeons, and has rough edges we list honestly on the <a href="releases.html#known-issues">known issues page</a>. When something misbehaves, a bug report with the seed is the most useful thing you can hand us.</p>
         </div>
         <div class="closing__actions">
           <a class="site-button site-button--primary" href="releases.html#downloads">Download DOA</a>
-          <a class="site-button site-button--quiet" href="manual.html">Read the Manual</a>
+          <a class="site-button site-button--quiet" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">Report what breaks</a>
         </div>
       </div>
     </section>
@@ -225,6 +242,7 @@
         <a href="blog.html">Blog</a>
         <a href="releases.html">Releases</a>
         <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">Report a bug</a>
         <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite">GitHub</a>
       </div>
     </div>

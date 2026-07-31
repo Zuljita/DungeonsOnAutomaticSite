@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Monster data problem
+    url: https://github.com/Zuljita/DungeonsOnAutomaticMonsters/issues/new
+    about: A stat, trait, credit, or art problem in a specific monster record — file it on the monster-data repository.
+  - name: Questions and ideas
+    url: https://github.com/Zuljita/DungeonsOnAutomaticSite/discussions
+    about: Not a bug — a question, an idea, or something you made with the generator.
+  - name: Quickstart
+    url: https://dungeonsonautomatic.com/quickstart.html
+    about: New here? Install-to-room-key in three steps.

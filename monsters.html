@@ -96,7 +96,7 @@
     <div class="wrap">
       <span class="eyebrow">The bestiary</span>
       <h1>Something is already in the room.</h1>
-      <p class="lead">Three hundred&ndash;odd monsters, each with an original portrait, a top-down token, a hex token cut to its real footprint, and a complete stat block. Search it by name or by what the thing actually does &mdash; <em>petrification</em>, <em>engulf</em>, <em>impaling</em> &mdash; then print the block or import it into GCS. Free, no account, nothing to install.</p>
+      <p class="lead">More than 450 monsters, each with an original portrait, a top-down token, a hex token cut to its real footprint, and a complete stat block. Search it by name or by what the thing actually does &mdash; <em>petrification</em>, <em>engulf</em>, <em>impaling</em> &mdash; then print the block or import it into GCS. Free, no account, nothing to install.</p>
       <div class="actions">
         <a class="action action--primary" href="#library">Browse the bestiary</a>
         <a class="action" href="foundry.html">Install in Foundry VTT</a>
@@ -154,7 +154,7 @@
       <p>GURPS and Dungeon Fantasy Roleplaying Game are trademarks or registered trademarks of Steve Jackson Games. All rights are reserved by Steve Jackson Games. This free, non-resale game aid uses those marks under the <a href="https://www.sjgames.com/general/online_policy.html">SJ Games Online Policy</a>; no SJ Games art, logos, or trade dress are hosted here.</p>
     </div>
   </section>
-  <footer><div class="wrap">The bestiary is free to browse, print, and use at your table. <a href="monster-credits.html">Where these monsters came from.</a></div></footer>
+  <footer><div class="wrap">The bestiary is free to browse, print, and use at your table. <a href="monster-credits.html">Where these monsters came from.</a> <a href="https://github.com/Zuljita/DungeonsOnAutomaticMonsters/issues">Report a stat or art problem.</a></div></footer>
   <script>
     const INDEX_URL = 'data/monsters/index.json';
     const SLUGS_URL = 'data/monsters/slugs.json';
@@ -194,7 +194,7 @@
         if (!tags.includes(tag)) return false;
       }
       if (!state.needle) return true;
-      // Searching the mechanics is what makes 304 records a reference rather
+      // Searching the mechanics is what makes hundreds of records a reference rather
       // than a list you scroll: "petrification", "engulf" and "impaling" should
       // all find their monsters.
       const attacks = monster.stats?.attacks || [];

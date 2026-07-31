@@ -1,0 +1,53 @@
+name: Bug report
+description: Something in the app, the bestiary, or an export is wrong.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for poking at it. The seed and version are what make a generator bug reproducible — with them we can regenerate your exact dungeon.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong, and what did you expect instead?
+      placeholder: The player PNG export shows the secret door in room 7.
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options:
+        - Desktop app — Windows
+        - Desktop app — macOS (Apple silicon)
+        - Desktop app — macOS (Intel)
+        - Desktop app — Linux
+        - Bestiary / website
+        - Foundry VTT module
+        - Somewhere else
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Help → About in the app. Skip for website issues.
+      placeholder: 0.1.71
+  - type: textarea
+    id: seed
+    attributes:
+      label: Seed and settings
+      description: For generation bugs — the seed plus any non-default settings (party CER, size, sources, session brief). The full Dungeon JSON export is even better.
+      placeholder: "Seed 8F1A-7C2D, party CER 40, danger high, DFRPG core only"
+  - type: input
+    id: room
+    attributes:
+      label: Room or map area
+      description: The room number or map area where the problem shows up, if it has one.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots, exports, or logs
+      description: Drag files in. For export bugs, the exported file itself is the most useful thing you can attach.

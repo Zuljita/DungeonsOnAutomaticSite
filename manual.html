@@ -166,7 +166,7 @@
         <h2>Stage Manager</h2>
         <p>The Stage Manager is the in-character director layer and the real progress/event surface. Kovath, Zarlzazz, Vorga, and Mizzik narrate what the generator is doing while generation, validation, exports, and polish work happen underneath.</p>
         <h3>Local AI direction and narrative polish</h3>
-        <p>Local AI is optional. Connect Ollama, LM Studio, or llama.cpp in Settings to enable brief suggestions, the Dungeon Interview, director actions, and narrative polish. The desktop app talks to the provider running on your own machine.</p>
+        <p>Local AI is optional. The app can download a small model and run it on its bundled llama.cpp runtime from Settings, or connect to Ollama, LM Studio, or llama.cpp to enable brief suggestions, the Dungeon Interview, director actions, and narrative polish. Either way the model runs on your own machine.</p>
         <p>LLM director actions use a constrained list of validated tool calls. Source filters and structural validators review every proposed DungeonState change.</p>
       </section>
       <section id="limitations">
@@ -188,7 +188,7 @@
         <h3>The VTT import is misaligned</h3>
         <p>Confirm the target grid size, export scale, and whether the VTT expects pixels per square or square size in scene units.</p>
         <h3>I need to report a bug</h3>
-        <p>Keep the seed, settings, app version, export format, and the room number or map area where the problem appears. That is the incident report. The staff will pretend to appreciate it.</p>
+        <p>File it on the <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">public issue tracker</a>. Include the seed, settings, app version, export format, and the room number or map area where the problem appears — with the seed we can regenerate your exact dungeon. Monster stat or art problems go to the <a href="https://github.com/Zuljita/DungeonsOnAutomaticMonsters/issues">monster-data tracker</a>.</p>
       </section>
     </main>
   </div>
@@ -198,6 +198,6 @@
       <p>GURPS and Dungeon Fantasy Roleplaying Game are trademarks or registered trademarks of Steve Jackson Games. All rights are reserved by Steve Jackson Games. This free, non-resale game aid uses those marks under the <a href="https://www.sjgames.com/general/online_policy.html">SJ Games Online Policy</a>; no SJ Games art, logos, or trade dress are hosted here.</p>
     </div>
   </section>
-  <footer><div class="wrap">Dungeons on Automatic manual. Local-first DFRPG dungeon prep documentation.</div></footer>
+  <footer><div class="wrap">Dungeons on Automatic manual. Local-first DFRPG dungeon prep documentation. <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">Report a bug.</a></div></footer>
 </body>
 </html>
