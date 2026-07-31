@@ -96,7 +96,7 @@
       <div>
         <h2>Continuous early access builds</h2>
         <p>These unofficial early access desktop builds are mirrored as the <code>continuous</code> public release for Windows, macOS, and Linux.</p>
-        <p>The artifacts include the Electron desktop runtime and app dependencies. Install Ollama, LM Studio, or llama.cpp separately to enable local AI features.</p>
+        <p>The artifacts include the Electron desktop runtime and app dependencies. Local AI is optional and built in: the app can download a small model and run it on its bundled llama.cpp runtime, or connect to an Ollama, LM Studio, or llama.cpp server you already run. The generator itself never needs a model.</p>
         <p>Compare the available version shown below with your installed version in the app's About dialog or Help menu update check.</p>
         <p>New here? Start with the <a href="quickstart.html">first dungeon quickstart</a>, then return for downloads and known issues.</p>
         <div class="downloads">
@@ -107,10 +107,30 @@
           <a class="download" data-download-id="linux-arm64" href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-arm64.AppImage"><strong>Linux ARM64</strong><span>AppImage build for ARM64 Linux.</span><span class="download-meta">Version metadata loading.</span></a>
         </div>
         <p><a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/tag/continuous">View SHA-256 checksum files, updater metadata, and all mirrored release assets.</a></p>
-        <p>These early access artifacts are currently unsigned and unnotarized. Windows, macOS, and Linux may show their standard first-run warnings.</p>
+        <p>These builds are unsigned, so every OS challenges the first launch. <a href="#known-issues">First-run steps for each platform and the current known issues are below.</a></p>
         <h2>Foundry VTT monster module</h2>
         <p>The whole monster library installs into Foundry VTT as a compendium for the GURPS Game Aid &mdash; every monster an Actor with its portrait, hex token, stat block, and armour. It installs from a manifest URL rather than Foundry's module browser.</p>
         <p><a href="foundry.html">How to install the Foundry VTT module</a> &mdash; the URL, the steps, and what you need first.</p>
+      </div>
+    </article>
+    <article class="release" id="known-issues">
+      <aside>
+        <div class="version">Known issues</div>
+        <div class="date">Read before installing</div>
+      </aside>
+      <div>
+        <h2>What will bite you first</h2>
+        <p>Continuous builds are working software with rough edges. This is the honest list. Anything you hit that is not here belongs on the <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">issue tracker</a> &mdash; seed and app version included, please.</p>
+        <h3>The builds are unsigned &mdash; every OS challenges the first launch</h3>
+        <p><strong>Windows:</strong> SmartScreen shows &ldquo;Windows protected your PC.&rdquo; Click <em>More info</em>, then <em>Run anyway</em>. This appears once per download.</p>
+        <p><strong>macOS:</strong> the first open is blocked because the app is not notarized. Open <em>System Settings &rarr; Privacy &amp; Security</em>, scroll to the message about the blocked app, and click <em>Open Anyway</em>. If macOS instead claims the app is &ldquo;damaged,&rdquo; clear the quarantine flag in Terminal: <code>xattr -dr com.apple.quarantine "/Applications/Dungeons on Automatic.app"</code>. In-app updates also do not install on macOS while builds are unsigned &mdash; when the app offers an update, re-download from this page instead.</p>
+        <p><strong>Linux:</strong> mark the AppImage executable (<code>chmod +x</code> or the file manager's Properties &rarr; Permissions), then run it. Some distributions need the FUSE 2 library (<code>libfuse2</code>) for AppImages.</p>
+        <h3>Current known issues</h3>
+        <ul>
+          <li>The built-in local-AI setup (bundled llama.cpp runtime with a one-click model download) is new, and its first-run flow on a completely fresh machine is still being verified. If it misbehaves, the Ollama / LM Studio connection path is the fallback &mdash; and a bug report is a favor.</li>
+          <li>Universal VTT (<code>.dd2vtt</code>) import hardening is in progress. Importers differ in strictness; if a file is rejected, say which VTT and attach the file.</li>
+          <li>A dungeon is reproducible from its seed <em>within</em> an app version. Across versions the generator changes, so keep the Dungeon JSON export for anything you want to keep exactly.</li>
+        </ul>
       </div>
     </article>
     <article class="release">
@@ -166,7 +186,7 @@
       <p>GURPS and Dungeon Fantasy Roleplaying Game are trademarks or registered trademarks of Steve Jackson Games. All rights are reserved by Steve Jackson Games. This free, non-resale game aid uses those marks under the <a href="https://www.sjgames.com/general/online_policy.html">SJ Games Online Policy</a>; no SJ Games art, logos, or trade dress are hosted here.</p>
     </div>
   </section>
-  <footer><div class="wrap">Dungeons on Automatic release notes. Early access builds, checksums, and roadmap notes.</div></footer>
+  <footer><div class="wrap">Dungeons on Automatic release notes. Early access builds, checksums, and roadmap notes. <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">Report a bug.</a></div></footer>
   <script>
     (async () => {
       const formatBytes = (bytes) => {
