@@ -4,9 +4,9 @@
   "candidate": {
     "id": "enraged-eggplant-monsters",
     "name": "Enraged Eggplant Monster Library",
-    "candidateVersion": "0.4.0",
-    "recordCount": 304,
-    "approvedCount": 304,
+    "candidateVersion": "0.5.0",
+    "recordCount": 457,
+    "approvedCount": 457,
     "reviewRequiredCount": 0,
     "sourceSystem": "gurps_4e_fan_conversion",
     "sourceLicense": "author_permission",
@@ -16,17 +16,17 @@
   "latest": {
     "id": "enraged-eggplant-monsters",
     "name": "Dungeons on Automatic Monster Library",
-    "version": "0.4.0",
-    "path": "packages/enraged-eggplant-0.4.0.json",
-    "fileName": "enraged-eggplant-0.4.0.json",
-    "sha256": "8ee2eef073cbd7c773b5519376c393e3abb675938911f47b57924b6bfaa00ee1",
-    "monsterCount": 304,
+    "version": "0.5.0",
+    "path": "packages/enraged-eggplant-0.5.0.json",
+    "fileName": "enraged-eggplant-0.5.0.json",
+    "sha256": "2b13a6d13cc294df4da9902d33df8130a40f7544b020fcaa3204b3e6d21cdd47",
+    "monsterCount": 457,
     "art": {
-      "manifestUrl": "https://assets.dungeonsonautomatic.com/monsters/enraged-eggplant/image-manifest.json",
-      "portraitCount": 304,
-      "tokenCount": 304,
-      "hexTokenCount": 304
+      "manifestUrl": "https://assets.dungeonsonautomatic.com/monsters/image-manifest.json",
+      "portraitCount": 457,
+      "tokenCount": 457,
+      "hexTokenCount": 457
     },
-    "publishedAt": "2026-07-31T18:45:02.572Z"
+    "publishedAt": "2026-07-31T19:44:04.829Z"
   }
 }
