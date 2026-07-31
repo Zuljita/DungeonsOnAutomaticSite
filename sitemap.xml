@@ -4,10 +4,10 @@
     <loc>https://dungeonsonautomatic.com/blog.html</loc>
   </url>
   <url>
-    <loc>https://dungeonsonautomatic.com/</loc>
+    <loc>https://dungeonsonautomatic.com/foundry.html</loc>
   </url>
   <url>
-    <loc>https://dungeonsonautomatic.com/foundry.html</loc>
+    <loc>https://dungeonsonautomatic.com/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/manual.html</loc>
@@ -156,6 +156,9 @@
     <lastmod>2018-01-09</lastmod>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/aasimar/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/aboleth/</loc>
   </url>
   <url>
@@ -163,6 +166,36 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/achaierai/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-black-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-blue-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-brass-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-bronze-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-copper-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-gold-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-green-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-red-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-silver-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/adult-white-dragon/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/air-elemental/</loc>
@@ -174,7 +207,40 @@
     <loc>https://dungeonsonautomatic.com/monsters/allip/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-black-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-blue-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-brass-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-bronze-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-copper-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-gold-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-green-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-red-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-silver-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ancient-white-dragon/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/androsphinx/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/animated-armor/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/ankheg/</loc>
@@ -207,6 +273,12 @@
     <loc>https://dungeonsonautomatic.com/monsters/avoral/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/awakened-shrub/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/awakened-tree/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/axebeak/</loc>
   </url>
   <url>
@@ -237,7 +309,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/basilisk/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/bat/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/bat-swarm/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/bear-black/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/bear-brown/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/bear-polar/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/bearded-devil-barbazu/</loc>
@@ -258,13 +342,25 @@
     <loc>https://dungeonsonautomatic.com/monsters/black-dragon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/black-dragon-wyrmling/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/black-pudding/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/blink-dog/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/blood-hawk/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/blue-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/blue-dragon-wyrmling/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/boar/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/bodak/</loc>
@@ -279,7 +375,16 @@
     <loc>https://dungeonsonautomatic.com/monsters/brass-dragon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/brass-dragon-wyrmling/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/bronze-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/bronze-dragon-wyrmling/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/bugbear/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/bulette/</loc>
@@ -288,13 +393,28 @@
     <loc>https://dungeonsonautomatic.com/monsters/cachalot-whale/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/camel/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/cat/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/cauchemar/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/centaur/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/centipede-swarm/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/chain-devil-kyton/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/chaos-beast/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/cheetah/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/chimera/</loc>
@@ -306,6 +426,9 @@
     <loc>https://dungeonsonautomatic.com/monsters/chuul/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/clay-golem/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/cloaker/</loc>
   </url>
   <url>
@@ -315,13 +438,25 @@
     <loc>https://dungeonsonautomatic.com/monsters/cockatrice/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/constrictor-snake/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/copper-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/copper-dragon-wyrmling/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/couatl/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/crab/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/criosphinx/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/crocodile/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/cryohydra/</loc>
@@ -331,6 +466,21 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/darkmantle/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/death-dog/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/deep-dwarf/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/deep-halfling/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/deer/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/deinonychus/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/delver/</loc>
@@ -378,10 +528,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/dire-weasel/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/dire-wolf/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/dire-wolverine/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/djinni/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/dog/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/donkey/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/doppelganger/</loc>
@@ -402,7 +561,13 @@
     <loc>https://dungeonsonautomatic.com/monsters/drider/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/drow/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/dryad/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/duergar/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/dust-mephit/</loc>
@@ -418,6 +583,15 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/efreeti/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/elasmosaurus/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/elephant/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/elk/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/erinyes/</loc>
@@ -450,6 +624,15 @@
     <loc>https://dungeonsonautomatic.com/monsters/flying-snake/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/flying-sword/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/forest-gnome/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/frog/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/frost-giant/</loc>
   </url>
   <url>
@@ -471,7 +654,13 @@
     <loc>https://dungeonsonautomatic.com/monsters/ghoul/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-ant/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-ape/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-badger/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-bat/</loc>
@@ -480,7 +669,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/giant-bee/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-boar/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-bombardier-beetle/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-centipede/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-constrictor-snake/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-crab/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-crocodile/</loc>
@@ -489,10 +690,22 @@
     <loc>https://dungeonsonautomatic.com/monsters/giant-eagle/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-elk/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-fire-beetle/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-frog/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-goat/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-hyena/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-lizard/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-octopus/</loc>
@@ -501,10 +714,25 @@
     <loc>https://dungeonsonautomatic.com/monsters/giant-owl/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-poisonous-snake/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-praying-mantis/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-rat/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-scorpion/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-sea-horse/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-shark/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-spider/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-squid/</loc>
@@ -513,7 +741,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/giant-stag-beetle/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-toad/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-vulture/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/giant-wasp/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-weasel/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/giant-wolf-spider/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/gibbering-mouther/</loc>
@@ -525,10 +765,25 @@
     <loc>https://dungeonsonautomatic.com/monsters/glabrezu/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/gnoll/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/goat/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/goblin/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/gold-dragon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/gold-dragon-wyrmling/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/gorgon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/gray-elf/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/gray-ooze/</loc>
@@ -541,6 +796,9 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/green-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/green-dragon-wyrmling/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/green-hag/</loc>
@@ -564,7 +822,16 @@
     <loc>https://dungeonsonautomatic.com/monsters/gynosphinx/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/half-elf/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/half-orc/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/harpy/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/hawk/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/hell-hound/</loc>
@@ -588,16 +855,28 @@
     <loc>https://dungeonsonautomatic.com/monsters/hippogriff/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/hobgoblin/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/homunculus/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/horned-devil-cornugon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/horse-heavy/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/horse-light/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/hound-archon/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/howler/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/hunter-shark/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/hydra/</loc>
@@ -633,6 +912,9 @@
     <loc>https://dungeonsonautomatic.com/monsters/kapoacinth/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/kobold/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/kolyarut/</loc>
   </url>
   <url>
@@ -666,10 +948,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/lillend/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/lion/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/lizard/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/lizardfolk/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/locathah/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/locust-swarm/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/magma-mephit/</loc>
@@ -679,6 +970,9 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/malenti/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/mammoth/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/manta-ray/</loc>
@@ -697,6 +991,15 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/medusa/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/megaraptor/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/merfolk/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/merrow/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/mimic/</loc>
@@ -756,6 +1059,12 @@
     <loc>https://dungeonsonautomatic.com/monsters/monstrous-scorpion-tiny/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/mountain-dwarf/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/mule/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/mummy/</loc>
   </url>
   <url>
@@ -795,7 +1104,16 @@
     <loc>https://dungeonsonautomatic.com/monsters/octopus/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/ogre/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/oni/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/ooze-mephit/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/orc/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/orca/</loc>
@@ -804,7 +1122,13 @@
     <loc>https://dungeonsonautomatic.com/monsters/otyugh/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/owl/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/owlbear/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/panther/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/pegasus/</loc>
@@ -828,6 +1152,15 @@
     <loc>https://dungeonsonautomatic.com/monsters/planetar/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/plesiosaurus/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/pony/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/porpoise/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/pseudodragon/</loc>
   </url>
   <url>
@@ -838,6 +1171,9 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/quasit/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/quipper/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/rakshasa/</loc>
@@ -864,6 +1200,12 @@
     <loc>https://dungeonsonautomatic.com/monsters/red-dragon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/red-dragon-wyrmling/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/reef-shark/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/remorhaz/</loc>
   </url>
   <url>
@@ -882,7 +1224,13 @@
     <loc>https://dungeonsonautomatic.com/monsters/roper/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/rug-of-smothering/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/rust-monster/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/saber-toothed-tiger/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/sahuagin/</loc>
@@ -900,6 +1248,9 @@
     <loc>https://dungeonsonautomatic.com/monsters/satyr/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/scorpion/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/scorpionfolk/</loc>
   </url>
   <url>
@@ -912,6 +1263,9 @@
     <loc>https://dungeonsonautomatic.com/monsters/sea-hag/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/sea-horse/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/shadow/</loc>
   </url>
   <url>
@@ -919,6 +1273,9 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/shambling-mound/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/shark/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/shield-guardian/</loc>
@@ -933,6 +1290,9 @@
     <loc>https://dungeonsonautomatic.com/monsters/silver-dragon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/silver-dragon-wyrmling/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/skum/</loc>
   </url>
   <url>
@@ -942,10 +1302,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/spectre/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/spider/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/spider-eater/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/spider-swarm/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/spirit-naga/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/sprite/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/squid/</loc>
@@ -969,6 +1338,30 @@
     <loc>https://dungeonsonautomatic.com/monsters/succubus/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/svirfneblin/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/swarm-of-bats/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/swarm-of-insects/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/swarm-of-poisonous-snakes/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/swarm-of-quippers/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/swarm-of-rats/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/swarm-of-ravens/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/tallfellow-halfling/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/tarrasque/</loc>
   </url>
   <url>
@@ -976,6 +1369,12 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/thoqqua/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/tiefling/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/tiger/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/titan/</loc>
@@ -990,6 +1389,9 @@
     <loc>https://dungeonsonautomatic.com/monsters/treant/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/triceratops/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/triton/</loc>
   </url>
   <url>
@@ -1000,6 +1402,9 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/trumpet-archon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/tyrannosaurus/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/unicorn/</loc>
@@ -1014,10 +1419,19 @@
     <loc>https://dungeonsonautomatic.com/monsters/violet-fungus/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/viper-snake/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/vrock/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/vulture/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/war-pony/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/warhorse-heavy/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/water-elemental/</loc>
@@ -1035,13 +1449,28 @@
     <loc>https://dungeonsonautomatic.com/monsters/white-dragon/</loc>
   </url>
   <url>
+    <loc>https://dungeonsonautomatic.com/monsters/white-dragon-wyrmling/</loc>
+  </url>
+  <url>
     <loc>https://dungeonsonautomatic.com/monsters/wight/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/wild-elf/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/will-o-wisp/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/winter-wolf/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/wolf/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/wolverine/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/wood-elf/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/worg/</loc>
@@ -1060,6 +1489,36 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/yeth-hound/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-black-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-blue-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-brass-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-bronze-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-copper-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-gold-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-green-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-red-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-silver-dragon/</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/monsters/young-white-dragon/</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/monsters/yrthak/</loc>
