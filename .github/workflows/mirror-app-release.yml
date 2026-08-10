@@ -80,6 +80,27 @@ jobs:
             --jq '[.[] | select(.draft == false) | {tagName: .tag_name, name: .name, publishedAt: .published_at, isPrerelease: .prerelease, body: (.body // "")}]' \
             > data/releases.json
 
+      - name: Merge the release changelog into the public changelog
+        # The application publishes one rolling `continuous` release, so its
+        # notes only ever describe the newest build. data/changelog.json is this
+        # repository's cumulative history, built by merging each release's
+        # release-changelog.json into what is already committed. The merge is
+        # keyed and idempotent, so a mirror run with nothing new changes nothing.
+        run: |
+          [ "$MIRROR_SKIP" = "1" ] && exit 0
+          rm -rf mirror-meta/changelog
+          mkdir -p mirror-meta/changelog
+          if ! GH_TOKEN="$SOURCE_TOKEN" gh release download "$SOURCE_TAG" \
+            --repo "$SOURCE_REPO" \
+            --pattern "release-changelog.json" \
+            --dir mirror-meta/changelog \
+            --clobber; then
+            echo "::warning title=No release changelog asset::${SOURCE_REPO}@${SOURCE_TAG} has no release-changelog.json, so the public changelog keeps its existing entries."
+            exit 0
+          fi
+
+          node scripts/merge-changelog.mjs mirror-meta/changelog/release-changelog.json
+
       - name: Write public download metadata
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
@@ -272,7 +293,7 @@ jobs:
           [ "$MIRROR_SKIP" = "1" ] && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/releases.json data/downloads.json
+          git add data/releases.json data/downloads.json data/changelog.json
           if git diff --cached --quiet; then
             echo "No public release metadata changes to commit."
           else
