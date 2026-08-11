@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/build-blog.mjs && node scripts/build-monsters.mjs && node scripts/build-sitemap.mjs",
     "export:blog": "node scripts/export-blog-to-markdown.mjs",
-    "test": "node scripts/test-blog-roundtrip.mjs && node scripts/test-hex-facing.mjs && node scripts/validate-monster-library.mjs",
+    "test": "node scripts/test-blog-roundtrip.mjs && node scripts/test-hex-facing.mjs && node scripts/test-changelog-merge.mjs && node scripts/validate-monster-library.mjs",
     "publish:monster-package": "node scripts/publish-monster-package.mjs"
   }
 }

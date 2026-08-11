@@ -62,6 +62,17 @@
     .feed-item .markdown a { color: var(--brass-300); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
     .feed-item .markdown code { font-family: var(--font-mono); font-size: 0.92em; color: var(--text-body); background: var(--surface-sunken); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); padding: 1px 5px; }
     .feed-item .markdown .divider { height: 1px; background: var(--border-hairline); margin: 4px 0; }
+    .changelog-group ul { margin: 14px 0 0; padding-left: 0; list-style: none; }
+    .changelog-entry + .changelog-entry { margin-top: 12px; }
+    .changelog-entry > .ref { font-family: var(--font-mono); font-size: 12px; color: var(--brass-300); letter-spacing: 0.02em; margin-right: 8px; }
+    /* Commit subjects under a pull request. Roll-up PRs are titled with a bare
+       list of issue numbers, so this nested list is where the release actually
+       says what changed. */
+    .changelog-entry .detail { margin: 8px 0 0; padding-left: 18px; list-style: disc; }
+    .changelog-entry .detail li { color: var(--text-faint); font-size: 14px; line-height: 1.55; }
+    .changelog-entry .detail li + li { margin-top: 4px; }
+    .changelog-more { cursor: pointer; font: inherit; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .changelog-more:hover { border-color: var(--brass-400); color: var(--brass-300); }
     footer { padding: 34px 0; border-top: 1px solid var(--stone-800); color: var(--text-faint); font-size: 13px; }
     @media (max-width: 760px) {
       .release { grid-template-columns: 1fr; }
@@ -169,14 +180,15 @@
     <article class="release" id="changelog">
       <aside>
         <div class="version">Changelog</div>
-        <div class="date">From app releases</div>
+        <div class="date" id="changelog-count">From app releases</div>
       </aside>
       <div>
         <h2>Application changelog</h2>
-        <p>Release notes are copied from the application release feed into this public changelog.</p>
+        <p>Every pull request merged into the application, newest first. Entries arrive automatically with each build.</p>
         <div class="feed" id="release-feed">
-          <p>Loading release notes.</p>
+          <p>Loading the changelog.</p>
         </div>
+        <button type="button" class="status changelog-more" id="changelog-more" hidden>Show earlier changes</button>
       </div>
     </article>
   </main>
@@ -240,104 +252,111 @@
   <script>
     (async () => {
       const feed = document.getElementById('release-feed');
-      try {
-        const response = await fetch('data/releases.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error('release feed unavailable');
-        const releases = await response.json();
-        feed.replaceChildren();
-        const appendInlineMarkdown = (parent, text) => {
-          const pattern = /(`([^`]+)`)|\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
-          let cursor = 0;
-          let match;
-          while ((match = pattern.exec(text)) !== null) {
-            if (match.index > cursor) {
-              parent.append(document.createTextNode(text.slice(cursor, match.index)));
-            }
-            if (match[2]) {
-              const code = document.createElement('code');
-              code.textContent = match[2];
-              parent.append(code);
-            } else {
-              const link = document.createElement('a');
-              link.href = match[4];
-              link.textContent = match[3];
-              link.rel = 'noopener';
-              link.target = '_blank';
-              parent.append(link);
-            }
-            cursor = pattern.lastIndex;
-          }
-          if (cursor < text.length) {
-            parent.append(document.createTextNode(text.slice(cursor)));
-          }
-        };
+      const moreButton = document.getElementById('changelog-more');
+      const countLabel = document.getElementById('changelog-count');
 
-        const renderMarkdown = (markdown) => {
-          const container = document.createElement('div');
-          container.className = 'markdown';
-          let list = null;
-          const closeList = () => {
-            list = null;
-          };
-          markdown.split(/\r?\n/).forEach((rawLine) => {
-            const line = rawLine.trim();
-            if (!line) {
-              closeList();
-              return;
-            }
-            if (line === '---') {
-              closeList();
-              const divider = document.createElement('div');
-              divider.className = 'divider';
-              container.append(divider);
-              return;
-            }
-            if (line.startsWith('# ')) {
-              closeList();
-              const heading = document.createElement('h4');
-              heading.textContent = line.slice(2);
-              container.append(heading);
-              return;
-            }
-            if (line.startsWith('## ')) {
-              closeList();
-              const heading = document.createElement('h4');
-              heading.textContent = line.slice(3);
-              container.append(heading);
-              return;
-            }
-            if (line.startsWith('- ')) {
-              if (!list) {
-                list = document.createElement('ul');
-                container.append(list);
-              }
-              const item = document.createElement('li');
-              appendInlineMarkdown(item, line.slice(2));
-              list.append(item);
-              return;
-            }
-            closeList();
-            const paragraph = document.createElement('p');
-            appendInlineMarkdown(paragraph, line);
-            container.append(paragraph);
+      // The application repository is private, so the changelog carries no
+      // links — only numbers, titles, and commit subjects. Nothing here builds
+      // a URL into it.
+      const monthLabel = (iso) => {
+        const date = new Date(iso);
+        if (Number.isNaN(date.getTime())) return 'Undated';
+        return date.toLocaleDateString(undefined, { year: 'numeric', month: 'long' });
+      };
+
+      const renderEntry = (entry) => {
+        const item = document.createElement('li');
+        item.className = 'changelog-entry';
+
+        if (entry.kind === 'pull-request' && Number.isInteger(entry.number)) {
+          const ref = document.createElement('span');
+          ref.className = 'ref';
+          ref.textContent = `#${entry.number}`;
+          item.append(ref);
+        }
+
+        item.append(document.createTextNode(entry.title));
+
+        if (Array.isArray(entry.commits) && entry.commits.length > 0) {
+          const detail = document.createElement('ul');
+          detail.className = 'detail';
+          entry.commits.forEach((subject) => {
+            const line = document.createElement('li');
+            line.textContent = subject;
+            detail.append(line);
           });
-          return container;
-        };
+          item.append(detail);
+        }
 
-        releases.slice(0, 8).forEach((release) => {
-          const article = document.createElement('article');
-          article.className = 'feed-item';
-          const title = document.createElement('h3');
-          title.textContent = release.name || release.tagName || 'Release';
-          const date = document.createElement('time');
-          date.dateTime = release.publishedAt || '';
-          date.textContent = release.publishedAt ? new Date(release.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : 'Unpublished';
-          const body = renderMarkdown(release.body || 'No public release notes yet.');
-          article.append(title, date, body);
-          feed.append(article);
+        return item;
+      };
+
+      const renderGroup = (label, entries) => {
+        const group = document.createElement('article');
+        group.className = 'feed-item changelog-group';
+        const heading = document.createElement('h3');
+        heading.textContent = label;
+        const list = document.createElement('ul');
+        entries.forEach((entry) => list.append(renderEntry(entry)));
+        group.append(heading, list);
+        return group;
+      };
+
+      try {
+        const response = await fetch('data/changelog.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('changelog unavailable');
+        const changelog = await response.json();
+        const entries = Array.isArray(changelog.entries) ? changelog.entries : [];
+
+        if (entries.length === 0) {
+          feed.textContent = 'No changes have been published yet.';
+          return;
+        }
+
+        // Already sorted newest-first by the build; grouping preserves that
+        // order because a Map keeps insertion order.
+        const byMonth = new Map();
+        entries.forEach((entry) => {
+          const label = monthLabel(entry.authoredAt);
+          if (!byMonth.has(label)) byMonth.set(label, []);
+          byMonth.get(label).push(entry);
         });
+
+        const groups = [...byMonth.entries()];
+        // Budget by entries rather than by months: a single busy month can hold
+        // two hundred merges, so "show the last two months" is not a bound on
+        // page length. Whole months are kept intact — the budget decides how
+        // many of them open, never splits one.
+        const budget = 40;
+        let shown = 0;
+        let initial = 0;
+        while (initial < groups.length) {
+          const size = groups[initial][1].length;
+          // Test the budget against the group that is about to open, not the
+          // ones already open: a busy month holds two hundred merges, and
+          // "we are still under budget" is no reason to unfold all of it. The
+          // newest month always opens, however large, so the page is never
+          // empty above the button.
+          if (initial > 0 && shown + size > budget) break;
+          shown += size;
+          initial += 1;
+        }
+
+        feed.replaceChildren();
+        groups.slice(0, initial).forEach(([label, group]) => feed.append(renderGroup(label, group)));
+
+        countLabel.textContent = `${entries.length} change${entries.length === 1 ? '' : 's'}`;
+
+        const remaining = groups.slice(initial);
+        if (remaining.length > 0) {
+          moreButton.hidden = false;
+          moreButton.addEventListener('click', () => {
+            remaining.forEach(([label, group]) => feed.append(renderGroup(label, group)));
+            moreButton.remove();
+          }, { once: true });
+        }
       } catch (error) {
-        feed.textContent = 'Release notes are temporarily unavailable.';
+        feed.textContent = 'The changelog is temporarily unavailable.';
       }
     })();
   </script>

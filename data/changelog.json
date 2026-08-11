@@ -1,0 +1,2792 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "kind": "pull-request",
+      "number": 528,
+      "title": "Put the pane splitters where the seam is, and draw them (#521)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T07:50:16-04:00",
+      "shortSha": "11d0c09",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 514,
+      "title": "Build(deps): Bump js-yaml from 4.2.0 to 4.3.1",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T07:03:50-04:00",
+      "shortSha": "06b7589",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 515,
+      "title": "Build(deps-dev): Bump electron from 39.8.5 to 39.8.10",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T07:03:35-04:00",
+      "shortSha": "ad5c611",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 525,
+      "title": "Settings → GCS: point the app at a GCS install that isn't where we guessed",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T07:01:06-04:00",
+      "shortSha": "715eb09",
+      "commits": [
+        "Settings → GCS: point the app at a GCS install that isn't where we guessed",
+        "GCS has no installer — stop pretending discovery is the normal path"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 526,
+      "title": "Resolution smoke covers the full desktop landscape: 2K/4K scale factors, 16:10, all ultrawide classes",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T06:41:32-04:00",
+      "shortSha": "286d5ca",
+      "commits": [
+        "The resolution smoke covers the desktop landscape: 2K and 4K at their common scale factors, 16:10, and every ultrawide class"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 527,
+      "title": "Rescue Room Forge (#520): the merged PR #523 never reached main",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T06:41:12-04:00",
+      "shortSha": "e11e904",
+      "commits": [
+        "Forge one room to order: the room commission API, and the Room Forge rail panel that serves it"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 524,
+      "title": "Challenge gains True Random (#518): rooms roll the monster pool's whole spectrum",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-09T23:04:57-04:00",
+      "shortSha": "129efd7",
+      "commits": [
+        "Challenge gains True Random: every room rolls the monster pool's whole spectrum, and Party CER stops being homework"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 522,
+      "title": "Every panel stays reachable at 1080p: rollups stop shrink-clipping, plus an automated resolution smoke",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-09T22:40:37-04:00",
+      "shortSha": "9b0a110",
+      "commits": [
+        "Every panel stays reachable at 1080p: rollups stop shrink-clipping, and a resolution smoke pins it"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 517,
+      "title": "User-selectable install location for local models (managed runtime)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-08T20:54:11-04:00",
+      "shortSha": "584afb9",
+      "commits": [
+        "Local models install where the GM says: model storage gains a movable directory"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 516,
+      "title": "Room-name vocabulary is data: tag-keyed word lists carry the small-model floor (#513)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-08T20:48:17-04:00",
+      "shortSha": "2e5c337",
+      "commits": [
+        "Room-name vocabulary is data: tag-keyed word lists carry the small-model floor (#513)",
+        "First-run onboarding stops claiming a local LLM is needed",
+        "First-run copy tells the truth the right way round: the model is the point"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 512,
+      "title": "Make the interview appear in the generation: outline-planned sites, intake backstop, room keys that speak the brief",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-06T21:10:31-05:00",
+      "shortSha": "213da4e",
+      "commits": [
+        "The interview appears in the generation: outline-planned sites, premise-word backstop, and room keys that speak the brief",
+        "The plan is the dungeon: outline rooms bind by name and type, every brief tag reaches a room, the brief stays the GM's words",
+        "Brief tags discriminate: a selection-time saturation ceiling and rarest-first room keys"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 511,
+      "title": "Directors findable everywhere, first-run tour, Vorga casts brief characters, interview-match benchmark",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-06T20:54:12-05:00",
+      "shortSha": "2ee1b2a",
+      "commits": [
+        "Directors you can always find, a first-run tour, Vorga casts the brief's characters, and the interview-match benchmark"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 510,
+      "title": "The brief is declared: five of seven fields are knobs, commissions state it structurally (#483)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-05T01:18:58-05:00",
+      "shortSha": "3251ac4",
+      "commits": [
+        "The brief is declared: five of seven fields are knobs, and commissions state it structurally (#483)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 509,
+      "title": "Follow-ups: #505 every pickable tag pulls something, #506 no slash-composites in room names",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-05T00:48:44-05:00",
+      "shortSha": "58657ba",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 508,
+      "title": "Sprint: #470 who you meet obeys the occupancy, #473 the requested chapel IS a chapel",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-05T00:11:01-05:00",
+      "shortSha": "493d28d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 507,
+      "title": "Sprint: #467 the brief's prose becomes tags, #466 differential tag carry",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T23:17:39-05:00",
+      "shortSha": "6bb2e77",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 503,
+      "title": "Sprint: #468 the brief reaches biome selection, #475 site and occupancy split into orthogonal axes",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T22:29:41-05:00",
+      "shortSha": "afe1fdc",
+      "commits": [
+        "A sewer brief can now put a sewer on the map (#468)",
+        "Site and occupancy are orthogonal axes, and now the generator agrees (#475)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 502,
+      "title": "Decor gets prerequisites, a memory, and the brief's ear (#471)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T20:59:26-05:00",
+      "shortSha": "98fe725",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 501,
+      "title": "Sprint: #489 package-tag dispositions, #472 unique grounded room names",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T19:43:27-05:00",
+      "shortSha": "c41c739",
+      "commits": [
+        "Sprint: #489 every package tag gets a disposition, #472 rooms get real unique names",
+        "Pre-align the crosswalk with the monster library's incoming closed vocabulary"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 500,
+      "title": "Sprint: #493 number knobs in the interview, #476 premise-proposed biome count, #483 dangerHint consumption",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T18:32:18-05:00",
+      "shortSha": "bbe28bc",
+      "commits": [
+        "Sprint: #493 number knobs reach the interview, #476 the premise proposes a biome count, #483 the hint stops reverting the GM"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 499,
+      "title": "Sprint: #497 scoped-reroll containment (+ mixed default), #469 enclosure axis, #476 biomeCount knob",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T17:24:24-05:00",
+      "shortSha": "13d4d96",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 498,
+      "title": "Generator controls: close nine of epic #477, and say what the audit got wrong",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T15:54:17-05:00",
+      "shortSha": "78e33aa",
+      "commits": [
+        "Stop `derived` from meaning \"the GM owns this book\" (#478, #479, #482, #491)",
+        "Regenerate REGISTRY.md for the shared depth-band exports",
+        "Pick which quantity is depth, and make the code obey it (#492)",
+        "Move door access and water bias into biomes.json (#490)",
+        "Stop the commission socket ignoring the dungeonSize it was handed (#494)",
+        "Declare how many fights there are, not just how hard (#480)",
+        "Make biome dominance a control instead of a rule (#481)",
+        "Point the biomeDominance default comment at the filed issue (#497)",
+        "Fix eight things an adversarial review pass found",
+        "Say what actually dropped from the default source pool (#478)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 496,
+      "title": "Harden the monster package's deferred-field checks on top of #495",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T10:56:32-05:00",
+      "shortSha": "4ce86cf",
+      "commits": [
+        "Grade the monster package's deferred fields per source, not per package"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 495,
+      "title": "Pin monster library 0.5.1: 457 citations that open a real page (#464)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T10:13:37-05:00",
+      "shortSha": "96ed292",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 463,
+      "title": "Build(deps-dev): Bump fast-uri from 3.1.4 to 3.1.5",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T09:24:16-05:00",
+      "shortSha": "3841733",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 462,
+      "title": "Build(deps-dev): Bump undici from 6.27.0 to 6.28.0",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T09:24:01-05:00",
+      "shortSha": "02f30ec",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 461,
+      "title": "Build(deps-dev): Bump brace-expansion from 1.1.15 to 1.1.18",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T09:23:48-05:00",
+      "shortSha": "26ae567",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 488,
+      "title": "Known-issues sprint: #474, #485, #484, #486, #464, #487",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-04T09:08:17-05:00",
+      "shortSha": "c0c459b",
+      "commits": [
+        "Measure the brief, and actually run the quality gate (#474)",
+        "Say seven where the docs said five, and name the fixture honestly (#474)",
+        "\"Most\" dead ends now means most dead ends (#485)",
+        "Stop rolling dice for the treasure dial the GM already set (#484)",
+        "A premise describes a place, not the party (#486)",
+        "Cite the page the package names, not an anchor that never resolved (#464)",
+        "Sweep the dead config, drifted tables and stale docs (#487)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 460,
+      "title": "Banter reports the work: ~75% of lines are about what the model is doing",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-03T20:27:18-05:00",
+      "shortSha": "679b9d1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 459,
+      "title": "Headless InterviewSession: the sequencer the interview never had (#446, part 1 of 2)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-03T00:29:56-05:00",
+      "shortSha": "1af3d6e",
+      "commits": [
+        "Rehome interview-steps under generation/intent (#446 W1)",
+        "The dungeon interview as a callable object (#446 W2)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 458,
+      "title": "Issue cleanup sprint: #442, #445, #447, #448, #449",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-02T12:39:50-05:00",
+      "shortSha": "797e7c5",
+      "commits": [
+        "Rank the interview's vocabulary chips, and stop naming one after a dial (#449)",
+        "Bound the art-pack tag-view derivation before Select All can weaponize it (#445)",
+        "Director's Commentary: a real panel, and a surface the interview can use (#448, #447)",
+        "Hachure the rock's edge instead of scribbling over all of it (#442)",
+        "Note that Stage Manager is the internal name; the panel is Director's Commentary (#448)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 457,
+      "title": "Make lighting declared data, not keyword-matched prose (#456)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-02T10:11:01-05:00",
+      "shortSha": "a000547",
+      "commits": [
+        "Make lighting declared data, not keyword-matched prose (#456)",
+        "Make darkness the default: a room is lit only where a source belongs (#456)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 455,
+      "title": "Make the Dungeondraft export actually work: blank maps, invisible objects, floors, asset variety, lights in walls",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-01T23:45:34-05:00",
+      "shortSha": "d31182f",
+      "commits": [
+        "Reach art by family name, and fold artist tag namespaces (#445)",
+        "Write crosswalk patterns bare, now that namespaces fold generically (#445)",
+        "Seed family matching from the room, not the pack's own tags (#445)",
+        "Judged art run + Dungeondraft export harness (#445)",
+        "Synthesized Dungeondraft fixture was missing the `mod` key, so exports would not open (#445)",
+        "Fix Dungeondraft export: blank maps and invisible objects (#445)",
+        "The blank map was a missing editor_state.color_palettes (#445)",
+        "Paint room floors into the tile layer, tinted (#445)",
+        "Map features to Dungeondraft's real asset library (#445)",
+        "Place room lights inside the room (#445)",
+        "Sweep the room-centre assumption; one helper, five call sites (#445)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 454,
+      "title": "Art packs: library-wide Select all, bulk index progress, discovery defaults to enabled",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-01T23:35:51-05:00",
+      "shortSha": "9c47773",
+      "commits": [
+        "Art packs: library-wide Select all, bulk index progress, discovery defaults to enabled (#445)",
+        "Shorten the tag-pass notice to the number that matters (#445)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 453,
+      "title": "Ramp danger by walked distance from the entrance, and allow single-biome sites",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-01T12:56:51-05:00",
+      "shortSha": "0b25343",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 451,
+      "title": "Unbreak the Windows build: drop `shell: bash` from the version stamp",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-01T12:18:31-05:00",
+      "shortSha": "458a017",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 450,
+      "title": "Fix About reporting 0.0.0, and art-pack list rebuilding on every tick",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-01T12:06:07-05:00",
+      "shortSha": "eac294f",
+      "commits": [
+        "Fix About reporting 0.0.0, and art-pack list rebuilding on every tick",
+        "Map docs/self-hosted-runners.md into AGENTS.md §3.1"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 441,
+      "title": "Help menu: Report a Bug opens the public issue tracker",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-31T15:37:32-05:00",
+      "shortSha": "cc03cb7",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 440,
+      "title": "Vertical links as first-class validated graph edges (#13)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T22:34:46-05:00",
+      "shortSha": "2c67559",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 439,
+      "title": "Drag-to-move panels, drop-created bottom strip, and remount-proof docking (#268)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T22:23:00-05:00",
+      "shortSha": "0d1fd8f",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 438,
+      "title": "Cloud provider support for director LLM calls (#119)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T22:11:13-05:00",
+      "shortSha": "18535e3",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 434,
+      "title": "Build Windows on every push via self-hosted runners, gated on availability",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T21:10:13-05:00",
+      "shortSha": "dfa721c",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 437,
+      "title": "Sprint: close the pre-launch backlog — open trap floor, set pieces, solitary cap, and export QA against a live Foundry",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T21:04:43-05:00",
+      "shortSha": "5399dbc",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 436,
+      "title": "Consolidate stringArray/clamp local copies into src/utils/collections.ts",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T20:33:01-05:00",
+      "shortSha": "bf73590",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 435,
+      "title": "Documentation audit: accuracy, single-owner paths, dead-code removal, and a drift gate",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T19:01:50-05:00",
+      "shortSha": "ea513e6",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 433,
+      "title": "Forward usesFatigueOrSpell to the rating profile so the halving actually applies",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T18:42:48-05:00",
+      "shortSha": "febcb41",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 431,
+      "title": "#424 wrap: polish wiring, region enrichment, faction carry, requested exports",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T06:10:04-05:00",
+      "shortSha": "5c0c53e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 430,
+      "title": "#424 S2/S3/S5: site commissions — contract, digest, and the loopback API (decisions 1-5)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-30T00:13:28-05:00",
+      "shortSha": "2772297",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 429,
+      "title": "Sprint: #424 S1 callable pipeline, #425 context tree + shell budget, #426 locality rings, #428 fix",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-29T22:27:50-05:00",
+      "shortSha": "0bb17d9",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 427,
+      "title": "#274 third slice: tag-set knobs, set-piece + source-matrix composites, conditionalOn",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-29T20:09:50-05:00",
+      "shortSha": "59d1786",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 422,
+      "title": "Fix #421: the physical world is not rules content — book gates remain on monsters, magic, and treasure",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-29T11:40:03-05:00",
+      "shortSha": "17f1623",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 419,
+      "title": "#414: architectural programs — who built it decides the floor plan",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-29T06:59:29-05:00",
+      "shortSha": "930aec1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 418,
+      "title": "Mapping raft: #413 #416 #412 #408 #409 #411 #410 — honest counts, real biome identity, irregular seams, real room boundaries, cavern structures",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T23:33:13-05:00",
+      "shortSha": "f219dfc",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 417,
+      "title": "Sprint: #378 core lineage, #372 room rosters, #274 Dungeon API first slice + medium tail (#401, #392, #400, #394)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T19:48:06-05:00",
+      "shortSha": "1c886d6",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 405,
+      "title": "#404: resolve the hand-authored Evil Cleric spells against the library",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T15:03:31-05:00",
+      "shortSha": "6f95790",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 402,
+      "title": "Tranche: spell/skill level correctness + export truncation (#396, #397, #398, #386)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T13:54:33-05:00",
+      "shortSha": "779db0d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 403,
+      "title": "Drop the unused, lineage-wrong `attribute` field from concealment skills",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T13:29:21-05:00",
+      "shortSha": "dffa3ce",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 395,
+      "title": "Fast-fail an unreachable model host; attest concealment to both rules cores",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T13:06:00-05:00",
+      "shortSha": "d4aae7f",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 389,
+      "title": "Sprint: Dungeondraft export fix + caster/Talent levels (#384, #385)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T13:04:41-05:00",
+      "shortSha": "a5a6204",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 388,
+      "title": "Sprint: dungeon interview + treasure concealment (#376, #366, #370, #110)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T08:10:32-05:00",
+      "shortSha": "c92b236",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 383,
+      "title": "Sprint: NPC sheet fidelity (#380, #381, #382) + #367 caster fixes",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T07:31:46-05:00",
+      "shortSha": "81d61de",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 379,
+      "title": "Sprint: launch-readiness fixes (#365, #368, #369, #371, #373, #374, #375, #377)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-28T06:42:04-05:00",
+      "shortSha": "e4ad5d6",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 363,
+      "title": "#292 first slice: first-party managed llama.cpp runtime (zero-config local AI)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-27T21:10:38-05:00",
+      "shortSha": "b4b78b8",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 360,
+      "title": "#286 first slice: dungeon quality rubric + automated eval harness",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-27T16:12:56-05:00",
+      "shortSha": "4015ef4",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 362,
+      "title": "#131: bring the public monster library in as an enableable source",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-27T07:02:36-05:00",
+      "shortSha": "8ba9239",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 359,
+      "title": "Rate hazards that are not resolved by an attack roll",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-26T14:24:03-05:00",
+      "shortSha": "3a92bfb",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 357,
+      "title": "Credit the GCS Master Library and record its MPL-2.0 terms",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-26T09:49:02-05:00",
+      "shortSha": "b336cae",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 358,
+      "title": "Fix red main: two extractions of the same player-safe helpers collided",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-26T09:48:41-05:00",
+      "shortSha": "639b707",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 351,
+      "title": "#284 third slice: extract player-safe export filtering + cover the player map",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-26T09:07:20-05:00",
+      "shortSha": "cbcc069",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 356,
+      "title": "#284: cover the UI wiring contracts without a DOM",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-26T09:05:21-05:00",
+      "shortSha": "552026a",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 355,
+      "title": "#93: surface page-reference links for treasure items",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T20:52:32-05:00",
+      "shortSha": "8c9888b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 353,
+      "title": "#93: make imported GCS page-reference mappings actually resolve",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T20:43:20-05:00",
+      "shortSha": "ed9176d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 352,
+      "title": "#284: extract Settings, director, and export display logic + smokes",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T15:31:32-05:00",
+      "shortSha": "c444efe",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 350,
+      "title": "Fix #246: session-scoped art-tag working view for Mizzik",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T12:13:38-05:00",
+      "shortSha": "dc9e1c5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 349,
+      "title": "Fix #245: index-time art-pack tag normalization (cacheable capability view)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T11:19:26-05:00",
+      "shortSha": "89f9a18",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 348,
+      "title": "Fix #92: clickable source-book page references that open the mapped PDF",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T10:44:30-05:00",
+      "shortSha": "b0dddb1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 347,
+      "title": "#284 second slice: extract selection/list display logic + smoke coverage",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T09:41:13-05:00",
+      "shortSha": "d6c98bc",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 346,
+      "title": "#110: close the Stage Manager silent-content backlog",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T09:28:21-05:00",
+      "shortSha": "311d1c6",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 345,
+      "title": "#160: tag facets — engine plumbing off the user-facing theme surfaces",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-25T00:17:35-05:00",
+      "shortSha": "4504bf8",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 329,
+      "title": "Bump tar from 7.5.19 to 7.5.22",
+      "authorName": "dependabot[bot]",
+      "authoredAt": "2026-07-24T22:29:32-05:00",
+      "shortSha": "316ce12",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 328,
+      "title": "Bump postcss from 8.5.10 to 8.5.23",
+      "authorName": "dependabot[bot]",
+      "authoredAt": "2026-07-24T22:29:28-05:00",
+      "shortSha": "4073f62",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 344,
+      "title": "Dig constructed hallways inside rebuilt WFC footprints (#216).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T22:26:29-05:00",
+      "shortSha": "a82c634",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 343,
+      "title": "Re-land lost PR #227: bind inhabitants to multi-room set-piece clusters as rosters (#140)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T22:26:08-05:00",
+      "shortSha": "9dcbb75",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 342,
+      "title": "Emergent factions: the faction set derives from the enabled monster pool (#276)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T22:13:37-05:00",
+      "shortSha": "d0777da",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 340,
+      "title": "#170 close-out: protection[] as policy, catalog content placed, danger modifier consumed",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T21:47:50-05:00",
+      "shortSha": "490460b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 341,
+      "title": "#171: set-piece climax/defense scenes reliably apply lenses",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T21:38:31-05:00",
+      "shortSha": "7f1a085",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 338,
+      "title": "Fix #336: build-a-dragon monster synthesis + ecology-aware NPC lineages",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T21:30:25-05:00",
+      "shortSha": "5a0bf8b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 339,
+      "title": "#147: party spotlights become mechanical pressure on doors, traps, and key notes",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T20:17:02-05:00",
+      "shortSha": "10936c5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 337,
+      "title": "Onboarding interview: the directors ask the guided questions",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T20:08:10-05:00",
+      "shortSha": "7777351",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 335,
+      "title": "Fix odd-dice CER damage inflation; add Healing/Cure HP term",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T18:47:29-05:00",
+      "shortSha": "e8ee2fa",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 333,
+      "title": "#313 NPC follow-up: DF15 henchmen + DF9/DF4/DF12/DF3/DF7 classes as generator-native roles",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T18:18:15-05:00",
+      "shortSha": "d3f2d5d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 334,
+      "title": "Fix #330: original open-source enchantment set (magical treasure without DF8/DFMI)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T15:16:28-05:00",
+      "shortSha": "5dc5184",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 331,
+      "title": "Fix #288: bundle an original open-source treasure table (CC-BY)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T15:08:09-05:00",
+      "shortSha": "82ce68e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 327,
+      "title": "#280 phase 4: GCS CLI render bridge + local fidelity oracle — closes the epic",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T13:06:58-05:00",
+      "shortSha": "cda9a47",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 326,
+      "title": "#313 follow-up: mine DF16 into outdoor-dungeon vocabulary",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T12:48:22-05:00",
+      "shortSha": "b2643a1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 325,
+      "title": "#269/#313 doc: no one-toggle-per-book — matrix mixing is permanent",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T12:46:25-05:00",
+      "shortSha": "76f8020",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 324,
+      "title": "#280 phase 5: Open in GCS — shell-open an imported .gcs externally",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T10:38:06-05:00",
+      "shortSha": "f3e0a66",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 323,
+      "title": "Fix #281: in-app read-only stat cards — monsters, NPCs, and imported .gcs",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T10:27:19-05:00",
+      "shortSha": "019f0d5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 322,
+      "title": "Fix #287: remaining failure paths surface on the shared notice component",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T10:07:09-05:00",
+      "shortSha": "c1be6e5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 321,
+      "title": "Fix #275: draggable pane splitters — resize the rail and info pane on the fly",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T09:59:19-05:00",
+      "shortSha": "b022316",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 320,
+      "title": "Fix #318: workspace-content startup runs from initWorkspaceContent() at the module tail",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T09:45:21-05:00",
+      "shortSha": "71e477a",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 319,
+      "title": "Fix #273: structured set-piece picker/builder replaces the free-text DSL",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T09:33:56-05:00",
+      "shortSha": "85b82ec",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 317,
+      "title": "Fix #272: tag inputs become toggleable + weightable chip controls",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T09:19:00-05:00",
+      "shortSha": "e5fe233",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 316,
+      "title": "Fix #269: ruleset lineage selector — DFRPG / GURPS DF / Both",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T09:01:40-05:00",
+      "shortSha": "9bb3aec",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 315,
+      "title": "Fix #313: shared-vocabulary re-attribution + exploits-off lineage smoke",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T08:46:17-05:00",
+      "shortSha": "33e9e40",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 314,
+      "title": "#313: mine Basic Set + DF1-3 + DF-line into GURPS-DF lineage rows",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T08:31:39-05:00",
+      "shortSha": "863c3f3",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 312,
+      "title": "Fix #270: source x content-type matrix UI in Settings -> Source Books",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:55:53-05:00",
+      "shortSha": "13d1085",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 311,
+      "title": "#270 data layer: per-category source filtering (source x content-type matrix)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:40:39-05:00",
+      "shortSha": "38a580e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 310,
+      "title": "#284 first slice: extract feature-view builders + view-layer smoke",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:31:42-05:00",
+      "shortSha": "feda8d5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 309,
+      "title": "Fix #267: reading mode reflows across resolutions",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:27:03-05:00",
+      "shortSha": "e0bf213",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 308,
+      "title": "Fix #265: directors section is first-class, not 'Optional: Local LLM polish'",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:20:51-05:00",
+      "shortSha": "c64a97c",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 307,
+      "title": "#110: banter coverage — 12 new tag events, 38 lines, 12 word triggers",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:09:26-05:00",
+      "shortSha": "ff84614",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 306,
+      "title": "Fix #271: Source Books inline help + per-book category breakdown",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:09:06-05:00",
+      "shortSha": "299011a",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 305,
+      "title": "Fix #264: explanatory tooltips on every generation dropdown",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T06:07:10-05:00",
+      "shortSha": "8bc5233",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 303,
+      "title": "Fix #277: schema migration for saves; version errors preserve the autosave",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:51:13-05:00",
+      "shortSha": "744c276",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 304,
+      "title": "Fix #262: move Base items catalog into Settings → Source Books",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:50:56-05:00",
+      "shortSha": "8090341",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 302,
+      "title": "Fix #260: coherence gate — role/lens enhancement must suit the base monster",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:50:07-05:00",
+      "shortSha": "7265c41",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 301,
+      "title": "Fix typecheck on main: drop unused createPrng import in phase2-rerolls-smoke",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:26:09-05:00",
+      "shortSha": "1a49944",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 298,
+      "title": "Fix #251: typecheck tests/ and scripts/ in the deterministic tier",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:05:18-05:00",
+      "shortSha": "eda358e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 300,
+      "title": "Fix #285: Definition of Done for UI PRs — browser-verify gate + PR checklist",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:04:20-05:00",
+      "shortSha": "41a601b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 299,
+      "title": "Fix #290: split phase2-wfc-smoke across parallel tier lanes",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:03:54-05:00",
+      "shortSha": "95dcdc0",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 297,
+      "title": "Fix #278: CI guardrail against Math.random() in generation paths",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:02:56-05:00",
+      "shortSha": "4950f4d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 296,
+      "title": "Fix #279: gitignore agent scratch files (.pr-body-*, .issue-*-body, .triage-tmp)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:02:44-05:00",
+      "shortSha": "9b658e8",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 295,
+      "title": "Fix #259: persist and render the enhanced monster stat profile",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-24T05:02:34-05:00",
+      "shortSha": "4a8db7d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 293,
+      "title": "Add model-tier phase benchmark harness + findings (#266)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-23T23:09:20-05:00",
+      "shortSha": "a87e1b7",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 261,
+      "title": "Fix #258: separate generated role/lens from the book citation",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-23T12:52:58-05:00",
+      "shortSha": "f225694",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 291,
+      "title": "Add a consistent user-facing notice surface; kill silent failures (#287)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-23T07:57:32-05:00",
+      "shortSha": "9757e18",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 289,
+      "title": "Parallelize the deterministic test tier (test:det)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-23T02:37:28-05:00",
+      "shortSha": "a64b38f",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 257,
+      "title": "Docs: model-in-the-loop is first-class architecture, epic #230 delivered (#238).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-22T20:44:54-05:00",
+      "shortSha": "ca93d45",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 256,
+      "title": "Bounded in-pipeline model calls: region theming + set-piece ranking (#236).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-22T20:38:39-05:00",
+      "shortSha": "eeb4c4d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 255,
+      "title": "Recovery by checkpoint: stage snapshots, restore-stability, visible degrade (#237).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-22T20:20:35-05:00",
+      "shortSha": "780671e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 254,
+      "title": "Guided generation front door: premise → vocabulary → questions → Generate (#235).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-22T20:14:36-05:00",
+      "shortSha": "6762bb9",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 253,
+      "title": "Bump fast-uri from 3.1.3 to 3.1.4",
+      "authorName": "dependabot[bot]",
+      "authoredAt": "2026-07-22T19:35:45-05:00",
+      "shortSha": "6e93e8d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 252,
+      "title": "Ollama in the live tier + wait out model cold loads (detect & retry)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-21T18:20:55-05:00",
+      "shortSha": "1f886df",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 250,
+      "title": "Add model-driven constrained question flow → generation config (#234).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-21T14:34:24-05:00",
+      "shortSha": "2a56f56",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 249,
+      "title": "Re-land S3 premise intake (#233) + fix the Windows test-tier gate (#242)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-21T14:16:17-05:00",
+      "shortSha": "ac09360",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 248,
+      "title": "Standardize two-tier smoke tests with CI gate (#242).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-21T13:47:12-05:00",
+      "shortSha": "d8ec0f3",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 247,
+      "title": "Cover silent model-call surfaces with Stage Manager banter (#244).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-21T13:34:17-05:00",
+      "shortSha": "8f70948",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 243,
+      "title": "Docs: model-always-present pivot — drop replay, checkpoints, safety-net fallbacks (#230).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-20T21:47:28-05:00",
+      "shortSha": "ed30eaa",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 240,
+      "title": "S2 — Live tag consolidation view (#232)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-20T15:27:58-05:00",
+      "shortSha": "6f50981",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 239,
+      "title": "Model-in-the-loop: direction docs + S1 ModelService (#230, #231)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-20T13:30:14-05:00",
+      "shortSha": "80fa582",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 226,
+      "title": "Add structured tactical environment, material, and liquid rules (#15).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-20T09:46:44-05:00",
+      "shortSha": "3150196",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 225,
+      "title": "Fix orphaned empty float bars from hidden floating panels (#224).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T21:06:54-05:00",
+      "shortSha": "e1c5258",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 223,
+      "title": "Add route environment prep and surface the wandering procedure (#20).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T20:48:05-05:00",
+      "shortSha": "244a8c7",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 222,
+      "title": "Expand trap coverage and add pit/shaft alternates to stairs down (#16)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T14:39:08-05:00",
+      "shortSha": "d24232d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 221,
+      "title": "Declare runtime-emitted generation tags in tags.json.",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T14:38:53-05:00",
+      "shortSha": "4270b2e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 207,
+      "title": "Bundle a pinned public monster package index with provenance gates (#84).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T14:38:19-05:00",
+      "shortSha": "8361185",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 220,
+      "title": "Regenerate single rooms with tag bias, safe wall re-lays, and room detail rerolls (#37, #18).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T13:35:08-05:00",
+      "shortSha": "e8775db",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 219,
+      "title": "Render liquids as smoothed contiguous shapes (#24).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T10:43:38-05:00",
+      "shortSha": "89795be",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 218,
+      "title": "Expose danger flow modes in generation config and UI (#14).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T10:19:46-05:00",
+      "shortSha": "c5880ed",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 215,
+      "title": "Re-run gate planning and purpose refinement in scoped WFC rebuilds (#214).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-18T08:26:30-05:00",
+      "shortSha": "88e336e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 213,
+      "title": "Wire geography into danger, treasure, and door security consumers (#206).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-16T22:25:26-05:00",
+      "shortSha": "492edf1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 212,
+      "title": "Dig constructed hallways with width profiles for organized/straight maps (#205).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-16T19:45:32-05:00",
+      "shortSha": "9ea9505",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 211,
+      "title": "Classify circulation spine, branches, and chokepoint rooms (#204).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-16T19:24:57-05:00",
+      "shortSha": "15aa716",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 210,
+      "title": "Assign room purposes on the room graph: adjacency, depth bands, scarcity (#203).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-16T18:59:12-05:00",
+      "shortSha": "6c9af80",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 209,
+      "title": "Carve planned zone gate seams and gate-first connectivity repair (#202).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-16T02:10:42-05:00",
+      "shortSha": "4645b16",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 208,
+      "title": "Spend residual NPC points on coded upgrade modules; add merchant/sage recipes (#85)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-15T14:52:52-05:00",
+      "shortSha": "e063959",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 200,
+      "title": "Add BSP biome fragmentation, merging, and interconnection controls (#30).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-15T08:09:46-05:00",
+      "shortSha": "23085a7",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 199,
+      "title": "Add optional generation↔art-pack tag crosswalk (#164).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T14:55:26-05:00",
+      "shortSha": "0e553ff",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 198,
+      "title": "Add offline tag harvest to review-artifact authoring pipeline (#163)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T12:38:09-05:00",
+      "shortSha": "97a2e23",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 197,
+      "title": "Expand monster role and lens packages beyond the Phase 2 stub (#151).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T11:19:16-05:00",
+      "shortSha": "0fcd07f",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 196,
+      "title": "Expand Stage Manager banter for silent tags, traps, rooms, and set pieces.",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T09:55:38-05:00",
+      "shortSha": "70a5b08",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 195,
+      "title": "Wire EraStack, adventure frame, and room cards to shortlisted LLM context",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T09:06:24-05:00",
+      "shortSha": "8ab72a7",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 194,
+      "title": "Prompt context budgets and closed tag shortlists for LLM calls (#165)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T08:46:40-05:00",
+      "shortSha": "f57b2ef",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 193,
+      "title": "Declare high-value generation tags that were silently dropping (#162).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T02:52:57-05:00",
+      "shortSha": "572866b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 192,
+      "title": "Add undeclared-tag audit script for catalog hygiene (#161).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T02:50:37-05:00",
+      "shortSha": "e37bfbd",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 191,
+      "title": "Document tag catalog authoring vs runtime LLM context budgets (#167).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T00:46:22-05:00",
+      "shortSha": "133b0b9",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 190,
+      "title": "Make Stage Manager dismissable, resizable, and tear-off capable (#174).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-14T00:34:07-05:00",
+      "shortSha": "39c9a1e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 189,
+      "title": "Expand Stage Manager banter for tags, categories, and missing monsters.",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-13T23:04:27-05:00",
+      "shortSha": "a650ad5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 188,
+      "title": "Named opponents and threat-class CER budget targeting (#139)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-13T22:52:39-05:00",
+      "shortSha": "53a2abf",
+      "commits": [
+        "Add named opponents and threat-class CER budget targeting"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 187,
+      "title": "Sheet-based CER for generated NPCs and trait-based CER for enhanced monsters (#138)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-13T22:32:45-05:00",
+      "shortSha": "44e1143",
+      "commits": [
+        "Compute sheet-based CER for NPCs and trait-based CER for enhanced monsters"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 186,
+      "title": "Fix app boot hang in hidden/throttled tabs (#185).",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-13T22:32:34-05:00",
+      "shortSha": "fc254bf",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 184,
+      "title": "Autosave the working session and add Open/Save Dungeon to the File menu",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-13T22:06:59-05:00",
+      "shortSha": "79befff",
+      "commits": [
+        "Autosave the working session and add Open/Save Dungeon to the File menu."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 183,
+      "title": "Dungeondraft round trip: map export, LLM library pick, UVTT ingest",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-13T07:14:15-05:00",
+      "shortSha": "f39866d",
+      "commits": [
+        "Dungeondraft round trip: map export, LLM library pick, UVTT ingest",
+        "Persist the polished map with the dungeon and add Open Dungeon JSON",
+        "Add Polished UVTT / Polished Map Image buttons to the Export panel"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 182,
+      "title": "Tear off dock panels into OS windows",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-12T23:10:08-05:00",
+      "shortSha": "8eaeb81",
+      "commits": [
+        "Tear off dock panels into OS windows with dual float UX."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 181,
+      "title": "Add coded DTG field kits to NPC and Vorga loadouts.",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-12T22:58:06-05:00",
+      "shortSha": "d9a0e85",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 177,
+      "title": "Stealth-launch readiness: first-run, exports, traps, treasure",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-12T10:34:51-05:00",
+      "shortSha": "a5f5601",
+      "commits": [
+        "Refresh-early-access-About-copy",
+        "Advance stealth-launch readiness: first-run showcase, export QA, and loot/trap polish."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 180,
+      "title": "Make Dungeondraft art-pack ingestion work on real collections",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-12T10:30:18-05:00",
+      "shortSha": "8c2aebb",
+      "commits": [
+        "Make Dungeondraft art-pack ingestion work on real collections.",
+        "Reorganize Settings and fix two startup-breaking UI bugs (#179)."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 178,
+      "title": "Refresh-early-access-About-copy",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T21:56:54-05:00",
+      "shortSha": "6a9cb1f",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 175,
+      "title": "Keep Session Brief usable without a local LLM.",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T15:00:55-05:00",
+      "shortSha": "c4436b3",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 176,
+      "title": "Surface Adventure Frame in Procedures panel (#146)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T14:01:55-05:00",
+      "shortSha": "0f3f764",
+      "commits": [
+        "Surface Adventure Frame in the Procedures panel."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 168,
+      "title": "Consolidate Settings, dockable panels, and path discovery",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T09:01:54-05:00",
+      "shortSha": "f5183d2",
+      "commits": [
+        "Consolidate Settings, dockable panels, and path discovery for #158.",
+        "Hide the themed in-app menu in Electron so only the OS menu bar remains.",
+        "Use the themed in-app menu as the only product menu bar.",
+        "Document that Electron is the shipped product and Vite is dev-only.",
+        "Clarify DFRPG data is bundled into the Electron renderer, not a web deploy."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 159,
+      "title": "fix(llm): report real RAM/VRAM in desktop hardware auto-detect",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T08:00:59-05:00",
+      "shortSha": "e6468d1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 157,
+      "title": "Add pre-generation session brief for themed dungeon steering.",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T07:51:29-05:00",
+      "shortSha": "996dba6",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 155,
+      "title": "Dungeon tonight hub: factions, NPC binding, interview (#148)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-11T00:10:46-05:00",
+      "shortSha": "5cea48b",
+      "commits": [
+        "Advance dungeon-tonight hub: scoped rerolls, factions, rumors, spotlights.",
+        "Bind faction NPC recipes and add optional dungeon interview."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 152,
+      "title": "Add GCS-derived DF3/DFRPG ancestry packages for NPCs",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-10T23:24:34-05:00",
+      "shortSha": "675e400",
+      "commits": [
+        "Add GCS-derived DF3/DFRPG ancestry packages for dungeon NPCs."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 156,
+      "title": "Add page reference links and smooth liquid rendering",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-10T18:50:53-05:00",
+      "shortSha": "34a1925",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 154,
+      "title": "Session brief + adventure frame for campaign-moment dungeon tonight (#148)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-10T10:54:00-05:00",
+      "shortSha": "dd6df04",
+      "commits": [
+        "Add pre-generation session brief and adventure frame for dungeon tonight."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 149,
+      "title": "Add dungeon NPC inhabitants, monster enhancement, and CER calculator",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-10T07:41:08-05:00",
+      "shortSha": "b8f70ee",
+      "commits": [
+        "Add deterministic CER calculator and ignore local GCS fixtures.",
+        "Add dungeon NPC inhabitants, monster enhancement, and GCS export."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 144,
+      "title": "Patch Mizzik red kobold portrait into app",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-09T21:37:25-05:00",
+      "shortSha": "1648d10",
+      "commits": [
+        "Patch-Mizzik-red-kobold-portrait"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 143,
+      "title": "Fix desktop top menus by repairing Electron preload",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-09T17:52:57-05:00",
+      "shortSha": "54ab8a0",
+      "commits": [
+        "Fix desktop menus by loading Electron preload as CommonJS."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 142,
+      "title": "Declare consumed art packs in Dungeondraft export asset_manifest",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-09T10:26:12-05:00",
+      "shortSha": "e7c6018",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 136,
+      "title": "Dungeondraft art-pack catalog reader + LLM placement experiment",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-09T02:34:26-05:00",
+      "shortSha": "0ec49d4",
+      "commits": [
+        "Add Dungeondraft art-pack catalog reader and placement experiment",
+        "Add ASCII-map placement mode and Dungeondraft map emission to art experiment",
+        "Fold Dungeondraft art placement into the app: catalog, place_art, Mizzik pass"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 137,
+      "title": "Expand stage manager banter for generation and LLM waits",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-09T01:32:20-05:00",
+      "shortSha": "cb121f0",
+      "commits": [
+        "Expand stage manager banter into a loading-screen entertainment layer."
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 120,
+      "title": "fix(auto-update): point updater at public site mirror and pin to continuous tag",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-08T07:34:40-05:00",
+      "shortSha": "fe2af71",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 134,
+      "title": "Add Dungeondraft project export and Foundry map-image round trip",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-07T22:29:15-05:00",
+      "shortSha": "5a2359d",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 133,
+      "title": "Fix desktop menu and LLM configuration split",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-07T17:51:33-05:00",
+      "shortSha": "0b4d5e6",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "align-package-version-with-desktop-build",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-07T16:21:53-05:00",
+      "shortSha": "989c0b1",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "fix-desktop-release-mirror-dispatch",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-07T16:19:11-05:00",
+      "shortSha": "fa64359",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 132,
+      "title": "Consolidate desktop menus",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-07T16:09:53-05:00",
+      "shortSha": "5d48a42",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 123,
+      "title": "ci(release): fix broken line continuations in continuous-release changelog step",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-06T10:59:53-05:00",
+      "shortSha": "3743911",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Warn when site dispatch token is absent",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-06T08:18:52-05:00",
+      "shortSha": "be62126",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Fix release changelog workflow command",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-06T08:11:49-05:00",
+      "shortSha": "cffb1e7",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Dispatch public site mirror after release",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-06T00:20:03-05:00",
+      "shortSha": "ee1c38a",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Prepare app launch compliance",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-06T00:11:15-05:00",
+      "shortSha": "ea168bd",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 122,
+      "title": "Follow rebuilt rooms through zone-scoped geometry rebuilds (opt-in)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-05T01:02:26-05:00",
+      "shortSha": "b3f3cf7",
+      "commits": [
+        "Let the director pipeline follow rebuilt rooms through geometry rebuilds",
+        "Fix TS2352 in publicMonsterPackageFromUnknown so tsc --noEmit stays clean"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 121,
+      "title": "[codex] Add narrative tunnel carving tool",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-04T21:53:07-05:00",
+      "shortSha": "424ff2b",
+      "commits": [
+        "Add-narrative-tunnel-carving-tool"
+      ]
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "fix(ui): remove stale btn-regen wiring that broke event listener init",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-04T00:18:44-05:00",
+      "shortSha": "c15db80",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "ci(build): avoid GitHub artifact storage for published desktop builds",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-04T00:03:43-05:00",
+      "shortSha": "d661faa",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "ci(build): upload only distributable desktop artifacts",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-03T23:51:26-05:00",
+      "shortSha": "9e53c44",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 31,
+      "title": "feat(ui): roll up workspace controls into collapsible submenus",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-03T19:01:25-05:00",
+      "shortSha": "c0dc58d",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add canonical tag suggestions for LLM tools",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-07-03T18:51:00-05:00",
+      "shortSha": "f0b3025",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 116,
+      "title": "[codex] Explicit set-piece geometry reservations",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-03T18:34:32-05:00",
+      "shortSha": "4d90392",
+      "commits": [
+        "Explicit set-piece geometry reservations"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 115,
+      "title": "Menu bar simplification",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-03T16:30:32-05:00",
+      "shortSha": "747b518",
+      "commits": [
+        "feat(ui): add top menu bar and simplify workspace (#113)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 111,
+      "title": "[codex] Add public monster package contract",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-03T11:38:15-05:00",
+      "shortSha": "edc95b2",
+      "commits": [
+        "Add public monster package contract"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 112,
+      "title": "Zone-scoped WFC rebuild primitive and biome-type region rerolls (issue #40)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-03T11:31:40-05:00",
+      "shortSha": "9e15f09",
+      "commits": [
+        "Add zone-scoped WFC rebuild primitive and biome-type region rerolls",
+        "Fix pre-existing TypeScript errors so tsc --noEmit is clean",
+        "Make the director pipeline resilient to mid-pipeline geometry rebuilds"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 109,
+      "title": "Model DF8 worked-example treasure composition workflows",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-03T01:01:05-05:00",
+      "shortSha": "d637429",
+      "commits": [
+        "Model DF8 worked-example treasure composition workflows",
+        "Fill and verify treasure component pricing from licensed source RAG",
+        "Support DFRPG, GURPS, and Low-Tech base weapon/armor catalogs",
+        "Decouple the base weapon/armor catalog from source-book toggles"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 108,
+      "title": "Stage-aware director prompts: token trimming + narrative feed-forward (fixes #104)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-02T07:56:41-05:00",
+      "shortSha": "dc155ba",
+      "commits": [
+        "Trim director prompts per stage and feed narrative state forward (#104)",
+        "Harden add_furniture parsing for edge models; document tier expectations",
+        "Auto-detect hardware and recommend a director-fit model"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 107,
+      "title": "Add regeneration-safe reader mode (#101)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-01T22:52:30-05:00",
+      "shortSha": "54cce28",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 106,
+      "title": "[codex] Merge director windowing hardening",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-01T21:35:46-05:00",
+      "shortSha": "8cfa805",
+      "commits": [
+        "Harden LLM director pipeline and window rooms per director"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 99,
+      "title": "Fix 11 Dependabot vulnerabilities (electron-builder + vite/esbuild bumps)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-01T21:28:17-05:00",
+      "shortSha": "38082a4",
+      "commits": [
+        "Fix 11 Dependabot vulnerabilities in dev/build toolchain"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 105,
+      "title": "[codex] Add release changelog artifacts and adjust desktop schedule",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-01T21:24:43-05:00",
+      "shortSha": "ef0dbc4",
+      "commits": [
+        "Run desktop freshness checks three times weekly",
+        "Add continuous release changelog artifacts"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 103,
+      "title": "[codex] Expose app version in About dialog",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-01T20:44:49-05:00",
+      "shortSha": "cf82504",
+      "commits": [
+        "Expose app version in About dialog"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 100,
+      "title": "[codex] Expand treasure generation plugin and mined data",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-07-01T07:50:54-05:00",
+      "shortSha": "47b8022",
+      "commits": [
+        "Integrate mined DFRPG armor tables and full suits, add deterministic treasure composer, update registry",
+        "Add Low-Tech base items and source book toggle (115 records)",
+        "Expand_DFRPG_treasure_generation_data"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 98,
+      "title": "Fix director-prompt context overflow; add adaptive windowing + LM Studio context loading",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-30T23:04:13-05:00",
+      "shortSha": "1b9e8d5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 95,
+      "title": "Add first-run mission/About panel + VISION.md (closes #43)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-30T13:20:52-05:00",
+      "shortSha": "2630b6e",
+      "commits": [
+        "Add first-run mission/About panel (closes #43)",
+        "Frame coherence as a goal, not a disclaimer, in About panel",
+        "Add early-stage disclaimer to top of About panel",
+        "Add VISION.md — project mission and direction"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 94,
+      "title": "Add in-app auto-update path for the desktop app",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-30T12:24:23-05:00",
+      "shortSha": "f3f60eb",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 91,
+      "title": "[codex] Add shape masks for generated regions",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-29T07:03:21-05:00",
+      "shortSha": "dc3a96c",
+      "commits": [
+        "Add shape masks for generated regions"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 89,
+      "title": "[codex] Improve high-scale laptop layout",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-28T21:34:03-05:00",
+      "shortSha": "ff0c2b2",
+      "commits": [
+        "Improve-high-scale-laptop-layout"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 88,
+      "title": "[codex] add entrance graph depth metadata",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-28T21:24:01-05:00",
+      "shortSha": "caa243f",
+      "commits": [
+        "Add entrance graph depth metadata"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 87,
+      "title": "[codex] add two-mode reachability validation",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-28T20:40:21-05:00",
+      "shortSha": "707a1cb",
+      "commits": [
+        "Add two-mode reachability validation"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 86,
+      "title": "[codex] add authored set-piece catalog fixtures",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-28T13:53:58-05:00",
+      "shortSha": "b8c50c9",
+      "commits": [
+        "feat: add authored set-piece catalog fixtures"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 83,
+      "title": "[codex] Add set-piece catalog placement and fixtures",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-27T21:52:03-05:00",
+      "shortSha": "4212d18",
+      "commits": [
+        "feat: add set-piece catalog placement fixtures"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 82,
+      "title": "[codex] Sync teleporter and director polish onto main",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-27T20:42:24-05:00",
+      "shortSha": "e5f7285",
+      "commits": [
+        "feat: add static teleporter generation",
+        "feat: polish director workflow and tag vocabulary"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 80,
+      "title": "feat: enrich monster schema and enable custom tags via local RAG",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-27T13:17:20-05:00",
+      "shortSha": "3e1b94e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 79,
+      "title": "[codex] add director controls and design reference",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-27T00:37:21-05:00",
+      "shortSha": "0777fce",
+      "commits": [
+        "add-director-controls-and-design-reference"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 78,
+      "title": "[codex] document public site changelog updates",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-27T00:37:04-05:00",
+      "shortSha": "0588ed5",
+      "commits": [
+        "document public site changelog updates"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 77,
+      "title": "[codex] remove pages publishing workflow",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-26T21:21:12-05:00",
+      "shortSha": "2088b52",
+      "commits": [
+        "remove pages publishing workflow"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 73,
+      "title": "[codex] Align documentation with DFRPG and LLM roadmap",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-26T21:14:05-05:00",
+      "shortSha": "bfe3aef",
+      "commits": [
+        "docs: align roadmap with dfrpg and llm direction",
+        "docs: add set-piece issue anchors to roadmap"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 69,
+      "title": "[codex] Add Stage Manager tool-call banter",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-26T16:04:04-05:00",
+      "shortSha": "1eac47a",
+      "commits": [
+        "add stage manager tool banter"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 68,
+      "title": "[codex] Move local LLM setup out of bundled Ollama",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-26T14:07:58-05:00",
+      "shortSha": "568340e",
+      "commits": [
+        "Move local LLM setup out of bundled Ollama",
+        "Run desktop builds only on manual dispatch",
+        "Remove portable wording from desktop build workflow",
+        "Run desktop builds when main has changed"
+      ]
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "style(ci): normalize build.yml line endings",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-26T07:17:20-05:00",
+      "shortSha": "151f7a1",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "ci(continuous): mark rolling release as latest so /releases/latest works",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-26T07:16:44-05:00",
+      "shortSha": "b05c4b9",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "fix(site): drop portable wording from hero eyebrow",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-26T00:45:57-05:00",
+      "shortSha": "fd26a43",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 67,
+      "title": "build(deps-dev): bump electron from 31.7.7 to 39.8.5",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-26T00:45:40-05:00",
+      "shortSha": "ac7619c",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "build(windows): switch to NSIS single-file installer",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-26T00:37:17-05:00",
+      "shortSha": "0fe3819",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "ci: publish rolling continuous release from main builds",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-26T00:17:44-05:00",
+      "shortSha": "68a0beb",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Create SECURITY.md for security policy",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-26T00:00:36-05:00",
+      "shortSha": "9c5c981",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "fix(ci): auto-enable GitHub Pages in site workflow",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-25T23:48:03-05:00",
+      "shortSha": "c033dcd",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 63,
+      "title": "[codex] Add downloads site for local builds",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T23:41:53-05:00",
+      "shortSha": "2ab578a",
+      "commits": [
+        "Add-downloads-site-for-portable-builds"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 62,
+      "title": "[codex] Add React design system UI shell",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T23:22:08-05:00",
+      "shortSha": "4e4a424",
+      "commits": [
+        "React-design-system-ui-shell"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 61,
+      "title": "[codex] Separate topology from intent dressing",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T19:53:36-05:00",
+      "shortSha": "3ee7a12",
+      "commits": [
+        "Separate topology from intent dressing"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 60,
+      "title": "[codex] complete stage manager progress and banter",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T19:01:47-05:00",
+      "shortSha": "7e45cb0",
+      "commits": [
+        "add stage manager banter"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 59,
+      "title": "[codex] add Ollama model pull setup",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T15:51:48-05:00",
+      "shortSha": "4bf6b0a",
+      "commits": [
+        "add ollama model pull setup"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 58,
+      "title": "[codex] add generation profiles",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T14:31:18-05:00",
+      "shortSha": "a6d50f3",
+      "commits": [
+        "add generation profiles"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 57,
+      "title": "[codex] Implement director pipeline",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T13:40:45-05:00",
+      "shortSha": "0e49d77",
+      "commits": [
+        "Implement director pipeline"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 47,
+      "title": "feat(desktop): Electron installer with bundled Ollama and cross-platform CI",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-25T07:08:58-05:00",
+      "shortSha": "95a8ea9",
+      "commits": [
+        "feat(desktop): Electron installer with bundled Ollama and cross-platform CI",
+        "fix(ollama): use correct asset names and avoid GitHub API rate limits",
+        "feat(assets): add images folder, favicon, and app icons for Electron",
+        "fix(ollama): handle Linux tar.zst bin/ollama layout and nested binary discovery"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 46,
+      "title": "feat(intent, ui, exports): theme-aware DungeonIntent, two-phase set pieces, scoped LLM polish, and monster citations",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-24T23:27:08-05:00",
+      "shortSha": "5882766",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 41,
+      "title": "feat(intent): scoped content-rebuild executor (loot, atmosphere, encounters)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-24T00:49:27-05:00",
+      "shortSha": "737d506",
+      "commits": [
+        "feat(intent): scoped content-rebuild executor closes the steering loop",
+        "feat(intent): re-roll loot and atmosphere in scoped content rebuild"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 35,
+      "title": "feat(llm): incremental hybrid narrative polish + benchmark + steerable dungeon intent",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-24T00:05:05-05:00",
+      "shortSha": "bd726d7",
+      "commits": [
+        "feat(llm): scale narrative-polish timeout by room count and model class",
+        "feat(llm): incremental hybrid narrative polish with markdown working memory",
+        "feat(llm): add local-model benchmark harness (npm run bench:llm)",
+        "feat(llm): suppress model thinking + strip reasoning, warm up benchmark",
+        "feat(intent): LLM-steerable dungeon intent layer"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 34,
+      "title": "feat(llm): local LLM narrative polish via Ollama",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T18:26:27-05:00",
+      "shortSha": "71b47d6",
+      "commits": [
+        "feat(llm): local LLM narrative polish via Ollama",
+        "feat(llm): add LM Studio backend + backend selector"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 32,
+      "title": "feat(renderer): add toggleable hex grid overlay",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T13:53:39-05:00",
+      "shortSha": "e51f987",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 33,
+      "title": "fix(export): remove unused imports in markdown room-key adapter",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T13:53:27-05:00",
+      "shortSha": "2c6b2cc",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 29,
+      "title": "feat(export): complete legacy-style room key output",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T12:34:37-05:00",
+      "shortSha": "06a883e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 4,
+      "title": "[codex] Document successor roadmap beyond parity",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T12:13:27-05:00",
+      "shortSha": "954c705",
+      "commits": [
+        "Document-successor-roadmap"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 28,
+      "title": "feat(editor): split selection details into reflowable panel",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T12:02:49-05:00",
+      "shortSha": "2ce7a91",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 27,
+      "title": "feat(export): add Markdown room-key export adapter",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T11:29:44-05:00",
+      "shortSha": "ed0f0bb",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 26,
+      "title": "Highlight room outline when a room is selected",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-06-23T10:58:19-05:00",
+      "shortSha": "d88068c",
+      "commits": [
+        "Fix-noncontiguous-room-subdivision",
+        "Add-preview-pan-zoom-and-room-grouped-inspector",
+        "feat(renderer): highlight selected room outline on canvas"
+      ]
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-liquid-tag-affinity",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-23T00:34:40-05:00",
+      "shortSha": "0971f90",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-lava-and-liquid-features",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T23:07:15-05:00",
+      "shortSha": "3de1cfb",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-visible-water-features",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T22:23:34-05:00",
+      "shortSha": "9e01752",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-hallway-traps-and-passage-metadata",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T21:36:16-05:00",
+      "shortSha": "f86cd10",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Push-parity-room-key-and-source-cleanup",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T19:19:26-05:00",
+      "shortSha": "fce3c0b",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Normalize-workbook-monster-source-books",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T08:11:58-05:00",
+      "shortSha": "fd07367",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Improve-source-picker-ux",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T07:52:00-05:00",
+      "shortSha": "53f04fd",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Derive-imported-monster-source-toggles",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T07:45:06-05:00",
+      "shortSha": "90edf4f",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-GM-player-PNG-map-exports",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T07:28:33-05:00",
+      "shortSha": "a29877e",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-Universal-VTT-export-and-parity-notes",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T00:47:11-05:00",
+      "shortSha": "308f4c6",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add-DFRPG-trap-tables-and-door-traps",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T00:24:24-05:00",
+      "shortSha": "7fe5b92",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Build-DFRPG-parity-foundation",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-06-22T00:15:00-05:00",
+      "shortSha": "10d1f72",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "feat(phase1): BSP partitioner, organic zone grower, layout validator + preview",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-04-21T21:27:33-05:00",
+      "shortSha": "1835554",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "feat(phase0): core data model, DFRPG module, serialization, validation",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-04-21T21:16:13-05:00",
+      "shortSha": "a1d830b",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "WFC vertical spike — fully working dungeon generator",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-04-21T19:52:48-05:00",
+      "shortSha": "04633c7",
+      "commits": []
+    }
+  ]
+}
