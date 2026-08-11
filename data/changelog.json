@@ -3,6 +3,17 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 529,
+      "title": "Publish a pull-request changelog that actually reaches the public site",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-10T20:02:01-04:00",
+      "shortSha": "97d8995",
+      "commits": [
+        "Publish a pull-request changelog that reaches the public site"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 528,
       "title": "Put the pane splitters where the seam is, and draw them (#521)",
       "authorName": "Zuljita",
