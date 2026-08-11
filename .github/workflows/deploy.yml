@@ -17,6 +17,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Deploy the tip of main, not the commit this run was created against.
+          #
+          # The mirror workflow commits data/*.json and then immediately calls
+          # `gh workflow run deploy.yml`, because a push made with GITHUB_TOKEN
+          # does not fire on:push. `gh workflow run` can only name a branch, and
+          # GitHub resolves that branch to a SHA when it registers the dispatch —
+          # which raced the push and lost on 2026-08-11, stamping the run with
+          # the pre-push commit. checkout then took `github.sha` and published
+          # the site *without* the changelog entry the mirror had just committed,
+          # where it stayed stranded until some later commit happened to trigger
+          # another deploy.
+          #
+          # A site deploy always wants "whatever main is now", so say that.
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
