@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 561,
+      "title": "Add bench:creatures --outline mode and the desktop guided-vs-findings rows",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-13T03:30:17-04:00",
+      "shortSha": "bfda031",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 548,
       "title": "Enforce declared room-type size floors",
       "authorName": "Zuljita",
