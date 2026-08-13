@@ -3,6 +3,26 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 548,
+      "title": "Enforce declared room-type size floors",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-13T01:34:24-04:00",
+      "shortSha": "5aefe29",
+      "commits": [
+        "Enforce declared room-type size floors (#535 trial)"
+      ]
+    },
+    {
+      "kind": "pull-request",
+      "number": 547,
+      "title": "Bundle GCS Master Library monster statblocks",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-13T01:34:21-04:00",
+      "shortSha": "f5f6c18",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 543,
       "title": "Enhancement riders: ratings-only monsters get playable role/lens deltas",
       "authorName": "Zuljita",
