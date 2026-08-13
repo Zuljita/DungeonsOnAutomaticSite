@@ -3,6 +3,18 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 563,
+      "title": "NPC builds: guided one-question chain over GCS template menus — enforced freshness, capture/replay, bench:npc-build (#555)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-13T19:04:58-04:00",
+      "shortSha": "89d602d",
+      "commits": [
+        "NPC builds: guided one-question chain over GCS template menus (#555)",
+        "Serve NPC builds over the commission API (POST /npc-commission)"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 561,
       "title": "Add bench:creatures --outline mode and the desktop guided-vs-findings rows",
       "authorName": "Zuljita",
