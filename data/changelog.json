@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 543,
+      "title": "Enhancement riders: ratings-only monsters get playable role/lens deltas",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-13T00:16:56-04:00",
+      "shortSha": "ae4b9b2",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 529,
       "title": "Publish a pull-request changelog that actually reaches the public site",
       "authorName": "Zuljita",
