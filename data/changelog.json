@@ -3,6 +3,20 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 569,
+      "title": "NPC gear scales to station: priced from the catalog, Cheap-to-Fine ladder, Dwarven make, model-picked boss enchantments, captives stripped",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-15T14:05:53-04:00",
+      "shortSha": "ed05adc",
+      "commits": [
+        "NPC gear scales to station: cheap arms for the rank and file, Fine for elites, captives stripped",
+        "Price NPC gear from the catalog; bosses carry enchanted weapons and Fortify; Dwarven make where it makes sense",
+        "Lowest fodder swings regular axes and wooden sword-analogs; Dwarven make starts at stock",
+        "Calibrate gear against the loot-pinata rollup; the model picks the boss's enchantment"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 563,
       "title": "NPC builds: guided one-question chain over GCS template menus — enforced freshness, capture/replay, bench:npc-build (#555)",
       "authorName": "Zuljita",
