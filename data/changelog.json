@@ -3,6 +3,17 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 564,
+      "title": "Guided-cast chain latency trims: enhance-ask skips + measured folded ask (#554 item 2)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-15T18:48:19-04:00",
+      "shortSha": "357fae9",
+      "commits": [
+        "Guided-cast chain latency trims: enhance-ask skips + measured folded ask (#554)"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 570,
       "title": "NPCs get a reaction band; prison cells can hold someone worth rescuing",
       "authorName": "Zuljita",
