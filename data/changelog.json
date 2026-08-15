@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 570,
+      "title": "NPCs get a reaction band; prison cells can hold someone worth rescuing",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-15T18:41:19-04:00",
+      "shortSha": "24d2ec9",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 569,
       "title": "NPC gear scales to station: priced from the catalog, Cheap-to-Fine ladder, Dwarven make, model-picked boss enchantments, captives stripped",
       "authorName": "Zuljita",
