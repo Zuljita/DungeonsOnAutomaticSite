@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 578,
+      "title": "The director decides who is held in each cell; a population knob dials the civilian layer",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-16T12:19:11-04:00",
+      "shortSha": "5e43bfc",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 576,
       "title": "Weapons know their make and coffers their limits: material classes drive weapon DR, containers clamp to declared capacity",
       "authorName": "Zuljita",
