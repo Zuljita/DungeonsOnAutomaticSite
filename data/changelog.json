@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 571,
+      "title": "Gear effects go mechanical, bosses carry a composed showpiece, Low-Tech variants priced",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-15T19:49:16-04:00",
+      "shortSha": "9548e54",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 564,
       "title": "Guided-cast chain latency trims: enhance-ask skips + measured folded ask (#554 item 2)",
       "authorName": "Zuljita",
