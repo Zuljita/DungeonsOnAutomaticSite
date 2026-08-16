@@ -3,6 +3,18 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 576,
+      "title": "Weapons know their make and coffers their limits: material classes drive weapon DR, containers clamp to declared capacity",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-16T07:56:27-04:00",
+      "shortSha": "d246574",
+      "commits": [
+        "Weapons know their make and coffers their limits: material classes drive weapon DR, containers clamp to declared capacity",
+        "Weapon notes credit the rules that fire in play; per-item stats retreat behind the click-through"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 572,
       "title": "Objects know how they break: furniture, doors, and treasure carry cited HP/DR/SM as GM drill-down",
       "authorName": "Zuljita",
