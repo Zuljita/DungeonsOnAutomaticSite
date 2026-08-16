@@ -3,6 +3,18 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 572,
+      "title": "Objects know how they break: furniture, doors, and treasure carry cited HP/DR/SM as GM drill-down",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-15T23:50:58-04:00",
+      "shortSha": "773162b",
+      "commits": [
+        "Objects know how they break: furniture, doors, and treasure carry cited HP/DR/SM as GM drill-down",
+        "The object-stats rules go on the wire: POST /object-stats on the loopback commission surface"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 571,
       "title": "Gear effects go mechanical, bosses carry a composed showpiece, Low-Tech variants priced",
       "authorName": "Zuljita",
