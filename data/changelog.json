@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 579,
+      "title": "A chip names what stands in the room; the taxonomy header and the 58-tag blob both go",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-17T22:58:36-04:00",
+      "shortSha": "35144fe",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 578,
       "title": "The director decides who is held in each cell; a population knob dials the civilian layer",
       "authorName": "Zuljita",
