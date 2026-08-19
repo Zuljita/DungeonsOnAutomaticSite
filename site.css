@@ -30,6 +30,42 @@ a:focus-visible {
   margin-inline: auto;
 }
 
+/* On Automatic family strip: one thin bar above every page's nav naming the
+   siblings, so each product page is also the front door to the others. */
+.site-family {
+  border-bottom: 1px solid rgba(58, 55, 66, 0.5);
+  background: rgba(12, 11, 14, 0.96);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-family__inner {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 5px 0;
+}
+
+.site-family__brand {
+  color: var(--brass-300);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.site-family__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.site-family__links a { color: var(--text-muted); transition: color var(--dur-fast) var(--ease-standard); }
+.site-family__links a:hover,
+.site-family__links a[aria-current="page"] { color: var(--brass-300); }
+
 .site-nav {
   position: sticky;
   top: 0;
