@@ -237,7 +237,13 @@ export function monsterStatSummary(monster) {
     .join(' ');
 }
 
-const NAV = `<nav class="site-nav" aria-label="Main navigation">
+const NAV = `<div class="site-family" aria-label="On Automatic family">
+    <div class="site-wrap site-family__inner">
+      <a class="site-family__brand" href="../../family.html">On Automatic</a>
+      <div class="site-family__links"><a href="../../index.html">Dungeons</a><a href="../../hexes.html">Hexes</a><a href="../../characters.html">Characters</a><a href="../../campaigns.html">Campaign Vault</a><a href="../../monsters.html" aria-current="page">Monster Library</a></div>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="site-wrap site-nav__inner">
       <a class="site-brand" href="../../index.html"><img src="../../assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
       <div class="site-nav__links"><a href="../../index.html">Home</a><a href="../../quickstart.html">Quickstart</a><a href="../../manual.html">Manual</a><a href="../../monsters.html">Monsters</a><a href="../../blog.html">Blog</a></div>

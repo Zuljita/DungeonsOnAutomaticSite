@@ -178,7 +178,13 @@ function renderHead({ title, description, canonical, prefix, ogType, image, extr
 </head>`;
 }
 
-const renderNav = (prefix) => `<nav class="site-nav" aria-label="Main navigation">
+const renderNav = (prefix) => `<div class="site-family" aria-label="On Automatic family">
+    <div class="site-wrap site-family__inner">
+      <a class="site-family__brand" href="${prefix}family.html">On Automatic</a>
+      <div class="site-family__links"><a href="${prefix}index.html">Dungeons</a><a href="${prefix}hexes.html">Hexes</a><a href="${prefix}characters.html">Characters</a><a href="${prefix}campaigns.html">Campaign Vault</a><a href="${prefix}monsters.html">Monster Library</a></div>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="site-wrap site-nav__inner">
       <a class="site-brand" href="${prefix}index.html"><img src="${prefix}assets/brand/doa_logo_transparent.svg" alt=""><span>Dungeons on Automatic</span></a>
       <div class="site-nav__links"><a href="${prefix}index.html">Home</a><a href="${prefix}quickstart.html">Quickstart</a><a href="${prefix}manual.html">Manual</a><a href="${prefix}monsters.html">Monsters</a><a href="${prefix}blog.html">Blog</a></div>

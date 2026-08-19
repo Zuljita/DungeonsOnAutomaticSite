@@ -1,5 +1,21 @@
 name: Mirror App Release Downloads
 
+# Copies each On Automatic desktop app's rolling release out of the private
+# monorepo (Zuljita/OnAutomatic) into a public release on this repository, and
+# writes the per-app data files the pages render (downloads/releases/changelog).
+#
+# One workflow, many apps: `data/apps.json` is the registry — source tag,
+# target tag, data directory, and the download table (asset names must match
+# the app's electron-builder artifactName). Dungeons keeps the site's original
+# `continuous` release so installed updaters never see their feed URL change;
+# every other app gets its own `<app>-continuous`.
+#
+# Triggers: the app's build workflow dispatches `app_release_published` with
+# `client_payload.app` right after publishing; the 15-minute schedule is the
+# fallback and walks every app. An app whose source release does not exist yet
+# (Hexes before its first published build) is skipped by the schedule, but a
+# dispatch that names it is an error — the app just told us it published.
+
 on:
   repository_dispatch:
     types: [app_release_published]
@@ -15,46 +31,100 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  mirror:
+  plan:
+    name: Which apps
     runs-on: ubuntu-latest
+    outputs:
+      apps: ${{ steps.plan.outputs.apps }}
+    steps:
+      - name: Checkout public site
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: data/apps.json
+          sparse-checkout-cone-mode: false
+
+      - name: Decide which apps to mirror
+        id: plan
+        env:
+          DISPATCH_APP: ${{ github.event.client_payload.app }}
+          DISPATCH_SOURCE_TAG: ${{ github.event.client_payload.source_tag }}
+        run: |
+          set -euo pipefail
+          all="$(jq -c '[.apps[].id]' data/apps.json)"
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            app="${DISPATCH_APP:-}"
+            if [ -z "$app" ]; then
+              # Pre-monorepo dispatch shape (no `app`): the source tag names the app
+              # by prefix, or it is the original bare `continuous` = Dungeons.
+              case "${DISPATCH_SOURCE_TAG:-continuous}" in
+                hexes-*) app="hexes" ;;
+                *) app="dungeons" ;;
+              esac
+            fi
+            if ! jq -e --arg app "$app" '.apps[] | select(.id == $app)' data/apps.json >/dev/null; then
+              echo "::error title=Unknown app::'$app' is not registered in data/apps.json."
+              exit 1
+            fi
+            apps="$(jq -cn --arg app "$app" '[$app]')"
+          else
+            apps="$all"
+          fi
+          echo "apps=$apps" >> "$GITHUB_OUTPUT"
+          echo "Mirroring: $apps" >> "$GITHUB_STEP_SUMMARY"
+
+  mirror:
+    name: Mirror ${{ matrix.app }}
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      # Every app commits to main; serialise so the pushes never race.
+      max-parallel: 1
+      matrix:
+        app: ${{ fromJSON(needs.plan.outputs.apps) }}
     env:
-      SOURCE_REPO: Zuljita/DungeonsOnAutomatic
+      APP: ${{ matrix.app }}
       TARGET_REPO: Zuljita/DungeonsOnAutomaticSite
-      SOURCE_TAG: continuous
-      TARGET_TAG: continuous
       SOURCE_TOKEN: ${{ secrets.DOA_RELEASE_MIRROR_TOKEN }}
       TARGET_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout public site
         uses: actions/checkout@v4
 
-      - name: Resolve mirror tags
-        env:
-          DISPATCH_SOURCE_TAG: ${{ github.event.client_payload.source_tag }}
-          DISPATCH_TARGET_TAG: ${{ github.event.client_payload.target_tag }}
+      - name: Resolve app configuration
         run: |
-          source_tag="${DISPATCH_SOURCE_TAG:-continuous}"
-          target_tag="${DISPATCH_TARGET_TAG:-continuous}"
-          echo "SOURCE_TAG=$source_tag" >> "$GITHUB_ENV"
-          echo "TARGET_TAG=$target_tag" >> "$GITHUB_ENV"
+          set -euo pipefail
+          jq -e --arg app "$APP" '.apps[] | select(.id == $app)' data/apps.json > mirror-app.json
+          {
+            echo "SOURCE_REPO=$(jq -r '.sourceRepo' data/apps.json)"
+            echo "SOURCE_TAG=$(jq -r '.sourceTag' mirror-app.json)"
+            echo "TARGET_TAG=$(jq -r '.targetTag' mirror-app.json)"
+            echo "DATA_DIR=$(jq -r '.dataDir' mirror-app.json)"
+            echo "APP_NAME=$(jq -r '.name' mirror-app.json)"
+          } >> "$GITHUB_ENV"
 
       - name: Preflight source release access
         run: |
-          mkdir -p data mirror-meta
+          set -euo pipefail
+          mkdir -p "$DATA_DIR" mirror-meta
           if [ -z "$SOURCE_TOKEN" ]; then
-            message="DOA_RELEASE_MIRROR_TOKEN is not set."
-            echo "::error title=Missing release mirror token::$message"
+            echo "::error title=Missing release mirror token::DOA_RELEASE_MIRROR_TOKEN is not set."
             exit 1
           fi
 
           if GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases/tags/$SOURCE_TAG" \
-            > mirror-meta/source-release.json; then
-            echo "Using DOA_RELEASE_MIRROR_TOKEN to read $SOURCE_REPO."
+            > mirror-meta/source-release.json 2> mirror-meta/source-release.err; then
+            echo "Reading $SOURCE_REPO@$SOURCE_TAG for $APP_NAME."
             exit 0
           fi
 
-          message="DOA_RELEASE_MIRROR_TOKEN could not read ${SOURCE_REPO}@${SOURCE_TAG}."
-          echo "::error title=Invalid release mirror token::$message"
+          if grep -q "HTTP 404" mirror-meta/source-release.err && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "::notice title=Nothing to mirror yet::$SOURCE_REPO has no $SOURCE_TAG release yet ($APP_NAME has not published a build). Skipping."
+            echo "MIRROR_SKIP=1" >> "$GITHUB_ENV"
+            exit 0
+          fi
+
+          echo "::error title=Cannot read source release::DOA_RELEASE_MIRROR_TOKEN could not read ${SOURCE_REPO}@${SOURCE_TAG}: $(cat mirror-meta/source-release.err)"
           exit 1
 
       - name: Read source metadata
@@ -66,24 +136,25 @@ jobs:
             echo "---"
             echo "Mirrored from $SOURCE_REPO release $SOURCE_TAG."
           } >> release-notes.md
-          jq -r '.name // "Continuous build"' mirror-meta/source-release.json \
+          jq -r --arg fallback "$APP_NAME — continuous build" '.name // $fallback' mirror-meta/source-release.json \
             > release-title.txt
           jq '[.assets[] | {name, size, digest}] | sort_by(.name)' \
             mirror-meta/source-release.json > mirror-meta/source-assets.json
 
-      - name: Write public changelog data
+      - name: Write public release list
+        # The monorepo publishes every app's releases in one place; this app's
+        # are the ones whose tag carries its prefix.
         run: |
           [ "$MIRROR_SKIP" = "1" ] && exit 0
-          mkdir -p data
           GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases" \
             --paginate \
-            --jq '[.[] | select(.draft == false) | {tagName: .tag_name, name: .name, publishedAt: .published_at, isPrerelease: .prerelease, body: (.body // "")}]' \
-            > data/releases.json
+            --jq "[.[] | select(.draft == false) | select(.tag_name | startswith(\"$APP-\")) | {tagName: .tag_name, name: .name, publishedAt: .published_at, isPrerelease: .prerelease, body: (.body // \"\")}]" \
+            > "$DATA_DIR/releases.json"
 
       - name: Merge the release changelog into the public changelog
-        # The application publishes one rolling `continuous` release, so its
-        # notes only ever describe the newest build. data/changelog.json is this
-        # repository's cumulative history, built by merging each release's
+        # The app publishes one rolling release, so its notes only ever describe
+        # the newest build. <dataDir>/changelog.json is this repository's
+        # cumulative history for the app, built by merging each release's
         # release-changelog.json into what is already committed. The merge is
         # keyed and idempotent, so a mirror run with nothing new changes nothing.
         run: |
@@ -99,7 +170,7 @@ jobs:
             exit 0
           fi
 
-          node scripts/merge-changelog.mjs mirror-meta/changelog/release-changelog.json
+          node scripts/merge-changelog.mjs mirror-meta/changelog/release-changelog.json "$DATA_DIR/changelog.json"
 
       - name: Write public download metadata
         run: |
@@ -110,11 +181,12 @@ jobs:
             --repo "$SOURCE_REPO" \
             --pattern "latest*.yml" \
             --dir mirror-meta/download-metadata \
-            --clobber
+            --clobber || echo "No updater metadata on the source release (an app without electron-updater); versions come from the release only."
           node <<'NODE'
           const fs = require("fs");
           const path = require("path");
 
+          const app = JSON.parse(fs.readFileSync("mirror-app.json", "utf8"));
           const release = JSON.parse(fs.readFileSync("mirror-meta/source-release.json", "utf8"));
           const assetByName = new Map((release.assets || []).map((asset) => [asset.name, asset]));
           const metadataDir = "mirror-meta/download-metadata";
@@ -131,39 +203,6 @@ jobs:
             return `https://github.com/${targetRepo}/releases/download/${targetTag}/${encodeURIComponent(assetName)}`;
           }
 
-          const downloads = [
-            {
-              id: "windows-x64",
-              label: "Windows installer",
-              feed: "latest.yml",
-              asset: "Dungeons-on-Automatic-windows-x64-setup.exe",
-            },
-            {
-              id: "mac-arm64",
-              label: "macOS Apple silicon",
-              feed: "latest-mac.yml",
-              asset: "Dungeons-on-Automatic-mac-arm64.zip",
-            },
-            {
-              id: "mac-x64",
-              label: "macOS Intel",
-              feed: "latest-mac.yml",
-              asset: "Dungeons-on-Automatic-mac-x64.zip",
-            },
-            {
-              id: "linux-x86_64",
-              label: "Linux x86_64",
-              feed: "latest-linux.yml",
-              asset: "Dungeons-on-Automatic-linux-x86_64.AppImage",
-            },
-            {
-              id: "linux-arm64",
-              label: "Linux ARM64",
-              feed: "latest-linux-arm64.yml",
-              asset: "Dungeons-on-Automatic-linux-arm64.AppImage",
-            },
-          ];
-
           function readFeed(name) {
             const file = path.join(metadataDir, name);
             if (!fs.existsSync(file)) return {};
@@ -173,12 +212,15 @@ jobs:
             return { version, releaseDate };
           }
 
+          const downloads = app.downloads;
           const feedByName = new Map([...new Set(downloads.map((download) => download.feed))]
             .map((feed) => [feed, readFeed(feed)]));
 
           const output = {
             schemaVersion: 1,
-            releaseTag: release.tag_name,
+            app: app.id,
+            releaseTag: targetTag,
+            sourceReleaseTag: release.tag_name,
             releaseName: release.name,
             publishedAt: release.published_at,
             updatedAt: release.updated_at,
@@ -200,7 +242,9 @@ jobs:
             }),
           };
 
-          fs.writeFileSync("data/downloads.json", `${JSON.stringify(output, null, 2)}\n`);
+          const dataDir = process.env.DATA_DIR;
+          fs.mkdirSync(dataDir, { recursive: true });
+          fs.writeFileSync(path.join(dataDir, "downloads.json"), `${JSON.stringify(output, null, 2)}\n`);
           NODE
 
       - name: Compare mirrored assets
@@ -293,11 +337,15 @@ jobs:
           [ "$MIRROR_SKIP" = "1" ] && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/releases.json data/downloads.json data/changelog.json
+          git add "$DATA_DIR/releases.json" "$DATA_DIR/downloads.json" "$DATA_DIR/changelog.json"
           if git diff --cached --quiet; then
-            echo "No public release metadata changes to commit."
+            echo "No public release metadata changes to commit for $APP_NAME."
           else
-            git commit -m "Update public release metadata"
+            git commit -m "Update public release metadata ($APP)"
+            # Another app's job may have pushed while this one ran (max-parallel 1
+            # serialises the jobs, but this checkout predates that push). Each app
+            # touches only its own data files, so the rebase never conflicts.
+            git pull --rebase --quiet origin main
             git push
             # Pushes made with GITHUB_TOKEN do not trigger on:push workflows,
             # so kick the Cloudflare deploy explicitly.

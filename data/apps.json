@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "notes": "The On Automatic desktop apps this site distributes. The release mirror workflow reads sourceTag/targetTag/dataDir/downloads from here (one entry per app; asset names must match each app's electron-builder artifactName), and the pages read the per-app data files it writes.",
+  "sourceRepo": "Zuljita/OnAutomatic",
+  "apps": [
+    {
+      "id": "dungeons",
+      "name": "Dungeons on Automatic",
+      "tagline": "Keyed dungeon sites: maps, room keys, encounters, treasure, VTT exports.",
+      "page": "index.html",
+      "downloadsPage": "releases.html#downloads",
+      "sourceTag": "dungeons-continuous",
+      "targetTag": "continuous",
+      "dataDir": "data",
+      "downloads": [
+        { "id": "windows-x64", "label": "Windows installer", "feed": "latest.yml", "asset": "Dungeons-on-Automatic-windows-x64-setup.exe" },
+        { "id": "mac-arm64", "label": "macOS Apple silicon", "feed": "latest-mac.yml", "asset": "Dungeons-on-Automatic-mac-arm64.zip" },
+        { "id": "mac-x64", "label": "macOS Intel", "feed": "latest-mac.yml", "asset": "Dungeons-on-Automatic-mac-x64.zip" },
+        { "id": "linux-x86_64", "label": "Linux x86_64", "feed": "latest-linux.yml", "asset": "Dungeons-on-Automatic-linux-x86_64.AppImage" },
+        { "id": "linux-arm64", "label": "Linux ARM64", "feed": "latest-linux-arm64.yml", "asset": "Dungeons-on-Automatic-linux-arm64.AppImage" }
+      ]
+    },
+    {
+      "id": "hexes",
+      "name": "Hexes on Automatic",
+      "tagline": "Overworld hex regions: terrain, rivers, settlements, sites, roads, factions — written into a Campaign Vault.",
+      "page": "hexes.html",
+      "downloadsPage": "hexes.html#downloads",
+      "sourceTag": "hexes-continuous",
+      "targetTag": "hexes-continuous",
+      "dataDir": "data/hexes",
+      "downloads": [
+        { "id": "windows-x64", "label": "Windows installer", "feed": "latest.yml", "asset": "Hexes-on-Automatic-win-x64-setup.exe" },
+        { "id": "mac-arm64", "label": "macOS Apple silicon", "feed": "latest-mac.yml", "asset": "Hexes-on-Automatic-mac-arm64.zip" },
+        { "id": "mac-x64", "label": "macOS Intel", "feed": "latest-mac.yml", "asset": "Hexes-on-Automatic-mac-x64.zip" },
+        { "id": "linux-x86_64", "label": "Linux x86_64", "feed": "latest-linux.yml", "asset": "Hexes-on-Automatic-linux-x86_64.AppImage" },
+        { "id": "linux-arm64", "label": "Linux ARM64", "feed": "latest-linux-arm64.yml", "asset": "Hexes-on-Automatic-linux-arm64.AppImage" }
+      ]
+    }
+  ]
+}

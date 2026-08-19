@@ -8,7 +8,11 @@
 // replace itself on every build. This file is the history.
 //
 // Usage:
-//   node scripts/merge-changelog.mjs <release-changelog.json>
+//   node scripts/merge-changelog.mjs <release-changelog.json> [<target changelog.json>]
+//
+// The target defaults to data/changelog.json (Dungeons on Automatic). Sibling
+// apps keep their own cumulative file — the mirror passes e.g.
+// data/hexes/changelog.json — so one app's history never leaks into another's.
 //
 // Re-running with the same input is a no-op: entries are keyed and deduplicated,
 // so an unchanged mirror run leaves the file byte-identical and commits nothing.
@@ -18,7 +22,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const target = path.join(root, 'data', 'changelog.json');
 
 const SCHEMA_VERSION = 1;
 
@@ -70,11 +73,12 @@ function sortNewestFirst(entries) {
   });
 }
 
-const [inputPath] = process.argv.slice(2);
+const [inputPath, targetArg] = process.argv.slice(2);
 if (!inputPath) {
-  console.error('Usage: node scripts/merge-changelog.mjs <release-changelog.json>');
+  console.error('Usage: node scripts/merge-changelog.mjs <release-changelog.json> [<target changelog.json>]');
   process.exit(1);
 }
+const target = targetArg ? path.resolve(targetArg) : path.join(root, 'data', 'changelog.json');
 
 const incoming = JSON.parse(await readFile(inputPath, 'utf8'));
 if (incoming.schemaVersion !== 2) {

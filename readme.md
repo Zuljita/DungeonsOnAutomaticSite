@@ -1,7 +1,10 @@
 # Dungeons on Automatic Site
 
-Public marketing, manual, and release-note site for
-[Dungeons on Automatic](https://github.com/Zuljita/DungeonsOnAutomatic).
+Public marketing, manual, downloads and release-note site for the **On
+Automatic** family — Dungeons on Automatic, Hexes on Automatic, the Characters
+kernel, the Campaign Vault, and the public monster library. The apps' source
+lives in the private monorepo `Zuljita/OnAutomatic`; the family pages are
+`family.html`, `hexes.html`, `characters.html`, `campaigns.html`.
 
 This repository is intentionally static. It can stay public while the application
 source repository moves private, giving users a stable place to find:
@@ -86,7 +89,7 @@ No build step is required.
 
 ## Public/private split
 
-Once `Zuljita/DungeonsOnAutomatic` is private, keep public release assets mirrored
+The app source repository (`Zuljita/OnAutomatic`) is private, so public release assets are mirrored
 on this repository's GitHub Releases. Private-repo release assets require
 authentication, so public downloads should not point there.
 
@@ -99,37 +102,47 @@ distribution path.
 
 ## Mirroring app releases
 
-The `Mirror App Release Downloads` workflow copies assets from
-`Zuljita/DungeonsOnAutomatic` into this public repository's `continuous` release.
-The downloads page links to those stable public asset URLs, so routine release
-updates should not require editing the page.
+The `Mirror App Release Downloads` workflow copies each On Automatic desktop
+app's rolling release out of the private monorepo `Zuljita/OnAutomatic` into a
+public release on this repository, and writes the per-app data the pages render.
+`data/apps.json` is the registry: one entry per app with its source tag, target
+tag, data directory, and download table (asset names must match the app's
+electron-builder `artifactName`).
 
-Before the source repository goes private, add a repository secret named
-`DOA_RELEASE_MIRROR_TOKEN` with read access to `Zuljita/DungeonsOnAutomatic`.
-The scheduled workflow uses that token to read the private release and the
-standard `GITHUB_TOKEN` to publish mirrored assets here.
+| App | Source release (monorepo) | Public release (here) | Data files |
+| --- | --- | --- | --- |
+| Dungeons on Automatic | `dungeons-continuous` | `continuous` (unchanged, so installed updaters keep their feed URL) | `data/{releases,downloads,changelog}.json` |
+| Hexes on Automatic | `hexes-continuous` | `hexes-continuous` | `data/hexes/{releases,downloads,changelog}.json` |
 
-The mirror workflow also accepts a `repository_dispatch` event named
-`app_release_published` so the source repository can update the public mirror
-within minutes of publishing a release:
+Add a repository secret named `DOA_RELEASE_MIRROR_TOKEN` with read access to
+`Zuljita/OnAutomatic` (a classic PAT with `repo`, or a fine-grained token that
+includes that repository). The workflow uses it to read the private releases and
+the standard `GITHUB_TOKEN` to publish mirrored assets here.
+
+Each app's build workflow dispatches `app_release_published` right after it
+publishes, naming the app:
 
 ```sh
-gh api repos/Zuljita/DungeonsOnAutomaticSite/dispatches \
-  --method POST \
-  --field event_type=app_release_published \
-  --raw-field client_payload='{"source_tag":"continuous","target_tag":"continuous"}'
+gh api repos/Zuljita/DungeonsOnAutomaticSite/dispatches   --method POST   --field event_type=app_release_published   --raw-field client_payload='{"app":"hexes","source_tag":"hexes-continuous","target_tag":"hexes-continuous"}'
 ```
 
-In the source app repository, configure `DOA_SITE_MIRROR_DISPATCH_TOKEN` with
-permission to create repository dispatch events in this public site repository.
-
-During launch, the fallback schedule runs every 15 minutes. Dispatch and
-scheduled runs fail visibly if `DOA_RELEASE_MIRROR_TOKEN` is missing or invalid
-instead of silently succeeding with stale downloads.
+(In the monorepo that token is `DOA_SITE_MIRROR_DISPATCH_TOKEN`, shared by both
+build workflows.) The 15-minute schedule is the fallback and walks every app in
+`data/apps.json`; an app whose source release does not exist yet is skipped with
+a notice, while a dispatch that names a missing release fails visibly. A missing
+or invalid `DOA_RELEASE_MIRROR_TOKEN` always fails visibly rather than serving
+stale downloads.
 
 Updater metadata matters: the mirror compares release assets and the
 `latest*.yml` files used by Electron auto-update before deciding whether to
-replace public assets.
+replace public assets. `scripts/merge-changelog.mjs` keeps each app's cumulative
+changelog (`data/…/changelog.json`) — pass the target file as its second
+argument.
+
+To add an app: append it to `data/apps.json`, seed its data directory
+(`downloads.json` with `url: null` rows, `releases.json` `[]`, `changelog.json`
+with an empty `entries` array), give it a page that reads those files, and have
+its build workflow dispatch with `app: <id>`.
 
 ## Public monster library
 
