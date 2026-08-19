@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you our second (of 2) Big
 
 ![Big Cats 2 token art by Emily Smirle](assets/blog/token-tuesday-big-cats-2/image.png)
 
-[download: Download tokens (.zip) | big-cats-2-tokens.zip | 1.6 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-big-cats-2/big-cats-2-tokens.zip)
+[download: Download tokens (.zip) | big-cats-2-tokens.zip | 1.6 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-big-cats-2/big-cats-2-tokens.zip)
 
 > Big Cats 2 tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

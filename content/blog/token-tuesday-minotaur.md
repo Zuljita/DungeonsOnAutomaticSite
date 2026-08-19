@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the Minotaur.
 
 ![Minotaur token art by Emily Smirle](assets/blog/token-tuesday-minotaur/image.png)
 
-[download: Download tokens (.zip) | minotaur-tokens.zip | 369 KB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-minotaur/minotaur-tokens.zip)
+[download: Download tokens (.zip) | minotaur-tokens.zip | 369 KB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-minotaur/minotaur-tokens.zip)
 
 > Minotaur tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

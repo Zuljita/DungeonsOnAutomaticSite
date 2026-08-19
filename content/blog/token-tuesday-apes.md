@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the Apes of various s
 
 ![Apes token art by Emily Smirle](assets/blog/token-tuesday-apes/image.png)
 
-[download: Download tokens (.zip) | apes-tokens.zip | 2.2 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-apes/apes-tokens.zip)
+[download: Download tokens (.zip) | apes-tokens.zip | 2.2 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-apes/apes-tokens.zip)
 
 > Apes tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

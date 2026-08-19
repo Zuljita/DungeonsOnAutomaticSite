@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the Strix. You'll fin
 
 ![Strix with Special News Bulletin! token art by Emily Smirle](assets/blog/token-tuesday-strix/image.jpg)
 
-[download: Download tokens (.zip) | strix-tokens.zip | 421 KB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-strix/strix-tokens.zip)
+[download: Download tokens (.zip) | strix-tokens.zip | 421 KB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-strix/strix-tokens.zip)
 
 > Strix Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

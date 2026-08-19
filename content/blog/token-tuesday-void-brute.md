@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the creepy eldrich sl
 
 ![Void Brute token art by Emily Smirle](assets/blog/token-tuesday-void-brute/image.png)
 
-[download: Download tokens (.zip) | void-brute-tokens.zip | 2.9 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-void-brute/void-brute-tokens.zip)
+[download: Download tokens (.zip) | void-brute-tokens.zip | 2.9 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-void-brute/void-brute-tokens.zip)
 
 > Void Brute Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

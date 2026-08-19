@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you another DFRPG monster
 
 ![Peshkali token art by Emily Smirle](assets/blog/token-tuesday-peshkali/image.png)
 
-[download: Download tokens (.zip) | peshkali-tokens.zip | 2.9 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-peshkali/peshkali-tokens.zip)
+[download: Download tokens (.zip) | peshkali-tokens.zip | 2.9 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-peshkali/peshkali-tokens.zip)
 
 > Peshkali tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

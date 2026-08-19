@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the armored evil Blac
 
 ![Black Knight token art by Emily Smirle](assets/blog/token-tuesday-black-knight/image.jpg)
 
-[download: Download tokens (.zip) | black-knight-tokens.zip | 1.5 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-black-knight/black-knight-tokens.zip)
+[download: Download tokens (.zip) | black-knight-tokens.zip | 1.5 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-black-knight/black-knight-tokens.zip)
 
 > Black Knight Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the undead warrior kn
 
 ![Draug token art by Emily Smirle](assets/blog/token-tuesday-draug/image.png)
 
-[download: Download tokens (.zip) | draug-tokens.zip | 996 KB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-draug/draug-tokens.zip)
+[download: Download tokens (.zip) | draug-tokens.zip | 996 KB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-draug/draug-tokens.zip)
 
 > Draug tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the Water Elemental, 
 
 ![Water Elementals token art by Emily Smirle](assets/blog/token-tuesday-water-elementals/image.png)
 
-[download: Download tokens (.zip) | water-elementals-tokens.zip | 1.2 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-water-elementals/water-elementals-tokens.zip)
+[download: Download tokens (.zip) | water-elementals-tokens.zip | 1.2 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-water-elementals/water-elementals-tokens.zip)
 
 > Water Elementals tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

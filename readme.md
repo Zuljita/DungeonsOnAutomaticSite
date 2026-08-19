@@ -50,24 +50,30 @@ Notes:
 - `body` items render in order; mix strings and the object block types above.
 - Body text is inserted as plain text, so no HTML escaping is required.
 
-### Downloadable files (Git LFS)
+### Downloadable files (Cloudflare R2, not git)
 
-Binary download packs (e.g. the Token Tuesday `.zip` archives under
-`assets/blog/`) are stored in **Git LFS** — see the `assets/blog/**/*.zip`
-rule in `.gitattributes`. You need `git lfs install` once on any clone that
-will add or fetch these files.
+Binary download packs (the Token Tuesday `.zip` archives) live in the
+`doa-assets` R2 bucket under `blog/<slug>/<file>.zip`, served from
+`https://assets.dungeonsonautomatic.com/blog/<slug>/<file>.zip` with
+`Content-Disposition: attachment`. **They are not committed to this repository
+and Git LFS is no longer used anywhere in the family** — the account's LFS
+budget was exhausted by the monster art, and a Pages deploy of an LFS pointer
+serves the pointer text as the download (that is exactly what happened to every
+Token Tuesday zip until 2026-08-19).
 
-Important: **GitHub Pages does not serve Git LFS content** — it would return the
-small pointer file, not the binary. So `download` blocks must point at GitHub's
-raw endpoint, which resolves LFS objects:
+To publish a new pack: keep the file out of git (`assets/blog/` holds only the
+post images), upload it with the monsters repository's uploader, then link it:
 
-```text
-https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/<slug>/<file>.zip
+```sh
+CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=...   node ../DungeonsOnAutomaticMonsters/scripts/upload-art-to-r2.mjs     --bucket doa-assets --art-dir path/to/dir-with-the-zip --prefix blog/<slug>     --flat --attachment
 ```
 
-These links resolve once the file is on `main`. Note GitHub's free LFS tier
-allows 1 GB storage and 1 GB/month bandwidth; if a pack ever gets heavy traffic,
-move it to a GitHub Release asset (no LFS bandwidth limit) and update the link.
+```text
+[download: Download tokens (.zip) | <file>.zip | 2.2 MB](https://assets.dungeonsonautomatic.com/blog/<slug>/<file>.zip)
+```
+
+R2 egress is free and the bucket sits well inside the free tier, so a popular
+pack costs nothing.
 
 ## GitHub Pages
 

@@ -12,6 +12,6 @@ Today on Token Tuesday (from my backlog), Emily Smirle has served up for you the
 
 ![as-Sharak token art by Emily Smirle](assets/blog/token-tuesday-as-sharak/image.png)
 
-[download: Download tokens (.zip) | as-sharak-tokens.zip | 2.2 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-as-sharak/as-sharak-tokens.zip)
+[download: Download tokens (.zip) | as-sharak-tokens.zip | 2.2 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-as-sharak/as-sharak-tokens.zip)
 
 > as-Sharak Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
