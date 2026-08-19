@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you a unique DFRPG monste
 
 ![Watcher at the End of Time token art by Emily Smirle](assets/blog/token-tuesday-watcher-at-the-end-of-time/image.png)
 
-[download: Download tokens (.zip) | watcher-at-the-end-of-time-tokens.zip | 231 KB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-watcher-at-the-end-of-time/watcher-at-the-end-of-time-tokens.zip)
+[download: Download tokens (.zip) | watcher-at-the-end-of-time-tokens.zip | 231 KB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-watcher-at-the-end-of-time/watcher-at-the-end-of-time-tokens.zip)
 
 > Watcher at the End of Time tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

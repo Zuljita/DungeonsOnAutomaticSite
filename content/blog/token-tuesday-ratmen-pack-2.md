@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the second 3 of an as
 
 ![Ratmen Pack 2 token art by Emily Smirle](assets/blog/token-tuesday-ratmen-pack-2/image.png)
 
-[download: Download tokens (.zip) | ratmen-pack-2-tokens.zip | 3.2 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-ratmen-pack-2/ratmen-pack-2-tokens.zip)
+[download: Download tokens (.zip) | ratmen-pack-2-tokens.zip | 3.2 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-ratmen-pack-2/ratmen-pack-2-tokens.zip)
 
 > Ratmen Pack 2 tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

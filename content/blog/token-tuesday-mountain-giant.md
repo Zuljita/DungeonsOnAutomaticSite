@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you the Mountain Giant, c
 
 ![Mountain Giant token art by Emily Smirle](assets/blog/token-tuesday-mountain-giant/image.jpg)
 
-[download: Download tokens (.zip) | mountain-giant-tokens.zip | 1.3 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-mountain-giant/mountain-giant-tokens.zip)
+[download: Download tokens (.zip) | mountain-giant-tokens.zip | 1.3 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-mountain-giant/mountain-giant-tokens.zip)
 
 > Mountain Giant Tokens by Emily Smirle is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

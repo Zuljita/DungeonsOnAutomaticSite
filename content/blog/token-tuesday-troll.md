@@ -12,6 +12,6 @@ Today on Token Tuesday, Emily Smirle has served up for you an assortment of trol
 
 ![Troll token art by Emily Smirle](assets/blog/token-tuesday-troll/image.png)
 
-[download: Download tokens (.zip) | troll-tokens.zip | 2.8 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-troll/troll-tokens.zip)
+[download: Download tokens (.zip) | troll-tokens.zip | 2.8 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-troll/troll-tokens.zip)
 
 > Troll tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

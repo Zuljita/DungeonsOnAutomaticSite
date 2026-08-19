@@ -12,6 +12,6 @@ summary: "Skeletons — token art by Emily Smirle, from the original blog archiv
 
 ![Skeletons token art by Emily Smirle](assets/blog/token-tuesday-skeletons/image.png)
 
-[download: Download tokens (.zip) | skeletons-tokens.zip | 7.0 MB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-skeletons/skeletons-tokens.zip)
+[download: Download tokens (.zip) | skeletons-tokens.zip | 7.0 MB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-skeletons/skeletons-tokens.zip)
 
 > Skeletons tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.

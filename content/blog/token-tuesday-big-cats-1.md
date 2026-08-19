@@ -12,6 +12,6 @@ Today on Token Tuesday (A day late, I'm sorry), Emily Smirle has served up for y
 
 ![Big Cats 1 token art by Emily Smirle](assets/blog/token-tuesday-big-cats-1/image.png)
 
-[download: Download tokens (.zip) | big-cats-1-tokens.zip | 914 KB](https://github.com/Zuljita/DungeonsOnAutomaticSite/raw/main/assets/blog/token-tuesday-big-cats-1/big-cats-1-tokens.zip)
+[download: Download tokens (.zip) | big-cats-1-tokens.zip | 914 KB](https://assets.dungeonsonautomatic.com/blog/token-tuesday-big-cats-1/big-cats-1-tokens.zip)
 
 > Big Cats 1 tokens by Emily Smirle, licensed under Creative Commons BY-NC-SA 4.0.
