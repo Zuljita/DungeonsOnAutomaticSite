@@ -112,6 +112,14 @@ jobs:
             exit 1
           fi
 
+          # A private repository the token cannot see 404s exactly like a missing
+          # release would, so check the repository itself first: that failure is
+          # a token-scope problem and must be loud, not a quiet "nothing yet".
+          if ! GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO" > /dev/null 2> mirror-meta/source-repo.err; then
+            echo "::error title=Release mirror token cannot see the source repository::DOA_RELEASE_MIRROR_TOKEN cannot read $SOURCE_REPO ($(cat mirror-meta/source-repo.err)). Grant the token access to that repository (classic PAT: repo scope; fine-grained: add the repository)."
+            exit 1
+          fi
+
           if GH_TOKEN="$SOURCE_TOKEN" gh api "repos/$SOURCE_REPO/releases/tags/$SOURCE_TAG" \
             > mirror-meta/source-release.json 2> mirror-meta/source-release.err; then
             echo "Reading $SOURCE_REPO@$SOURCE_TAG for $APP_NAME."
