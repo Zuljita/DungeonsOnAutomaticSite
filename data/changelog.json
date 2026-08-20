@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "commit",
+      "number": null,
+      "title": "Campaigns on Automatic: the campaign lens — a read-first browser for whole vaults",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T14:05:15-05:00",
+      "shortSha": "ce97c3f",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 20,
       "title": "EULA: anything you make with these tools is yours, commercial use included",
