@@ -14,15 +14,12 @@ summary: |-
   Dungeon Generator — a desktop app (Windows/macOS/Linux, self-updating) that spits out a full DFRPG prep packet: tactical map, room keys, traps, treasure, wandering monsters, and factions. Maps render at one-foot resolution with real wall geometry and GURPS hexes on top. Separate GM and player views, exports to Foundry and Universal VTT, imports your Dungeondraft packs, filters by the books you own, and lets you lock what works and reroll what doesn't. Local AI ships zero-config — no account, no API key, no cloud.
 
   Monsters on Automatic — 457 monsters with portrait and token art plus GCS files. 304 come from Enraged Eggplant's library with permission; 153 are new. Data lives in a public GitHub repo.
-
-  Why AI? LLMs handle the fuzzy calls — reading your freeform description, picking presets and tags, checking that rooms fit their purpose. Deterministic code builds the actual dungeon, and everything the model decides gets validated. The monsters commenting in the corner are real pipeline stages, not decoration.
 ---
 
 Welcome to the reboot of Dungeons on Automatic, a solo project run by Kyle Norton with a whole lot of AI and LLM assistance.
 What will you find here? 
 Tools that make it easier to run a GURPS Dungeon Fantasy or Dungeon Fantasy RPG game tonight, as if on Automatic.
 DoA currently offers two tools: the Dungeon Generator, which is the app actually called Dungeons on Automatic, and the DoA Monster Library, also known as Monsters on Automatic.
-
 
 ## The Dungeon Generator
 
