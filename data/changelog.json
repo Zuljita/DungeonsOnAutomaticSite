@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 20,
+      "title": "EULA: anything you make with these tools is yours, commercial use included",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-20T10:14:47-04:00",
+      "shortSha": "de4ea0e",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 2,
       "title": "Correct the pipeline docs: old repo reached 0.1.148; monorepo names in self-hosted-runners.md",
       "authorName": "Zuljita",
