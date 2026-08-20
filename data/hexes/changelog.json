@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "EULA: anything you make with these tools is yours, commercial use included",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T09:14:35-05:00",
+      "shortSha": "8385576",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "The campaign layer: explored hexes, cleared sites, day counter, deterministic restocking",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-20T08:45:01-05:00",
