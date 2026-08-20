@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "The campaign layer: explored hexes, cleared sites, day counter, deterministic restocking",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T08:45:01-05:00",
+      "shortSha": "3546941",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Issues sprint: the crawl gets its floor — encounter tables, targeted rumors, DFRPG aids, layered hexes, living settlements, map export, free-text guards",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-20T07:07:15-05:00",
