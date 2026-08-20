@@ -3,6 +3,17 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 2,
+      "title": "Correct the pipeline docs: old repo reached 0.1.148; monorepo names in self-hosted-runners.md",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-20T00:10:31-04:00",
+      "shortSha": "ab4c5fd",
+      "commits": [
+        "Correct the version history: the old repo reached 0.1.148, not 0.1.71"
+      ]
+    },
+    {
+      "kind": "pull-request",
       "number": 579,
       "title": "A chip names what stands in the room; the taxonomy header and the 58-tag blob both go",
       "authorName": "Zuljita",
