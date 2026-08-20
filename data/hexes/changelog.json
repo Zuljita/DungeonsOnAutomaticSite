@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Issues sprint: the crawl gets its floor — encounter tables, targeted rumors, DFRPG aids, layered hexes, living settlements, map export, free-text guards",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T07:07:15-05:00",
+      "shortSha": "b614c23",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Make the Hexes map worth hosting: real geography, readable canvas, ship-blocker fixes",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-19T23:43:24-05:00",
