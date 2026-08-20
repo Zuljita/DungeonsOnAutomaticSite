@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Solo mode: the map reveals only as you travel it",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T09:55:59-05:00",
+      "shortSha": "d5472e4",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "EULA: anything you make with these tools is yours, commercial use included",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-20T09:14:35-05:00",
