@@ -1,6 +1,6 @@
 ---
 title: Rebooting Dungeons on Automatic
-date: 2026-08-04
+date: 2026-08-19
 author: Kyle Norton
 tags:
   - Human Authored
