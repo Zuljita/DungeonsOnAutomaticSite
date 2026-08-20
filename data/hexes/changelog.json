@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Campaigns on Automatic: the campaign lens — a read-first browser for whole vaults",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T14:05:15-05:00",
+      "shortSha": "ce97c3f",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Solo mode: the map reveals only as you travel it",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-20T09:55:59-05:00",
