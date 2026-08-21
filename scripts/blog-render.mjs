@@ -181,7 +181,7 @@ function renderHead({ title, description, canonical, prefix, ogType, image, extr
 const renderNav = (prefix) => `<div class="site-family" aria-label="On Automatic family">
     <div class="site-wrap site-family__inner">
       <a class="site-family__brand" href="${prefix}family.html">On Automatic</a>
-      <div class="site-family__links"><a href="${prefix}index.html">Dungeons</a><a href="${prefix}hexes.html">Hexes</a><a href="${prefix}characters.html">Characters</a><a href="${prefix}campaigns.html">Campaign Vault</a><a href="${prefix}monsters.html">Monster Library</a></div>
+      <div class="site-family__links"><a href="${prefix}index.html">Dungeons</a><a href="https://hexesonautomatic.com/">Hexes</a><a href="https://townsonautomatic.com/">Towns</a><a href="${prefix}characters.html">Characters</a><a href="https://campaignsonautomatic.com/">Campaign Vault</a><a href="${prefix}monsters.html">Monster Library</a></div>
     </div>
   </div>
   <nav class="site-nav" aria-label="Main navigation">

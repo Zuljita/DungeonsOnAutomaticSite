@@ -4,9 +4,6 @@
     <loc>https://dungeonsonautomatic.com/blog.html</loc>
   </url>
   <url>
-    <loc>https://dungeonsonautomatic.com/campaigns.html</loc>
-  </url>
-  <url>
     <loc>https://dungeonsonautomatic.com/characters.html</loc>
   </url>
   <url>
@@ -14,9 +11,6 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/foundry.html</loc>
-  </url>
-  <url>
-    <loc>https://dungeonsonautomatic.com/hexes.html</loc>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/</loc>
@@ -38,6 +32,10 @@
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/releases.html</loc>
+  </url>
+  <url>
+    <loc>https://dungeonsonautomatic.com/blog/rebooting-dungeons-on-automatic/</loc>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://dungeonsonautomatic.com/blog/the-dungeon-office-opens/</loc>

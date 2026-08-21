@@ -7,13 +7,7 @@ tags:
   - Mission Statement
   - GURPS
   - DFRPG
-summary: |-
-  AI Generated Summary:
-  Dungeons on Automatic is back, rebuilt as a solo project with local AI doing the heavy lifting. Two tools, both free to download:
-
-  Dungeon Generator — a desktop app (Windows/macOS/Linux, self-updating) that spits out a full DFRPG prep packet: tactical map, room keys, traps, treasure, wandering monsters, and factions. Maps render at one-foot resolution with real wall geometry and GURPS hexes on top. Separate GM and player views, exports to Foundry and Universal VTT, imports your Dungeondraft packs, filters by the books you own, and lets you lock what works and reroll what doesn't. Local AI ships zero-config — no account, no API key, no cloud.
-
-  Monsters on Automatic — 457 monsters with portrait and token art plus GCS files. 304 come from Enraged Eggplant's library with permission; 153 are new. Data lives in a public GitHub repo.
+summary: "Dungeons on Automatic is back, rebuilt as a solo project with local AI doing the heavy lifting: the DFRPG dungeon generator and a free 457-monster library, both free to download."
 ---
 
 Welcome to the reboot of Dungeons on Automatic, a solo project run by Kyle Norton with a whole lot of AI and LLM assistance.
