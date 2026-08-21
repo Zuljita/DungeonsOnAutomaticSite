@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dungeons on Automatic - Human Authored</title>
+    <link>https://dungeonsonautomatic.com/blog/tags/human-authored/</link>
+    <atom:link href="https://dungeonsonautomatic.com/blog/tags/human-authored/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Posts tagged &quot;Human Authored&quot; on the Dungeons on Automatic blog.</description>
+    <language>en-us</language>
+    <generator>Dungeons on Automatic build scripts</generator>
+    <item>
+      <title>Rebooting Dungeons on Automatic</title>
+      <link>https://dungeonsonautomatic.com/blog/rebooting-dungeons-on-automatic/</link>
+      <guid isPermaLink="true">https://dungeonsonautomatic.com/blog/rebooting-dungeons-on-automatic/</guid>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kyle Norton</dc:creator>
+      <description>Dungeons on Automatic is back, rebuilt as a solo project with local AI doing the heavy lifting: the DFRPG dungeon generator and a free 457-monster library, both free to download.</description>
+      <category>Human Authored</category>
+      <category>Mission Statement</category>
+      <category>GURPS</category>
+      <category>DFRPG</category>
+      <content:encoded><![CDATA[<p>Welcome to the reboot of Dungeons on Automatic, a solo project run by Kyle Norton with a whole lot of AI and LLM assistance.
+What will you find here? 
+Tools that make it easier to run a GURPS Dungeon Fantasy or Dungeon Fantasy RPG game tonight, as if on Automatic.
+DoA currently offers two tools: the Dungeon Generator, which is the app actually called Dungeons on Automatic, and the DoA Monster Library, also known as Monsters on Automatic.</p>
+        <p>## The Dungeon Generator</p>
+        <p>The [Dungeons on Automatic generator](https://dungeonsonautomatic.com/releases#downloads) is aimed first and foremost at giving you a way to get a DFRPG game up and running now, without starting from scratch, while taking advantage of your existing books, art, and other assets.</p>
+        <p>It is also here to help a system I love gain parity with d20 in one simple respect: if you want to run a d20 game tonight, there are thousands of premade adventures, dungeons, and monsters you can drop in and play.</p>
+        <p>I can&#39;t make thousands of dungeons by hand, but I can make a tool that produces many more.</p>
+        <p>The goal is for you to be able to say, “My players went in a direction I didn’t expect, and I need a 10-room dungeon with eldritch horrors tonight,” and have DoA supply it, complete with exports ready for Dungeondraft, Foundry, or both.</p>
+        <p>I also want it to help GMs break out of their usual ruts, remember skills and options they might have overlooked, and build usable encounters in much less time.</p>
+        <p>## Where It Stands Today</p>
+        <p>The app is a desktop program for Windows, macOS, and Linux. You can download it now, and it keeps itself up to date.</p>
+        <p>It already:</p>
+        <ul><li>Generates a complete GM prep packet, including a tactical map, room keys, doors and locks, traps, treasure, wandering monsters, set pieces, and factions that emerge from the monsters in the dungeon.</li><li>Builds maps at one-foot resolution, where walls are real geometry. A three-foot fortress wall is actually three feet thick, and an arrow slit is an arrow slit, with familiar GURPS yard hexes overlaid on top.</li><li>Produces separate GM and player-safe views, keeping secret doors and traps hidden.</li><li>Exports Foundry scenes and Universal VTT files compatible with Roll20, Arkenforge, Fantasy Grounds Unity, MapTool, EncounterPlus, and d20Pro, along with print-ready PNG maps at exact scale.</li><li>Imports your Dungeondraft art packs, so maps can use assets you already own.</li><li>Filters content by sourcebook, so the generator only draws from books you have enabled.</li><li>Lets you keep what you like and reroll what you do not. You can lock a room, reroll a zone, or reroll only the encounters or set dressing.</li><li>Ships with zero-configuration local AI. On first run, the app downloads and manages a small model by itself. No account, API key, or cloud service is required.</li></ul>
+        <p>The app is still developing quickly, and some parts of the interface remain rough, but the working foundation is already there.</p>
+        <p>## Monsters on Automatic</p>
+        <p>[Monsters on Automatic](https://monstersonautomatic.com) is being built largely in service to the Dungeon Generator, but it has become useful enough to stand on its own.</p>
+        <p>The first round of monsters was generously seeded by [Enraged Eggplant](https://enragedeggplant.blogspot.com/) and then transformed and augmented with AI assistance. The library includes 304 monsters brought over with permission from Enraged Eggplant’s GURPS monster library, along with another 153 generated specifically for this project.</p>
+        <p>Each monster includes AI-generated portrait and token-style art, along with files for use and customization in [GURPS Character Sheet](https://gurpscharactersheet.com/).</p>
+        <p>The long-term goal is a vast, well-tagged monster library that makes it easy to find the right creature for whatever you are running. The underlying data is also available in a [public GitHub repository](https://github.com/Zuljita/DungeonsOnAutomaticMonsters).</p>
+        <p>## Why AI?</p>
+        <p>The previous iteration of DoA I worked on with Emily Smirle didn&#39;t use AI (it didn&#39;t exist yet!), so why start now? </p>
+        <p>Large language models are useful for fuzzy decisions that would otherwise require explicit code and logic. They interpret a request, choose among structured options, and help the different pieces of a dungeon fit together.</p>
+        <p>The Dungeon Generator is built around local AI running on your own hardware. The smallest supported models can run on a modest laptop, without an account, API key, subscription, or cloud inference.</p>
+        <p>The intake interview lets you describe the dungeon you want in freeform text. The model maps that request to configuration presets and tags from the available data. Deterministic code then uses those selections to build the dungeon.</p>
+        <p>Afterward, the local model reviews whether rooms fit their intended purposes. When they don&#39;t, the app rerolls them with more direction. NPC and boss creation follows a similar process.</p>
+        <p>Every decision goes through validation. Weak models make mistakes, but that&#39;s why I built in guardrails. It turns out that even very small local models can provide a useful amount of intelligence when they are given constrained choices.</p>
+        <p>## Why the Director Personas?</p>
+        <p>If you&#39;ve seen screenshots of the app, you have probably noticed monsters commenting in the corner. That is the Stage Manager cast: four staff monsters who narrate the generation process in character.</p>
+        <p>Kovath, a raven, is the Creative Director. Vorga, an orc, runs encounters. Mizzik, a kobold, handles furniture and loot. Zarlzazz, a minotaur, writes the prose.</p>
+        <p>They exist partly because the pipeline really works this way. Creative direction, encounter balancing, room dressing, and narrative polish are separate passes with separate jobs, and each one makes its own calls to the local model. When a message says Vorga rerolled an encounter, that is a real event produced by that part of the system.</p>
+        <p>The other big reason: Local generation takes time. Rather than just showing a spinner, the app uses the cast to report monsters, rooms, and generation events.</p>
+        <p>Kyle Norton, also known as Zuljita, is an IT and security leader, the author of [_The Dragons of Rosgarth_](https://gaming-ballistic.myshopify.com/products/the-dragons-of-rosgarth?variant=42552581718271), and the developer of Dungeons on Automatic.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
