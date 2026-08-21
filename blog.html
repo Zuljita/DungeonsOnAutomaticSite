@@ -24,7 +24,7 @@
   <div class="site-family" aria-label="On Automatic family">
     <div class="site-wrap site-family__inner">
       <a class="site-family__brand" href="family.html">On Automatic</a>
-      <div class="site-family__links"><a href="index.html">Dungeons</a><a href="hexes.html">Hexes</a><a href="characters.html">Characters</a><a href="campaigns.html">Campaign Vault</a><a href="monsters.html">Monster Library</a></div>
+      <div class="site-family__links"><a href="index.html">Dungeons</a><a href="https://hexesonautomatic.com/">Hexes</a><a href="https://townsonautomatic.com/">Towns</a><a href="characters.html">Characters</a><a href="https://campaignsonautomatic.com/">Campaign Vault</a><a href="monsters.html">Monster Library</a></div>
     </div>
   </div>
   <nav class="site-nav" aria-label="Main navigation">
@@ -43,6 +43,14 @@
     </div>
   </header>
   <main class="wrap" id="posts">
+    <article class="post post--card" id="rebooting-dungeons-on-automatic">
+      <aside class="post__meta"><time datetime="2026-08-19">August 19, 2026</time><div class="author">Kyle Norton</div><div class="post__tags"><a class="tag" href="blog/tags/human-authored/">Human Authored</a><a class="tag" href="blog/tags/mission-statement/">Mission Statement</a><a class="tag" href="blog/tags/gurps/">GURPS</a><a class="tag" href="blog/tags/dfrpg/">DFRPG</a></div></aside>
+      <div class="post__body">
+        <h2><a href="blog/rebooting-dungeons-on-automatic/">Rebooting Dungeons on Automatic</a></h2>
+        <p class="post__summary">Dungeons on Automatic is back, rebuilt as a solo project with local AI doing the heavy lifting: the DFRPG dungeon generator and a free 457-monster library, both free to download.</p>
+        <a class="post__more" href="blog/rebooting-dungeons-on-automatic/">Read post &rarr;</a>
+      </div>
+    </article>
     <article class="post post--card" id="the-dungeon-office-opens">
       <aside class="post__meta"><time datetime="2026-06-30">June 30, 2026</time><div class="author">The Stage Manager</div><div class="post__tags"><a class="tag" href="blog/tags/update/">update</a><a class="tag" href="blog/tags/behind-the-scenes/">behind the scenes</a><a class="tag" href="blog/tags/ai-generated/">AI Generated</a></div></aside>
       <div class="post__body">
@@ -309,7 +317,7 @@
   <footer><div class="wrap">Dungeons on Automatic blog. Local-first DFRPG dungeon prep, thinking out loud. <a href="https://github.com/Zuljita/DungeonsOnAutomaticSite/issues">Report a bug.</a></div></footer>
   <script>
     (() => {
-      const slugs = new Set(["the-dungeon-office-opens","token-tuesday-as-sharak","token-tuesday-chimera","token-tuesday-mountain-giant","token-tuesday-strix","black-knights","token-tuesday-black-knight","token-tuesday-void-brute","lava-golem","new-announcements-2018-06","token-tuesday-skeletons","token-tuesday-draug","token-tuesday-big-cats-2","dungeon-generator-update-2018-04","token-tuesday-big-cats-1","token-tuesday-echoes-of-ratmen-past","token-tuesday-water-elementals","token-tuesday-ratmen-pack-4","token-tuesday-ratmen-pack-3","token-tuesday-ratmen-pack-2","token-tuesday-ratmen-pack-1","token-tuesday-troll","gm-tips-monster-traits-1","token-tuesday-minotaur","token-tuesday-giant-spiders","token-tuesday-apes","making-the-dungeon-prettier","token-tuesday-ogre","generator-update-2018-01","token-tuesday-werewolf","token-tuesday-peshkali","token-tuesday-watcher-at-the-end-of-time"]);
+      const slugs = new Set(["rebooting-dungeons-on-automatic","the-dungeon-office-opens","token-tuesday-as-sharak","token-tuesday-chimera","token-tuesday-mountain-giant","token-tuesday-strix","black-knights","token-tuesday-black-knight","token-tuesday-void-brute","lava-golem","new-announcements-2018-06","token-tuesday-skeletons","token-tuesday-draug","token-tuesday-big-cats-2","dungeon-generator-update-2018-04","token-tuesday-big-cats-1","token-tuesday-echoes-of-ratmen-past","token-tuesday-water-elementals","token-tuesday-ratmen-pack-4","token-tuesday-ratmen-pack-3","token-tuesday-ratmen-pack-2","token-tuesday-ratmen-pack-1","token-tuesday-troll","gm-tips-monster-traits-1","token-tuesday-minotaur","token-tuesday-giant-spiders","token-tuesday-apes","making-the-dungeon-prettier","token-tuesday-ogre","generator-update-2018-01","token-tuesday-werewolf","token-tuesday-peshkali","token-tuesday-watcher-at-the-end-of-time"]);
       const slug = decodeURIComponent(location.hash.replace(/^#/, ''));
       if (slugs.has(slug)) location.replace('blog/' + slug + '/');
     })();

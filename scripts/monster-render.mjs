@@ -240,7 +240,7 @@ export function monsterStatSummary(monster) {
 const NAV = `<div class="site-family" aria-label="On Automatic family">
     <div class="site-wrap site-family__inner">
       <a class="site-family__brand" href="../../family.html">On Automatic</a>
-      <div class="site-family__links"><a href="../../index.html">Dungeons</a><a href="../../hexes.html">Hexes</a><a href="../../characters.html">Characters</a><a href="../../campaigns.html">Campaign Vault</a><a href="../../monsters.html" aria-current="page">Monster Library</a></div>
+      <div class="site-family__links"><a href="../../index.html">Dungeons</a><a href="https://hexesonautomatic.com/">Hexes</a><a href="https://townsonautomatic.com/">Towns</a><a href="../../characters.html">Characters</a><a href="https://campaignsonautomatic.com/">Campaign Vault</a><a href="../../monsters.html" aria-current="page">Monster Library</a></div>
     </div>
   </div>
   <nav class="site-nav" aria-label="Main navigation">
