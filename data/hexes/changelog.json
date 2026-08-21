@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "The rumor table stops telling you the same thing eight times",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-21T00:23:27-05:00",
+      "shortSha": "7d790f5",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "The region stops being something you can only reroll",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-20T23:36:13-05:00",
