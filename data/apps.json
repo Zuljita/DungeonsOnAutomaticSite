@@ -36,6 +36,23 @@
         { "id": "linux-x86_64", "label": "Linux x86_64", "feed": "latest-linux.yml", "asset": "Hexes-on-Automatic-linux-x86_64.AppImage" },
         { "id": "linux-arm64", "label": "Linux ARM64", "feed": "latest-linux-arm64.yml", "asset": "Hexes-on-Automatic-linux-arm64.AppImage" }
       ]
+    },
+    {
+      "id": "campaigns",
+      "name": "Campaigns on Automatic",
+      "tagline": "Read-first browser for the Campaign Vault: dashboard, atlas, notes, relationships, quests, timeline — and the player-safe export.",
+      "page": "https://campaignsonautomatic.com/",
+      "downloadsPage": "https://campaignsonautomatic.com/releases#downloads",
+      "sourceTag": "campaigns-continuous",
+      "targetTag": "campaigns-continuous",
+      "dataDir": "data/campaigns",
+      "downloads": [
+        { "id": "windows-x64", "label": "Windows installer", "feed": "latest.yml", "asset": "Campaigns-on-Automatic-win-x64-setup.exe" },
+        { "id": "mac-arm64", "label": "macOS Apple silicon", "feed": "latest-mac.yml", "asset": "Campaigns-on-Automatic-mac-arm64.zip" },
+        { "id": "mac-x64", "label": "macOS Intel", "feed": "latest-mac.yml", "asset": "Campaigns-on-Automatic-mac-x64.zip" },
+        { "id": "linux-x86_64", "label": "Linux x86_64", "feed": "latest-linux.yml", "asset": "Campaigns-on-Automatic-linux-x86_64.AppImage" },
+        { "id": "linux-arm64", "label": "Linux ARM64", "feed": "latest-linux-arm64.yml", "asset": "Campaigns-on-Automatic-linux-arm64.AppImage" }
+      ]
     }
   ]
 }
