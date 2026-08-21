@@ -4,6 +4,60 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "The wandering die stops guessing and starts reading the map",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T21:58:11-05:00",
+      "shortSha": "a3a0ffb",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "The wandering band stops being an accident of how long a list is",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T21:51:19-05:00",
+      "shortSha": "d90789e",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Somebody lives here now: the region gets residents, and a few of them get names",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T21:49:34-05:00",
+      "shortSha": "88caf00",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Monsters learn how far they roam, when they wake, and how many are home",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T21:39:51-05:00",
+      "shortSha": "b1f99a1",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Resync the monster shortlist against enraged-eggplant-monsters@0.6.0",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T21:38:45-05:00",
+      "shortSha": "c29a46f",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "The frontier gets a name: settled, borderland, and the waste beyond",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T21:35:04-05:00",
+      "shortSha": "184d71a",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Hexes joins the shared campaign layer: one clock, one party, one turn sheet",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-20T17:08:43-05:00",
