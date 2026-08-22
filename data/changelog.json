@@ -56,6 +56,15 @@
       "commits": []
     },
     {
+      "kind": "commit",
+      "number": null,
+      "title": "Bootstrap Towns on Automatic: keyed settlements the GM can navigate",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T02:48:56-05:00",
+      "shortSha": "fd42fb0",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 2,
       "title": "Correct the pipeline docs: old repo reached 0.1.148; monorepo names in self-hosted-runners.md",
