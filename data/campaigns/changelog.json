@@ -2,6 +2,17 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "pull-request",
+      "number": 78,
+      "title": "Extract treasure into @on-automatic/treasure; fold in donated Demented Avenger material",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-22T18:37:31-04:00",
+      "shortSha": "766e9bb",
+      "commits": [
+        "Extract treasure into @on-automatic/treasure; add donated DA material"
+      ]
+    },
+    {
       "kind": "commit",
       "number": null,
       "title": "Campaigns: generate a Campaign Vault, and register it with Obsidian",
