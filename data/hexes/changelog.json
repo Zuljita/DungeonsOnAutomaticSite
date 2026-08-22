@@ -175,6 +175,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Bootstrap Towns on Automatic: keyed settlements the GM can navigate",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-20T02:48:56-05:00",
+      "shortSha": "fd42fb0",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Make the Hexes map worth hosting: real geography, readable canvas, ship-blocker fixes",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-19T23:43:24-05:00",
