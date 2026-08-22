@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "commit",
+      "number": null,
+      "title": "The setting questions: what a campaign cannot answer becomes work",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-22T17:45:47-05:00",
+      "shortSha": "7e5aa68",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 78,
       "title": "Extract treasure into @on-automatic/treasure; fold in donated Demented Avenger material",
