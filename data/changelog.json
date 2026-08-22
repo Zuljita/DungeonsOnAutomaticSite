@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "The setting questions: what a campaign cannot answer becomes work",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-22T17:45:47-05:00",
+      "shortSha": "7e5aa68",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Campaigns: generate a Campaign Vault, and register it with Obsidian",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-22T09:01:42-05:00",
