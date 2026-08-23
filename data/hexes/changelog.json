@@ -2,6 +2,42 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "pull-request",
+      "number": 44,
+      "title": "Hexes: pin which oracle the vault tells you to run",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T08:33:25-05:00",
+      "shortSha": "439e438",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 87,
+      "title": "Hexes: one model service per session, not one per click",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T08:31:56-05:00",
+      "shortSha": "2c9cf71",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 47,
+      "title": "Hexes: the saturation knob, and what it costs the party",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T08:24:59-05:00",
+      "shortSha": "122ac9f",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Hexes: a lair is a resource, and the frontier has a direction (#49, #50)",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T08:21:53-05:00",
+      "shortSha": "69b1a0f",
+      "commits": []
+    },
+    {
       "kind": "commit",
       "number": null,
       "title": "Drop hexDirectionForRoll: the shared rule hands back an index, not a die",
