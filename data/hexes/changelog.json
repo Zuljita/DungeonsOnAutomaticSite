@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "pull-request",
+      "number": 102,
+      "title": "packages/dfrpg: one GCS sheet reader, and Dodge at the load you carry (#63)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-23T11:32:58-05:00",
+      "shortSha": "949792b",
+      "commits": []
+    },
+    {
       "kind": "commit",
       "number": null,
       "title": "Hexes: the rumor table gets its taxonomy (#94, #95, #96, #97, #100, #101)",
