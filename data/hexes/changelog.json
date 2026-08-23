@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "commit",
+      "number": null,
+      "title": "Hexes: the rumor table gets its taxonomy (#94, #95, #96, #97, #100, #101)",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T10:26:13-05:00",
+      "shortSha": "2adcb33",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 44,
       "title": "Hexes: pin which oracle the vault tells you to run",
