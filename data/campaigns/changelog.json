@@ -4,6 +4,24 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Drop hexDirectionForRoll: the shared rule hands back an index, not a die",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-22T21:25:20-05:00",
+      "shortSha": "170f4cb",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "A treasure map points somewhere real, and the seam runs both ways",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-22T20:54:59-05:00",
+      "shortSha": "9088306",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "The setting questions: what a campaign cannot answer becomes work",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-22T17:45:47-05:00",
