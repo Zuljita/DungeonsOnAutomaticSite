@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "pull-request",
+      "number": 63,
+      "title": "packages/dfrpg: one GCS sheet reader, and Dodge at the load you carry",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T10:21:58-05:00",
+      "shortSha": "dd9ca0f",
+      "commits": []
+    },
+    {
       "kind": "commit",
       "number": null,
       "title": "Drop hexDirectionForRoll: the shared rule hands back an index, not a die",
