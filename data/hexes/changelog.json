@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "commit",
+      "number": null,
+      "title": "Hexes: a heard rumor is campaign state, and the zero-prep draw (#98, #99)",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T11:33:49-05:00",
+      "shortSha": "722fc13",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 102,
       "title": "packages/dfrpg: one GCS sheet reader, and Dodge at the load you carry (#63)",
