@@ -2,6 +2,24 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "commit",
+      "number": null,
+      "title": "PROJECT.md: this round did not ship the GCS reader, main did",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T22:50:14-05:00",
+      "shortSha": "13575be",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Campaigns: Obsidian is the editor half, and tags go somewhere (#62, #60)",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T10:44:43-05:00",
+      "shortSha": "4c049bf",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 63,
       "title": "packages/dfrpg: one GCS sheet reader, and Dodge at the load you carry",
