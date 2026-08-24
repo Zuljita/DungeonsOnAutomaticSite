@@ -4,6 +4,15 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Campaigns: Obsidian is the editor half, and tags go somewhere (#62, #60)",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T10:44:43-05:00",
+      "shortSha": "4c049bf",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Drop hexDirectionForRoll: the shared rule hands back an index, not a die",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-22T21:25:20-05:00",
