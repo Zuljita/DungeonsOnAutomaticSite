@@ -22,6 +22,24 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Campaigns: Obsidian is the editor half, and tags go somewhere (#62, #60)",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T10:44:43-05:00",
+      "shortSha": "4c049bf",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 63,
+      "title": "packages/dfrpg: one GCS sheet reader, and the Dodge ladder it was missing",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-23T10:44:25-05:00",
+      "shortSha": "1780656",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Hexes: the rumor table gets its taxonomy (#94, #95, #96, #97, #100, #101)",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-23T10:26:13-05:00",
