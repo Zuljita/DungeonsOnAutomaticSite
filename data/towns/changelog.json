@@ -1,4 +1,59 @@
 {
   "schemaVersion": 1,
-  "entries": []
+  "entries": [
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Towns: fix the building value ladder, and say what the ink does now",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-24T23:51:00-05:00",
+      "shortSha": "ca8f758",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Towns: draw terraces at the whole-town band, not dots",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-24T23:49:00-05:00",
+      "shortSha": "048c78d",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Towns: stop the texture re-exposing the grid the tracing hides",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-24T23:45:51-05:00",
+      "shortSha": "6bf8514",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Towns: letter the plate",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-24T23:41:40-05:00",
+      "shortSha": "d49ade1",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Towns: trace the regions instead of filling their cells",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-24T18:38:03-05:00",
+      "shortSha": "4c61f3b",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Towns: the map draws like a town plan instead of a spreadsheet",
+      "authorName": "Claude",
+      "authoredAt": "2026-08-24T08:47:44-05:00",
+      "shortSha": "1587ae1",
+      "commits": []
+    }
+  ]
 }
