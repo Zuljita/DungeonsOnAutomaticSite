@@ -53,6 +53,23 @@
         { "id": "linux-x86_64", "label": "Linux x86_64", "feed": "latest-linux.yml", "asset": "Campaigns-on-Automatic-linux-x86_64.AppImage" },
         { "id": "linux-arm64", "label": "Linux ARM64", "feed": "latest-linux-arm64.yml", "asset": "Campaigns-on-Automatic-linux-arm64.AppImage" }
       ]
+    },
+    {
+      "id": "towns",
+      "name": "Towns on Automatic",
+      "tagline": "Settlements with a map and a gazetteer: wards, businesses, stock and services, notable folk — filling the settlement stubs Hexes mints into a Campaign Vault.",
+      "page": "https://townsonautomatic.com/",
+      "downloadsPage": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/tag/towns-continuous",
+      "sourceTag": "towns-continuous",
+      "targetTag": "towns-continuous",
+      "dataDir": "data/towns",
+      "downloads": [
+        { "id": "windows-x64", "label": "Windows installer", "feed": "latest.yml", "asset": "Towns-on-Automatic-win-x64-setup.exe" },
+        { "id": "mac-arm64", "label": "macOS Apple silicon", "feed": "latest-mac.yml", "asset": "Towns-on-Automatic-mac-arm64.zip" },
+        { "id": "mac-x64", "label": "macOS Intel", "feed": "latest-mac.yml", "asset": "Towns-on-Automatic-mac-x64.zip" },
+        { "id": "linux-x86_64", "label": "Linux x86_64", "feed": "latest-linux.yml", "asset": "Towns-on-Automatic-linux-x86_64.AppImage" },
+        { "id": "linux-arm64", "label": "Linux ARM64", "feed": "latest-linux-arm64.yml", "asset": "Towns-on-Automatic-linux-arm64.AppImage" }
+      ]
     }
   ]
 }

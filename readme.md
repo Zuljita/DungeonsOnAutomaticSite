@@ -120,11 +120,26 @@ electron-builder `artifactName`).
 | Dungeons on Automatic | `dungeons-continuous` | `continuous` (unchanged, so installed updaters keep their feed URL) | `data/{releases,downloads,changelog}.json` |
 | Hexes on Automatic | `hexes-continuous` | `hexes-continuous` | `data/hexes/{releases,downloads,changelog}.json` |
 | Campaigns on Automatic | `campaigns-continuous` | `campaigns-continuous` | `data/campaigns/{releases,downloads,changelog}.json` |
+| Towns on Automatic | `towns-continuous` | `towns-continuous` | `data/towns/{releases,downloads,changelog}.json` |
 
 Campaigns has no page in this repository: campaignsonautomatic.com reads the
 mirrored release straight from the GitHub API, so what it needs from the mirror
 is the public release itself. Its `data/campaigns/` files are written all the
 same, for parity and for anything here that wants them.
+
+Towns is the same arrangement with one piece not built yet: townsonautomatic.com
+is still the pre-launch landing page, so there is no releases page to send people
+to. Its `downloadsPage` therefore names the mirrored GitHub release rather than
+a site URL — which is also what the shipped app's macOS fallback opens, since
+mac builds are unsigned and cannot install in place. Point both at
+`https://townsonautomatic.com/releases#downloads` when that page ships.
+
+The registry is load-bearing for auto-update, not just for the pages. Each app's
+`electron-builder.yml` sets its update feed to
+`releases/download/<targetTag>/`, so an app that is not listed here has no feed:
+the mirror walks past it every 15 minutes in silence and installed copies never
+see a new build. Registering an app and shipping its updater are two halves of
+one change.
 
 Add a repository secret named `DOA_RELEASE_MIRROR_TOKEN` with read access to
 `Zuljita/OnAutomatic` (a classic PAT with `repo`, or a fine-grained token that

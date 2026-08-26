@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "releaseTag": "towns-continuous",
+  "releaseName": null,
+  "publishedAt": null,
+  "updatedAt": null,
+  "generatedAt": null,
+  "downloads": [
+    {
+      "id": "windows-x64",
+      "label": "Windows installer",
+      "assetName": "Towns-on-Automatic-win-x64-setup.exe",
+      "feedName": "latest.yml",
+      "version": null,
+      "releaseDate": null,
+      "size": null,
+      "digest": null,
+      "url": null
+    },
+    {
+      "id": "mac-arm64",
+      "label": "macOS Apple silicon",
+      "assetName": "Towns-on-Automatic-mac-arm64.zip",
+      "feedName": "latest-mac.yml",
+      "version": null,
+      "releaseDate": null,
+      "size": null,
+      "digest": null,
+      "url": null
+    },
+    {
+      "id": "mac-x64",
+      "label": "macOS Intel",
+      "assetName": "Towns-on-Automatic-mac-x64.zip",
+      "feedName": "latest-mac.yml",
+      "version": null,
+      "releaseDate": null,
+      "size": null,
+      "digest": null,
+      "url": null
+    },
+    {
+      "id": "linux-x86_64",
+      "label": "Linux x86_64",
+      "assetName": "Towns-on-Automatic-linux-x86_64.AppImage",
+      "feedName": "latest-linux.yml",
+      "version": null,
+      "releaseDate": null,
+      "size": null,
+      "digest": null,
+      "url": null
+    },
+    {
+      "id": "linux-arm64",
+      "label": "Linux ARM64",
+      "assetName": "Towns-on-Automatic-linux-arm64.AppImage",
+      "feedName": "latest-linux-arm64.yml",
+      "version": null,
+      "releaseDate": null,
+      "size": null,
+      "digest": null,
+      "url": null
+    }
+  ]
+}
