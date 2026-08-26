@@ -4,6 +4,42 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Hexes: docs catch up with the wilderness runtime",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-25T22:04:33-05:00",
+      "shortSha": "16fcb2b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 46,
+      "title": "Hexes: the clue ladder's last three rungs",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-25T21:55:40-05:00",
+      "shortSha": "4b8d656",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 48,
+      "title": "Hexes: the dynamic lair pool fills its own blanks",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-25T21:50:36-05:00",
+      "shortSha": "e9f7acc",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 51,
+      "title": "Hexes: the encounter procedure gets a caller",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-08-25T21:40:24-05:00",
+      "shortSha": "6c29332",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Hexes: a heard rumor is campaign state, and the zero-prep draw (#98, #99)",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-08-23T11:33:49-05:00",

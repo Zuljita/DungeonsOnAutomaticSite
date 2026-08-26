@@ -5,18 +5,18 @@
   "sourceReleaseTag": "hexes-continuous",
   "releaseName": "Hexes on Automatic — continuous build",
   "publishedAt": "2026-08-19T09:48:59Z",
-  "updatedAt": "2026-08-24T10:03:55Z",
-  "generatedAt": "2026-08-26T02:47:42.490Z",
+  "updatedAt": "2026-08-26T03:22:22Z",
+  "generatedAt": "2026-08-26T03:54:08.298Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Hexes-on-Automatic-win-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.1.33",
-      "releaseDate": "2026-08-24T10:03:16.783Z",
-      "size": 94431593,
-      "digest": "sha256:7c6cb50e89dc84767c9a444494aab9cf2423151a413eb57a4ed4aab77f2a390e",
+      "version": "0.1.34",
+      "releaseDate": "2026-08-26T03:21:47.257Z",
+      "size": 94434650,
+      "digest": "sha256:cba59bc294203be0b55d605adc189fa5dcf0c94a85139285184d3688897e3c93",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/hexes-continuous/Hexes-on-Automatic-win-x64-setup.exe"
     },
     {
