@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "pull-request",
+      "number": 122,
+      "title": "Every app self-updates, through one shared updater",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-26T14:09:33-05:00",
+      "shortSha": "b690cf4",
+      "commits": []
+    },
+    {
       "kind": "commit",
       "number": null,
       "title": "Towns: fix the building value ladder, and say what the ink does now",
