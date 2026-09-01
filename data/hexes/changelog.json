@@ -3,6 +3,33 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 126,
+      "title": "Open-issues sprint: five unblocked fixes, each with a test that was red",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-31T23:35:36-05:00",
+      "shortSha": "73b021b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 125,
+      "title": "Close the receiving half of the cross-app work-order loop",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-27T23:30:21-05:00",
+      "shortSha": "68763f5",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 123,
+      "title": "Campaigns: the machine lane gets its verbs (#60)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-27T08:26:02-05:00",
+      "shortSha": "096402b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 122,
       "title": "Every app self-updates, through one shared updater",
       "authorName": "Zuljita",
