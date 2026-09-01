@@ -2,6 +2,24 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "pull-request",
+      "number": 126,
+      "title": "Open-issues sprint: five unblocked fixes, each with a test that was red",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-31T23:35:36-05:00",
+      "shortSha": "73b021b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
+      "number": 125,
+      "title": "Close the receiving half of the cross-app work-order loop",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-08-27T23:30:21-05:00",
+      "shortSha": "68763f5",
+      "commits": []
+    },
+    {
       "kind": "commit",
       "number": null,
       "title": "Campaigns: Obsidian is the editor half, and tags go somewhere (#62, #60)",
