@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 129,
+      "title": "Towns: a lane behind the wall, and a circuit that follows its own polygon (#114)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-01T16:55:27-05:00",
+      "shortSha": "837622b",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 126,
       "title": "Open-issues sprint: five unblocked fixes, each with a test that was red",
       "authorName": "Zuljita",
