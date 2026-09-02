@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 131,
+      "title": "Towns: wards follow the streets, the fringe thins, the market gets a shape (#117, #116, #113)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-01T22:10:02-05:00",
+      "shortSha": "43c4b6f",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 129,
       "title": "Towns: a lane behind the wall, and a circuit that follows its own polygon (#114)",
       "authorName": "Zuljita",
