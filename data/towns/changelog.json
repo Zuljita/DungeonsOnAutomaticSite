@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 146,
+      "title": "A render smoke for all three UIs, and the frontier finally gets written-up lairs (#144, #143)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-03T11:19:40-05:00",
+      "shortSha": "cd1f9bd",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 140,
       "title": "Open-issues sprint: a bestiary bug and the last of the Hexes wilderness batch (#103, #43)",
       "authorName": "Zuljita",
