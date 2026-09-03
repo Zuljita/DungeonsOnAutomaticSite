@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 140,
+      "title": "Open-issues sprint: a bestiary bug and the last of the Hexes wilderness batch (#103, #43)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-03T08:12:26-05:00",
+      "shortSha": "e42be07",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 134,
       "title": "Towns: the head count sets the mix, and the doors quote a price (#68, #69, #74)",
       "authorName": "Zuljita",
