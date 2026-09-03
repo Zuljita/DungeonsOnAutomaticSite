@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 134,
+      "title": "Towns: the head count sets the mix, and the doors quote a price (#68, #69, #74)",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-02T23:30:12-05:00",
+      "shortSha": "a7936f1",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 131,
       "title": "Towns: wards follow the streets, the fringe thins, the market gets a shape (#117, #116, #113)",
       "authorName": "Zuljita",

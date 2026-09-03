@@ -5,18 +5,18 @@
   "sourceReleaseTag": "towns-continuous",
   "releaseName": "Towns on Automatic — continuous build",
   "publishedAt": "2026-08-22T00:41:58Z",
-  "updatedAt": "2026-09-02T13:43:40Z",
-  "generatedAt": "2026-09-03T01:23:53.498Z",
+  "updatedAt": "2026-09-03T04:31:51Z",
+  "generatedAt": "2026-09-03T06:14:50.008Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Towns-on-Automatic-win-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.1.25",
-      "releaseDate": "2026-09-02T13:43:02.414Z",
-      "size": 94811713,
-      "digest": "sha256:43e3f3d28b56688acaa88046abef6464a0edc7b719b040123e9c4d086f9bca92",
+      "version": "0.1.28",
+      "releaseDate": "2026-09-03T04:31:22.596Z",
+      "size": 94824079,
+      "digest": "sha256:ed9abe2c416535bbf25b33dafee6520538082eaa8cfeeae632a27824f99b0658",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/towns-continuous/Towns-on-Automatic-win-x64-setup.exe"
     },
     {
