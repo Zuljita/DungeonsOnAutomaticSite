@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 148,
+      "title": "Retry Built-in AI with a compatibility ladder after llama-server dies",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-03T22:40:04-05:00",
+      "shortSha": "7b3c488",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 145,
       "title": "Fix Built-in AI crash on RTX 50-series (Blackwell Vulkan cooperative-matrix bug)",
       "authorName": "Zuljita",
