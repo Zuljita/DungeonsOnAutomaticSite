@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 148,
+      "title": "Retry Built-in AI with a compatibility ladder after llama-server dies",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-03T22:40:04-05:00",
+      "shortSha": "7b3c488",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 146,
       "title": "A render smoke for all three UIs, and the frontier finally gets written-up lairs (#144, #143)",
       "authorName": "Zuljita",
