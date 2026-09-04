@@ -3,6 +3,15 @@
   "entries": [
     {
       "kind": "pull-request",
+      "number": 149,
+      "title": "Built-in AI: a Benchmark button, a log you can send us, and one shared model panel",
+      "authorName": "Zuljita",
+      "authoredAt": "2026-09-04T14:03:39-05:00",
+      "shortSha": "487d315",
+      "commits": []
+    },
+    {
+      "kind": "pull-request",
       "number": 148,
       "title": "Retry Built-in AI with a compatibility ladder after llama-server dies",
       "authorName": "Zuljita",
