@@ -5,18 +5,18 @@
   "sourceReleaseTag": "campaigns-continuous",
   "releaseName": "Campaigns on Automatic — continuous build",
   "publishedAt": "2026-08-21T02:55:49Z",
-  "updatedAt": "2026-09-04T13:35:34Z",
-  "generatedAt": "2026-09-04T18:10:26.884Z",
+  "updatedAt": "2026-09-04T19:05:32Z",
+  "generatedAt": "2026-09-04T20:47:11.149Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Campaigns-on-Automatic-win-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.1.30",
-      "releaseDate": "2026-09-04T13:34:55.474Z",
-      "size": 94739484,
-      "digest": "sha256:23f148cbd0fae2345031dd8867b3a25e4896784c3e561eef53b2d80bc4df2f03",
+      "version": "0.1.31",
+      "releaseDate": "2026-09-04T19:04:58.480Z",
+      "size": 94750506,
+      "digest": "sha256:ff7866fc6434837f904660a03979fabb642328ef35d19204b6001f177869fe12",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-win-x64-setup.exe"
     },
     {
