@@ -5,18 +5,18 @@
   "sourceReleaseTag": "towns-continuous",
   "releaseName": "Towns on Automatic — continuous build",
   "publishedAt": "2026-08-22T00:41:58Z",
-  "updatedAt": "2026-09-23T14:17:22Z",
-  "generatedAt": "2026-09-25T12:17:09.049Z",
+  "updatedAt": "2026-09-25T14:38:57Z",
+  "generatedAt": "2026-09-25T17:28:04.966Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Towns-on-Automatic-win-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.1.43",
-      "releaseDate": "2026-09-23T14:16:37.552Z",
-      "size": 94841027,
-      "digest": "sha256:a46dd57fbbd1f2b27044dd9e4b82311b049c424f96298e790fa98de58c079714",
+      "version": "0.1.44",
+      "releaseDate": "2026-09-25T14:38:23.266Z",
+      "size": 94841109,
+      "digest": "sha256:6f3719750a26248c78ed1e705406d9ade4c368e297164250b3b5d1f3e804f70c",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/towns-continuous/Towns-on-Automatic-win-x64-setup.exe"
     },
     {
@@ -24,10 +24,10 @@
       "label": "macOS Apple silicon",
       "assetName": "Towns-on-Automatic-mac-arm64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.43",
-      "releaseDate": "2026-09-23T14:16:37.048Z",
-      "size": 111810367,
-      "digest": "sha256:63f1ca6672526309ad4903380bea770e1c8e8890e2620b8b74e6aff66edf2ad0",
+      "version": "0.1.44",
+      "releaseDate": "2026-09-25T14:37:46.135Z",
+      "size": 111810359,
+      "digest": "sha256:7b8a665d4c0c1d022bd42818325bf1b0b5bfba467e8212a4177a042a2b4069fe",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/towns-continuous/Towns-on-Automatic-mac-arm64.zip"
     },
     {
@@ -35,10 +35,10 @@
       "label": "macOS Intel",
       "assetName": "Towns-on-Automatic-mac-x64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.43",
-      "releaseDate": "2026-09-23T14:16:37.048Z",
-      "size": 117372685,
-      "digest": "sha256:5cd554e69698ce29d96fa4bee30a4de6040626b16e8d59bc4aadab8aa409acf2",
+      "version": "0.1.44",
+      "releaseDate": "2026-09-25T14:37:46.135Z",
+      "size": 117372677,
+      "digest": "sha256:faa3373665d2de807a32033f3dd4a1ba5e75537a7463bed184e05fd4b4bc74c4",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/towns-continuous/Towns-on-Automatic-mac-x64.zip"
     },
     {
@@ -46,10 +46,10 @@
       "label": "Linux x86_64",
       "assetName": "Towns-on-Automatic-linux-x86_64.AppImage",
       "feedName": "latest-linux.yml",
-      "version": "0.1.43",
-      "releaseDate": "2026-09-23T14:16:15.123Z",
-      "size": 117558849,
-      "digest": "sha256:190aa110c15b85d3dc21ee412e8878e5cf1cdee1f5e007cbc2059af25340f4a2",
+      "version": "0.1.44",
+      "releaseDate": "2026-09-25T14:37:49.728Z",
+      "size": 117558844,
+      "digest": "sha256:01c13750eb029f8145e4a7b68b3cf85e8b02dc8e5f95f82754a1a5d09e355b3e",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/towns-continuous/Towns-on-Automatic-linux-x86_64.AppImage"
     },
     {
@@ -57,10 +57,10 @@
       "label": "Linux ARM64",
       "assetName": "Towns-on-Automatic-linux-arm64.AppImage",
       "feedName": "latest-linux-arm64.yml",
-      "version": "0.1.43",
-      "releaseDate": "2026-09-23T14:16:15.123Z",
-      "size": 118170497,
-      "digest": "sha256:af4b85814cd222e8b2af12a0cdce4c88b677c08824e4d30db4dec39d97531347",
+      "version": "0.1.44",
+      "releaseDate": "2026-09-25T14:37:49.728Z",
+      "size": 118170481,
+      "digest": "sha256:d568d316f2edd584d0c5affaa3486206e186e5053949af0acc75e44fdf78d68d",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/towns-continuous/Towns-on-Automatic-linux-arm64.AppImage"
     }
   ]
