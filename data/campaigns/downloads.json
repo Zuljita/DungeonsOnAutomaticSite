@@ -6,7 +6,7 @@
   "releaseName": "Campaigns on Automatic — continuous build",
   "publishedAt": "2026-08-21T02:55:49Z",
   "updatedAt": "2026-10-05T18:27:57Z",
-  "generatedAt": "2026-10-06T15:13:25.217Z",
+  "generatedAt": "2026-10-06T20:22:24.400Z",
   "downloads": [
     {
       "id": "windows-x64",
@@ -57,6 +57,8 @@
       "label": "Linux ARM64",
       "assetName": "Campaigns-on-Automatic-linux-arm64.AppImage",
       "feedName": "latest-linux-arm64.yml",
+      "version": "0.1.44",
+      "releaseDate": "2026-10-05T18:26:46.308Z",
       "size": 117990104,
       "digest": "sha256:a1a3b9ff831c65550d39cbba12cd9fbc402e723dc2730edf784a426fb4c286cc",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-linux-arm64.AppImage"
