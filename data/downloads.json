@@ -5,18 +5,18 @@
   "sourceReleaseTag": "dungeons-continuous",
   "releaseName": "Dungeons on Automatic — continuous build",
   "publishedAt": "2026-08-19T09:49:47Z",
-  "updatedAt": "2026-10-02T15:49:32Z",
-  "generatedAt": "2026-10-07T12:02:42.277Z",
+  "updatedAt": "2026-10-07T16:28:49Z",
+  "generatedAt": "2026-10-07T18:57:23.738Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Dungeons-on-Automatic-windows-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.2.51",
-      "releaseDate": "2026-10-02T15:48:59.878Z",
-      "size": 124090780,
-      "digest": "sha256:9a43cff53470d9c4e877e075a65acc91149074527f26fe5b432beb414ece5053",
+      "version": "0.2.53",
+      "releaseDate": "2026-10-07T16:28:15.307Z",
+      "size": 124090777,
+      "digest": "sha256:4de303c09b78fd316bc5b5c8f6016a1658f4cfc99bb2a4e65b1b6757970fe545",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-windows-x64-setup.exe"
     },
     {
@@ -24,10 +24,10 @@
       "label": "macOS Apple silicon",
       "assetName": "Dungeons-on-Automatic-mac-arm64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.2.51",
-      "releaseDate": "2026-10-02T15:48:31.698Z",
-      "size": 142122117,
-      "digest": "sha256:91934beb8059d3b14647ddd3926142d90dde9cfb02c5ee677c4e89446291a4f1",
+      "version": "0.2.53",
+      "releaseDate": "2026-10-07T16:27:23.401Z",
+      "size": 142122115,
+      "digest": "sha256:9a870629a1aa6bb51326e5b92b67d146c784b96a9d4bff1bbea96129c3b88be5",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-mac-arm64.zip"
     },
     {
@@ -35,10 +35,10 @@
       "label": "macOS Intel",
       "assetName": "Dungeons-on-Automatic-mac-x64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.2.51",
-      "releaseDate": "2026-10-02T15:48:31.698Z",
-      "size": 147684435,
-      "digest": "sha256:6321214cb6001d849ddf7a75d67c53749c2007266abb6a5e8b2fdb0e381fc425",
+      "version": "0.2.53",
+      "releaseDate": "2026-10-07T16:27:23.401Z",
+      "size": 147684433,
+      "digest": "sha256:f727db35cfd615f2142ced61547c4844fc22f68e47055fa4a02003b36736f869",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-mac-x64.zip"
     },
     {
@@ -46,10 +46,10 @@
       "label": "Linux x86_64",
       "assetName": "Dungeons-on-Automatic-linux-x86_64.AppImage",
       "feedName": "latest-linux.yml",
-      "version": "0.2.51",
-      "releaseDate": "2026-10-02T15:47:47.852Z",
-      "size": 148018482,
-      "digest": "sha256:1cac72c392c5324cb7e623828517cc8f3e9d354f55921899b973578aa0d70ffe",
+      "version": "0.2.53",
+      "releaseDate": "2026-10-07T16:27:21.010Z",
+      "size": 148018467,
+      "digest": "sha256:a709a0452a00189d1c93cdde9de8bda4ea333b70e7a3ef4b8a333bf7bfd74454",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-x86_64.AppImage"
     },
     {
@@ -57,10 +57,10 @@
       "label": "Linux ARM64",
       "assetName": "Dungeons-on-Automatic-linux-arm64.AppImage",
       "feedName": "latest-linux-arm64.yml",
-      "version": "0.2.51",
-      "releaseDate": "2026-10-02T15:47:47.852Z",
-      "size": 148630156,
-      "digest": "sha256:485f0a3b370539e7003df888999ed42b29052bf9ec6c88c0ce85eda78c76a3bf",
+      "version": "0.2.53",
+      "releaseDate": "2026-10-07T16:27:21.010Z",
+      "size": 148630165,
+      "digest": "sha256:28aaefa6a348b655b7e14a3aa4448dc4b2662852ca78ce54545d9418c64859e0",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-linux-arm64.AppImage"
     }
   ]
