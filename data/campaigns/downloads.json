@@ -5,8 +5,8 @@
   "sourceReleaseTag": "campaigns-continuous",
   "releaseName": "Campaigns on Automatic — continuous build",
   "publishedAt": "2026-08-21T02:55:49Z",
-  "updatedAt": "2026-11-02T19:29:57Z",
-  "generatedAt": "2026-11-04T15:40:24.277Z",
+  "updatedAt": "2026-11-04T17:21:11Z",
+  "generatedAt": "2026-11-04T21:32:29.193Z",
   "downloads": [
     {
       "id": "windows-x64",
@@ -15,19 +15,19 @@
       "feedName": "latest.yml",
       "version": "0.1.56",
       "releaseDate": "2026-11-02T19:29:48.034Z",
-      "size": 94750595,
-      "digest": "sha256:32d1702c62526c4bdfcd13606f3fa7a60dba703708b80647a0b0918da7fb46df",
-      "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-win-x64-setup.exe"
+      "size": null,
+      "digest": null,
+      "url": null
     },
     {
       "id": "mac-arm64",
       "label": "macOS Apple silicon",
       "assetName": "Campaigns-on-Automatic-mac-arm64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.55",
-      "releaseDate": "2026-10-30T15:56:20.996Z",
-      "size": 111655269,
-      "digest": "sha256:29eed3e54bfe668584e9b85d088682afe1b7183c41e28590724f5b441b395ae5",
+      "version": "0.1.57",
+      "releaseDate": "2026-11-04T17:20:15.743Z",
+      "size": 111655274,
+      "digest": "sha256:b057dd4df51fc898d7e12c886633ac25678112d93fbbff78bc7c119fdf0a0ca1",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-mac-arm64.zip"
     },
     {
@@ -35,10 +35,10 @@
       "label": "macOS Intel",
       "assetName": "Campaigns-on-Automatic-mac-x64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.55",
-      "releaseDate": "2026-10-30T15:56:20.996Z",
-      "size": 117217587,
-      "digest": "sha256:4120ac2179a97ce0c0241942e2d0584549270340d64bd6f4048d8449870533e7",
+      "version": "0.1.57",
+      "releaseDate": "2026-11-04T17:20:15.743Z",
+      "size": 117217592,
+      "digest": "sha256:aa3e8085b220294e361c5caa14a3246e7a6d9be8b53e13f26839566b4035487d",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-mac-x64.zip"
     },
     {
