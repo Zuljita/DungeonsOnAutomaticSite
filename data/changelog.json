@@ -2,6 +2,69 @@
   "schemaVersion": 1,
   "entries": [
     {
+      "kind": "commit",
+      "number": null,
+      "title": "Make Foundry note icons local and verify native scene startup",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-11-02T12:12:26-06:00",
+      "shortSha": "d054a37",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Preserve physical water and dry islands in native map exports",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-10-29T23:50:57-05:00",
+      "shortSha": "fea9867",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Preserve Dungeondraft doors and physical scale through native round trips",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-10-29T07:41:17-05:00",
+      "shortSha": "99f7dcf",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Fix native floor masks and Foundry wall restrictions",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-10-28T18:38:30-05:00",
+      "shortSha": "8f73658",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Fix liquid overlays on structural map annotations",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-10-27T09:59:52-05:00",
+      "shortSha": "26dfbeb",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Prototype constrained WFC detail with paired planner validation",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-10-26T07:46:21-05:00",
+      "shortSha": "0a82c11",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "WIP: checkpoint dungeon layout planning, room counts, and water shapes",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-10-25T22:02:09-05:00",
+      "shortSha": "5368725",
+      "commits": []
+    },
+    {
       "kind": "pull-request",
       "number": 150,
       "title": "Dungeondraft maps open on the dungeon, and Mizzik uses more of the library",

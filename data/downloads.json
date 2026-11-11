@@ -5,18 +5,18 @@
   "sourceReleaseTag": "dungeons-continuous",
   "releaseName": "Dungeons on Automatic — continuous build",
   "publishedAt": "2026-08-19T09:49:47Z",
-  "updatedAt": "2026-11-09T19:48:43Z",
-  "generatedAt": "2026-11-10T21:48:19.557Z",
+  "updatedAt": "2026-11-10T23:07:52Z",
+  "generatedAt": "2026-11-11T01:43:45.170Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Dungeons-on-Automatic-windows-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.2.67",
-      "releaseDate": "2026-11-09T19:48:01.811Z",
-      "size": 124090695,
-      "digest": "sha256:fe9e7a8005ea2c1aa4bd5ff360f7042057d8cec18d445487287bd5cccd462913",
+      "version": "0.2.68",
+      "releaseDate": "2026-11-10T23:07:07.741Z",
+      "size": 124092534,
+      "digest": "sha256:57e7ab22be27d2faaa1c134d079a4f691965c57acab065b186ee950890c17cbe",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/continuous/Dungeons-on-Automatic-windows-x64-setup.exe"
     },
     {
