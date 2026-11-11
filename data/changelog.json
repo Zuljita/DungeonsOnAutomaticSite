@@ -4,6 +4,24 @@
     {
       "kind": "commit",
       "number": null,
+      "title": "Allow isolated renderer CI without a privileged sandbox helper",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-11-11T07:32:47-06:00",
+      "shortSha": "0de14b8",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
+      "title": "Add Chromium renderer smokes for all four apps",
+      "authorName": "Kyle Norton",
+      "authoredAt": "2026-11-10T22:00:48-06:00",
+      "shortSha": "1510a48",
+      "commits": []
+    },
+    {
+      "kind": "commit",
+      "number": null,
       "title": "Make Foundry note icons local and verify native scene startup",
       "authorName": "Kyle Norton",
       "authoredAt": "2026-11-02T12:12:26-06:00",
