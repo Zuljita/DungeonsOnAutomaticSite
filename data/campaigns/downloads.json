@@ -5,18 +5,18 @@
   "sourceReleaseTag": "campaigns-continuous",
   "releaseName": "Campaigns on Automatic — continuous build",
   "publishedAt": "2026-08-21T02:55:49Z",
-  "updatedAt": "2026-11-11T17:09:15Z",
-  "generatedAt": "2026-11-13T15:36:09.670Z",
+  "updatedAt": "2026-11-13T17:14:16Z",
+  "generatedAt": "2026-11-13T21:40:00.062Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Campaigns-on-Automatic-win-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.1.61",
-      "releaseDate": "2026-11-11T17:07:18.790Z",
-      "size": 94750494,
-      "digest": "sha256:9d02d7268545f9a39a55c1497b9f3302d33023e2f5de33fca508d32525174f0b",
+      "version": "0.1.62",
+      "releaseDate": "2026-11-13T17:13:10.600Z",
+      "size": 94750616,
+      "digest": "sha256:11542bff8e660f2e4b856adbc8c2d45088966ec8c8f60adf3cf22edae5087597",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-win-x64-setup.exe"
     },
     {
@@ -24,10 +24,10 @@
       "label": "macOS Apple silicon",
       "assetName": "Campaigns-on-Automatic-mac-arm64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.61",
-      "releaseDate": "2026-11-11T17:07:04.070Z",
-      "size": 111655291,
-      "digest": "sha256:5a1758b6e756f8c97cc29b6bf943bfbb5dcc1815f7513e802b38cd9902970402",
+      "version": "0.1.62",
+      "releaseDate": "2026-11-13T17:12:54.996Z",
+      "size": 111655292,
+      "digest": "sha256:d99b79e825b30f748976e3478b4d1ba37e5829ac8995f10a3eff876d86c0549e",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-mac-arm64.zip"
     },
     {
@@ -35,10 +35,10 @@
       "label": "macOS Intel",
       "assetName": "Campaigns-on-Automatic-mac-x64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.61",
-      "releaseDate": "2026-11-11T17:07:04.070Z",
-      "size": 117217609,
-      "digest": "sha256:ed1357fc35b56a111918f9c7756b07a1240299020f70dbca8f5b0b95cc4903fa",
+      "version": "0.1.62",
+      "releaseDate": "2026-11-13T17:12:54.996Z",
+      "size": 117217610,
+      "digest": "sha256:53a0479c69f00a3204d5d5358ab29374b6891540fc417d8e67f0458dc9fd7804",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-mac-x64.zip"
     },
     {
@@ -46,10 +46,10 @@
       "label": "Linux x86_64",
       "assetName": "Campaigns-on-Automatic-linux-x86_64.AppImage",
       "feedName": "latest-linux.yml",
-      "version": "0.1.61",
-      "releaseDate": "2026-11-11T17:08:12.921Z",
-      "size": 117378548,
-      "digest": "sha256:160f502d5d94b55b40421de9f5b4dcd0d184f01bfba58c1c6a2731ec8f6a63fa",
+      "version": "0.1.62",
+      "releaseDate": "2026-11-13T17:12:53.361Z",
+      "size": 117378516,
+      "digest": "sha256:69e74bd700d3b88185d00c533a7455f6a6835f7af3be2f2b7ea864a239980b37",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-linux-x86_64.AppImage"
     },
     {
@@ -57,10 +57,10 @@
       "label": "Linux ARM64",
       "assetName": "Campaigns-on-Automatic-linux-arm64.AppImage",
       "feedName": "latest-linux-arm64.yml",
-      "version": "0.1.61",
-      "releaseDate": "2026-11-11T17:08:12.921Z",
-      "size": 117990136,
-      "digest": "sha256:59f0a86450fc9b60653a6caa11114916e7c74a16371d6ce6f0a5531b38435cd8",
+      "version": "0.1.62",
+      "releaseDate": "2026-11-13T17:12:53.361Z",
+      "size": 117990119,
+      "digest": "sha256:1aa47e2759906d3596b4da71e66b626a0cddd813116b6b3275824aa31f3ba847",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/campaigns-continuous/Campaigns-on-Automatic-linux-arm64.AppImage"
     }
   ]
