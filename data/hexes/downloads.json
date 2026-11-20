@@ -5,18 +5,18 @@
   "sourceReleaseTag": "hexes-continuous",
   "releaseName": "Hexes on Automatic — continuous build",
   "publishedAt": "2026-08-19T09:48:59Z",
-  "updatedAt": "2026-11-18T18:02:38Z",
-  "generatedAt": "2026-11-20T16:58:14.064Z",
+  "updatedAt": "2026-11-20T17:47:59Z",
+  "generatedAt": "2026-11-20T23:01:46.696Z",
   "downloads": [
     {
       "id": "windows-x64",
       "label": "Windows installer",
       "assetName": "Hexes-on-Automatic-win-x64-setup.exe",
       "feedName": "latest.yml",
-      "version": "0.1.82",
-      "releaseDate": "2026-11-18T18:01:21.734Z",
-      "size": 94786801,
-      "digest": "sha256:1f9d8591aaa49b81dc9363f5d7edc3e4c7c0339b87226fed43d15fc892f7618b",
+      "version": "0.1.83",
+      "releaseDate": "2026-11-20T17:46:48.860Z",
+      "size": 94786715,
+      "digest": "sha256:5da47c3f1bfaf3b0fb987d15ad2ecb189066b87faca2014ee979ef62119337de",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/hexes-continuous/Hexes-on-Automatic-win-x64-setup.exe"
     },
     {
@@ -24,10 +24,10 @@
       "label": "macOS Apple silicon",
       "assetName": "Hexes-on-Automatic-mac-arm64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.82",
-      "releaseDate": "2026-11-18T18:01:40.244Z",
-      "size": 111699262,
-      "digest": "sha256:81269e2c5530e3c73e8844f2967632b4044f3cd1c1d7af2b2a81980a23ec89dd",
+      "version": "0.1.83",
+      "releaseDate": "2026-11-20T17:46:51.846Z",
+      "size": 111699254,
+      "digest": "sha256:77eb6e6fb4d9be52f08662d7d90c60ebed55db4545c03153c2cbcd8b56e4e106",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/hexes-continuous/Hexes-on-Automatic-mac-arm64.zip"
     },
     {
@@ -35,10 +35,10 @@
       "label": "macOS Intel",
       "assetName": "Hexes-on-Automatic-mac-x64.zip",
       "feedName": "latest-mac.yml",
-      "version": "0.1.82",
-      "releaseDate": "2026-11-18T18:01:40.244Z",
-      "size": 117261580,
-      "digest": "sha256:cc5ae44730228b8a01e2c3d4f6ac271e606aa8d2f3c37ac4bff390d75e19c6eb",
+      "version": "0.1.83",
+      "releaseDate": "2026-11-20T17:46:51.846Z",
+      "size": 117261572,
+      "digest": "sha256:43ff3cd0c6eb295c5f477a1cc04b051281b8cc003cc968eb67917e537530e422",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/hexes-continuous/Hexes-on-Automatic-mac-x64.zip"
     },
     {
@@ -46,10 +46,10 @@
       "label": "Linux x86_64",
       "assetName": "Hexes-on-Automatic-linux-x86_64.AppImage",
       "feedName": "latest-linux.yml",
-      "version": "0.1.82",
-      "releaseDate": "2026-11-18T18:00:59.231Z",
-      "size": 117411287,
-      "digest": "sha256:73f5b95d7ecad4c4ad54a5887b9171ab0efc647f37a7a0815b21661f94d11f27",
+      "version": "0.1.83",
+      "releaseDate": "2026-11-20T17:46:30.985Z",
+      "size": 117411290,
+      "digest": "sha256:ea486deeea3ac7c8b0cbc90b1855ff606116179b6d8239e45371bcb1aeddc0ea",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/hexes-continuous/Hexes-on-Automatic-linux-x86_64.AppImage"
     },
     {
@@ -57,10 +57,10 @@
       "label": "Linux ARM64",
       "assetName": "Hexes-on-Automatic-linux-arm64.AppImage",
       "feedName": "latest-linux-arm64.yml",
-      "version": "0.1.82",
-      "releaseDate": "2026-11-18T18:00:59.231Z",
-      "size": 118022902,
-      "digest": "sha256:085026c638c7da6389ae7bae87492527195cbf089ac01f944354049c49927114",
+      "version": "0.1.83",
+      "releaseDate": "2026-11-20T17:46:30.985Z",
+      "size": 118022900,
+      "digest": "sha256:b8d8dad6d65f4185d75bbb3d1d85d2d8e64173e47e534be35aebca209e271d0a",
       "url": "https://github.com/Zuljita/DungeonsOnAutomaticSite/releases/download/hexes-continuous/Hexes-on-Automatic-linux-arm64.AppImage"
     }
   ]
